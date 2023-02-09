@@ -3,12 +3,11 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "css-compile": "tailwindcss build -i resources/css/tailwind/tailwind.css -c resources/js/tailwind.config.js -o resources/css/tailwind/tailwind.css",
-    "css-minified": "tailwindcss build -i resources/css/tailwind/tailwind.css -c resources/js/tailwind.config.js -o resources/css/tailwind/minified/tailwind.min.css --minify",
+    "css-compile": "tailwindcss build -i resources/css/tailwind.css -c resources/js/tailwind.config.js -o resources/css/tailwind.css",
+    "css-minified": "tailwindcss build -i resources/css/tailwind.css -c resources/js/tailwind.config.js -o resources/css/tailwind/app.min.css --minify",
     "css": "npm-run-all --sequential css-*",
     "watch": "npm-run-all build --parallel watch-templates watch-css browsersync",
-    "watch-templates": "npm run templates -- --watch",
-    "watch-css": "tailwindcss build -i resources/css/tailwind/tailwind.css -c resources/js/tailwind.config.js -o resources/css/tailwind/minified/tailwind.min.css --minify --watch"
+    "watch-css": "tailwindcss build -i resources/css/tailwind.css -c resources/js/tailwind.config.js -o resources/css/app.min.css --minify --watch"
   },
   "devDependencies": {
     "axios": "^1.1.2",
