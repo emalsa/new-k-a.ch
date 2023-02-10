@@ -1,3 +1,14 @@
 <template>
-  <div class="bg-blue-500">How To Install Vue 3 in Laravel 9 with Vite - TechvBlogs..</div>
+  <Navigation/>
+  <Formular/>
+  <Footer/>
 </template>
+<script>
+import Formular from "./components/Formular.vue";
+import Footer from "./components/Footer.vue";
+import Navigation from "./components/Navigation.vue";
+
+export default {
+  components: {Formular, Navigation, Footer},
+}
+</script>
