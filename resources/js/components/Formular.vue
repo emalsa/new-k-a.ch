@@ -15,8 +15,12 @@
                 <span class="text-green-500">&nbsp;Starten</span>
               </span>
             </div>
-            <h4 v-if="isStep1" class="max-w-xs font-heading text-3xl sm:text-4xl mt-2">Person 1</h4>
-            <h4 v-if="isStep2" class="max-w-xs font-heading text-3xl sm:text-4xl mt-2">Partner</h4>
+            <h4 v-if="isStep1" class="max-w-xs font-heading text-3xl mt-2">Person 1</h4>
+            <h4 v-if="isStep2" class="max-w-xs font-heading text-3xl mt-2">Partner</h4>
+            <h4 v-if="isStep3" class="max-w-xs font-heading text-3xl mt-2">Kinder</h4>
+            <h4 v-if="isStep4" class="max-w-xs font-heading text-3xl mt-2">Kirchgemeinde</h4>
+
+
             <div>
               <div v-if="errors.length">
                 <b>Please correct the following error(s):</b>
@@ -28,6 +32,8 @@
           </div>
 
           <form @submit.prevent="checkForm" class="bg-red">
+
+            <!-- Step 1 (Person)-->
             <div v-if="isStep1" class="step1">
               <div class="mb-4">
                 <label class="block text-md leading-6 mb-2" for="">Vorname</label>
@@ -74,38 +80,76 @@
                 </div>
               </div>
 
+              <!-- Address -->
+              <div class="address mt-16">
+                <h4 class="mb-6 max-w-xs font-heading text-3xl mt-2">Deine Adresse</h4>
+                <div class="mb-6">
+                  <label class="block text-md leading-6 mb-2" for="">Strasse und Nr.</label>
+                  <input class="block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
+                         v-model="person.streetAddress"
+                         type="text"
+                         required
+                         placeholder="Musterstrasse 24b">
+                </div>
+
+                <div class="mb-6">
+                  <label class="block text-md leading-6 mb-2" for="">Addresszusatz</label>
+                  <input class="block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
+                         v-model="person.streetAdditionalAddress"
+                         type="text">
+                </div>
+
+                <div class="mb-6 flex">
+                  <div class="flex-grow w-1/12 pr-2">
+                    <label class="block text-md leading-6 mb-2" for="">Postleitzahl</label>
+                    <input class="block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
+                           v-model="person.postalAddress"
+                           type="text"
+                           required
+                           placeholder="3000">
+                  </div>
+                  <div class="flex-grow">
+                    <label class="block text-md leading-6 mb-2" for="">Ort</label>
+                    <input class="block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
+                           v-model="person.locationAddress"
+                           type="text"
+                           required
+                           placeholder="Bern">
+                  </div>
+                </div>
+
+              </div>
               <!--Taufdatum checkbox -->
               <div class="my-12">
                 <label>
                   <input type="checkbox"
-                         v-model="person.taufdatumBekanntPerson"
-                         name="taufdatumBekanntPerson"
+                         v-model="person.taufDatumBekanntPerson"
+                         name="taufDatumBekanntPerson"
                          value="example value">
                   <span class="ml-1">Ich kenne mein Taufdatum oder Taufort</span>
                 </label>
-              </div>
-
-              <!-- Taufort/datum -->
-              <div v-if="person.taufdatumBekanntPerson" class="mt-12 mb-6">
-                <div class="mb-6">
-                  <label class="block text-md leading-6 mb-2" for="">Taufdatum</label>
-                  <input class="block w-full p-4 font-heading text-gray-300 placeholder-gray-300 bg-gray-50 rounded outline-none"
-                         name="taufdatumPerson"
-                         type="text"
-                         placeholder="Taufdatum, Beispiel: 4.12.1967">
-                  <span class="block text-md w-full py-4 font-heading rounded outline-none">Beispiel: <i>4.12.1966</i> oder <i>3.3.1922</i></span>
-                </div>
-                <div class="mb-6">
-                  <label class="block text-md leading-6 mb-2" for="">Taufort</label>
-                  <input class="block w-full p-4 font-heading text-gray-300 placeholder-gray-300 bg-gray-50 rounded outline-none"
-                         name="taufortPerson"
-                         type="text"
-                         placeholder="Taufort">
+                <!-- Taufort/datum -->
+                <div v-if="person.taufDatumBekanntPerson" class="mt-12 mb-6">
+                  <div class="mb-6">
+                    <label class="block text-md leading-6 mb-2" for="">Taufdatum</label>
+                    <input class="block w-full p-4 font-heading text-gray-300 placeholder-gray-300 bg-gray-50 rounded outline-none"
+                           name="taufdatumPerson"
+                           type="text"
+                           placeholder="Taufdatum, Beispiel: 4.12.1967">
+                    <span class="block text-md w-full py-4 font-heading rounded outline-none">Beispiel: <i>4.12.1966</i> oder <i>3.3.1922</i></span>
+                  </div>
+                  <div class="mb-6">
+                    <label class="block text-md leading-6 mb-2" for="">Taufort</label>
+                    <input class="block w-full p-4 font-heading text-gray-300 placeholder-gray-300 bg-gray-50 rounded outline-none"
+                           name="taufortPerson"
+                           type="text"
+                           placeholder="Taufort">
+                  </div>
                 </div>
               </div>
             </div>
 
-
+            <!-- Step 2 (Partner)-->
             <div v-if="isStep2" class="step2">
               <!--Taufdatum checkbox -->
               <div class="my-12">
@@ -166,15 +210,15 @@
                 <div class="my-12">
                   <label>
                     <input type="checkbox"
-                           v-model="partner.taufdatumBekanntPartner"
-                           name="taufdatumBekanntPartner"
+                           v-model="partner.taufDatumBekanntPartner"
+                           name="taufDatumBekanntPartner"
                            value="example value">
                     <span class="ml-1">Der Partner kennt sein Taufdatum oder Taufort</span>
                   </label>
                 </div>
 
                 <!-- Taufort/datum -->
-                <div v-if="partner.taufdatumBekanntPartner" class="mt-12 mb-6">
+                <div v-if="partner.taufDatumBekanntPartner" class="mt-12 mb-6">
                   <div class="mb-6">
                     <label class="block text-md leading-6 mb-2" for="">Taufdatum</label>
                     <input class="block w-full p-4 font-heading text-gray-300 placeholder-gray-300 bg-gray-50 rounded outline-none"
@@ -194,18 +238,115 @@
               </div>
             </div>
 
-            <div v-if="isStep3" class="step2">
+            <!-- Step 3 (Kinder)-->
+            <div v-if="isStep3" class="step3">
               <!--Taufdatum checkbox -->
               <div class="my-12">
                 <label>
                   <input type="checkbox"
-                         v-model="hatKinder"
-                         name="hatKinder"
+                         v-model="hasChildren"
+                         @click="clickHasChildren"
+                         name="hasChildren"
                          value="example value">
                   <span class="ml-1">Meine Kinder wollen auch austreten. (Unter 16 Jahre)</span>
                 </label>
               </div>
-              <div v-if="hatKinder">
+
+              <div v-if="hasChildren">
+                <div class="border border-sky-500 px-10 pt-10 " v-for="(childElement, childrenCount) in children" v-bind:key="childrenCount">
+                  <div>
+                    <h3 class="font-heading mt-2 text-3xl float-left">{{ childrenCount + 1 }}. Kind</h3>
+                    <button @click="removeChild(childrenCount)" class="mt-1.5 py-1 px-2  text-base text-white bg-red-500 hover:bg-red-600 border border-red-500 hover:border-red-600 rounded-sm transition duration-200 float-right">Entfernen</button>
+                  </div>
+                  <div class="mb-4 pt-20">
+                    <label class="block text-md leading-6 mb-2" for="">Vorname</label>
+                    <input class="block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
+                           v-model="children[childrenCount].vornameChild"
+                           type="text"
+                           required
+                           placeholder="Vorname">
+                  </div>
+                  <div class="mb-4">
+                    <label class="block text-md leading-6 mb-2" for="">Nachname</label>
+                    <input class="block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
+                           v-model="children[childrenCount].nachnameChild"
+                           type="text"
+                           required
+                           placeholder="Nachname">
+                  </div>
+                  <div class="mb-6">
+                    <label class="block text-md leading-6 mb-2" for="">Geburtsdatum</label>
+                    <input class="block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
+                           v-model="children[childrenCount].geburtsdatumChild"
+                           type="text"
+                           required
+                           placeholder="Geburtsdatum, Beispiel: 4.12.1967">
+                    <span class="block text-md w-full py-4 font-heading rounded outline-none">Beispiel: <i>4.12.1966</i> oder <i>3.3.1922</i></span>
+                  </div>
+                  <div class="mb-6">
+                    <label class="block text-md leading-6 mb-2" for="">Konfession</label>
+                    <div class="relative">
+                      <select class="appearance-none block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
+                              v-model="children[childrenCount].konfessionChild"
+                              required>
+                        <option disabled selected value>Bitte auswählen</option>
+                        <option value="kath">R&ouml;misch-Katholisch (Kath.)</option>
+                        <option value="ref">Evangelisch-Reformiert (Ref.)</option>
+                      </select>
+                      <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                        <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 20 20">
+                          <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"></path>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                  <!--Taufdatum checkbox -->
+                  <div class="my-12">
+                    <label>
+                      <input type="checkbox"
+                             v-model="children[childrenCount].taufDatumBekanntChild"
+                             name="taufDatumBekanntPartner"
+                             value="example value">
+                      <span class="ml-1">Das Taufdatum oder Taufort ist bekannt</span>
+                    </label>
+                  </div>
+                  <!-- Taufort/datum -->
+                  <div v-if="children[childrenCount].taufDatumBekanntChild" class="mt-12 mb-6">
+                    <div class="mb-6">
+                      <label class="block text-md leading-6 mb-2" for="">Taufdatum</label>
+                      <input class="block w-full p-4 font-heading text-gray-300 placeholder-gray-300 bg-gray-50 rounded outline-none"
+                             name="taufdatumPartner"
+                             type="text"
+                             placeholder="Taufdatum, Beispiel: 4.12.1967">
+                      <span class="block text-md w-full py-4 font-heading rounded outline-none">Beispiel: <i>4.12.1966</i> oder <i>3.3.1922</i></span>
+                    </div>
+                    <div class="mb-6">
+                      <label class="block text-md leading-6 mb-2" for="">Taufort</label>
+                      <input class="block w-full p-4 font-heading text-gray-300 placeholder-gray-300 bg-gray-50 rounded outline-none"
+                             v-model="children[childrenCount].taufortChild"
+                             type="text"
+                             placeholder="Taufort">
+                    </div>
+                  </div>
+                </div>
+                <button @click="addChild" class="mt-10 w-full block py-4 px-6 text-center text-base text-white bg-blue-400 hover:bg-blue-600 border border-blue-400 hover:border-blue-600 rounded-sm transition duration-200 ">Weiteres Kind hinzuf&uuml;gen</button>
+              </div>
+
+            </div>
+
+            <!-- Step 4 (Buy or enter address) -->
+            <div v-if="isStep4" class="step4">
+              <!--Taufdatum checkbox -->
+              <div class="my-12">
+                <label>
+                  <input type="checkbox"
+                         v-model="hatEhepartner"
+                         name="hatEhepartner"
+                         value="example value">
+                  <span class="ml-1">Mein Ehepartner möchte auch austreten</span>
+                </label>
+              </div>
+              <div v-if="hatEhepartner">
                 <div class="mb-4">
                   <label class="block text-md leading-6 mb-2" for="">Vorname</label>
                   <input class="block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
@@ -254,15 +395,15 @@
                 <div class="my-12">
                   <label>
                     <input type="checkbox"
-                           v-model="partner.taufdatumBekanntPartner"
-                           name="taufdatumBekanntPartner"
+                           v-model="partner.taufDatumBekanntPartner"
+                           name="taufDatumBekanntPartner"
                            value="example value">
                     <span class="ml-1">Der Partner kennt sein Taufdatum oder Taufort</span>
                   </label>
                 </div>
 
                 <!-- Taufort/datum -->
-                <div v-if="partner.taufdatumBekanntPartner" class="mt-12 mb-6">
+                <div v-if="partner.taufDatumBekanntPartner" class="mt-12 mb-6">
                   <div class="mb-6">
                     <label class="block text-md leading-6 mb-2" for="">Taufdatum</label>
                     <input class="block w-full p-4 font-heading text-gray-300 placeholder-gray-300 bg-gray-50 rounded outline-none"
@@ -282,18 +423,18 @@
               </div>
             </div>
 
-            <!-- Weiter -->
-            <div class="flex">
-              <div class="w-1/2  pr-36  text-left">
+            <!-- Button -->
+            <div class="flex mt-10">
+              <!-- Zurück -->
+              <div class="w-1/2 pr-32 text-left">
                 <button class="w-full block py-4 px-6 text-center font-heading font-medium text-base text-white bg-green-500 hover:bg-green-600 border border-green-500 hover:border-green-600 rounded-sm transition duration-200"
                         name="back"
                         @click.prevent="prev">
                   Zurück
                 </button>
               </div>
-
               <!-- Weiter -->
-              <div class="w-1/2  text-right">
+              <div class="w-1/2 text-right">
                 <button class="w-full block py-4 px-6 text-center font-heading font-medium text-base text-white bg-green-500 hover:bg-green-600 border border-green-500 hover:border-green-600 rounded-sm transition duration-200"
                         name="next">
                   Weiter
@@ -380,19 +521,23 @@ export default {
     return {
       errors: [],
       hatEhepartner: false,
-      hatKinder: false,
+      hasChildren: false,
       currentStep: 1,
       person: {
-        taufdatumBekanntPerson: false,
+        taufDatumBekanntPerson: false,
         vornamePerson: null,
         nachnamePerson: null,
         geburtsdatumPerson: null,
         konfessionPerson: null,
         taufdatumPerson: null,
-        taufortPerson: null
+        taufortPerson: null,
+        streetAddress: null,
+        streetAdditionalAddress: null,
+        postalAddress: null,
+        locationAddress: null
       },
       partner: {
-        taufdatumBekanntPartner: false,
+        taufDatumBekanntPartner: false,
         vornamePartner: null,
         nachnamePartner: null,
         geburtsdatumPartner: null,
@@ -401,6 +546,7 @@ export default {
         taufortPartner: null
       },
       child: {
+        taufDatumBekanntChild: null,
         vornameChild: null,
         nachnameChild: null,
         geburtsdatumChild: null,
@@ -408,7 +554,7 @@ export default {
         taufdatumChild: null,
         taufortChild: null
       },
-      children: {}
+      children: [],
     }
   },
   computed: {
@@ -425,9 +571,22 @@ export default {
     },
     isStep3() {
       return this.currentStep === 3;
+    },
+    isStep4() {
+      return this.currentStep === 4;
     }
   },
   methods: {
+    removeChild(count) {
+      console.log('Remove' + count)
+      this.children.splice(count, 1)
+    },
+    addChild() {
+      this.children.push({});
+    },
+    clickHasChildren() {
+      this.children.push({});
+    },
     prev() {
       this.currentStep--;
     },
