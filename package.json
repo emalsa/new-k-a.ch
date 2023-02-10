@@ -2,7 +2,7 @@
   "private": true,
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && npm run css-minified",
     "css-compile": "tailwindcss build -i resources/css/app.css -c ./tailwind.config.js -o resources/css/min/app.min.css",
     "css-minified": "tailwindcss build -i resources/css/app.css -c ./tailwind.config.js -o resources/css/min/app.min.css --minify",
     "css": "npm-run-all --sequential css-*",
