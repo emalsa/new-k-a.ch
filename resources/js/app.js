@@ -11,7 +11,7 @@ const routes = [
 ]
 
 const router = createRouter({
-    // history: createWebHistory(env.BASE_URL),
+    history: createWebHistory(),
     routes,
 });
 
