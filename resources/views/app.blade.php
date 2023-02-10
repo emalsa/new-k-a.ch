@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
-    @vite('resources/css/tailwind.css','resources/js/app.js')
+    @vite('resources/css/app.css','resources/js/app.js')
 
 </head>
 <body class="antialiased bg-body text-body font-body">

@@ -3,7 +3,7 @@ module.exports = {
         './resources/views/*.html',
         './resources/views/*.php',
         './resources/js/components/*.vue',
-        "./resources/js/*.js",
+        './resources/js/*.js',
         './resources/js/*.vue',
         './resources/css/*.css',
     ],
