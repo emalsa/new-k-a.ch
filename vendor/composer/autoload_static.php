@@ -340,8 +340,8 @@ class ComposerStaticInitacb70e19bd4840651c9d841b1d2b9510
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-message/src',
-            1 => __DIR__ . '/..' . '/psr/http-factory/src',
+            0 => __DIR__ . '/..' . '/psr/http-factory/src',
+            1 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (
@@ -529,6 +529,7 @@ class ComposerStaticInitacb70e19bd4840651c9d841b1d2b9510
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
         'App\\Models\\CatholicAddress' => __DIR__ . '/../..' . '/app/Models/CatholicAddress.php',
         'App\\Models\\Child' => __DIR__ . '/../..' . '/app/Models/Child.php',
+        'App\\Models\\ChurchAddress' => __DIR__ . '/../..' . '/app/Models/ChurchAddress.php',
         'App\\Models\\Partner' => __DIR__ . '/../..' . '/app/Models/Partner.php',
         'App\\Models\\Person' => __DIR__ . '/../..' . '/app/Models/Person.php',
         'App\\Models\\ReformAddress' => __DIR__ . '/../..' . '/app/Models/ReformAddress.php',

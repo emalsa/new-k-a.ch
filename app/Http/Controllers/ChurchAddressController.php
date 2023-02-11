@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\ReformAddress;
+use App\Models\ChurchAddress;
 use Illuminate\Http\Request;
 
-class ReformAddressController extends Controller
+class ChurchAddressController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class ReformAddressController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\ReformAddress  $reformAddress
+     * @param  \App\Models\ChurchAddress  $churchAddress
      * @return \Illuminate\Http\Response
      */
-    public function show(ReformAddress $reformAddress)
+    public function show(ChurchAddress $churchAddress)
     {
         //
     }
@@ -52,10 +52,10 @@ class ReformAddressController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\ReformAddress  $reformAddress
+     * @param  \App\Models\ChurchAddress  $churchAddress
      * @return \Illuminate\Http\Response
      */
-    public function edit(ReformAddress $reformAddress)
+    public function edit(ChurchAddress $churchAddress)
     {
         //
     }
@@ -64,10 +64,10 @@ class ReformAddressController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\ReformAddress  $reformAddress
+     * @param  \App\Models\ChurchAddress  $churchAddress
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, ReformAddress $reformAddress)
+    public function update(Request $request, ChurchAddress $churchAddress)
     {
         //
     }
@@ -75,10 +75,10 @@ class ReformAddressController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\ReformAddress  $reformAddress
+     * @param  \App\Models\ChurchAddress  $churchAddress
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ReformAddress $reformAddress)
+    public function destroy(ChurchAddress $churchAddress)
     {
         //
     }

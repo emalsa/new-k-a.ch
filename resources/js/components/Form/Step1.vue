@@ -109,6 +109,7 @@
         <div class="mb-6">
           <label class="block text-md leading-6 mb-2" for="">Taufdatum</label>
           <input class="block w-full p-4 font-heading text-gray-300 placeholder-gray-300 bg-gray-50 rounded outline-none"
+                 v-model="person.taufdatum"
                  name="taufdatum"
                  type="text"
                  placeholder="Taufdatum, Beispiel: 4.12.1967">

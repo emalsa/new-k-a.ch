@@ -37,12 +37,8 @@ class Person extends Model {
     return $this->hasMany(Child::class);
   }
 
-  public function catholicAddress() {
-    return $this->hasOne(CatholicAddress::class);
-  }
-
-  public function reformAddress() {
-    return $this->hasOne(ReformAddress::class);
+  public function churchAddress() {
+    return $this->hasOne(ChurchAddress::class);
   }
 
 }

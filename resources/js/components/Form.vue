@@ -67,10 +67,10 @@
                 </div>
               </div>
 
-              <div v-if="paid===false">
+              <div v-if="formData.paid===false">
 
                 <!-- catholic -->
-                <div class="catholic" v-if="isCatholic">
+                <div class="catholic" v-if="formData.isCatholic">
                   <div class="mb-4">
                     <label class="block text-md leading-6 mb-2" for="">Strasse und Nr.</label>
                     <input class="block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
@@ -106,7 +106,7 @@
                 </div>
 
                 <!-- Reform -->
-                <div class="reform" v-if="isReform">
+                <div class="reform" v-if="formData.isReform">
                   <div class="mb-4">
                     <label class="block text-md leading-6 mb-2" for="">Strasse und Nr.</label>
                     <input class="block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
@@ -152,8 +152,11 @@
                 </div>
 
                 <PersonSummary class="border border-sky-500  bg-white" :element="person"/>
-                <PersonSummary class="border border-sky-500 " :element="partner"/>
-                <div class="border border-sky-500" v-for="(child, index) in children" :key="index">
+                <PersonSummary v-if="formData.hatEhepartner" class="border border-sky-500 " :element="partner"/>
+                <div v-if="formData.hasChildren"
+                     class="border border-sky-500"
+                     v-for="(child, index) in children"
+                     :key="index">
                   <PersonSummary :element="child"/>
                 </div>
               </div>
@@ -282,52 +285,52 @@ export default {
         isReform: false,
         hatEhepartner: false,
         hasChildren: false,
-        paid: null,
+        paid: false,
       },
       person: {
-        email: null,
+        email: '',
         taufDatumBekanntPerson: false,
-        vorname: null,
-        nachname: null,
-        geburtsdatum: null,
-        konfession: null,
-        taufdatum: null,
-        taufort: null,
-        streetAddress: null,
-        streetAdditionalAddress: null,
-        postalAddress: null,
-        locationAddress: null
+        vorname: '',
+        nachname: '',
+        geburtsdatum: '',
+        konfession: '',
+        taufdatum: '',
+        taufort: '',
+        streetAddress: '',
+        streetAdditionalAddress: '',
+        postalAddress: '',
+        locationAddress: ''
       },
       partner: {
         taufDatumBekanntPartner: false,
-        vorname: null,
-        nachname: null,
-        geburtsdatum: null,
-        konfession: null,
-        taufdatum: null,
-        taufort: null
+        vorname: '',
+        nachname: '',
+        geburtsdatum: '',
+        konfession: '',
+        taufdatum: '',
+        taufort: ''
       },
       child: {
-        taufDatumBekanntChild: null,
-        vorname: null,
-        nachname: null,
-        geburtsdatum: null,
-        konfession: null,
-        taufdatum: null,
-        taufort: null
+        taufDatumBekanntChild: false,
+        vorname: '',
+        nachname: '',
+        geburtsdatum: '',
+        konfession: '',
+        taufdatum: '',
+        taufort: ''
       },
       children: [],
       catholic: {
-        streetAddress: null,
-        streetAdditionalAddress: null,
-        postalAddress: null,
-        locationAddress: null
+        streetAddress: '',
+        streetAdditionalAddress: '',
+        postalAddress: '',
+        locationAddress: ''
       },
       reform: {
-        streetAddress: null,
-        streetAdditionalAddress: null,
-        postalAddress: null,
-        locationAddress: null
+        streetAddress: '',
+        streetAdditionalAddress: '',
+        postalAddress: '',
+        locationAddress: ''
       },
     }
   },
@@ -369,24 +372,35 @@ export default {
       if (event.target.value === 'paidChecked') {
         this.formData.paid = true;
       }
-      this.formData.isCatholic = null;
-      this.formData.isReform = null;
+      this.formData.isCatholic = false;
+      this.formData.isReform = false;
       console.log('optionClicked')
-      if (this.person.konfession === 'kath' || this.partner.konfession === 'kath') {
+
+      if (this.person.konfession === 'kath') {
         this.formData.isCatholic = true;
       }
-      if (!this.formData.isCatholic) {
+      if (this.formData.hatEhepartner && this.partner.konfession === 'kath') {
+        this.formData.isCatholic = true;
+      }
+
+      if (this.formData.hasChildren && !this.formData.isCatholic) {
         this.children.forEach(child => {
           this.formData.isCatholic = child.konfession === 'kath'
         });
       }
 
-      if (this.person.konfession === 'ref' || this.partner.konfession === 'ref') {
+      if (this.person.konfession === 'ref') {
         this.formData.isReform = true;
       }
-      this.children.forEach(child => {
-        this.formData.isReform = child.konfession === 'ref'
-      });
+      if (this.formData.hatEhepartner && this.partner.konfession === 'ref') {
+        this.formData.isReform = true;
+      }
+      if (this.formData.hasChildren && !this.formData.isReform) {
+        this.children.forEach(child => {
+          this.formData.isReform = child.konfession === 'ref'
+        });
+      }
+
 
     },
     prev() {
@@ -421,6 +435,8 @@ export default {
             partner: this.partner,
             children: this.children,
             formData: this.formData,
+            catholic: this.catholic,
+            reform: this.reform,
             currentStep: this.currentStep,
           }
       )

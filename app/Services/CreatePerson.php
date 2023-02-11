@@ -65,7 +65,7 @@ class CreatePerson {
     if ($formData['hasChildren']) {
       $childrenPostData = $this->request->json('children');
       foreach ($childrenPostData as $index => $childPostData) {
-        $data = [
+        $person->children()->create([
           'vorname' => $childPostData['vorname'],
           'nachname' => $childPostData['nachname'],
           'geburtsdatum' => $childPostData['geburtsdatum'],
@@ -73,12 +73,33 @@ class CreatePerson {
           'taufDatumBekanntChild' => isset($childPostData['taufDatumBekanntChild']) ? $childPostData['taufDatumBekanntChild'] : FALSE,
           'taufdatum' => isset($childPostData['taufdatum']) ? $childPostData['taufdatum'] : '',
           'taufort' => isset($childPostData['taufort']) ? $childPostData['taufort'] : '',
-        ];
-        $a=1;
-        $person->children()->create($data);
+        ]);
       }
-      if (!empty($childElements)) {
-        //        $children = $person->children()->createMany($childElements);
+
+      if (!$formData['paid']) {
+        $catholicPostData = $this->request->json('catholic');
+        if ($formData['isCatholic']) {
+          // Catholic
+          $person->churchAddress()->create([
+            'confession' => 'kath',
+            'streetAddress' => $catholicPostData['streetAddress'],
+            'streetAdditionalAddress' => $catholicPostData['streetAdditionalAddress'],
+            'postalAddress' => $catholicPostData['postalAddress'],
+            'locationAddress' => $catholicPostData['locationAddress'],
+          ]);
+        }
+
+        // Reform
+        if ($formData['isReform']) {
+          $reformPostData = $this->request->json('reform');
+          $person->churchAddress()->create([
+            'confession' => 'reform',
+            'streetAddress' => $reformPostData['streetAddress'],
+            'streetAdditionalAddress' => $reformPostData['streetAdditionalAddress'],
+            'postalAddress' => $reformPostData['postalAddress'],
+            'locationAddress' => $reformPostData['locationAddress'],
+          ]);
+        }
       }
     }
 
