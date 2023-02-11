@@ -151,7 +151,7 @@
                   <h3 class="font-heading mt-2 text-2xl">Zusammenfassung</h3>
                 </div>
 
-                <PersonSummary class="border border-sky-500 " :element="person"/>
+                <PersonSummary class="border border-sky-500  bg-white" :element="person"/>
                 <PersonSummary class="border border-sky-500 " :element="partner"/>
                 <div class="border border-sky-500" v-for="(child, index) in children" :key="index">
                   <PersonSummary :element="child"/>

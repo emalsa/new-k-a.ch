@@ -1,11 +1,10 @@
 module.exports = {
     content: [
-        './resources/views/*.html',
         './resources/views/*.php',
-        './resources/js/components/*.vue',
-        './resources/js/*.js',
         './resources/js/*.vue',
-        './resources/css/*.css',
+        './resources/js/components/*.vue',
+        './resources/js/components/Form/*.vue',
+        './resources/js/*.js',
     ],
 
     theme: {

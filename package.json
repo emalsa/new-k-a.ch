@@ -7,7 +7,7 @@
     "css-minified": "tailwindcss build -i resources/css/app.css -c ./tailwind.config.js -o resources/css/min/app.min.css --minify",
     "css": "npm-run-all --sequential css-*",
     "watch": "npm-run-all build --parallel watch-templates watch-css browsersync",
-    "watch-css": "tailwindcss build -i resources/css/tailwind.css -c ./tailwind.config.js -o resources/css/min/app.min.css --minify --watch"
+    "watch-css": "tailwindcss build -i resources/css/app.css -c ./tailwind.config.js -o resources/css/min/app.min.css --minify --watch"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.13",
