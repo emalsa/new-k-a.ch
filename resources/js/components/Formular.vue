@@ -161,7 +161,7 @@
 
 
             <!-- Buttons -->
-            <div class="flex mt-10 bg-yellow-500">
+            <div class="flex mt-10">
               <!-- Zurück -->
               <div class="w-1/2 pr-32 text-left">
                 <button class="w-full block py-4 px-6 text-center font-heading font-medium text-base text-white bg-green-500 hover:bg-green-600 border border-green-500 hover:border-green-600 rounded-sm transition duration-200"
