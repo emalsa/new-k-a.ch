@@ -8,7 +8,7 @@
     "src": "resources/assets/logo/logo-acros-column-white.svg"
   },
   "resources/css/app.css": {
-    "file": "assets/app-239ed809.css",
+    "file": "assets/app-9aa22c95.css",
     "isEntry": true,
     "src": "resources/css/app.css"
   },
@@ -23,9 +23,9 @@
       "assets/logo-acros-black-9c4d4972.svg"
     ],
     "css": [
-      "assets/app-239ed809.css"
+      "assets/app-9aa22c95.css"
     ],
-    "file": "assets/app-0a16c22f.js",
+    "file": "assets/app-9ea1389a.js",
     "isEntry": true,
     "src": "resources/js/app.js"
   }
