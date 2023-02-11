@@ -1,14 +1,14 @@
 <template>
   <Navigation/>
-  <Formular/>
+  <Form/>
   <Footer/>
 </template>
 <script>
-import Formular from "./components/Formular.vue";
+import Form from "./components/Form.vue";
 import Footer from "./components/Footer.vue";
 import Navigation from "./components/Navigation.vue";
 
 export default {
-  components: {Formular, Navigation, Footer},
+  components: {Form, Navigation, Footer},
 }
 </script>

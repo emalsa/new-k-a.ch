@@ -259,10 +259,10 @@ import PersonSummary from './Form/PersonSummary.vue';
 
 export default {
   components: {
-    PersonSummary,
-    Step3,
     Step1,
-    Step2
+    Step2,
+    Step3,
+    PersonSummary,
   },
   data() {
     return {
@@ -321,9 +321,9 @@ export default {
   },
   computed: {
     isForm() {
-      // console.log(this.$route.name === 'Formular')
+      // console.log(this.$route.name === 'Form')
       // name = this.$route.name;
-      return this.$route.name === 'Formular'
+      return this.$route.name === 'Form'
     },
     // isCatholic() {
     //   console.log('isCatholic')

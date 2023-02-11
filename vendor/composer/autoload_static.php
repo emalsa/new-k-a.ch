@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit05b7950fa9357028da9bf6fb84288fcb
+class ComposerStaticInitacb70e19bd4840651c9d841b1d2b9510
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -511,7 +511,12 @@ class ComposerStaticInit05b7950fa9357028da9bf6fb84288fcb
     public static $classMap = array (
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
+        'App\\Http\\Controllers\\CatholicAddressController' => __DIR__ . '/../..' . '/app/Http/Controllers/CatholicAddressController.php',
+        'App\\Http\\Controllers\\ChildController' => __DIR__ . '/../..' . '/app/Http/Controllers/ChildController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Http\\Controllers\\PartnerController' => __DIR__ . '/../..' . '/app/Http/Controllers/PartnerController.php',
+        'App\\Http\\Controllers\\PersonController' => __DIR__ . '/../..' . '/app/Http/Controllers/PersonController.php',
+        'App\\Http\\Controllers\\ReformAddressController' => __DIR__ . '/../..' . '/app/Http/Controllers/ReformAddressController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
@@ -522,12 +527,18 @@ class ComposerStaticInit05b7950fa9357028da9bf6fb84288fcb
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\ValidateSignature' => __DIR__ . '/../..' . '/app/Http/Middleware/ValidateSignature.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'App\\Models\\CatholicAddress' => __DIR__ . '/../..' . '/app/Models/CatholicAddress.php',
+        'App\\Models\\Child' => __DIR__ . '/../..' . '/app/Models/Child.php',
+        'App\\Models\\Partner' => __DIR__ . '/../..' . '/app/Models/Partner.php',
+        'App\\Models\\Person' => __DIR__ . '/../..' . '/app/Models/Person.php',
+        'App\\Models\\ReformAddress' => __DIR__ . '/../..' . '/app/Models/ReformAddress.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
         'App\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
+        'App\\Services\\CreatePerson' => __DIR__ . '/../..' . '/app/Services/CreatePerson.php',
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
         'Brick\\Math\\BigDecimal' => __DIR__ . '/..' . '/brick/math/src/BigDecimal.php',
         'Brick\\Math\\BigInteger' => __DIR__ . '/..' . '/brick/math/src/BigInteger.php',
@@ -5751,10 +5762,10 @@ class ComposerStaticInit05b7950fa9357028da9bf6fb84288fcb
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit05b7950fa9357028da9bf6fb84288fcb::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit05b7950fa9357028da9bf6fb84288fcb::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit05b7950fa9357028da9bf6fb84288fcb::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit05b7950fa9357028da9bf6fb84288fcb::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitacb70e19bd4840651c9d841b1d2b9510::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitacb70e19bd4840651c9d841b1d2b9510::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInitacb70e19bd4840651c9d841b1d2b9510::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInitacb70e19bd4840651c9d841b1d2b9510::$classMap;
 
         }, null, ClassLoader::class);
     }
