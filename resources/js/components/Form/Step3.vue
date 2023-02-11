@@ -13,7 +13,7 @@
     </div>
 
     <div v-if="hasChildren">
-      <div class="border border-sky-500 px-10 pt-10 "
+      <div class="border border-sky-500 px-10 pt-10"
            v-for="(childElement, childrenCount) in children"
            v-bind:key="childrenCount">
         <div>
@@ -26,7 +26,7 @@
         <div class="mb-4 pt-20">
           <label class="block text-md leading-6 mb-2" for="">Vorname</label>
           <input class="block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
-                 v-model="children[childrenCount].vornameChild"
+                 v-model="children[childrenCount].vorname"
                  type="text"
                  required
                  placeholder="Vorname">
@@ -34,7 +34,7 @@
         <div class="mb-4">
           <label class="block text-md leading-6 mb-2" for="">Nachname</label>
           <input class="block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
-                 v-model="children[childrenCount].nachnameChild"
+                 v-model="children[childrenCount].nachname"
                  type="text"
                  required
                  placeholder="Nachname">
@@ -42,7 +42,7 @@
         <div class="mb-6">
           <label class="block text-md leading-6 mb-2" for="">Geburtsdatum</label>
           <input class="block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
-                 v-model="children[childrenCount].geburtsdatumChild"
+                 v-model="children[childrenCount].geburtsdatum"
                  type="text"
                  required
                  placeholder="Geburtsdatum, Beispiel: 4.12.1967">
@@ -52,7 +52,7 @@
           <label class="block text-md leading-6 mb-2" for="">Konfession</label>
           <div class="relative">
             <select class="appearance-none block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
-                    v-model="children[childrenCount].konfessionChild"
+                    v-model="children[childrenCount].konfession"
                     required>
               <option disabled selected value>Bitte auswählen</option>
               <option value="kath">R&ouml;misch-Katholisch (Kath.)</option>
@@ -80,7 +80,7 @@
           <div class="mb-6">
             <label class="block text-md leading-6 mb-2" for="">Taufdatum</label>
             <input class="block w-full p-4 font-heading text-gray-300 placeholder-gray-300 bg-gray-50 rounded outline-none"
-                   v-model="children[childrenCount].taufdatumChild"
+                   v-model="children[childrenCount].taufdatum"
                    type="text"
                    placeholder="Taufdatum, Beispiel: 4.12.1967">
             <span class="block text-md w-full py-4 font-heading rounded outline-none">Beispiel: <i>4.12.1966</i> oder <i>3.3.1922</i></span>
@@ -88,7 +88,7 @@
           <div class="mb-6">
             <label class="block text-md leading-6 mb-2" for="">Taufort</label>
             <input class="block w-full p-4 font-heading text-gray-300 placeholder-gray-300 bg-gray-50 rounded outline-none"
-                   v-model="children[childrenCount].taufortChild"
+                   v-model="children[childrenCount].taufort"
                    type="text"
                    placeholder="Taufort">
           </div>

@@ -19,7 +19,7 @@
             <h4 v-if="isStep2" class="max-w-xs font-heading text-3xl mt-2">Partner</h4>
             <h4 v-if="isStep3" class="max-w-xs font-heading text-3xl mt-2">Kinder</h4>
             <h4 v-if="isStep4" class="max-w-xs font-heading text-3xl mt-2">Kirchgemeinde</h4>
-
+            <h4 v-if="isStep5" class="max-w-xs font-heading text-3xl mt-2">Best&auml;tigung</h4>
 
             <div>
               <div v-if="errors.length">
@@ -41,7 +41,6 @@
 
             <!-- Step 3 (Kinder)-->
             <Step3 :is-step3="isStep3" :children="children"/>
-
 
             <!-- Step 4 (Buy or enter address) -->
             <div v-if="isStep4" class="step4">
@@ -144,6 +143,23 @@
               </div>
             </div>
 
+
+            <!-- Step 5 (Buy or enter address) -->
+            <div v-if="isStep5" class="step5">
+              <div class="px-10 pt-10">
+                <div>
+                  <h3 class="font-heading mt-2 text-2xl">Zusammenfassung</h3>
+                </div>
+
+                <PersonSummary class="border border-sky-500 " :element="person"/>
+                <PersonSummary class="border border-sky-500 " :element="partner"/>
+                <div class="border border-sky-500" v-for="(child, index) in children" :key="index">
+                  <PersonSummary :element="child"/>
+                </div>
+              </div>
+            </div>
+
+
             <!-- Buttons -->
             <div class="flex mt-10">
               <!-- Zurück -->
@@ -239,9 +255,11 @@
 import Step1 from './Form/Step1.vue'
 import Step2 from './Form/Step2.vue'
 import Step3 from './Form/Step3.vue'
+import PersonSummary from './Form/PersonSummary.vue';
 
 export default {
   components: {
+    PersonSummary,
     Step3,
     Step1,
     Step2
@@ -257,12 +275,12 @@ export default {
       paid: null,
       person: {
         taufDatumBekanntPerson: false,
-        vornamePerson: null,
-        nachnamePerson: null,
-        geburtsdatumPerson: null,
-        konfessionPerson: null,
-        taufdatumPerson: null,
-        taufortPerson: null,
+        vorname: null,
+        nachname: null,
+        geburtsdatum: null,
+        konfession: null,
+        taufdatum: null,
+        taufort: null,
         streetAddress: null,
         streetAdditionalAddress: null,
         postalAddress: null,
@@ -270,12 +288,12 @@ export default {
       },
       partner: {
         taufDatumBekanntPartner: false,
-        vornamePartner: null,
-        nachnamePartner: null,
-        geburtsdatumPartner: null,
-        konfessionPartner: null,
-        taufdatumPartner: null,
-        taufortPartner: null
+        vorname: null,
+        nachname: null,
+        geburtsdatum: null,
+        konfession: null,
+        taufdatum: null,
+        taufort: null
       },
       catholic: {
         streetAddress: null,
@@ -291,12 +309,12 @@ export default {
       },
       child: {
         taufDatumBekanntChild: null,
-        vornameChild: null,
-        nachnameChild: null,
-        geburtsdatumChild: null,
-        konfessionChild: null,
-        taufdatumChild: null,
-        taufortChild: null
+        vorname: null,
+        nachname: null,
+        geburtsdatum: null,
+        konfession: null,
+        taufdatum: null,
+        taufort: null
       },
       children: [],
     }
@@ -326,6 +344,9 @@ export default {
     },
     isStep4() {
       return this.currentStep === 4;
+    },
+    isStep5() {
+      return this.currentStep === 5;
     }
   },
   methods: {
@@ -339,20 +360,20 @@ export default {
       this.isCatholic = null;
       this.isReform = null;
       console.log('optionClicked')
-      if (this.person.konfessionPerson === 'kath' || this.partner.konfessionPartner === 'kath') {
+      if (this.person.konfession === 'kath' || this.partner.konfession === 'kath') {
         this.isCatholic = true;
       }
       if (!this.isCatholic) {
         this.children.forEach(child => {
-          this.isCatholic = child.konfessionChild === 'kath'
+          this.isCatholic = child.konfession === 'kath'
         });
       }
 
-      if (this.person.konfessionPerson === 'ref' || this.partner.konfessionPartner === 'ref') {
+      if (this.person.konfession === 'ref' || this.partner.konfession === 'ref') {
         this.isReform = true;
       }
       this.children.forEach(child => {
-        this.isReform = child.konfessionChild === 'ref'
+        this.isReform = child.konfession === 'ref'
       });
 
     },
@@ -367,10 +388,10 @@ export default {
       this.next();
       // this.errors = [];
       //
-      // console.log(!this.person.vornamePerson)
-      // console.log(this.person.vornamePerson)
+      // console.log(!this.person.vorname)
+      // console.log(this.person.vorname)
       //
-      // if (!this.person.vornamePerson) {
+      // if (!this.person.vorname) {
       //   this.errors.push("Vorname required.");
       // }
       //

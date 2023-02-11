@@ -3,8 +3,8 @@
     <div class="mb-4">
       <label class="block text-md leading-6 mb-2" for="">Vorname</label>
       <input class="block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
-             v-model="person.vornamePerson"
-             name="vornamePerson"
+             v-model="person.vorname"
+             name="vorname"
              type="text"
              required
              placeholder="Dein Vorname">
@@ -12,7 +12,7 @@
     <div class="mb-4">
       <label class="block text-md leading-6 mb-2" for="">Nachname</label>
       <input class="block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
-             v-model="person.nachnamePerson"
+             v-model="person.nachname"
              type="text"
              required
              placeholder="Dein Nachname">
@@ -20,7 +20,7 @@
     <div class="mb-6">
       <label class="block text-md leading-6 mb-2" for="">Geburtsdatum</label>
       <input class="block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
-             v-model="person.geburtsdatumPerson"
+             v-model="person.geburtsdatum"
              type="text"
              required
              placeholder="Dein Geburtsdatum, Beispiel: 4.12.1967">
@@ -29,9 +29,9 @@
     <div class="mb-6">
       <label class="block text-md leading-6 mb-2" for="">Meine Konfession</label>
       <div class="relative">
-        <select id="konfessionPerson"
+        <select id="konfession"
                 class="appearance-none block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
-                v-model="person.konfessionPerson"
+                v-model="person.konfession"
                 required>
           <option value="">Bitte auswählen</option>
           <option value="kath">R&ouml;misch-Katholisch (Kath.)</option>
@@ -98,7 +98,7 @@
         <div class="mb-6">
           <label class="block text-md leading-6 mb-2" for="">Taufdatum</label>
           <input class="block w-full p-4 font-heading text-gray-300 placeholder-gray-300 bg-gray-50 rounded outline-none"
-                 name="taufdatumPerson"
+                 name="taufdatum"
                  type="text"
                  placeholder="Taufdatum, Beispiel: 4.12.1967">
           <span class="block text-md w-full py-4 font-heading rounded outline-none">Beispiel: <i>4.12.1966</i> oder <i>3.3.1922</i></span>
@@ -106,7 +106,7 @@
         <div class="mb-6">
           <label class="block text-md leading-6 mb-2" for="">Taufort</label>
           <input class="block w-full p-4 font-heading text-gray-300 placeholder-gray-300 bg-gray-50 rounded outline-none"
-                 v-model="person.taufortPerson"
+                 v-model="person.taufort"
                  type="text"
                  placeholder="Taufort">
         </div>
