@@ -15,9 +15,9 @@ return new class extends Migration {
   public function up() {
     Schema::create('reform_addresses', function (Blueprint $table) {
       $table->id();
-      $table->foreignId(Person::class);
+      $table->foreignId('person_id');
       $table->string('streetAddress');
-      $table->string('streetAdditionalAddress');
+      $table->string('streetAdditionalAddress')->nullable();
       $table->string('postalAddress');
       $table->string('locationAddress');
       $table->timestamps();

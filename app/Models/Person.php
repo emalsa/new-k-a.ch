@@ -11,6 +11,24 @@ class Person extends Model {
 
   protected $table = 'person';
 
+  protected $fillable = [
+    'email',
+    'vorname',
+    'nachname',
+    'geburtsdatum',
+    'konfession',
+    'taufDatumBekanntPerson',
+    'taufdatum',
+    'taufort',
+    'streetAddress',
+    'streetAdditionalAddress',
+    'postalAddress',
+    'locationAddress',
+    'hatEhepartner',
+    'hasChildren',
+    'paid'
+  ];
+
   public function partner() {
     return $this->hasOne(Partner::class);
   }

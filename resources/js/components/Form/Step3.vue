@@ -3,16 +3,15 @@
     <!--Taufdatum checkbox -->
     <div class="my-12">
       <label>
-        <!--               @click="clickHasChildren"-->
         <input type="checkbox"
-               v-model="hasChildren"
+               v-model="formData.hasChildren"
                name="hasChildren"
                value="example value">
         <span class="ml-1">Meine Kinder wollen auch austreten. (Unter 16 Jahre)</span>
       </label>
     </div>
 
-    <div v-if="hasChildren">
+    <div v-if="formData.hasChildren">
       <div class="border border-sky-500 px-10 pt-10"
            v-for="(childElement, childrenCount) in children"
            v-bind:key="childrenCount">
@@ -70,7 +69,7 @@
           <label>
             <input type="checkbox"
                    v-model="children[childrenCount].taufDatumBekanntChild"
-                   name="taufDatumBekanntPartner"
+                   name="taufDatumBekanntChild"
                    value="example value">
             <span class="ml-1">Das Taufdatum oder Taufort ist bekannt</span>
           </label>
@@ -105,7 +104,7 @@
 
 <script>
 export default {
-  props: ['isStep3', 'children', 'hasChildren'],
+  props: ['isStep3', 'children', 'formData'],
   methods: {
     removeChild(count) {
       console.log('Remove' + count)

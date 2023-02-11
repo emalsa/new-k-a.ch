@@ -34,13 +34,13 @@
           <form @submit.prevent="checkForm" class="bg-red">
 
             <!-- Step 1 (Person)-->
-            <Step1 :is-step1="isStep1" :person="person"/>
+            <Step1 :is-step1="isStep1" :person="person" :formData="formData"/>
 
             <!-- Step 2 (Partner)-->
-            <Step2 :is-step2="isStep2" :partner="partner"/>
+            <Step2 :is-step2="isStep2" :partner="partner" :formData="formData"/>
 
             <!-- Step 3 (Kinder)-->
-            <Step3 :is-step3="isStep3" :children="children"/>
+            <Step3 :is-step3="isStep3" :child="child" :children="children" :formData="formData"/>
 
             <!-- Step 4 (Buy or enter address) -->
             <div v-if="isStep4" class="step4">
@@ -144,7 +144,7 @@
             </div>
 
 
-            <!-- Step 5 (Buy or enter address) -->
+            <!-- Step 5 (Summary) -->
             <div v-if="isStep5" class="step5">
               <div class="px-10 pt-10">
                 <div>
@@ -171,13 +171,22 @@
                 </button>
               </div>
               <!-- Weiter -->
-              <div class="w-1/2 text-right">
+              <div v-if="!isStep5" class="w-1/2 text-right">
                 <button class="w-full block py-4 px-6 text-center font-heading font-medium text-base text-white bg-green-500 hover:bg-green-600 border border-green-500 hover:border-green-600 rounded-sm transition duration-200"
                         name="next">
                   Weiter
                 </button>
               </div>
+              <div v-if="isStep5" class="w-1/2 text-right">
+                <button class="w-full block py-4 px-6 text-center font-heading font-medium text-base text-white bg-green-500 hover:bg-green-600 border border-green-500 hover:border-green-600 rounded-sm transition duration-200"
+                        name="next"
+                        @click.prevent="submit">
+                  Best&auml;tigen
+                </button>
+              </div>
             </div>
+
+
           </form>
         </div>
       </div>
@@ -267,13 +276,16 @@ export default {
   data() {
     return {
       errors: [],
-      isCatholic: false,
-      isReform: false,
-      hatEhepartner: false,
-      hasChildren: false,
       currentStep: 1,
-      paid: null,
+      formData: {
+        isCatholic: false,
+        isReform: false,
+        hatEhepartner: false,
+        hasChildren: false,
+        paid: null,
+      },
       person: {
+        email: null,
         taufDatumBekanntPerson: false,
         vorname: null,
         nachname: null,
@@ -295,6 +307,16 @@ export default {
         taufdatum: null,
         taufort: null
       },
+      child: {
+        taufDatumBekanntChild: null,
+        vorname: null,
+        nachname: null,
+        geburtsdatum: null,
+        konfession: null,
+        taufdatum: null,
+        taufort: null
+      },
+      children: [],
       catholic: {
         streetAddress: null,
         streetAdditionalAddress: null,
@@ -307,16 +329,6 @@ export default {
         postalAddress: null,
         locationAddress: null
       },
-      child: {
-        taufDatumBekanntChild: null,
-        vorname: null,
-        nachname: null,
-        geburtsdatum: null,
-        konfession: null,
-        taufdatum: null,
-        taufort: null
-      },
-      children: [],
     }
   },
   computed: {
@@ -352,33 +364,33 @@ export default {
   methods: {
     optionClicked(event) {
       if (event.target.value === 'unpaidChecked') {
-        this.paid = false;
+        this.formData.paid = false;
       }
       if (event.target.value === 'paidChecked') {
-        this.paid = true;
+        this.formData.paid = true;
       }
-      this.isCatholic = null;
-      this.isReform = null;
+      this.formData.isCatholic = null;
+      this.formData.isReform = null;
       console.log('optionClicked')
       if (this.person.konfession === 'kath' || this.partner.konfession === 'kath') {
-        this.isCatholic = true;
+        this.formData.isCatholic = true;
       }
-      if (!this.isCatholic) {
+      if (!this.formData.isCatholic) {
         this.children.forEach(child => {
-          this.isCatholic = child.konfession === 'kath'
+          this.formData.isCatholic = child.konfession === 'kath'
         });
       }
 
       if (this.person.konfession === 'ref' || this.partner.konfession === 'ref') {
-        this.isReform = true;
+        this.formData.isReform = true;
       }
       this.children.forEach(child => {
-        this.isReform = child.konfession === 'ref'
+        this.formData.isReform = child.konfession === 'ref'
       });
 
     },
     prev() {
-      this.paid = null;
+      this.formData.paid = null;
       this.currentStep--;
     },
     next() {
@@ -403,7 +415,23 @@ export default {
       // e.preventDefault();
     },
     submit() {
-      alert('Submit to blah and show blah and etc.');
+      console.log(this.person)
+      axios.post('/api/create-person?XDEBUG_SESSION_START=PHPSTORM', {
+            person: this.person,
+            partner: this.partner,
+            children: this.children,
+            formData: this.formData,
+            currentStep: this.currentStep,
+          }
+      )
+          .then((response) => {
+            console.log('Success:');
+            console.log(response);
+          })
+          .catch(e => {
+            console.log('Error:');
+            console.log(e);
+          });
     }
   }
 }

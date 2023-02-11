@@ -15,17 +15,14 @@ return new class extends Migration {
   public function up() {
     Schema::create('partners', function (Blueprint $table) {
       $table->id();
-      $table->foreignId(Person::class);
+      $table->foreignId('person_id');
       $table->string('vorname');
       $table->string('nachname');
       $table->string('geburtsdatum');
       $table->string('konfession');
-      $table->string('taufDatumBekanntPerson');
-      $table->string('taufdatum');
-      $table->string('taufort');
-      $table->string('isCatholic');
-      $table->string('isReform');
-      $table->string('paid');
+      $table->string('taufDatumBekanntPartner')->nullable();
+      $table->string('taufdatum')->nullable();
+      $table->string('taufort')->nullable();
       $table->timestamps();
     });
   }

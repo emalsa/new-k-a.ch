@@ -4,13 +4,13 @@
     <div class="my-12">
       <label>
         <input type="checkbox"
-               v-model="hatEhepartner"
+               v-model="formData.hatEhepartner"
                name="hatEhepartner"
                value="example value">
         <span class="ml-1">Mein Ehepartner möchte auch austreten</span>
       </label>
     </div>
-    <div v-if="hatEhepartner">
+    <div v-if="formData.hatEhepartner">
       <div class="mb-4">
         <label class="block text-md leading-6 mb-2" for="">Vorname</label>
         <input class="block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
@@ -90,7 +90,7 @@
 
 <script>
 export default {
-  props: ['isStep2', 'partner','hatEhepartner']
+  props: ['isStep2', 'partner', 'formData']
 }
 
 </script>

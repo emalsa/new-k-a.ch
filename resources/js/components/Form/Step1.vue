@@ -1,6 +1,17 @@
 <template>
   <div v-if="isStep1" class="step1">
     <div class="mb-4">
+      <label class="block text-md leading-6 mb-2" for="">Email</label>
+      <input class="block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
+             v-model="person.email"
+             name="email"
+             type="email"
+             required
+             placeholder="Deine Email">
+      <span class="block text-md w-full py-4 font-heading rounded outline-none">An diese Email schicken wir das Austrittsschreiben.</span>
+
+    </div>
+    <div class="mb-4">
       <label class="block text-md leading-6 mb-2" for="">Vorname</label>
       <input class="block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
              v-model="person.vorname"
@@ -117,7 +128,7 @@
 
 <script>
 export default {
-  props: ['isStep1', 'person']
+  props: ['isStep1', 'person', 'formData']
 }
 
 </script>
