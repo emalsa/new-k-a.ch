@@ -15,7 +15,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+  return $request->user();
 });
 
 Route::post('/create-person', 'App\Services\CreatePerson@handle');
+
+// To debug
+Route::post('/pdf', 'App\Services\PdfGenerate@generate');
