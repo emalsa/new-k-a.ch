@@ -15,6 +15,7 @@ class Child extends Model {
     'taufDatumBekanntChild',
     'taufdatum',
     'taufort',
+    'sign'
   ];
 
   use HasFactory;

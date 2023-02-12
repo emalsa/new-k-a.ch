@@ -1,12 +1,12 @@
 <template>
   <div v-if="isStep1" class="step1">
     <div class="mb-4">
-      <label class="block text-md leading-6 mb-2" for="">Email</label>
+      <label class="required block text-md leading-6 mb-2" for="">Email</label>
       <input class="block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
              v-model="person.email"
              name="email"
              type="email"
-             required
+
              placeholder="Deine Email">
       <span class="block text-md w-full py-4 font-heading rounded outline-none">An diese Email schicken wir das Austrittsschreiben.</span>
 
@@ -17,7 +17,7 @@
              v-model="person.vorname"
              name="vorname"
              type="text"
-             required
+
              placeholder="Dein Vorname">
     </div>
     <div class="mb-4">
@@ -25,7 +25,7 @@
       <input class="block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
              v-model="person.nachname"
              type="text"
-             required
+
              placeholder="Dein Nachname">
     </div>
     <div class="mb-6">
@@ -33,7 +33,7 @@
       <input class="block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
              v-model="person.geburtsdatum"
              type="text"
-             required
+
              placeholder="Dein Geburtsdatum, Beispiel: 4.12.1967">
       <span class="block text-md w-full py-4 font-heading rounded outline-none">Beispiel: <i>4.12.1966</i> oder <i>3.3.1922</i></span>
     </div>
@@ -43,7 +43,7 @@
         <select id="konfession"
                 class="appearance-none block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
                 v-model="person.konfession"
-                required>
+        >
           <option value="">Bitte auswählen</option>
           <option value="kath">R&ouml;misch-Katholisch (Kath.)</option>
           <option value="ref">Evangelisch-Reformiert (Ref.)</option>
@@ -64,7 +64,7 @@
         <input class="block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
                v-model="person.streetAddress"
                type="text"
-               required
+
                placeholder="Musterstrasse 24b">
       </div>
 
@@ -81,7 +81,7 @@
           <input class="block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
                  v-model="person.postalAddress"
                  type="text"
-                 required
+
                  placeholder="3000">
         </div>
         <div class="flex-grow">
@@ -89,7 +89,7 @@
           <input class="block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
                  v-model="person.locationAddress"
                  type="text"
-                 required
+
                  placeholder="Bern">
         </div>
       </div>
@@ -102,7 +102,7 @@
                v-model="person.taufDatumBekanntPerson"
                name="taufDatumBekanntPerson"
                value="example value">
-        <span class="ml-1">Ich kenne mein Taufdatum oder Taufort</span>
+        <span class="ml-1">Taufdatum oder Taufort ist bekannt</span>
       </label>
       <!-- Taufort/datum -->
       <div v-if="person.taufDatumBekanntPerson" class="mt-12 mb-6">

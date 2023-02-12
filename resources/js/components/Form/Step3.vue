@@ -27,7 +27,7 @@
           <input class="block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
                  v-model="children[childrenCount].vorname"
                  type="text"
-                 required
+
                  placeholder="Vorname">
         </div>
         <div class="mb-4">
@@ -35,7 +35,6 @@
           <input class="block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
                  v-model="children[childrenCount].nachname"
                  type="text"
-                 required
                  placeholder="Nachname">
         </div>
         <div class="mb-6">
@@ -43,7 +42,6 @@
           <input class="block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
                  v-model="children[childrenCount].geburtsdatum"
                  type="text"
-                 required
                  placeholder="Geburtsdatum, Beispiel: 4.12.1967">
           <span class="block text-md w-full py-4 font-heading rounded outline-none">Beispiel: <i>4.12.1966</i> oder <i>3.3.1922</i></span>
         </div>
@@ -51,8 +49,7 @@
           <label class="block text-md leading-6 mb-2" for="">Konfession</label>
           <div class="relative">
             <select class="appearance-none block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
-                    v-model="children[childrenCount].konfession"
-                    required>
+                    v-model="children[childrenCount].konfession">
               <option disabled selected value>Bitte auswählen</option>
               <option value="kath">R&ouml;misch-Katholisch (Kath.)</option>
               <option value="ref">Evangelisch-Reformiert (Ref.)</option>
@@ -64,14 +61,24 @@
             </div>
           </div>
         </div>
+        <div class="my-12 mt-8 mb-12">
+          <label>
+            <input type="checkbox"
+                   v-model="children[childrenCount].sign"
+                   name="sign"
+                   value="example value">
+            <span class="ml-1">Mein Kind ist in der Lage zu unterschreiben</span>
+            <span class="block text-md w-full py-4 font-heading rounded outline-none">Wenn dein Kind in der Lage ist, seinen Namen zu schreiben, kannst du das K&auml;stchen aktiviert lassen. Wenn es zum Beispiel zu jung ist, um zu unterschreiben, solltest du das K&auml;stchen deaktivieren.</span>
+          </label>
+        </div>
         <!--Taufdatum checkbox -->
-        <div class="my-12">
+        <div class="my-12 mt-8 mb-12">
           <label>
             <input type="checkbox"
                    v-model="children[childrenCount].taufDatumBekanntChild"
                    name="taufDatumBekanntChild"
-                   value="example value">
-            <span class="ml-1">Das Taufdatum oder Taufort ist bekannt</span>
+                   value="1">
+            <span class="ml-1">Taufdatum oder Taufort ist bekannt</span>
           </label>
         </div>
         <!-- Taufort/datum -->
@@ -93,10 +100,10 @@
           </div>
         </div>
       </div>
-      <button @click="addChild"
+      <a @click="addChild"
               class="mt-10 w-full block py-4 px-6 text-center text-base text-white bg-blue-400 hover:bg-blue-600 border border-blue-400 hover:border-blue-600 rounded-sm transition duration-200 ">
         Weiteres Kind hinzuf&uuml;gen
-      </button>
+      </a>
     </div>
 
   </div>

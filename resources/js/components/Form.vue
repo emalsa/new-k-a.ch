@@ -23,7 +23,7 @@
 
             <div>
               <div v-if="errors.length">
-                <b>Please correct the following error(s):</b>
+                <b>Fehler gefunden:</b>
                 <ul>
                   <li v-for="error in errors">{{ error }}</li>
                 </ul>
@@ -317,7 +317,8 @@ export default {
         geburtsdatum: '',
         konfession: '',
         taufdatum: '',
-        taufort: ''
+        taufort: '',
+        sign: true,
       },
       children: [],
       catholic: {
@@ -336,18 +337,8 @@ export default {
   },
   computed: {
     isForm() {
-      // console.log(this.$route.name === 'Form')
-      // name = this.$route.name;
       return this.$route.name === 'Form'
     },
-    // isCatholic() {
-    //   console.log('isCatholic')
-    //
-    // },
-    // isReform() {
-    //   console.log('isReform')
-    //
-    // },
     isStep1() {
       return this.currentStep === 1;
     },
@@ -374,7 +365,6 @@ export default {
       }
       this.formData.isCatholic = false;
       this.formData.isReform = false;
-      console.log('optionClicked')
 
       if (this.person.konfession === 'kath') {
         this.formData.isCatholic = true;
@@ -401,32 +391,150 @@ export default {
         });
       }
 
-
     },
     prev() {
+      this.errors = [];
+      window.scrollTo(0, 0);
       this.formData.payment = null;
       this.currentStep--;
     },
     next() {
+      this.errors = [];
+      window.scrollTo(0, 0);
       this.currentStep++;
     },
     checkForm: function (e) {
-      this.next();
-      // this.errors = [];
-      //
-      // console.log(!this.person.vorname)
-      // console.log(this.person.vorname)
-      //
-      // if (!this.person.vorname) {
-      //   this.errors.push("Vorname required.");
-      // }
-      //
-      // console.log(!this.errors)
-      //
-      // if (this.errors.length === 0) {
-      //   this.next();
-      // }
-      // e.preventDefault();
+      this.errors = [];
+      console.log(this.isStep1)
+      if (this.isStep1) {
+        if (!this.person.email) {
+          this.errors.push("Email erforderlich.");
+        }
+
+        if (this.person.email) {
+          if (!/[^\s@]+@[^\s@]+\.[^\s@]+/.test(this.person.email)) {
+            this.errors.push("Email nicht valide.");
+          }
+        }
+        if (!this.person.vorname) {
+          this.errors.push("Vorname erforderlich.");
+        }
+        if (!this.person.nachname) {
+          this.errors.push("Nachname erforderlich.");
+        }
+        if (!this.person.geburtsdatum) {
+          this.errors.push("Geburtsdatum erforderlich.");
+        }
+        if (this.person.geburtsdatum) {
+          if (!/^\d{1,2}(\.)\d{1,2}(\.)\d{4}$/.test(this.person.geburtsdatum)) {
+            this.errors.push("Geburtsdatum Format ist nicht korrekt. Format Tag.Monat.Jahr erforderlich.");
+          }
+        }
+
+        if (!this.person.konfession) {
+          this.errors.push("Bitte wähle deine Konfession.");
+        }
+
+        if (this.person.taufdatum) {
+          if (!/^\d{1,2}(\.)\d{1,2}(\.)\d{4}$/.test(this.person.taufdatum)) {
+            this.errors.push("Taufdatum Format ist nicht korrekt. Format Tag.Monat.Jahr erforderlich.");
+          }
+        }
+        if (!this.person.streetAddress) {
+          this.errors.push("Strasse erforderlich.");
+        }
+
+        if (!this.person.postalAddress) {
+          this.errors.push("Postleitzahl erforderlich.");
+        }
+
+        if (this.person.postalAddress) {
+          if (!/^\d+$/.test(this.person.postalAddress)) {
+            this.errors.push("Postleitzahl darf nur Nummern enthalten.");
+          }
+
+          if (this.person.postalAddress.length !== 4) {
+            this.errors.push("Postleitzahl darf nur vier Ziffern enthalten.");
+          }
+        }
+
+        if (!this.person.locationAddress) {
+          this.errors.push("Ort erforderlich.");
+        }
+      }
+
+      // Ehepartner
+      if (this.isStep2 && this.formData.hatEhepartner) {
+        console.log("hatEhepartner")
+        console.log(this.formData.hatEhepartner)
+
+        if (!this.partner.vorname) {
+          this.errors.push("Vorname erforderlich.");
+        }
+        if (!this.partner.nachname) {
+          this.errors.push("Nachname erforderlich.");
+        }
+        if (!this.partner.geburtsdatum) {
+          this.errors.push("Geburtsdatum erforderlich.");
+        }
+        if (this.partner.geburtsdatum) {
+          console.log("hat geburtsdatum")
+          console.log(this.partner.geburtsdatum)
+          if (!/^\d{1,2}(\.)\d{1,2}(\.)\d{4}$/.test(this.partner.geburtsdatum)) {
+            this.errors.push("Geburtsdatum Format ist nicht korrekt. Format Tag.Monat.Jahr erforderlich.");
+          }
+        }
+
+        if (!this.partner.konfession) {
+          this.errors.push("Bitte wähle die Konfession.");
+        }
+
+        if (this.partner.taufdatum) {
+          if (!/^\d{1,2}(\.)\d{1,2}(\.)\d{4}$/.test(this.partner.taufdatum)) {
+            this.errors.push("Taufdatum Format ist nicht korrekt. Format Tag.Monat.Jahr erforderlich.");
+          }
+        }
+      }
+
+      // Kinder
+      if (this.isStep3 && this.formData.hasChildren) {
+        for (let i = 0; i < this.children.length; i++) {
+          if (!this.children[i].vorname) {
+            this.errors.push(i + ". Kind: Vorname erforderlich.");
+          }
+          if (!this.children[i].nachname) {
+            this.errors.push(i + ". Kind: Nachname erforderlich.");
+          }
+          if (!this.children[i].geburtsdatum) {
+            this.errors.push(i + ". Kind: Geburtsdatum erforderlich.");
+          }
+          if (this.children[i].geburtsdatum) {
+            if (!/^\d{1,2}(\.)\d{1,2}(\.)\d{4}$/.test(this.children[i].geburtsdatum)) {
+              this.errors.push(i + ". Kind. Geburtsdatum Format ist nicht korrekt. Format Tag.Monat.Jahr erforderlich.");
+            }
+          }
+
+          if (!this.children[i].konfession) {
+            this.errors.push(i + ". Kind: Bitte wähle die Konfession.");
+          }
+
+          if (this.children[i].taufdatum) {
+            if (!/^\d{1,2}(\.)\d{1,2}(\.)\d{4}$/.test(this.partner.taufdatum)) {
+              this.errors.push(i + ". Kind: Taufdatum Format ist nicht korrekt. Format Tag.Monat.Jahr erforderlich.");
+            }
+          }
+        }
+      }
+
+
+      if (this.errors.length === 0) {
+        this.next();
+      }
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+      e.preventDefault();
     },
     submit() {
       console.log(this.person)

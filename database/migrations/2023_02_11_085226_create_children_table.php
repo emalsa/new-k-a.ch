@@ -23,6 +23,8 @@ return new class extends Migration {
       $table->boolean('taufDatumBekanntChild')->nullable();
       $table->string('taufdatum')->nullable();
       $table->string('taufort')->nullable();
+      $table->boolean('sign');
+
       $table->timestamps();
     });
   }
