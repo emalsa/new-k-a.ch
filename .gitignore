@@ -1,7 +1,8 @@
 #/public/build
 /public/hot
-/public/storage/*
+/public/storage
 /storage/*.key
+/storage/*
 .env
 .env.backup
 .env.production
