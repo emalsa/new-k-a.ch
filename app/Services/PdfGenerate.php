@@ -57,7 +57,7 @@ class PdfGenerate {
     }
 
 
-    if (!$person->getAttributeValue('paid')) {
+    if (!$person->getAttributeValue('payment')) {
       $catholicMode['churchAddress'] = $person->churchAddress()->where('confession', '=', 'kath')->first();
       $reformMode['churchAddress'] = $person->churchAddress()->where('confession', '=', 'reform')->first();
     }

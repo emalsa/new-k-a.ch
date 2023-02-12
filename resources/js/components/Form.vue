@@ -50,8 +50,8 @@
                     <input
                         @click="optionClicked"
                         type="radio"
-                        name="paidOrNot"
-                        value="unpaidChecked">
+                        name="paymentOrNot"
+                        value="unpaymentChecked">
                     <span class="ml-1">Ich werde die Kirchgemeinde erfassen (Gratis)</span>
                   </label>
                 </div>
@@ -60,14 +60,14 @@
                     <input
                         @click="optionClicked"
                         type="radio"
-                        name="paidOrNot"
-                        value="paidChecked">
+                        name="paymentOrNot"
+                        value="paymentChecked">
                     <span class="ml-1">Bitte suchen Sie mir die Kirchgemeinde heraus (15 Fr.)</span>
                   </label>
                 </div>
               </div>
 
-              <div v-if="formData.paid===false">
+              <div v-if="formData.payment===false">
 
                 <!-- catholic -->
                 <div class="catholic" v-if="formData.isCatholic">
@@ -285,7 +285,7 @@ export default {
         isReform: false,
         hatEhepartner: false,
         hasChildren: false,
-        paid: false,
+        payment: false,
       },
       person: {
         email: '',
@@ -366,11 +366,11 @@ export default {
   },
   methods: {
     optionClicked(event) {
-      if (event.target.value === 'unpaidChecked') {
-        this.formData.paid = false;
+      if (event.target.value === 'unpaymentChecked') {
+        this.formData.payment = false;
       }
-      if (event.target.value === 'paidChecked') {
-        this.formData.paid = true;
+      if (event.target.value === 'paymentChecked') {
+        this.formData.payment = true;
       }
       this.formData.isCatholic = false;
       this.formData.isReform = false;
@@ -404,7 +404,7 @@ export default {
 
     },
     prev() {
-      this.formData.paid = null;
+      this.formData.payment = null;
       this.currentStep--;
     },
     next() {

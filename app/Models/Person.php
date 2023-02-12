@@ -26,7 +26,12 @@ class Person extends Model {
     'locationAddress',
     'hatEhepartner',
     'hasChildren',
-    'paid'
+    'payment',
+    'confirmationMailSent',
+    'readyToSendFinalMail',
+    'finalMailSent',
+    'donationMailSent',
+    'hasPaid',
   ];
 
   public function partner() {

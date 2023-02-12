@@ -28,7 +28,13 @@ return new class extends Migration {
       $table->string('locationAddress');
       $table->string('hatEhepartner');
       $table->string('hasChildren');
-      $table->boolean('paid');
+      $table->boolean('payment');
+      $table->boolean('hasPaid')->nullable();
+      $table->boolean('readyToSendFinalMail');
+      $table->boolean('confirmationMailSent');
+      $table->boolean('finalMailSent');
+      $table->boolean('donationMailSent');
+
       $table->timestamps();
     });
   }

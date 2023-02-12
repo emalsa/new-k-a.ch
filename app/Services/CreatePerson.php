@@ -47,7 +47,12 @@ class CreatePerson {
         'locationAddress' => $personPostData['locationAddress'],
         'hatEhepartner' => $formData['hatEhepartner'],
         'hasChildren' => $formData['hasChildren'],
-        'paid' => $formData['paid'],
+        'payment' => $formData['payment'],
+        'confirmationMailSent' => FALSE,
+        'readyToSendFinalMail' => FALSE,
+        'finalMailSent' => FALSE,
+        'donationMailSent' => FALSE,
+        'hasPaid' => FALSE,
       ]);
 
     if ($formData['hatEhepartner']) {
@@ -76,7 +81,7 @@ class CreatePerson {
         ]);
       }
 
-      if (!$formData['paid']) {
+      if (!$formData['payment']) {
         $catholicPostData = $this->request->json('catholic');
         if ($formData['isCatholic']) {
           // Catholic
@@ -102,16 +107,17 @@ class CreatePerson {
         }
       }
     }
+    return response()->json(['status' => 'ok'], 200);
 
   }
 
   protected function validateRequest() {
     $this->validator = Validator::make($this->request->all(),
       [
-        //        'paid' => 'required',
+        //        'payment' => 'required',
       ],
       [
-        //        'paid.required' => 'Paid required',
+        //        'payment.required' => 'payment required',
         //        'type.required' => 'You have to choose type of the file!',
       ]
     );
