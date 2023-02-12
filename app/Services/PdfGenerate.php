@@ -90,22 +90,36 @@ class PdfGenerate {
       else {
         $childrenData = [];
       }
-      setlocale(LC_TIME, 'de_DE.UTF8');
+      $confessionFull = '';
       $currentDate = $this->getGermanDate();
-      $pdf = Pdf::loadView('austritt', compact('personData', 'childrenData', 'churchAddressData', 'currentDate'))->setPaper('a4');
+      $pdf = Pdf::loadView('austritt', compact('personData', 'childrenData', 'churchAddressData', 'currentDate', 'confessionFull'))->setPaper('a4');
       $file = $pdf->save("public/kath_austritt_{$key}.pdf", 'local');
     }
 
 
-    $a = 1;
   }
 
-  protected function getGermanDate() {
+  /**
+   * Fast and cheap getting written month in german.
+   *
+   * @return string
+   * The date string.
+   */
+  protected function getGermanDate(): string {
     $currentMonth = date('m');
     $germanMonth = [
       '01' => 'Januar',
       '02' => 'Februar',
       '03' => 'März',
+      '04' => 'April',
+      '05' => 'Mai',
+      '06' => 'Juni',
+      '07' => 'Juli',
+      '08' => 'August',
+      '09' => 'September',
+      '10' => 'Oktober',
+      '11' => 'November',
+      '12' => 'Dezember',
     ];
     return date('d.') . ' ' . $germanMonth[$currentMonth] . ' ' . date('Y');
   }

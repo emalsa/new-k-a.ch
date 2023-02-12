@@ -34,7 +34,7 @@
         }
 
         .receiver {
-            margin-top: 0.5cm;
+            margin-top: 0.75cm;
             margin-bottom: 0.5cm;
         }
 
@@ -64,7 +64,12 @@
         }
 
         .receiver-falls-leer {
-            height: 1cm;
+            margin-bottom: 0.5cm;
+            height: 1.75cm;
+        }
+
+        .sign {
+            padding-top: 0.75cm;
         }
 
         .sign span {
@@ -73,7 +78,7 @@
         }
 
         .sign .line {
-            padding-top: 1cm;
+            padding-top: 0.25cm;
         }
 
 
@@ -86,7 +91,21 @@
     if(empty($personData['taufdatum']) || empty($personData['taufort'])) {
       $showTaufdatumFehlt = TRUE;
     }
+
 ?>
+
+<?php if($showTaufdatumFehlt || empty($childrenData)): ?>
+    <style>
+
+        body {
+            line-height: 19px;
+        }
+
+        /*p {*/
+        /*    margin: 5mm 0 0 0;*/
+        /*}*/
+    </style>
+<?php endif; ?>
 
 <div class="page">
     <div class="wrapper">
@@ -108,7 +127,7 @@
             </div>
         <?php else: ?>
             <div class="receiver receiver-falls-leer">
-                Empfänger
+
             </div>
         <?php endif; ?>
 
@@ -127,14 +146,14 @@
                 <p>
                     Nach reiflicher Überlegung habe ich mich entschieden, aus der Kirche auszutreten.
                     Hiermit erkläre ich meinen vollständigen Austritt sowohl aus der Kirchgemeinde als auch aus der
-                    römisch-katholischen Kirche mit sofortiger Wirkung.
+                    <?php echo e($confessionFull); ?> Kirche mit sofortiger Wirkung.
                 </p>
             </div>
             <div class="person-data">
                 <table>
                     <tr>
                         <td>Vorname:</td>
-                        <td><i></i><?php echo e($personData['vorname']); ?></td>
+                        <td><?php echo e($personData['vorname']); ?></td>
                     </tr>
                     <tr>
                         <td>Nachname:</td>
@@ -166,8 +185,9 @@
             <?php if(!empty($childrenData)): ?>
                 <div class="text-falls-kinder">
                     <p>
-                        Meine unten aufgeführten Kinder haben ebenfalls entschieden sofort aus der Kirchgemeinde und aus
-                        der römisch-katholischen Kirche austreten.
+                        Meine unten aufgeführten Kinder haben ebenfalls entschieden ab sofort aus der Kirchgemeinde und
+                        aus
+                        der <?php echo e($confessionFull); ?> Kirche auszutreten.
                     </p>
                 </div>
                 <div class="tabelle-falls-kinder person-data">
@@ -273,10 +293,6 @@
         </p>
     </div>
     <?php $__currentLoopData = $childrenData; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $child): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-        <?php
-            $child['sign'] = TRUE;
-        ?>
-
         <?php if($child['sign']): ?>
             <div class="sign unterschrift-falls-kinder">
                 <div class="line">___________________________________________________________________________</div>
