@@ -144,8 +144,8 @@
             </div>
             <div class="text-1">
                 <p>
-                    Nach reiflicher Überlegung habe ich mich entschieden, aus der Kirche auszutreten.
-                    Hiermit erkläre ich meinen vollständigen Austritt sowohl aus der Kirchgemeinde als auch aus der
+                    Nach reiflicher &Uuml;berlegung habe ich mich entschieden, aus der Kirche auszutreten.
+                    Hiermit erkl&auml;re ich meinen vollst&auml;ndigen Austritt sowohl aus der Kirchgemeinde als auch aus der
                     {{$confessionFull}} Kirche mit sofortiger Wirkung.
                 </p>
             </div>
@@ -185,7 +185,7 @@
             @if(!empty($childrenData))
                 <div class="text-falls-kinder">
                     <p>
-                        Meine unten aufgeführten Kinder haben ebenfalls entschieden ab sofort aus der Kirchgemeinde und
+                        Meine unten aufgef&uuml;hrten Kinder haben ebenfalls entschieden ab sofort aus der Kirchgemeinde und
                         aus
                         der {{$confessionFull}} Kirche auszutreten.
                     </p>
@@ -196,7 +196,6 @@
                             if(!$showTaufdatumFehlt && (empty($child['taufdatum']) || empty($child['taufort']))) {
                               $showTaufdatumFehlt = TRUE;
                             }
-
                         @endphp
 
                         <table>
@@ -237,31 +236,31 @@
             @if($showTaufdatumFehlt)
                 <div class="text-falls-taufdaten-fehlen">
                     <p>
-                        Das Fehlen des Taufdatums oder Tauforts ist kein Hindernis und darf nicht als Grund für die
+                        Das Fehlen des Taufdatums oder Tauforts ist kein Hindernis und darf nicht als Grund f&uuml;r die
                         Ablehnung des Kirchenaustritts verwendet werden.
                     </p>
                 </div>
             @endif
             <div class="text-2">
                 <p>
-                    Ich möchte keine Kontaktaufnahme von der Kirche erhalten und lehne jegliche Gespräche dankend ab.
-                    Ich beabsichtige, keine Gründe für meinen Austritt zu nennen. Dies ist für einen Austritt nicht
+                    Ich w&uuml;nsche keine Kontaktaufnahme von der Kirche erhalten und lehne jegliche Gespr&auml;che dankend ab.
+                    Ich beabsichtige, keine Gr&uuml;nde f&uuml;r meinen Austritt zu nennen. Dies ist f&uuml;r einen Austritt nicht
                     notwendig.
-                    Ich bin nur für eine Kontaktaufnahme bereit, falls es Gründe gibt, die meinen Austritt unumgänglich
-                    verhindern würden.
-                    Ich bitte Sie höflich, mich sofort zu informieren, sollte ein solcher Fall eintreten.
-                    Ich bin damit einverstanden, dass nicht korrekte oder falsch aufgeführte Informationen in meiner
-                    Kirchenakte belassen werden können.
+                    Ich bin nur f&uuml;r eine Kontaktaufnahme bereit, falls es Gr&uuml;nde gibt, die meinen Austritt unumg&auml;nglich
+                    verhindern w&uuml;rden.
+                    Ich bitte Sie h&ouml;flich, mich sofort zu informieren, sollte ein solcher Fall eintreten.
+                    Ich bin damit einverstanden, dass nicht korrekte oder falsch aufgef&uuml;hrte Informationen in meiner
+                    Kirchenakte belassen werden k&ouml;nnen.
                 </p>
             </div>
 
             @if(!empty($childrenData))
                 <div class="text-falls-kinder-2">
                     <p>
-                        Die oben genannten Punkte gelten auch für die erwähnten Kinder. Der Austritt wurde gründlich mit
-                        ihnen besprochen und ich versichere Ihnen, dass sie sich bewusst sind über die
-                        damit einhergehenden Konsequenzen, einschließlich des Verzichts auf zukünftige Sakramente und
-                        ähnliches.
+                        Die oben genannten Punkte gelten auch f&uuml;r die erw&auml;hnten Kinder. Der Austritt wurde gr&uuml;ndlich mit
+                        ihnen besprochen und ich versichere Ihnen, dass sie sich bewusst sind &uuml;ber die
+                        damit einhergehenden Konsequenzen, einschließlich des Verzichts auf zuk&uuml;nftige Sakramente und
+                        &auml;hnliches.
                     </p>
                 </div>
             @endif
@@ -269,8 +268,8 @@
     </div>
     <div class="text-3">
         <p>
-            Ich bin mir der möglichen Folgen und Konsequenzen meines Austritts aus der Kirche vollständig bewusst und
-            ich bin informiert über die Rechte,
+            Ich bin mir der m&ouml;glichen Folgen und Konsequenzen meines Austritts aus der Kirche vollst&auml;ndig bewusst und
+            ich bin informiert &uuml;ber die Rechte,
             auf die ich mit meinem Austritt verzichte.
             Ich bitte Sie, alle notwendigen Schritte einzuleiten und die relevanten Stellen, wie die Einwohnerkontrolle
             und die Kirchgemeinde, zu informieren.
@@ -278,11 +277,11 @@
     </div>
     <div class="text-4">
         <p>
-            Ich erwarte Ihre schriftliche Bestätigung über den Austritt.
+            Ich erwarte Ihre schriftliche Best&auml;tigung &uuml;ber den Austritt.
         </p>
     </div>
     <div class="text-4">
-        <p>Freundliche Grüsse<br/>
+        <p>Freundliche Gr&uuml;sse<br/>
             Daniele Nicastro
         </p>
     </div>
