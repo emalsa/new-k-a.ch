@@ -556,6 +556,7 @@ class ComposerStaticInitacb70e19bd4840651c9d841b1d2b9510
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\ValidateSignature' => __DIR__ . '/../..' . '/app/Http/Middleware/ValidateSignature.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'App\\Jobs\\CreatePdfJob' => __DIR__ . '/../..' . '/app/Jobs/CreatePdfJob.php',
         'App\\Models\\Child' => __DIR__ . '/../..' . '/app/Models/Child.php',
         'App\\Models\\ChurchAddress' => __DIR__ . '/../..' . '/app/Models/ChurchAddress.php',
         'App\\Models\\Partner' => __DIR__ . '/../..' . '/app/Models/Partner.php',

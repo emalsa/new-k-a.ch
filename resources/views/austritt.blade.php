@@ -87,6 +87,14 @@
 </head>
 <body>
 @php
+    if($mode == 'kath'){
+      $confessionFull='Römisch-Katholische';
+    }
+    else {
+      $confessionFull='Evangelisch Reformierte';
+    }
+
+
     $showTaufdatumFehlt = NULL;
     if(empty($personData['taufdatum']) || empty($personData['taufort'])) {
       $showTaufdatumFehlt = TRUE;
@@ -145,7 +153,8 @@
             <div class="text-1">
                 <p>
                     Nach reiflicher &Uuml;berlegung habe ich mich entschieden, aus der Kirche auszutreten.
-                    Hiermit erkl&auml;re ich meinen vollst&auml;ndigen Austritt sowohl aus der Kirchgemeinde als auch aus der
+                    Hiermit erkl&auml;re ich meinen vollst&auml;ndigen Austritt sowohl aus der Kirchgemeinde als auch
+                    aus der
                     {{$confessionFull}} Kirche mit sofortiger Wirkung.
                 </p>
             </div>
@@ -177,7 +186,7 @@
                     @endif
                     <tr>
                         <td>Konfession:</td>
-                        <td>{{$personData['konfession']}}</td>
+                        <td>{{substr($confessionFull, 0, -1)}}</td>
                     </tr>
                 </table>
             </div>
@@ -185,9 +194,8 @@
             @if(!empty($childrenData))
                 <div class="text-falls-kinder">
                     <p>
-                        Meine unten aufgef&uuml;hrten Kinder haben ebenfalls entschieden ab sofort aus der Kirchgemeinde und
-                        aus
-                        der {{$confessionFull}} Kirche auszutreten.
+                        Meine unten aufgef&uuml;hrten Kinder haben ebenfalls entschieden ab sofort aus der Kirchgemeinde
+                        und aus der {{$confessionFull}} Kirche auszutreten.
                     </p>
                 </div>
                 <div class="tabelle-falls-kinder person-data">
@@ -226,7 +234,7 @@
                             @endif
                             <tr>
                                 <td>Konfession:</td>
-                                <td>{{$child['konfession']}}</td>
+                                <td>{{substr($confessionFull, 0, -1)}}</td>
                             </tr>
                         </table>
                     @endforeach
@@ -243,13 +251,17 @@
             @endif
             <div class="text-2">
                 <p>
-                    Ich w&uuml;nsche keine Kontaktaufnahme von der Kirche erhalten und lehne jegliche Gespr&auml;che dankend ab.
-                    Ich beabsichtige, keine Gr&uuml;nde f&uuml;r meinen Austritt zu nennen. Dies ist f&uuml;r einen Austritt nicht
+                    Ich w&uuml;nsche keine Kontaktaufnahme von der Kirche erhalten und lehne jegliche Gespr&auml;che
+                    dankend ab.
+                    Ich beabsichtige, keine Gr&uuml;nde f&uuml;r meinen Austritt zu nennen. Dies ist f&uuml;r einen
+                    Austritt nicht
                     notwendig.
-                    Ich bin nur f&uuml;r eine Kontaktaufnahme bereit, falls es Gr&uuml;nde gibt, die meinen Austritt unumg&auml;nglich
+                    Ich bin nur f&uuml;r eine Kontaktaufnahme bereit, falls es Gr&uuml;nde gibt, die meinen Austritt
+                    unumg&auml;nglich
                     verhindern w&uuml;rden.
                     Ich bitte Sie h&ouml;flich, mich sofort zu informieren, sollte ein solcher Fall eintreten.
-                    Ich bin damit einverstanden, dass nicht korrekte oder falsch aufgef&uuml;hrte Informationen in meiner
+                    Ich bin damit einverstanden, dass nicht korrekte oder falsch aufgef&uuml;hrte Informationen in
+                    meiner
                     Kirchenakte belassen werden k&ouml;nnen.
                 </p>
             </div>
@@ -257,9 +269,11 @@
             @if(!empty($childrenData))
                 <div class="text-falls-kinder-2">
                     <p>
-                        Die oben genannten Punkte gelten auch f&uuml;r die erw&auml;hnten Kinder. Der Austritt wurde gr&uuml;ndlich mit
+                        Die oben genannten Punkte gelten auch f&uuml;r die erw&auml;hnten Kinder. Der Austritt wurde gr&uuml;ndlich
+                        mit
                         ihnen besprochen und ich versichere Ihnen, dass sie sich bewusst sind &uuml;ber die
-                        damit einhergehenden Konsequenzen, einschließlich des Verzichts auf zuk&uuml;nftige Sakramente und
+                        damit einhergehenden Konsequenzen, einschließlich des Verzichts auf zuk&uuml;nftige Sakramente
+                        und
                         &auml;hnliches.
                     </p>
                 </div>
@@ -268,7 +282,8 @@
     </div>
     <div class="text-3">
         <p>
-            Ich bin mir der m&ouml;glichen Folgen und Konsequenzen meines Austritts aus der Kirche vollst&auml;ndig bewusst und
+            Ich bin mir der m&ouml;glichen Folgen und Konsequenzen meines Austritts aus der Kirche vollst&auml;ndig
+            bewusst und
             ich bin informiert &uuml;ber die Rechte,
             auf die ich mit meinem Austritt verzichte.
             Ich bitte Sie, alle notwendigen Schritte einzuleiten und die relevanten Stellen, wie die Einwohnerkontrolle

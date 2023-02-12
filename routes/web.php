@@ -1,5 +1,8 @@
 <?php
 
+use App\Jobs\CreatePdfJob;
+use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,4 +21,4 @@ Route::get('/test', function () {
 });
 Route::get('/{any}', function () {
   return view('app');
-})->where("any",".*");
+})->where("any", ".*");
