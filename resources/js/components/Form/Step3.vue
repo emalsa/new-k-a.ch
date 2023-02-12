@@ -6,7 +6,8 @@
         <input type="checkbox"
                v-model="formData.hasChildren"
                name="hasChildren"
-               value="example value">
+               value="example value"
+               @click="clickHasChildren">
         <span class="ml-1">Meine Kinder wollen auch austreten. (Unter 16 Jahre)</span>
       </label>
     </div>
@@ -23,7 +24,7 @@
           </button>
         </div>
         <div class="mb-4 pt-20">
-          <label class="block text-md leading-6 mb-2" for="">Vorname</label>
+          <label class="required block text-md leading-6 mb-2" for="">Vorname</label>
           <input class="block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
                  v-model="children[childrenCount].vorname"
                  type="text"
@@ -31,14 +32,14 @@
                  placeholder="Vorname">
         </div>
         <div class="mb-4">
-          <label class="block text-md leading-6 mb-2" for="">Nachname</label>
+          <label class="required block text-md leading-6 mb-2" for="">Nachname</label>
           <input class="block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
                  v-model="children[childrenCount].nachname"
                  type="text"
                  placeholder="Nachname">
         </div>
         <div class="mb-6">
-          <label class="block text-md leading-6 mb-2" for="">Geburtsdatum</label>
+          <label class="required block text-md leading-6 mb-2" for="">Geburtsdatum</label>
           <input class="block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
                  v-model="children[childrenCount].geburtsdatum"
                  type="text"
@@ -46,11 +47,12 @@
           <span class="block text-md w-full py-4 font-heading rounded outline-none">Beispiel: <i>4.12.1966</i> oder <i>3.3.1922</i></span>
         </div>
         <div class="mb-6">
-          <label class="block text-md leading-6 mb-2" for="">Konfession</label>
+          <label class="required block text-md leading-6 mb-2" for="">Konfession</label>
           <div class="relative">
-            <select class="appearance-none block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
+            <select
+                    class="appearance-none block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
                     v-model="children[childrenCount].konfession">
-              <option disabled selected value>Bitte auswählen</option>
+              <option value="">Bitte auswählen</option>
               <option value="kath">R&ouml;misch-Katholisch (Kath.)</option>
               <option value="ref">Evangelisch-Reformiert (Ref.)</option>
             </select>
@@ -85,7 +87,7 @@
         <div v-if="children[childrenCount].taufDatumBekanntChild" class="mt-12 mb-6">
           <div class="mb-6">
             <label class="block text-md leading-6 mb-2" for="">Taufdatum</label>
-            <input class="block w-full p-4 font-heading text-gray-300 placeholder-gray-300 bg-gray-50 rounded outline-none"
+            <input class="block w-full p-4 font-heading placeholder-gray-300 bg-gray-50 rounded outline-none"
                    v-model="children[childrenCount].taufdatum"
                    type="text"
                    placeholder="Taufdatum, Beispiel: 4.12.1967">
@@ -93,7 +95,7 @@
           </div>
           <div class="mb-6">
             <label class="block text-md leading-6 mb-2" for="">Taufort</label>
-            <input class="block w-full p-4 font-heading text-gray-300 placeholder-gray-300 bg-gray-50 rounded outline-none"
+            <input class="block w-full p-4 font-heading placeholder-gray-300 bg-gray-50 rounded outline-none"
                    v-model="children[childrenCount].taufort"
                    type="text"
                    placeholder="Taufort">
@@ -101,8 +103,8 @@
         </div>
       </div>
       <a @click="addChild"
-              class="mt-10 w-full block py-4 px-6 text-center text-base text-white bg-blue-400 hover:bg-blue-600 border border-blue-400 hover:border-blue-600 rounded-sm transition duration-200 ">
-        Weiteres Kind hinzuf&uuml;gen
+         class="mt-10 w-full block py-4 px-6 text-center text-base text-white bg-blue-400 hover:bg-blue-600 border border-blue-400 hover:border-blue-600 rounded-sm transition duration-200 ">
+        Kind hinzuf&uuml;gen
       </a>
     </div>
 
@@ -114,7 +116,6 @@ export default {
   props: ['isStep3', 'children', 'formData'],
   methods: {
     removeChild(count) {
-      console.log('Remove' + count)
       this.children.splice(count, 1)
     },
     addChild() {

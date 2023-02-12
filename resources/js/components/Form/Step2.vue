@@ -12,21 +12,21 @@
     </div>
     <div v-if="formData.hatEhepartner">
       <div class="mb-4">
-        <label class="block text-md leading-6 mb-2" for="">Vorname</label>
+        <label class="required block text-md leading-6 mb-2" for="">Vorname</label>
         <input class="block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
                v-model="partner.vorname"
                type="text"
                placeholder="Vorname">
       </div>
       <div class="mb-4">
-        <label class="block text-md leading-6 mb-2" for="">Nachname</label>
+        <label class="required block text-md leading-6 mb-2" for="">Nachname</label>
         <input class="block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
                v-model="partner.nachname"
                type="text"
                placeholder="Nachname">
       </div>
       <div class="mb-6">
-        <label class="block text-md leading-6 mb-2" for="">Geburtsdatum</label>
+        <label class="required block text-md leading-6 mb-2" for="">Geburtsdatum</label>
         <input class="block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
                v-model="partner.geburtsdatum"
                type="text"
@@ -36,11 +36,11 @@
 
 
       <div class="mb-6">
-        <label class="block text-md leading-6 mb-2" for="">Konfession</label>
+        <label class="required block text-md leading-6 mb-2" for="">Konfession</label>
         <div class="relative">
           <select class="appearance-none block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
                   v-model="partner.konfession">
-            <option disabled selected value>Bitte auswählen</option>
+            <option value="">Bitte auswählen</option>
             <option value="kath">R&ouml;misch-Katholisch (Kath.)</option>
             <option value="ref">Evangelisch-Reformiert (Ref.)</option>
           </select>
@@ -67,7 +67,7 @@
       <div v-if="partner.taufDatumBekanntPartner" class="mt-12 mb-6">
         <div class="mb-6">
           <label class="block text-md leading-6 mb-2" for="">Taufdatum</label>
-          <input class="block w-full p-4 font-heading text-gray-300 placeholder-gray-300 bg-gray-50 rounded outline-none"
+          <input class="block w-full p-4 font-heading placeholder-gray-300 bg-gray-50 rounded outline-none"
                  v-model="partner.taufdatum"
                  type="text"
                  placeholder="Taufdatum, Beispiel: 4.12.1967">
@@ -75,7 +75,7 @@
         </div>
         <div class="mb-6">
           <label class="block text-md leading-6 mb-2" for="">Taufort</label>
-          <input class="block w-full p-4 font-heading text-gray-300 placeholder-gray-300 bg-gray-50 rounded outline-none"
+          <input class="block w-full p-4 font-heading placeholder-gray-300 bg-gray-50 rounded outline-none"
                  v-model="partner.taufort"
                  type="text"
                  placeholder="Taufort">
