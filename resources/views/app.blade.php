@@ -8,10 +8,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@400;500;600;700&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
 
-    
+
     <link rel="apple-touch-icon" sizes="57x57" href={{URL::asset('static/favicon/apple-icon-57x57.png')}}>
     <link rel="apple-touch-icon" sizes="60x60" href={{URL::asset('static/favicon/apple-icon-60x60.png')}}>
     <link rel="apple-touch-icon" sizes="72x72" href={{URL::asset('static/favicon/apple-icon-72x72.png')}}>
@@ -21,7 +23,7 @@
     <link rel="apple-touch-icon" sizes="144x144" href={{URL::asset('static/favicon/apple-icon-144x144.png')}}>
     <link rel="apple-touch-icon" sizes="152x152" href={{URL::asset('static/favicon/apple-icon-152x152.png')}}>
     <link rel="apple-touch-icon" sizes="180x180" href={{URL::asset('static/favicon/favicon-16x16.png')}}>
-    <link rel="icon" type="image/png" sizes="192x192"  href={{URL::asset('static/favicon/android-icon-192x192.png')}}>
+    <link rel="icon" type="image/png" sizes="192x192" href={{URL::asset('static/favicon/android-icon-192x192.png')}}>
     <link rel="icon" type="image/png" sizes="32x32" href={{URL::asset('static/favicon/favicon-32x32.png')}}>
     <link rel="icon" type="image/png" sizes="96x96" href={{URL::asset('static/favicon/favicon-96x96.png')}}>
     <link rel="icon" type="image/png" sizes="16x16" href={{URL::asset('static/favicon/favicon-16x16.png')}}>
@@ -31,13 +33,27 @@
     <meta name="theme-color" content="#ffffff">
 
 
+    <?php if ($_SERVER['HTTP_HOST'] === 'kirche-austreten.ch' || $_SERVER['HTTP_HOST'] === 'www.kirche-austreten.ch'): ?>
+          <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CJ4WXHWCXT"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
-  <?php if ($_SERVER['HTTP_HOST'] === 'kirche-austreten.ch' || $_SERVER['HTTP_HOST'] === 'www.kirche-austreten.ch'): ?>
-      @vite('resources/css/min/app.min.css')
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-CJ4WXHWCXT');
+    </script>
+
+    @vite('resources/css/min/app.min.css')
   <?php else: ?>
-      @vite('resources/css/app.css')
+    <hehe></hehe>
+    @vite('resources/css/app.css')
   <?php endif ?>
-    <!--    @vite('resources/css/app.css')-->
+
     @vite('resources/js/app.js')
     @vite('resources/js/main.js')
 
