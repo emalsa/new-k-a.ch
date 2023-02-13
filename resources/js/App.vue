@@ -1,5 +1,6 @@
 <template>
   <Navigation/>
+  <Hero/>
   <Form v-if="isForm"/>
   <Confirm v-if="isConfirm"/>
   <Footer/>
@@ -9,9 +10,10 @@ import Form from "./components/Form.vue";
 import Footer from "./components/Footer.vue";
 import Navigation from "./components/Navigation.vue";
 import Confirm from "./components/Confirm.vue";
+import Hero from "./components/Hero.vue";
 
 export default {
-  components: {Form, Navigation, Footer, Confirm},
+  components: {Form, Navigation, Footer, Confirm, Hero},
   computed: {
     isForm() {
       return this.$route.name === 'Form'
