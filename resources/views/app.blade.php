@@ -4,7 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>kirche-austreten.ch</title>
-    <meta name="description" content="Kirchen austritt und austreten aus der Kirche Formular">
+    <meta title="Kirchenaustritt für die Schweiz. Auch Gratis">
+    <meta name="description"
+          content="Aus der Kirche austreten mit dem Gratis Austrittsformular. Schnell und einfach. Adresse der Kirchgemeinde suchen wir für dich.">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -32,8 +34,8 @@
     <meta name="msapplication-TileImage" content={{URL::asset('static/favicon/ms-icon-144x144.png')}}>
     <meta name="theme-color" content="#ffffff">
 
+  <?php if ($_SERVER['HTTP_HOST'] === 'kirche-austreten.ch' || $_SERVER['HTTP_HOST'] === 'www.kirche-austreten.ch'): ?>
 
-    <?php if ($_SERVER['HTTP_HOST'] === 'kirche-austreten.ch' || $_SERVER['HTTP_HOST'] === 'www.kirche-austreten.ch'): ?>
           <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-CJ4WXHWCXT"></script>
     <script>
@@ -44,13 +46,11 @@
         }
 
         gtag('js', new Date());
-
         gtag('config', 'G-CJ4WXHWCXT');
     </script>
 
     @vite('resources/css/min/app.min.css')
   <?php else: ?>
-    <hehe></hehe>
     @vite('resources/css/app.css')
   <?php endif ?>
 
@@ -58,8 +58,8 @@
     @vite('resources/js/main.js')
 
 </head>
+
 <body class="antialiased bg-body text-body font-body">
 <div id="app"></div>
-
 </body>
 </html>
