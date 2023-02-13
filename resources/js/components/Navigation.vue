@@ -17,7 +17,7 @@
           </ul>
         </div>
         <div class="w-auto hidden lg:block">
-          <a class="inline-block py-4 px-8 font-heading font-medium text-base text-white bg-test-500 hover:bg-test-600 border border-test-500 hover:border-test-600 rounded-sm transition duration-200"
+          <a class="inline-block py-4 px-8 font-heading font-medium text-base text-white bg-green-500 hover:bg-green-600 border border-green-500 hover:border-green-600 rounded-sm transition duration-200"
              href="/formular">Start</a></div>
         <div class="w-auto lg:hidden">
           <a class="navbar-burger inline-flex w-14 h-14 justify-center items-center bg-gray-50 hover:bg-gray-100 rounded-full"
@@ -42,20 +42,20 @@
             <img src="../../assets/logo/logo-acros-black_alone.png" alt="">
           </a>
           <ul class="w-full mb-auto pb-16">
-            <li><a class="font-heading block text-base font-medium py-4 px-6 hover:bg-test-50 rounded-sm"
+            <li><a class="font-heading block text-base font-medium py-4 px-6 hover:bg-green-50 rounded-sm"
                    href="/">Home</a></li>
-            <li><a class="font-heading block text-base py-4 px-6 hover:bg-test-50 rounded-sm" href="#">About</a></li>
-            <li><a class="font-heading block text-base py-4 px-6 hover:bg-test-50 rounded-sm" href="#">Company</a></li>
-            <li><a class="font-heading block text-base py-4 px-6 hover:bg-test-50 rounded-sm" href="#">Services</a>
+            <li><a class="font-heading block text-base py-4 px-6 hover:bg-green-50 rounded-sm" href="#">About</a></li>
+            <li><a class="font-heading block text-base py-4 px-6 hover:bg-green-50 rounded-sm" href="#">Company</a></li>
+            <li><a class="font-heading block text-base py-4 px-6 hover:bg-green-50 rounded-sm" href="#">Services</a>
             </li>
-            <li><a class="font-heading block text-base py-4 px-6 hover:bg-test-50 rounded-sm" href="#">Testimonials</a>
+            <li><a class="font-heading block text-base py-4 px-6 hover:bg-green-50 rounded-sm" href="#">Testimonials</a>
             </li>
-            <li><a class="font-heading block text-base py-4 px-6 hover:bg-test-50 rounded-sm" href="/formular">Start</a></li>
+            <li><a class="font-heading block text-base py-4 px-6 hover:bg-green-50 rounded-sm" href="/formular">Start</a></li>
           </ul>
           <div class="w-full">
-            <a class="block w-full py-4 px-4 mb-4 text-center font-heading font-medium text-base hover:text-test-500 border border-gray-900 hover:border-test-500 rounded-sm transition duration-200"
+            <a class="block w-full py-4 px-4 mb-4 text-center font-heading font-medium text-base hover:text-green-500 border border-gray-900 hover:border-green-500 rounded-sm transition duration-200"
                href="#">Log
-              in</a><a class="block w-full py-4 px-4 mb-8 text-center font-heading font-medium text-base text-white bg-test-500 hover:bg-test-600 border border-test-500 hover:border-test-600 rounded-sm transition duration-200"
+              in</a><a class="block w-full py-4 px-4 mb-8 text-center font-heading font-medium text-base text-white bg-green-500 hover:bg-green-600 border border-green-500 hover:border-green-600 rounded-sm transition duration-200"
                        href="#">Sign up</a>
             <p class="pl-2 text-sm">2022 © Shuffle</p>
           </div>

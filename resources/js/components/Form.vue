@@ -6,24 +6,24 @@
 
         <div class="max-w-3xl mx-auto">
           <div class="w-full mx-auto mb-14  max-w-2xl">
-            <div class="bg-test-500  h-1 flex items-center justify-between">
+            <div class="bg-green-500  h-1 flex items-center justify-between">
 
-              <div class="w-1/3 bg-test-500 h-1 flex items-center">
-                <div class="bg-test-500 h-6 w-6 rounded-full shadow flex items-center justify-center">
+              <div class="w-1/3 bg-green-500 h-1 flex items-center">
+                <div class="bg-green-500 h-6 w-6 rounded-full shadow flex items-center justify-center">
                   <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/thin_with_steps-svg1.svg" alt="check"/>
                 </div>
               </div>
 
-              <div class="w-1/3 bg-test-500 h-1 flex items-center">
-                <div class="bg-test-500 h-6 w-6 rounded-full shadow flex items-center justify-center">
+              <div class="w-1/3 bg-green-500 h-1 flex items-center">
+                <div class="bg-green-500 h-6 w-6 rounded-full shadow flex items-center justify-center">
                   <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/thin_with_steps-svg1.svg" alt="check"/>
                 </div>
               </div>
 
 
-              <div class="w-1/3 flex justify-between bg-test-500 h-1 items-center relative">
+              <div class="w-1/3 flex justify-between bg-green-500 h-1 items-center relative">
                 <div class="absolute right-0 -mr-2">
-                  <div class="relative bg-white dark:bg-test-500 shadow-lg px-2 py-1 rounded mt-16 -mr-12">
+                  <div class="relative bg-white dark:bg-green-500 shadow-lg px-2 py-1 rounded mt-16 -mr-12">
                     <svg class="absolute  top-0 -mt-1 w-full right-0 left-0 text-white dark:text-gray-800"
                          width="16px"
                          height="8px"
@@ -31,7 +31,7 @@
                          version="1.1"
                          xmlns="http://www.w3.org/2000/svg">
                       <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                        <g id="Progress-Bars" transform="translate(-322.000000, -198.000000)" fill="bg-test-500 ">
+                        <g id="Progress-Bars" transform="translate(-322.000000, -198.000000)" fill="bg-green-500 ">
                           <g id="Group-4" transform="translate(310.000000, 198.000000)">
                             <polygon id="Triangle" points="20 0 28 8 12 8"></polygon>
                           </g>
@@ -43,18 +43,18 @@
                   </div>
                 </div>
 
-                <div class="bg-test-500 h-6 w-6 rounded-full shadow flex items-center justify-center -ml-2">
+                <div class="bg-green-500 h-6 w-6 rounded-full shadow flex items-center justify-center -ml-2">
                   <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/thin_with_steps-svg1.svg" alt="check"/>
                 </div>
 
-                <div class="bg-white dark:bg-test-500 h-6 w-6 rounded-full shadow flex items-center justify-center -mr-3 relative">
-                  <div class="h-3 w-3 bg-test-500  rounded-full"></div>
+                <div class="bg-white dark:bg-green-500 h-6 w-6 rounded-full shadow flex items-center justify-center -mr-3 relative">
+                  <div class="h-3 w-3 bg-green-500  rounded-full"></div>
                 </div>
 
               </div>
 
               <div class="w-1/3 flex justify-end">
-                <div class="bg-white dark:bg-test-100 h-6 w-6 rounded-full shadow"></div>
+                <div class="bg-white dark:bg-green-100 h-6 w-6 rounded-full shadow"></div>
               </div>
 
             </div>
@@ -84,23 +84,23 @@
             <div class="mb-8">
               <span v-if="isStep1" class="text-md font-semibold uppercase">
                 <span>LASS UNS</span>
-                <span class="text-test-500">&nbsp;Starten</span>
+                <span class="text-green-500">&nbsp;Starten</span>
               </span>
               <span v-if="isStep2" class="text-sm font-semibold uppercase">
                 <span>Dein</span>
-                <span class="text-test-500">&nbsp;Ehepartner?</span>
+                <span class="text-green-500">&nbsp;Ehepartner?</span>
               </span>
               <span v-if="isStep3" class="text-sm font-semibold uppercase">
                 <span>Und deine</span>
-                <span class="text-test-500">&nbsp;Kinder?</span>
+                <span class="text-green-500">&nbsp;Kinder?</span>
               </span>
               <span v-if="isStep4" class="text-sm font-semibold uppercase">
                 <span>Bald</span>
-                <span class="text-test-500">&nbsp;geschafft</span>
+                <span class="text-green-500">&nbsp;geschafft</span>
               </span>
               <span v-if="isStep5" class="text-sm font-semibold uppercase">
                 <span>Pr&uuml;fe nochmal</span>
-                <span class="text-test-500">&nbsp;alles</span>
+                <span class="text-green-500">&nbsp;alles</span>
               </span>
             </div>
             <div class="mb-10 max-w-xs text-2xl mt-2 uppercase">
@@ -269,8 +269,8 @@
                 <!--                <div class="w-full lg:w-1/3 px-4">-->
                 <!--                  <ul>-->
                 <!--                    <li class="flex items-center mb-4">-->
-                <!--                      <div class="w-2 py-px bg-test-500 mr-4"></div>-->
-                <!--                      <a class="font-heading text-lg font-medium text-test-500" href="#">Sheridan</a>-->
+                <!--                      <div class="w-2 py-px bg-green-500 mr-4"></div>-->
+                <!--                      <a class="font-heading text-lg font-medium text-green-500" href="#">Sheridan</a>-->
                 <!--                    </li>-->
                 <!--                    <li class="flex items-center mb-4"><a class="font-heading text-lg font-medium" href="#">Neonic</a>-->
                 <!--                    </li>-->
@@ -294,7 +294,7 @@
                       </div>
                       <a class="group inline-flex items-center" href="#">
                         <span class="mr-4 text-sm" @click="prev(1)">Bearbeiten</span>
-                        <div class="flex items-center justify-center w-5 h-5 rounded-full bg-test-500 group-hover:bg-test-600">
+                        <div class="flex items-center justify-center w-5 h-5 rounded-full bg-green-500 group-hover:bg-green-600">
                           <svg width="12"
                                height="12"
                                viewbox="0 0 12 12"
@@ -320,7 +320,7 @@
                     </div>
                     <a class="group inline-flex items-center" href="#">
                       <span class="mr-4 text-sm" @click="prev(2)">Bearbeiten</span>
-                      <div class="flex items-center justify-center w-5 h-5 rounded-full bg-test-500 group-hover:bg-test-600">
+                      <div class="flex items-center justify-center w-5 h-5 rounded-full bg-green-500 group-hover:bg-green-600">
                         <svg width="12"
                              height="12"
                              viewbox="0 0 12 12"
@@ -348,7 +348,7 @@
                     </div>
                     <a class="group inline-flex items-center" href="#">
                       <span class="mr-4 text-sm" @click="prev(3)">Bearbeiten</span>
-                      <div class="flex items-center justify-center w-5 h-5 rounded-full bg-test-500 group-hover:bg-test-600">
+                      <div class="flex items-center justify-center w-5 h-5 rounded-full bg-green-500 group-hover:bg-green-600">
                         <svg width="12"
                              height="12"
                              viewbox="0 0 12 12"
@@ -373,7 +373,7 @@
                     </div>
                     <a class="group inline-flex items-center" href="#">
                       <span class="mr-4 text-sm" @click="prev(1)">Bearbeiten</span>
-                      <div class="flex items-center justify-center w-5 h-5 rounded-full bg-test-500 group-hover:bg-test-600">
+                      <div class="flex items-center justify-center w-5 h-5 rounded-full bg-green-500 group-hover:bg-green-600">
                         <svg width="12"
                              height="12"
                              viewbox="0 0 12 12"
@@ -399,7 +399,7 @@
                     </div>
                     <a class="group inline-flex items-center" href="#">
                       <span class="mr-4 text-sm" @click="prev(null)">Bearbeiten</span>
-                      <div class="flex items-center justify-center w-5 h-5 rounded-full bg-test-500 group-hover:bg-test-600">
+                      <div class="flex items-center justify-center w-5 h-5 rounded-full bg-green-500 group-hover:bg-green-600">
                         <svg width="12"
                              height="12"
                              viewbox="0 0 12 12"
@@ -425,7 +425,7 @@
                     </div>
                     <a class="group inline-flex items-center" href="#">
                       <span class="mr-4 text-sm" @click="prev(null)">Bearbeiten</span>
-                      <div class="flex items-center justify-center w-5 h-5 rounded-full bg-test-500 group-hover:bg-test-600">
+                      <div class="flex items-center justify-center w-5 h-5 rounded-full bg-green-500 group-hover:bg-green-600">
                         <svg width="12"
                              height="12"
                              viewbox="0 0 12 12"
@@ -491,7 +491,7 @@
             <div class="flex mt-14 mb-20">
               <!-- Zurück -->
               <div class="w-1/2 pr-32 text-left">
-                <button class="w-full block py-4 px-6 text-center font-heading font-medium text-base text-white bg-test-500 hover:bg-test-600 border border-test-500 hover:border-test-600 rounded-sm transition duration-200"
+                <button class="w-full block py-4 px-6 text-center font-heading font-medium text-base text-white bg-green-500 hover:bg-green-600 border border-green-500 hover:border-green-600 rounded-sm transition duration-200"
                         name="back"
                         @click.prevent="prev(null)">
                   Zurück
@@ -500,14 +500,14 @@
 
               <!-- Weiter -->
               <div v-if="!isStep5" class="w-1/2 text-right">
-                <button class="w-full block py-4 px-6 text-center font-heading font-medium text-base text-white bg-test-500 hover:bg-test-600 border border-test-500 hover:border-test-600 rounded-sm transition duration-200"
+                <button class="w-full block py-4 px-6 text-center font-heading font-medium text-base text-white bg-green-500 hover:bg-green-600 border border-green-500 hover:border-green-600 rounded-sm transition duration-200"
                         name="next">
                   Weiter
                 </button>
               </div>
 
               <div v-if="isStep5" class="w-1/2 text-right">
-                <button class="w-full block py-4 px-6 text-center font-heading font-medium text-base text-white bg-test-500 hover:bg-test-600 border border-test-500 hover:border-test-600 rounded-sm transition duration-200"
+                <button class="w-full block py-4 px-6 text-center font-heading font-medium text-base text-white bg-green-500 hover:bg-green-600 border border-green-500 hover:border-green-600 rounded-sm transition duration-200"
                         name="next"
                         @click.prevent="submit">
                   <span v-if="!formData.payment">Abschicken</span>
