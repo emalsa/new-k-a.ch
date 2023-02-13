@@ -3,12 +3,6 @@
 @tailwind utilities;
 
 
-.required:after {
-    content: " *";
-    color: darkred;
-    font-size: 15px;
-}
-
 .border-b-1 {
     border-bottom-width: 1px;
 }

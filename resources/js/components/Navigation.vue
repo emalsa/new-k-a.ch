@@ -2,10 +2,11 @@
   <section>
     <nav class="px-4 sm:px-10 py-4 bg-white">
       <div class="relative flex items-center justify-between">
-        <div class="w-auto">
-          <a class="inline-block" href="/">
-            <img src="../../assets/logo/logo-acros-black.svg" alt="">
+        <div class="w-auto flex justify-between">
+          <a class="inline-block mr-3" href="/">
+            <img src="../../assets/logo/logo-acros-black_alone.png" alt="">
           </a>
+          <h3 class="py-2 text-2xl">kirche-austreten.ch</h3>
         </div>
         <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 hidden lg:block">
           <ul class="flex items-center">
@@ -38,7 +39,7 @@
       <nav class="relative pt-7 pb-8 bg-white h-full overflow-y-auto">
         <div class="flex flex-col px-6 h-full">
           <a class="inline-block ml-4 mb-7" href="#">
-            <img src="../../assets/logo/logo-acros-black.svg" alt="">
+            <img src="../../assets/logo/logo-acros-black_alone.png" alt="">
           </a>
           <ul class="w-full mb-auto pb-16">
             <li><a class="font-heading block text-base font-medium py-4 px-6 hover:bg-green-50 rounded-sm"

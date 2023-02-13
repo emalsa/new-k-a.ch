@@ -9,8 +9,10 @@ export default defineConfig({
         vue(),
         laravel([
             'resources/css/app.css',
+            'resources/js/main.js',
             'resources/js/app.js',
-            'resources/css/min/app.min.css'
+            'resources/css/min/app.min.css',
+
         ]),
     ],
 });

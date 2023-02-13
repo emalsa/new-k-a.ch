@@ -17,7 +17,7 @@
   <?php endif ?>
     <!--    @vite('resources/css/app.css')-->
     @vite('resources/js/app.js')
-
+    @vite('resources/js/main.js')
 
 </head>
 <body class="antialiased bg-body text-body font-body">
