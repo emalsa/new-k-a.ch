@@ -1,6 +1,6 @@
 <template>
   <Navigation/>
-  <Hero/>
+  <Hero v-if="!isForm || !isConfirm"/>
   <Form v-if="isForm"/>
   <Confirm v-if="isConfirm"/>
   <Footer/>
