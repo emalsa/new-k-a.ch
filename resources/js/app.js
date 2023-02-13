@@ -8,7 +8,7 @@ import {createRouter, createWebHistory} from "vue-router";
 import Confirm from "./components/Confirm.vue";
 
 const routes = [
-    {path: '/home', component: App, name: 'App'},
+    {path: '/', component: App, name: 'App'},
     {path: '/formular', component: Form, name: 'Form'},
     {path: '/confirm', component: Confirm, name: 'Confirm'}
 ]

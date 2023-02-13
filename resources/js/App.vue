@@ -1,6 +1,6 @@
 <template>
   <Navigation/>
-  <Hero v-if="!isForm || !isConfirm"/>
+  <Hero v-if="isHome"/>
   <Form v-if="isForm"/>
   <Confirm v-if="isConfirm"/>
   <Footer/>
@@ -21,6 +21,9 @@ export default {
     isConfirm() {
       return this.$route.name === 'Confirm'
     },
+    isHome(){
+      return this.$route.name === 'App'
+    }
   }
 }
 </script>
