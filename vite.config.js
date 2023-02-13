@@ -12,7 +12,10 @@ export default defineConfig({
             'resources/js/main.js',
             'resources/js/app.js',
             'resources/css/min/app.min.css',
-
+            'resources/assets/favicon/*.png',
+            'resources/assets/favicon/*.json',
+            'resources/assets/favicon/*.ico',
+            'resources/assets/favicon/*.xml',
         ]),
     ],
 });
