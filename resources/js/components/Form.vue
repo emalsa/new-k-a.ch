@@ -61,6 +61,21 @@
           </div>
 
           <div class="mb-6 mx-auto max-w-xl">
+
+            <!-- Loading spinner -->
+            <div v-if="!isLoading"
+                 wire:loading
+                 class="fixed top-0 left-0 right-0 bottom-0 w-full h-screen z-50 overflow-hidden bg-gray-700 opacity-75 flex flex-col items-center justify-center">
+              <div class="loader ease-linear rounded-full border-4 border-t-4 border-gray-200 h-12 w-12 mb-4"></div>
+              <h2 class="text-center text-white text-xl font-semibold">Bitte warten...</h2>
+              <p v-if="!this.formData.payment" class="w-1/3 text-center text-white">Daten werden gespeichert.</p>
+              <p v-if="this.formData.payment" class="w-1/2 text-center text-white">In ein paar Sekunden wirst du zur Bezahlseite weitergeleitet. Falls du nicht weitergeleitet wirst, benutze diesen Link.</p>
+              <p class="w-full text-center text-white mt-5"> https://buy.stripe.com/fZe7urdLl1TmcaQ003</p>
+
+            </div>
+
+            <button>hey</button>
+
             <div class="mb-8">
               <span v-if="isStep1" class="text-md font-semibold uppercase">
                 <span>LASS UNS</span>
@@ -524,6 +539,7 @@ export default {
     return {
       errors: [],
       currentStep: 1,
+      isLoading: false,
       formData: {
         isCatholic: false,
         isReform: false,
@@ -566,14 +582,14 @@ export default {
       },
       children: [],
       catholic: {
-        anschriftAddress:'',
+        anschriftAddress: '',
         streetAddress: '',
         streetAdditionalAddress: '',
         postalAddress: '',
         locationAddress: ''
       },
       reform: {
-        anschriftAddress:'',
+        anschriftAddress: '',
         streetAddress: '',
         streetAdditionalAddress: '',
         postalAddress: '',
@@ -626,7 +642,9 @@ export default {
       this.currentStep++;
     },
     submit() {
-      axios.post('/api/create-person?XDEBUG_SESSION_START=PHPSTORM', {
+      this.isLoading = true;
+      console.log(this.isLoading)
+      axios.post('/hapi/create-person?XDEBUG_SESSION_START=PHPSTORM', {
             person: this.person,
             partner: this.partner,
             children: this.children,
@@ -637,13 +655,28 @@ export default {
           }
       )
           .then((response) => {
-            console.log('Success:');
-            console.log(response);
+            console.log('Success');
+            if (this.formData.payment) {
+
+            } else {
+              window.location.href = "/bestätigung"
+            }
           })
           .catch(e => {
+            this.errors = [];
+            this.errors.push("Da ging etwas schief... Versuche es noch einmal.");
+            this.errors.push("Sollte der Fehler immer noch auftreten, kontaktiere uns über das Kontaktformular.");
+
+            this.isLoading = false;
+            window.scrollTo({
+              top: 0,
+              behavior: "smooth"
+            });
             console.log('Error:');
             console.log(e);
           });
+
+
     },
     optionClicked(event) {
       // this.formData.payment = null;
@@ -653,10 +686,6 @@ export default {
       if (event.target.value === 'paymentChecked') {
         this.formData.payment = true;
       }
-
-      console.log('isCatholic 1 :' + this.formData.isCatholic);
-      console.log('isReform 1 :' + this.formData.isReform);
-
       this.formData.isCatholic = false;
       this.formData.isReform = false;
 
@@ -667,26 +696,13 @@ export default {
         this.formData.isCatholic = true;
       }
 
-      // if (this.formData.hasChildren && !this.formData.isCatholic) {
-      //   this.children.forEach(child => {
-      //     this.formData.isCatholic = child.konfession === 'kath'
-      //   });
-      // }
-
       if (this.person.konfession === 'ref') {
         this.formData.isReform = true;
       }
       if (this.formData.hatEhepartner && this.partner.konfession === 'ref') {
         this.formData.isReform = true;
       }
-      // if (this.formData.hasChildren && !this.formData.isReform) {
-      //   this.children.forEach(child => {
-      //     this.formData.isReform = child.konfession === 'ref'
-      //   });
-      // }
 
-      console.log('isCatholic 2 :' + this.formData.isCatholic);
-      console.log('isReform 2 :' + this.formData.isReform);
 
     },
     checkForm: function (e) {
