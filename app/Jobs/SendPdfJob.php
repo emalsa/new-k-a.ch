@@ -10,12 +10,13 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
+use Mailgun\HttpClient\HttpClientConfigurator;
+use Mailgun\Hydrator\NoopHydrator;
 use Mailgun\Mailgun;
 
 class SendPdfJob implements ShouldQueue {
 
   use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
-
 
   /**
    * Send to me.
@@ -86,7 +87,14 @@ class SendPdfJob implements ShouldQueue {
    * @return void
    */
   public function handle() {
-    $this->mailgun = Mailgun::create(env('MAILGUN_APIKEY'));
+    $apiKey = env('MAILGUN_APIKEY');
+
+    $configurator = new HttpClientConfigurator();
+    $configurator->setEndpoint('https://api.eu.mailgun.net/v3/mail.kirche-austreten.ch/messages');
+    $configurator->setApiKey($apiKey);
+    $configurator->setDebug(env('MAILGUN_APIKEY'));
+
+    $mg = new Mailgun($configurator, new NoopHydrator());
     $files = Storage::disk('private')->files("{$this->person->getAttribute('email')}/{$this->person->getAttribute('id')}");
     $attachments = [];
     foreach ($files as $file) {
@@ -97,7 +105,7 @@ class SendPdfJob implements ShouldQueue {
     }
 
     try {
-      $this->mailgun->messages()->send('kirche-austreten.ch', [
+      $mg->messages()->send('kirche-austreten.ch', [
           'from' => self::FROM,
           'to' => $this->person->getAttributeValue('email'),
           'subject' => self::SUBJECT,
@@ -105,6 +113,7 @@ class SendPdfJob implements ShouldQueue {
           'attachment' => $attachments,
         ]
       );
+
 
     }
     catch (\Exception $exception) {
