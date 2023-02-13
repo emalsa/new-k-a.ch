@@ -607,6 +607,13 @@ export default {
   },
   computed: {
     isStep1() {
+      if (this.currentStep === 1) {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
+      }
+
       this.isLoadingStep = true;
       setTimeout(() => {
         this.isLoadingStep = false;
@@ -635,7 +642,6 @@ export default {
         top: 0,
         behavior: "smooth"
       });
-      // this.formData.payment = null;
       if (goToStep) {
         this.currentStep = goToStep;
         return
