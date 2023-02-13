@@ -95,7 +95,7 @@
                   <span class="ml-4 text-sm">Garantie</span>
                 </li>
                 <li class="flex items-center text-gray-300">
-                  <span class="ml-4 text-sm"><span class="mr-2">*</span>Falls du die Adresse der Kirchgemeinde hast.</span>
+                  <span class="ml-4 text-sm"><span class="mr-2">*</span>Wenn du die Adresse der Kirchengemeinde besitzt.</span>
                 </li>
               </ul>
             </div>

@@ -17,7 +17,7 @@
     "src": "resources/css/app.css"
   },
   "resources/css/min/app.min.css": {
-    "file": "assets/app.min-fb617b3d.css",
+    "file": "assets/app.min-650c139b.css",
     "isEntry": true,
     "src": "resources/css/min/app.min.css"
   },
@@ -35,7 +35,7 @@
       "assets/app-574d079d.css",
       "assets/app-3296b6e8.css"
     ],
-    "file": "assets/app-8d97e00c.js",
+    "file": "assets/app-40dd4fb4.js",
     "isEntry": true,
     "src": "resources/js/app.js"
   },
