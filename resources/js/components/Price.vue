@@ -4,8 +4,7 @@
       <div class="flex flex-wrap justify-between items-center -mx-4 mb-12">
         <div class="w-full lg:w-2/3 px-4 mb-8 lg:mb-0">
           <span class="text-sm font-semibold uppercase">Angebot</span>
-          <h2 class="max-w-xl font-heading text-3xl sm:text-4xl">Lorem ipsum dolor sit amet consectutar domor at
-            elis</h2>
+          <h2 class="max-w-xl font-heading text-3xl sm:text-4xl">Austritt aus der Kirche</h2>
         </div>
         <div class="w-full lg:w-auto px-4">
 
@@ -82,7 +81,7 @@
                   </svg>
                   <span class="ml-4 text-sm">Schreiben für Steuergemeinde</span>
                 </li>
-                <li class="flex items-center mb-4">
+                <li class="flex items-center text-gray-300 mb-1">
                   <svg xmlns="http://www.w3.org/2000/svg"
                        width="21"
                        height="21"
@@ -94,10 +93,10 @@
                   </svg>
                   <span class="ml-4 text-sm">Garantie</span>
                 </li>
-                <li class="flex items-center text-gray-300">
-                  <span class="ml-4 text-sm"><span class="mr-2">*</span>Wenn du die Adresse der Kirchengemeinde besitzt.</span>
-                </li>
               </ul>
+              <div class="flex items-center text-gray-300">
+                <span class="ml-4 text-sm"><span class="mr-2">*</span>Wenn du die Adresse der Kirchengemeinde besitzt</span>
+              </div>
             </div>
           </div>
           <div class="w-full lg:w-1/2 px-4">
@@ -156,7 +155,7 @@
                           stroke-linejoin="round"></path>
                     <circle cx="10" cy="10" r="9" stroke="#00CBA6" stroke-width="1.5"></circle>
                   </svg>
-                  <span class="ml-4 text-sm">Mit Adresse der Kirchgemeinde</span>
+                  <span class="ml-4 text-sm">Wir finden die Adresse der Kirchgemeinde</span>
                 </li>
                 <li class="flex items-center mb-3">
                   <svg width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">

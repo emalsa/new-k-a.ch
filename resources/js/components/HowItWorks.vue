@@ -9,8 +9,9 @@
               <span class="text-green-500">&nbsp;funktioniert</span>
             </div>
             <h1 class="font-heading text-3xl sm:text-4xl mb-6">Ich möchte keine Kirchensteuern mehr bezahlen</h1>
-            <p class="max-w-sm text-lg leading-8 mb-8">Sobald du offiziell aus der Kirche ausgetreten bist. Und das geht
-              schnell.</p>
+            <p class="max-w-sm text-lg leading-8 mb-2">Sobald du offiziell aus der Kirche ausgetreten bist. Und das geht
+              schnell. Ohne Begr&uuml;ndung.</p>
+            <p class="max-w-sm text-lg leading-8 mb-8">Austreten aus Römisch-Katholischen oder Evangelisch-Reformierten Kirche.</p>
             <a class="inline-block w-full sm:w-auto py-4 px-6 text-center font-heading font-medium text-base text-gray-900 hover:text-green-500 border border-gray-900 hover:border-green-500 rounded-sm transition duration-150"
                href="#">Learn more</a>
           </div>
@@ -37,8 +38,7 @@
                 <div>
                   <h3 class="font-heading text-lg font-medium mb-4">Formular ausf&uuml;llen</h3>
                   <p class="max-w-xxs leading-7">Fülle das Austrittsformular Schweiz <a href="#">hier</a> aus. Dafür
-                    braucht es
-                    nur deinen Namen, Adresse und Geburtsdatum.</p>
+                    braucht es nur deinen Namen, Adresse und Geburtsdatum.</p>
                 </div>
               </div>
               <div class="flex mb-10">
@@ -129,6 +129,7 @@
     </div>
   </section>
 </template>
+
 <script>
 export default {}
 </script>
