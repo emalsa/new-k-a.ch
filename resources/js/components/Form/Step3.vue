@@ -13,7 +13,7 @@
     </div>
 
     <div v-if="formData.hasChildren">
-      <div class="border border-sky-500 px-10 pt-10"
+      <div class="border border-sky-500 px-10 pt-10 mt-8"
            v-for="(childElement, childrenCount) in children"
            v-bind:key="childrenCount">
         <div>
@@ -50,8 +50,8 @@
           <label class="required block text-md leading-6 mb-2" for="">Konfession</label>
           <div class="relative">
             <select
-                    class="appearance-none block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
-                    v-model="children[childrenCount].konfession">
+                class="appearance-none block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
+                v-model="children[childrenCount].konfession">
               <option value="">Bitte auswählen</option>
               <option value="kath">R&ouml;misch-Katholisch (Kath.)</option>
               <option value="ref">Evangelisch-Reformiert (Ref.)</option>
@@ -69,8 +69,8 @@
                    v-model="children[childrenCount].sign"
                    name="sign"
                    value="example value">
-            <span class="ml-1">Mein Kind ist in der Lage zu unterschreiben</span>
-            <span class="block text-md w-full py-4 font-heading rounded outline-none">Wenn dein Kind in der Lage ist, seinen Namen zu schreiben, kannst du das K&auml;stchen aktiviert lassen. Wenn es zum Beispiel zu jung ist, um zu unterschreiben, solltest du das K&auml;stchen deaktivieren.</span>
+            <span class="ml-1 leading-7">Mein Kind ist in der Lage zu unterschreiben</span>
+            <span class="block text-md w-full py-4 font-heading rounded outline-none leading-7">Wenn dein Kind in der Lage ist, seinen Namen zu schreiben, kannst du das K&auml;stchen aktiviert lassen. Wenn es zum Beispiel zu jung ist, um zu unterschreiben, solltest du das K&auml;stchen deaktivieren.</span>
           </label>
         </div>
         <!--Taufdatum checkbox -->
@@ -119,10 +119,10 @@ export default {
       this.children.splice(count, 1)
     },
     addChild() {
-      this.children.push({});
+      this.children.push({sign: true});
     },
     clickHasChildren() {
-      this.children.push({});
+      this.children.push({sign: true});
     },
   }
 }

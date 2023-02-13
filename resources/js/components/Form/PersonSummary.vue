@@ -1,8 +1,12 @@
 <template>
   <div>
-    <h5 class="uppercase mb-6">{{ headline }}</h5>
-    <table>
-      <tr>
+    <h5 class=" mb-8 font-heading text-2xl mb-4">{{ headline }}</h5>
+    <table class="leading-7">
+      <tr v-if="element.email">
+        <td>Email</td>
+        <td>{{ element.email }}</td>
+      </tr>
+      <tr v-if="element.vorname">
         <td>Vorname</td>
         <td>{{ element.vorname }}</td>
       </tr>
@@ -18,6 +22,12 @@
         <td>Konfession</td>
         <td>{{ konfessionName }}</td>
       </tr>
+
+      <tr v-if="isChild">
+        <td>Unterschreiben</td>
+        <td>{{ element.sign ? 'Ja' : 'Nein' }}</td>
+      </tr>
+
       <tr>
         <td>Taufdatum</td>
         <td>{{ element.taufdatum ? element.taufdatum : '-' }}</td>
@@ -25,19 +35,6 @@
       <tr>
         <td>Taufort</td>
         <td>{{ element.taufort ? element.taufort : '-' }}</td>
-      </tr>
-    </table>
-
-    <table v-if="element.streetAddress" class="mt-6">
-      <tr>
-        <td class="address">Adresse<span>Adree</span></td>
-        <td>
-          {{ element.streetAddress }}
-          <br v-if="element.streetAdditionalAddress" />
-          {{ element.streetAdditionalAddress }}
-          <br />
-          {{ element.postalAddress }}&nbsp;{{element.locationAddress}}
-        </td>
       </tr>
     </table>
   </div>
@@ -50,7 +47,11 @@ export default {
   computed: {
     konfessionName() {
       return this.$props.element.konfession === 'kath' ? 'Römisch-Katholisch' : 'Evangelisch-Reformiert';
-    }
+    },
+    isChild() {
+      console.log(this.$props.element)
+      return this.$props.element.hasOwnProperty('sign');
+    },
   }
 }
 </script>

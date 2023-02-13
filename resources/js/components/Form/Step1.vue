@@ -54,7 +54,7 @@
 
     <!-- Address -->
     <div class="address mt-16">
-      <h4 class="mb-6 max-w-xs font-heading text-3xl mt-2">Deine Adresse</h4>
+      <h4 class="mb-8 font-heading text-2xl mb-4">Deine Adresse</h4>
       <div class="mb-6">
         <label class="required block text-md leading-6 mb-2" for="">Strasse und Nr.</label>
         <input class="block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
@@ -71,8 +71,8 @@
                type="text">
       </div>
 
-      <div class="mb-6 flex">
-        <div class="flex-grow w-1/12 pr-2">
+      <div class="mb-6 md:flex">
+        <div class="flex-grow sm:w-1/12 pr-2">
           <label class="required block text-md leading-6 mb-2" for="">Postleitzahl</label>
           <input class="block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
                  v-model="person.postalAddress"

@@ -4,8 +4,8 @@
     <section class="py-16 bg-white">
       <div class="container px-4 mx-auto">
 
-        <div class="max-w-xl mx-auto">
-          <div class="w-full mx-auto mb-14">
+        <div class="max-w-3xl mx-auto">
+          <div class="w-full mx-auto mb-14  max-w-2xl">
             <div class="bg-green-500  h-1 flex items-center justify-between">
 
               <div class="w-1/3 bg-green-500 h-1 flex items-center">
@@ -60,8 +60,7 @@
             </div>
           </div>
 
-
-          <div class="mb-6">
+          <div class="mb-6 mx-auto max-w-xl">
             <div class="mb-8">
               <span v-if="isStep1" class="text-md font-semibold uppercase">
                 <span>LASS UNS</span>
@@ -101,7 +100,7 @@
             </div>
           </div>
 
-          <form @submit.prevent="checkForm" class="bg-red">
+          <form @submit.prevent="checkForm" class="mx-auto max-w-xl">
 
             <!-- Step 1 (Person)-->
             <Step1 :is-step1="isStep1" :person="person" :formData="formData"/>
@@ -118,37 +117,40 @@
                 <div class="mb-2">
                   <label>
                     <input
+                        class="mt-2 mr-2"
                         @click="optionClicked"
                         type="radio"
                         name="paymentOrNot"
                         value="paymentChecked">
-                    <span class="ml-1">Sucht ihr mir die Kirchgemeinde heraus, ich will nur unterschreiben (15 Fr.)</span>
+                    <span class="ml-1 leading-7">Sucht ihr mir die Kirchgemeinde heraus, ich will nur unterschreiben (15 Fr.)</span>
                   </label>
                 </div>
 
                 <div class="my-8">
                   <label>
                     <input
+                        class="mt-2 mr-2"
                         @click="optionClicked"
                         type="radio"
                         name="paymentOrNot"
                         value="unpaymentChecked">
-                    <span class="ml-1">Ich habe die Adresse der Kirchgemeinde bereits oder werde sie selbst suchen (Gratis)</span>
+                    <span class="ml-1 leading-7">Ich habe die Adresse der Kirchgemeinde bereits oder werde sie selbst suchen (Gratis)</span>
                   </label>
                 </div>
               </div>
 
               <div v-if="formData.payment===false">
 
-                <div class="mt-16 p-6 border warning">
-                  <p>
-                    Du kannst die Adresse nachtr&auml;glich hinzuf&uuml;gen, sobald du die Email mit dem
-                    Austrittsschreiben von uns erhalten hast.
-                  </p>
-                </div>
 
                 <!-- Catholic -->
-                <div class="catholic p-8 mt-14 border" v-if="formData.isCatholic">
+                <div class="catholic p-8 mt-4 border" v-if="formData.isCatholic">
+                  <div class="mb-8">
+                    <p>
+                      Du kannst die Adressfelder leer lassen und nachtr&auml;glich hinzuf&uuml;gen, wenn du die Email
+                      mit dem
+                      Austrittsschreiben von uns erhalten hast.
+                    </p>
+                  </div>
                   <div class="mb-4">
                     <h5 class="uppercase mb-8">Katholische Kirchgemeinde</h5>
                     <label class="block text-md leading-6 mb-2" for="">Strasse und Nr.</label>
@@ -163,7 +165,7 @@
                            v-model="catholic.streetAdditionalAddress"
                            type="text">
                   </div>
-                  <div class="mb-6 flex">
+                  <div class="mb-6 md:flex">
                     <div class="flex-grow w-1/12 pr-2">
                       <label class="block text-md leading-6 mb-2" for="">Postleitzahl</label>
                       <input class="block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
@@ -182,7 +184,14 @@
                 </div>
 
                 <!-- Reform -->
-                <div class="reform p-8 mt-14 border" v-if="formData.isReform">
+                <div class="reform p-8 mt-8 border" v-if="formData.isReform">
+                  <div class="mb-8">
+                    <p>
+                      Du kannst die Adressfelder leer lassen und nachtr&auml;glich hinzuf&uuml;gen, wenn du die Email
+                      mit dem
+                      Austrittsschreiben von uns erhalten hast.
+                    </p>
+                  </div>
                   <h5 class="uppercase mb-8">Reformierte Kirchgemeinde</h5>
                   <div class="mb-4">
                     <label class="block text-md leading-6 mb-2" for="">Strasse und Nr.</label>
@@ -197,15 +206,15 @@
                            v-model="reform.streetAdditionalAddress"
                            type="text">
                   </div>
-                  <div class="mb-6 flex">
-                    <div class="flex-grow w-1/12 pr-2">
+                  <div class="mb-6 md:flex">
+                    <div class="flex-grow w-1/12  pr-2">
                       <label class="block text-md leading-6 mb-2" for="">Postleitzahl</label>
                       <input class="block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
                              v-model="reform.postalAddress"
                              type="text"
                              placeholder="3000">
                     </div>
-                    <div class="flex-grow">
+                    <div class="md:flex-grow">
                       <label class="block text-md leading-6 mb-2" for="">Ort</label>
                       <input class="block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
                              v-model="reform.locationAddress"
@@ -218,26 +227,225 @@
             </div>
             <!-- Step 5 (Summary) -->
             <div v-if="isStep5" class="step5">
-              <div class="">
-                <!--                <div>-->
-                <!--                  <h3 class="font-heading mt-2 mb-14 text-2xl">Zusammenfassung</h3>-->
+
+              <div class="flex flex-wrap -mx-4 mt-16">
+                <!--                <div class="w-full lg:w-1/3 px-4">-->
+                <!--                  <ul>-->
+                <!--                    <li class="flex items-center mb-4">-->
+                <!--                      <div class="w-2 py-px bg-green-500 mr-4"></div>-->
+                <!--                      <a class="font-heading text-lg font-medium text-green-500" href="#">Sheridan</a>-->
+                <!--                    </li>-->
+                <!--                    <li class="flex items-center mb-4"><a class="font-heading text-lg font-medium" href="#">Neonic</a>-->
+                <!--                    </li>-->
+                <!--                    <li class="flex items-center mb-4"><a class="font-heading text-lg font-medium" href="#">Torf</a>-->
+                <!--                    </li>-->
+                <!--                    <li class="flex items-center mb-4"><a class="font-heading text-lg font-medium" href="#">Klakier</a>-->
+                <!--                    </li>-->
+                <!--                  </ul>-->
                 <!--                </div>-->
 
-                <PersonSummary class="p-8 border border-sky-500 mb-10"
-                               :element="person"
-                               headline="Deine Daten"/>
 
-                <PersonSummary v-if="formData.hatEhepartner"
-                               class="p-8 border border-sky-500 mb-10"
-                               :element="partner"
-                               headline="Ehepartner"/>
+                <div class="w-full px-4 border">
 
-                <div v-if="formData.hasChildren"
-                     class="border border-sky-500"
-                     v-for="(child, index) in children"
-                     :key="index">
-                  <PersonSummary :element="child" headline="Kinder"/>
+                  <!-- Person -->
+                  <div class="relative h-88 px-8 mx-auto sm:pl-10 py-8 border-b-1 mx-6">
+                    <div class="relative max-w-xs">
+                      <div class="mb-12">
+                        <PersonSummary class=""
+                                       :element="person"
+                                       headline="Deine Daten"/>
+                      </div>
+                      <a class="group inline-flex items-center" href="#">
+                        <span class="mr-4 text-sm" @click="prev(1)">Bearbeiten</span>
+                        <div class="flex items-center justify-center w-5 h-5 rounded-full bg-green-500 group-hover:bg-green-600">
+                          <svg width="12"
+                               height="12"
+                               viewbox="0 0 12 12"
+                               fill="none"
+                               xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2.5 6H9.5M9.5 6L6.5 3M9.5 6L6.5 9"
+                                  stroke="white"
+                                  stroke-width="1.5"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"></path>
+                          </svg>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+
+                  <!-- Ehepartner -->
+                  <div v-if="formData.hatEhepartner" class="relative h-88 px-8 mx-auto sm:pl-10 py-8 border-b-1 mx-6">
+                    <div class="relative max-w-xs">
+                      <div class="mb-12">
+                        <PersonSummary :element="partner" headline="Ehepartner"/>
+                      </div>
+                    </div>
+                    <a class="group inline-flex items-center" href="#">
+                      <span class="mr-4 text-sm" @click="prev(2)">Bearbeiten</span>
+                      <div class="flex items-center justify-center w-5 h-5 rounded-full bg-green-500 group-hover:bg-green-600">
+                        <svg width="12"
+                             height="12"
+                             viewbox="0 0 12 12"
+                             fill="none"
+                             xmlns="http://www.w3.org/2000/svg">
+                          <path d="M2.5 6H9.5M9.5 6L6.5 3M9.5 6L6.5 9"
+                                stroke="white"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"></path>
+                        </svg>
+                      </div>
+                    </a>
+                  </div>
+
+                  <!-- Children -->
+                  <div v-if="formData.hasChildren" class="relative h-88 px-8 mx-auto sm:pl-10 py-8 border-b-1 mx-6">
+                    <div class="relative max-w-xs">
+                      <h5 class="uppercase mb-6 font-heading text-2xl mb-4">Kinder</h5>
+                      <div class="mb-12"
+                           v-for="(child, index) in children"
+                           :key="index">
+                        <PersonSummary :element="child"/>
+                      </div>
+                    </div>
+                    <a class="group inline-flex items-center" href="#">
+                      <span class="mr-4 text-sm" @click="prev(3)">Bearbeiten</span>
+                      <div class="flex items-center justify-center w-5 h-5 rounded-full bg-green-500 group-hover:bg-green-600">
+                        <svg width="12"
+                             height="12"
+                             viewbox="0 0 12 12"
+                             fill="none"
+                             xmlns="http://www.w3.org/2000/svg">
+                          <path d="M2.5 6H9.5M9.5 6L6.5 3M9.5 6L6.5 9"
+                                stroke="white"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"></path>
+                        </svg>
+                      </div>
+                    </a>
+                  </div>
+
+                  <!-- Address -->
+                  <div class="relative h-88 px-8 mx-auto sm:pl-10 py-8 border-b-1 mx-6">
+                    <div class="relative max-w-xs">
+                      <div class="mb-12">
+                        <AddressSummary :element="person" headline="Deine Adresse"/>
+                      </div>
+                    </div>
+                    <a class="group inline-flex items-center" href="#">
+                      <span class="mr-4 text-sm" @click="prev(1)">Bearbeiten</span>
+                      <div class="flex items-center justify-center w-5 h-5 rounded-full bg-green-500 group-hover:bg-green-600">
+                        <svg width="12"
+                             height="12"
+                             viewbox="0 0 12 12"
+                             fill="none"
+                             xmlns="http://www.w3.org/2000/svg">
+                          <path d="M2.5 6H9.5M9.5 6L6.5 3M9.5 6L6.5 9"
+                                stroke="white"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"></path>
+                        </svg>
+                      </div>
+                    </a>
+                  </div>
+
+                  <!-- Catholic church -->
+                  <div v-if="!formData.payment && formData.isCatholic"
+                       class="relative h-88 px-8 mx-auto sm:pl-10 py-8 border-b-1 mx-6">
+                    <div class="relative">
+                      <div class="mb-12">
+                        <AddressSummary :element="catholic" headline="Katholische Kirchgemeinde"/>
+                      </div>
+                    </div>
+                    <a class="group inline-flex items-center" href="#">
+                      <span class="mr-4 text-sm" @click="prev(null)">Bearbeiten</span>
+                      <div class="flex items-center justify-center w-5 h-5 rounded-full bg-green-500 group-hover:bg-green-600">
+                        <svg width="12"
+                             height="12"
+                             viewbox="0 0 12 12"
+                             fill="none"
+                             xmlns="http://www.w3.org/2000/svg">
+                          <path d="M2.5 6H9.5M9.5 6L6.5 3M9.5 6L6.5 9"
+                                stroke="white"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"></path>
+                        </svg>
+                      </div>
+                    </a>
+                  </div>
+
+                  <!-- Reform church -->
+                  <div v-if="!formData.payment && formData.isReform"
+                       class="relative h-88 px-8 mx-auto sm:pl-10 py-8 border-b-1 mx-6">
+                    <div class="relative">
+                      <div class="mb-12">
+                        <AddressSummary :element="reform" headline="Reformierte Kirchgemeinde"/>
+                      </div>
+                    </div>
+                    <a class="group inline-flex items-center" href="#">
+                      <span class="mr-4 text-sm" @click="prev(null)">Bearbeiten</span>
+                      <div class="flex items-center justify-center w-5 h-5 rounded-full bg-green-500 group-hover:bg-green-600">
+                        <svg width="12"
+                             height="12"
+                             viewbox="0 0 12 12"
+                             fill="none"
+                             xmlns="http://www.w3.org/2000/svg">
+                          <path d="M2.5 6H9.5M9.5 6L6.5 3M9.5 6L6.5 9"
+                                stroke="white"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"></path>
+                        </svg>
+                      </div>
+                    </a>
+                  </div>
+
+                  <!-- Payment -->
+                  <div class="relative h-88 px-8 mx-auto sm:pl-10 py-8 mx-6">
+                    <div class="relative max-w-xs">
+                      <div class="mb-4">
+                        <h5 class=" mb-8 font-heading text-2xl mb-4">Kosten</h5>
+                        <p v-if="!formData.payment">Gratis</p>
+                        <div v-if="formData.payment">
+                          <p>15 Franken</p>
+                          <div class="mb-6 mt-6 ">
+                            <div class="mb-2">
+                              <label> <span>Bezahlen mit</span><br/>
+                                <input
+                                    class="mt-4 mr-2"
+                                    @click="optionPaymentClicked"
+                                    checked
+                                    type="radio"
+                                    name="paymentMethod"
+                                    value="stripe">
+                                <span class="ml-1">Kreditkarte, ApplePay, Google Pay etc.</span>
+                              </label>
+                            </div>
+
+                            <!--                            <div class="my-8">-->
+                            <!--                              <label>-->
+                            <!--                                <input-->
+                            <!--                                    @click="optionPaymentClicked"-->
+                            <!--                                    type="radio"-->
+                            <!--                                    name="paymentMethod"-->
+                            <!--                                    value="Twint">-->
+                            <!--                                <span class="ml-1">Twint</span>-->
+                            <!--                              </label>-->
+                            <!--                            </div>-->
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+
                 </div>
+
+
               </div>
             </div>
 
@@ -248,10 +456,11 @@
               <div class="w-1/2 pr-32 text-left">
                 <button class="w-full block py-4 px-6 text-center font-heading font-medium text-base text-white bg-green-500 hover:bg-green-600 border border-green-500 hover:border-green-600 rounded-sm transition duration-200"
                         name="back"
-                        @click.prevent="prev">
+                        @click.prevent="prev(null)">
                   Zurück
                 </button>
               </div>
+
               <!-- Weiter -->
               <div v-if="!isStep5" class="w-1/2 text-right">
                 <button class="w-full block py-4 px-6 text-center font-heading font-medium text-base text-white bg-green-500 hover:bg-green-600 border border-green-500 hover:border-green-600 rounded-sm transition duration-200"
@@ -259,11 +468,13 @@
                   Weiter
                 </button>
               </div>
+
               <div v-if="isStep5" class="w-1/2 text-right">
                 <button class="w-full block py-4 px-6 text-center font-heading font-medium text-base text-white bg-green-500 hover:bg-green-600 border border-green-500 hover:border-green-600 rounded-sm transition duration-200"
                         name="next"
                         @click.prevent="submit">
-                  Best&auml;tigen
+                  <span v-if="!formData.payment">Abschicken</span>
+                  <span v-if="formData.payment">Bestellen</span>
                 </button>
               </div>
             </div>
@@ -282,6 +493,7 @@ import Step1 from './Form/Step1.vue'
 import Step2 from './Form/Step2.vue'
 import Step3 from './Form/Step3.vue'
 import PersonSummary from './Form/PersonSummary.vue';
+import AddressSummary from "./Form/AddressSummary.vue";
 
 export default {
   components: {
@@ -289,6 +501,7 @@ export default {
     Step2,
     Step3,
     PersonSummary,
+    AddressSummary
   },
   data() {
     return {
@@ -370,6 +583,49 @@ export default {
     }
   },
   methods: {
+    optionPaymentClicked(event) {
+    },
+    prev(goToStep) {
+      this.errors = [];
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+      this.formData.payment = null;
+      if (goToStep) {
+        this.currentStep = goToStep;
+        return
+      }
+      this.currentStep--;
+    },
+    next() {
+      this.errors = [];
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+      this.currentStep++;
+    },
+    submit() {
+      axios.post('/api/create-person?XDEBUG_SESSION_START=PHPSTORM', {
+            person: this.person,
+            partner: this.partner,
+            children: this.children,
+            formData: this.formData,
+            catholic: this.catholic,
+            reform: this.reform,
+            currentStep: this.currentStep,
+          }
+      )
+          .then((response) => {
+            console.log('Success:');
+            console.log(response);
+          })
+          .catch(e => {
+            console.log('Error:');
+            console.log(e);
+          });
+    },
     optionClicked(event) {
       this.formData.payment = null;
       if (event.target.value === 'unpaymentChecked') {
@@ -407,23 +663,6 @@ export default {
         });
       }
 
-    },
-    prev() {
-      this.errors = [];
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-      });
-      this.formData.payment = null;
-      this.currentStep--;
-    },
-    next() {
-      this.errors = [];
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-      });
-      this.currentStep++;
     },
     checkForm: function (e) {
       this.errors = [];
@@ -566,26 +805,6 @@ export default {
       });
       e.preventDefault();
     },
-    submit() {
-      axios.post('/api/create-person?XDEBUG_SESSION_START=PHPSTORM', {
-            person: this.person,
-            partner: this.partner,
-            children: this.children,
-            formData: this.formData,
-            catholic: this.catholic,
-            reform: this.reform,
-            currentStep: this.currentStep,
-          }
-      )
-          .then((response) => {
-            console.log('Success:');
-            console.log(response);
-          })
-          .catch(e => {
-            console.log('Error:');
-            console.log(e);
-          });
-    }
   }
 }
 </script>
