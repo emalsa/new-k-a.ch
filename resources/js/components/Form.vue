@@ -121,7 +121,8 @@
                         @click="optionClicked"
                         type="radio"
                         name="paymentOrNot"
-                        value="paymentChecked">
+                        value="paymentChecked"
+                        :checked="this.formData.payment">
                     <span class="ml-1 leading-7">Sucht ihr mir die Kirchgemeinde heraus, ich will nur unterschreiben (15 Fr.)</span>
                   </label>
                 </div>
@@ -133,7 +134,8 @@
                         @click="optionClicked"
                         type="radio"
                         name="paymentOrNot"
-                        value="unpaymentChecked">
+                        value="unpaymentChecked"
+                        :checked="!this.formData.payment">
                     <span class="ml-1 leading-7">Ich habe die Adresse der Kirchgemeinde bereits oder werde sie selbst suchen (Gratis)</span>
                   </label>
                 </div>
@@ -151,8 +153,16 @@
                       Austrittsschreiben von uns erhalten hast.
                     </p>
                   </div>
+                  <h5 class="uppercase mb-8">Katholische Kirchgemeinde</h5>
+
                   <div class="mb-4">
-                    <h5 class="uppercase mb-8">Katholische Kirchgemeinde</h5>
+                    <label class="block text-md leading-6 mb-2" for="">Anschrift</label>
+                    <input class="block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
+                           v-model="catholic.anschriftAddress"
+                           type="text"
+                           placeholder="Kirchgemeinde Musterhausen">
+                  </div>
+                  <div class="mb-4">
                     <label class="block text-md leading-6 mb-2" for="">Strasse und Nr.</label>
                     <input class="block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
                            v-model="catholic.streetAddress"
@@ -193,6 +203,13 @@
                     </p>
                   </div>
                   <h5 class="uppercase mb-8">Reformierte Kirchgemeinde</h5>
+                  <div class="mb-4">
+                    <label class="block text-md leading-6 mb-2" for="">Anschrift</label>
+                    <input class="block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
+                           v-model="reform.anschriftAddress"
+                           type="text"
+                           placeholder="Kirchgemeinde Musterhausen">
+                  </div>
                   <div class="mb-4">
                     <label class="block text-md leading-6 mb-2" for="">Strasse und Nr.</label>
                     <input class="block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
@@ -248,7 +265,7 @@
                 <div class="w-full px-4 border">
 
                   <!-- Person -->
-                  <div class="relative h-88 px-8 mx-auto sm:pl-10 py-8 border-b-1 mx-6">
+                  <div class="relative h-88 px-6 py-8 border-b-1">
                     <div class="relative max-w-xs">
                       <div class="mb-12">
                         <PersonSummary class=""
@@ -275,7 +292,7 @@
                   </div>
 
                   <!-- Ehepartner -->
-                  <div v-if="formData.hatEhepartner" class="relative h-88 px-8 mx-auto sm:pl-10 py-8 border-b-1 mx-6">
+                  <div v-if="formData.hatEhepartner" class="relative h-88 px-6 py-8 border-b-1">
                     <div class="relative max-w-xs">
                       <div class="mb-12">
                         <PersonSummary :element="partner" headline="Ehepartner"/>
@@ -300,7 +317,7 @@
                   </div>
 
                   <!-- Children -->
-                  <div v-if="formData.hasChildren" class="relative h-88 px-8 mx-auto sm:pl-10 py-8 border-b-1 mx-6">
+                  <div v-if="formData.hasChildren" class="relative h-88 px-6 py-8 border-b-1">
                     <div class="relative max-w-xs">
                       <h5 class="uppercase mb-6 font-heading text-2xl mb-4">Kinder</h5>
                       <div class="mb-12"
@@ -328,7 +345,7 @@
                   </div>
 
                   <!-- Address -->
-                  <div class="relative h-88 px-8 mx-auto sm:pl-10 py-8 border-b-1 mx-6">
+                  <div class="relative h-88 px-6 py-8 border-b-1">
                     <div class="relative max-w-xs">
                       <div class="mb-12">
                         <AddressSummary :element="person" headline="Deine Adresse"/>
@@ -354,7 +371,7 @@
 
                   <!-- Catholic church -->
                   <div v-if="!formData.payment && formData.isCatholic"
-                       class="relative h-88 px-8 mx-auto sm:pl-10 py-8 border-b-1 mx-6">
+                       class="relative h-88 px-6 py-8 border-b-1">
                     <div class="relative">
                       <div class="mb-12">
                         <AddressSummary :element="catholic" headline="Katholische Kirchgemeinde"/>
@@ -380,7 +397,7 @@
 
                   <!-- Reform church -->
                   <div v-if="!formData.payment && formData.isReform"
-                       class="relative h-88 px-8 mx-auto sm:pl-10 py-8 border-b-1 mx-6">
+                       class="relative h-88 px-6 py-8 border-b-1">
                     <div class="relative">
                       <div class="mb-12">
                         <AddressSummary :element="reform" headline="Reformierte Kirchgemeinde"/>
@@ -405,7 +422,7 @@
                   </div>
 
                   <!-- Payment -->
-                  <div class="relative h-88 px-8 mx-auto sm:pl-10 py-8 mx-6">
+                  <div class="relative h-88 px-6 py-8 border-b-1">
                     <div class="relative max-w-xs">
                       <div class="mb-4">
                         <h5 class=" mb-8 font-heading text-2xl mb-4">Kosten</h5>
@@ -512,7 +529,7 @@ export default {
         isReform: false,
         hatEhepartner: false,
         hasChildren: false,
-        payment: null,
+        payment: true,
       },
       person: {
         email: '',
@@ -549,12 +566,14 @@ export default {
       },
       children: [],
       catholic: {
+        anschriftAddress:'',
         streetAddress: '',
         streetAdditionalAddress: '',
         postalAddress: '',
         locationAddress: ''
       },
       reform: {
+        anschriftAddress:'',
         streetAddress: '',
         streetAdditionalAddress: '',
         postalAddress: '',
@@ -591,7 +610,7 @@ export default {
         top: 0,
         behavior: "smooth"
       });
-      this.formData.payment = null;
+      // this.formData.payment = null;
       if (goToStep) {
         this.currentStep = goToStep;
         return
@@ -627,13 +646,16 @@ export default {
           });
     },
     optionClicked(event) {
-      this.formData.payment = null;
+      // this.formData.payment = null;
       if (event.target.value === 'unpaymentChecked') {
         this.formData.payment = false;
       }
       if (event.target.value === 'paymentChecked') {
         this.formData.payment = true;
       }
+
+      console.log('isCatholic 1 :' + this.formData.isCatholic);
+      console.log('isReform 1 :' + this.formData.isReform);
 
       this.formData.isCatholic = false;
       this.formData.isReform = false;
@@ -645,11 +667,11 @@ export default {
         this.formData.isCatholic = true;
       }
 
-      if (this.formData.hasChildren && !this.formData.isCatholic) {
-        this.children.forEach(child => {
-          this.formData.isCatholic = child.konfession === 'kath'
-        });
-      }
+      // if (this.formData.hasChildren && !this.formData.isCatholic) {
+      //   this.children.forEach(child => {
+      //     this.formData.isCatholic = child.konfession === 'kath'
+      //   });
+      // }
 
       if (this.person.konfession === 'ref') {
         this.formData.isReform = true;
@@ -657,11 +679,14 @@ export default {
       if (this.formData.hatEhepartner && this.partner.konfession === 'ref') {
         this.formData.isReform = true;
       }
-      if (this.formData.hasChildren && !this.formData.isReform) {
-        this.children.forEach(child => {
-          this.formData.isReform = child.konfession === 'ref'
-        });
-      }
+      // if (this.formData.hasChildren && !this.formData.isReform) {
+      //   this.children.forEach(child => {
+      //     this.formData.isReform = child.konfession === 'ref'
+      //   });
+      // }
+
+      console.log('isCatholic 2 :' + this.formData.isCatholic);
+      console.log('isReform 2 :' + this.formData.isReform);
 
     },
     checkForm: function (e) {

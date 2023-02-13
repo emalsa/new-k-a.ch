@@ -16,6 +16,7 @@ return new class extends Migration {
       $table->id();
       $table->foreignId('person_id');
       $table->string('confession');
+      $table->string('anschriftAddress');
       $table->string('streetAddress');
       $table->string('streetAdditionalAddress')->nullable();
       $table->string('postalAddress');

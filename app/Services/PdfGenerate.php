@@ -92,7 +92,7 @@ class PdfGenerate {
   }
 
   protected function generatePDF($mode, $key, $personData, $person, &$hasChildren, $churchAddressData, $children) {
-    // We need the address, because partner doesn't have it
+    // We need the address from the person, because partner doesn't have it.
     if ($key === 'partner') {
       $personData['streetAddress'] = $person->getAttributeValue('streetAddress');
       $personData['streetAdditionalAddress'] = $person->getAttributeValue('streetAdditionalAddress');

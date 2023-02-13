@@ -65,7 +65,7 @@
 
         .receiver-falls-leer {
             margin-bottom: 0.5cm;
-            height: 1.75cm;
+            height: 1.85cm;
         }
 
         .sign {
@@ -127,15 +127,14 @@
         @if(!empty($churchAddressData))
             <div class="receiver">
                 <p class="einschreiben"><b>Einschreiben</b></p>
-                <!--            <p>{{$personData['vorname']}}&nbsp;{{$personData['nachname']}}</p>-->
-                <p>{{$churchAddressData['streetAddress']}}</p>
+                <p>{{$churchAddressData['anschriftAddress']}}</p>
                 <p>{{$churchAddressData['streetAddress']}}</p>
                 <p>{{$churchAddressData['streetAdditionalAddress']}}</p>
                 <p>{{$churchAddressData['postalAddress']}}&nbsp;{{$churchAddressData['locationAddress']}}</p>
             </div>
         @else
             <div class="receiver receiver-falls-leer">
-
+                <p class="einschreiben"><b>Einschreiben</b></p>
             </div>
         @endif
 
@@ -154,8 +153,7 @@
                 <p>
                     Nach reiflicher &Uuml;berlegung habe ich mich entschieden, aus der Kirche auszutreten.
                     Hiermit erkl&auml;re ich meinen vollst&auml;ndigen Austritt sowohl aus der Kirchgemeinde als auch
-                    aus der
-                    {{$confessionFull}} Kirche mit sofortiger Wirkung.
+                    aus der {{$confessionFull}} Kirche mit sofortiger Wirkung.
                 </p>
             </div>
             <div class="person-data">
@@ -251,18 +249,14 @@
             @endif
             <div class="text-2">
                 <p>
-                    Ich w&uuml;nsche keine Kontaktaufnahme von der Kirche erhalten und lehne jegliche Gespr&auml;che
-                    dankend ab.
+                    Ich w&uuml;nsche keine Kontaktaufnahme von der Kirche und lehne jegliche Gespr&auml;che dankend ab.
                     Ich beabsichtige, keine Gr&uuml;nde f&uuml;r meinen Austritt zu nennen. Dies ist f&uuml;r einen
-                    Austritt nicht
-                    notwendig.
+                    Austritt nicht notwendig.
                     Ich bin nur f&uuml;r eine Kontaktaufnahme bereit, falls es Gr&uuml;nde gibt, die meinen Austritt
-                    unumg&auml;nglich
-                    verhindern w&uuml;rden.
+                    unumg&auml;nglich verhindern w&uuml;rden.
                     Ich bitte Sie h&ouml;flich, mich sofort zu informieren, sollte ein solcher Fall eintreten.
                     Ich bin damit einverstanden, dass nicht korrekte oder falsch aufgef&uuml;hrte Informationen in
-                    meiner
-                    Kirchenakte belassen werden k&ouml;nnen.
+                    meiner Kirchenakte belassen werden k&ouml;nnen.
                 </p>
             </div>
 
@@ -270,11 +264,9 @@
                 <div class="text-falls-kinder-2">
                     <p>
                         Die oben genannten Punkte gelten auch f&uuml;r die erw&auml;hnten Kinder. Der Austritt wurde gr&uuml;ndlich
-                        mit
-                        ihnen besprochen und ich versichere Ihnen, dass sie sich bewusst sind &uuml;ber die
+                        mit ihnen besprochen und ich versichere Ihnen, dass sie sich bewusst sind &uuml;ber die
                         damit einhergehenden Konsequenzen, einschließlich des Verzichts auf zuk&uuml;nftige Sakramente
-                        und
-                        &auml;hnliches.
+                        und &auml;hnliches.
                     </p>
                 </div>
             @endif
@@ -283,9 +275,7 @@
     <div class="text-3">
         <p>
             Ich bin mir der m&ouml;glichen Folgen und Konsequenzen meines Austritts aus der Kirche vollst&auml;ndig
-            bewusst und
-            ich bin informiert &uuml;ber die Rechte,
-            auf die ich mit meinem Austritt verzichte.
+            bewusst und ich bin informiert &uuml;ber die Rechte, auf die ich mit meinem Austritt verzichte.
             Ich bitte Sie, alle notwendigen Schritte einzuleiten und die relevanten Stellen, wie die Einwohnerkontrolle
             und die Kirchgemeinde, zu informieren.
         </p>

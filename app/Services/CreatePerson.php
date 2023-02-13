@@ -78,6 +78,7 @@ class CreatePerson {
           'taufDatumBekanntChild' => isset($childPostData['taufDatumBekanntChild']) ? $childPostData['taufDatumBekanntChild'] : FALSE,
           'taufdatum' => isset($childPostData['taufdatum']) ? $childPostData['taufdatum'] : '',
           'taufort' => isset($childPostData['taufort']) ? $childPostData['taufort'] : '',
+          'sign' => $childPostData['sign'],
         ]);
       }
 
@@ -87,6 +88,7 @@ class CreatePerson {
           // Catholic
           $person->churchAddress()->create([
             'confession' => 'kath',
+            'anschriftAddress' => $catholicPostData['anschriftAddress'],
             'streetAddress' => $catholicPostData['streetAddress'],
             'streetAdditionalAddress' => $catholicPostData['streetAdditionalAddress'],
             'postalAddress' => $catholicPostData['postalAddress'],
@@ -98,6 +100,7 @@ class CreatePerson {
         if ($formData['isReform']) {
           $reformPostData = $this->request->json('reform');
           $person->churchAddress()->create([
+            'anschriftAddress' => $reformPostData['anschriftAddress'],
             'confession' => 'reform',
             'streetAddress' => $reformPostData['streetAddress'],
             'streetAdditionalAddress' => $reformPostData['streetAdditionalAddress'],

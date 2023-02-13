@@ -11,6 +11,7 @@ class ChurchAddress extends Model {
 
   protected $fillable = [
     'confession',
+    'anschriftAddress',
     'streetAddress',
     'streetAdditionalAddress',
     'postalAddress',
