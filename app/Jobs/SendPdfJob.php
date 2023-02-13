@@ -76,7 +76,7 @@ class SendPdfJob implements ShouldQueue {
       SendPdfJob::dispatch($person)->onQueue('pdfSend');
     }
 
-    $person->setAttribute('finalMailSent', TRUE);
+    $person->setAttribute('finalMailSent', 1);
     $person->save();
 
   }
