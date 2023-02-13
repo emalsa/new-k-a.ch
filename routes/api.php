@@ -1,6 +1,7 @@
 <?php
 
 use App\Jobs\CreatePdfJob;
+use App\Jobs\SendPdfJob;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Log;
@@ -28,7 +29,7 @@ Route::post('/pdf', 'App\Services\PdfGenerate@generate');
 
 // Run queue worker, because there are some problems
 // on the hoster side to run the queue workers via cron.
-Route::post('queue-work/create-pdf/dispatch', function () {
+Route::get('queue-work/create-pdf/dispatch', function () {
   try {
     CreatePdfJob::store();
   }
@@ -40,12 +41,37 @@ Route::post('queue-work/create-pdf/dispatch', function () {
 
 // Run queue worker, because there are some problems
 // on the hoster side to run the queue workers via cron.
-Route::post('queue-work/create-pdf/work', function () {
+Route::get('queue-work/create-pdf/work', function () {
   try {
-    Artisan::call('queue:work --queue=pdfGenerate --stop-when-empty --max-jobs=20');
+    Artisan::call('queue:work --queue=pdfGenerate --stop-when-empty --max-jobs=2');
   }
   catch (\Exception $e) {
     Log::error('Error calling /api/queue-work/create-pdf/work route.');
+    Log::error($e->getMessage());
+  }
+});
+
+
+// Run queue worker, because there are some problems
+// on the hoster side to run the queue workers via cron.
+Route::get('queue-work/send-pdf/dispatch', function () {
+  try {
+    SendPdfJob::store();
+  }
+  catch (\Exception $e) {
+    Log::error('Error calling /api/queue-work/send-pdf/dispatch route.');
+    Log::error($e->getMessage());
+  }
+});
+
+// Run queue worker, because there are some problems
+// on the hoster side to run the queue workers via cron.
+Route::get('queue-work/send-pdf/work', function () {
+  try {
+    Artisan::call('queue:work --queue=pdfSend --stop-when-empty --max-jobs=5');
+  }
+  catch (\Exception $e) {
+    Log::error('Error calling /api/queue-work/send-pdf/work route.');
     Log::error($e->getMessage());
   }
 });

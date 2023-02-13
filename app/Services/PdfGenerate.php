@@ -6,32 +6,23 @@ use App\Models\Partner;
 use App\Models\Person;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
+use Symfony\Component\ErrorHandler\Error\FatalError;
 
 
 class PdfGenerate {
 
 
   public function generate(int $personId) {
-    //    string|int $personId
-    //    $personId = 2;
     /** @var Person $person */
     $person = Person::find($personId);
-
     $partner = $person->partner()->first();
-    //    $partner['reform'] = $person->partner()->where('konfession', '=', 'ref')->get();
-
     $children = $person->children()->get();
-    //    $children['reform'] = $person->children()->where('konfession', '=', 'ref')->get();
 
-    $catholicMode = [
-      'children' => [],
-      'churchAddress' => [],
-    ];
-    $reformMode = [
-      'children' => [],
-      'churchAddress' => [],
-    ];
+    $catholicMode = ['children' => [], 'churchAddress' => [],];
+    $reformMode = ['children' => [], 'churchAddress' => [],];
 
     if ($person->getAttributeValue('konfession') === 'kath') {
       $catholicMode['person'] = $person;
@@ -87,8 +78,8 @@ class PdfGenerate {
       $churchAddressData = $reformMode['churchAddress'];
       $this->generatePDF('reform', $key, $item, $person, $hasChildren, $churchAddressData, $reformMode['children']);
     }
-
-
+    $person->setAttribute('readyToSendFinalMail', TRUE);
+    $person->save();
   }
 
   protected function generatePDF($mode, $key, $personData, $person, &$hasChildren, $churchAddressData, $children) {
@@ -109,8 +100,22 @@ class PdfGenerate {
       $childrenData = [];
     }
     $currentDate = $this->getGermanDate();
-    $pdf = Pdf::loadView('austritt', compact('personData', 'childrenData', 'churchAddressData', 'currentDate', 'mode'))->setPaper('a4');
-    $file = $pdf->save("public/{$mode}_austritt_{$key}.pdf", 'local');
+    try {
+      $fileStorage = Storage::disk('private');
+      $filePathFull = "{$person->getAttributeValue('email')}/{$person->getAttributeValue('id')}/{$mode}_austritt_{$key}.pdf";
+      $pdf = Pdf::loadView('austritt', compact('personData', 'childrenData', 'churchAddressData', 'currentDate', 'mode'))->setPaper('a4');
+      $pdf->save($filePathFull, 'private');
+
+      if (!$fileStorage->exists($filePathFull)) {
+        throw new \Exception('File does not exist: ' . $filePathFull);
+      }
+    }
+    catch (\Exception $exception) {
+      Log::error('Error generating PDF for: ' . $person->getAttributeValue('email'));
+      Log::error($exception->getMessage());
+      dd($exception->getMessage());
+
+    }
   }
 
   /**
