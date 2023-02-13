@@ -1,5 +1,5 @@
 <template>
-  <div v-if="isForm">
+  <div>
 
     <section class="py-16 bg-white">
       <div class="container px-4 mx-auto">
@@ -62,19 +62,24 @@
 
           <div class="mb-6 mx-auto max-w-xl">
 
-            <!-- Loading spinner -->
-            <div v-if="!isLoading"
-                 wire:loading
-                 class="fixed top-0 left-0 right-0 bottom-0 w-full h-screen z-50 overflow-hidden bg-gray-700 opacity-75 flex flex-col items-center justify-center">
+            <!-- Loading spinner Submit -->
+            <div v-if="isLoading" wire:loading
+                 class="fixed top-0 left-0 right-0 bottom-0 w-full h-screen z-50 overflow-hidden bg-gray-700 opacity-95 flex flex-col items-center justify-center">
               <div class="loader ease-linear rounded-full border-4 border-t-4 border-gray-200 h-12 w-12 mb-4"></div>
               <h2 class="text-center text-white text-xl font-semibold">Bitte warten...</h2>
               <p v-if="!this.formData.payment" class="w-1/3 text-center text-white">Daten werden gespeichert.</p>
-              <p v-if="this.formData.payment" class="w-1/2 text-center text-white">In ein paar Sekunden wirst du zur Bezahlseite weitergeleitet. Falls du nicht weitergeleitet wirst, benutze diesen Link.</p>
-              <p class="w-full text-center text-white mt-5"> https://buy.stripe.com/fZe7urdLl1TmcaQ003</p>
-
+              <p v-if="this.formData.payment" class="w-1/3 text-center text-white">In wenigen Sekunden wirst du zur
+                Bezahlseite weitergeleitet. Falls du nicht weitergeleitet wirst, benutze diesen Link.</p>
+              <p v-if="this.formData.payment" class="w-full text-center text-white mt-5">
+                <a :href=this.stripeURL>{{ this.stripeURL }}</a>
+              </p>
             </div>
 
-            <button>hey</button>
+            <div v-if="isLoadingStep" wire:loading
+                 class="fixed top-0 left-0 right-0 bottom-0 w-full h-screen z-50 overflow-hidden bg-gray-700 opacity-95 flex flex-col items-center justify-center">
+              <div class="loader ease-linear rounded-full border-4 border-t-4 border-gray-200 h-12 w-12 mb-4"></div>
+              <h2 class="text-center text-white text-xl font-semibold">Bitte warten...</h2>
+            </div>
 
             <div class="mb-8">
               <span v-if="isStep1" class="text-md font-semibold uppercase">
@@ -540,6 +545,9 @@ export default {
       errors: [],
       currentStep: 1,
       isLoading: false,
+      isLoadingStep: false,
+      stripeURL: 'https://buy.stripe.com/fZe7urdLl1TmcaQ003',
+      confirmURL: '/confirm',
       formData: {
         isCatholic: false,
         isReform: false,
@@ -598,10 +606,11 @@ export default {
     }
   },
   computed: {
-    isForm() {
-      return this.$route.name === 'Form'
-    },
     isStep1() {
+      this.isLoadingStep = true;
+      setTimeout(() => {
+        this.isLoadingStep = false;
+      }, '1000')
       return this.currentStep === 1;
     },
     isStep2() {
@@ -644,7 +653,7 @@ export default {
     submit() {
       this.isLoading = true;
       console.log(this.isLoading)
-      axios.post('/hapi/create-person?XDEBUG_SESSION_START=PHPSTORM', {
+      axios.post('/api/create-person?XDEBUG_SESSION_START=PHPSTORM', {
             person: this.person,
             partner: this.partner,
             children: this.children,
@@ -657,10 +666,17 @@ export default {
           .then((response) => {
             console.log('Success');
             if (this.formData.payment) {
-
+              setTimeout(() => {
+                this.isLoadingStep = false;
+                window.location.href = this.stripeURL
+              }, '8000')
             } else {
-              window.location.href = "/bestätigung"
+              setTimeout(() => {
+                this.isLoadingStep = false;
+                window.location.href = this.confirmURL
+              }, '5000')
             }
+
           })
           .catch(e => {
             this.errors = [];

@@ -5,12 +5,12 @@ import {createApp} from 'vue'
 import App from './App.vue'
 import Form from "./components/Form.vue";
 import {createRouter, createWebHistory} from "vue-router";
-import Success from "./components/Success.vue";
+import Confirm from "./components/Confirm.vue";
 
 const routes = [
     {path: '/home', component: App, name: 'App'},
     {path: '/formular', component: Form, name: 'Form'},
-    {path: '/success', component: Success, name: 'Success'}
+    {path: '/confirm', component: Confirm, name: 'Confirm'}
 ]
 
 const router = createRouter({
