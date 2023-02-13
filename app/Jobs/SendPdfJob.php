@@ -97,7 +97,7 @@ class SendPdfJob implements ShouldQueue {
     }
 
     try {
-      $this->mailgun->messages()->send('mail.kirche-austreten.ch', [
+      $this->mailgun->messages()->send('kirche-austreten.ch', [
           'from' => self::FROM,
           'to' => $this->person->getAttributeValue('email'),
           'subject' => self::SUBJECT,
