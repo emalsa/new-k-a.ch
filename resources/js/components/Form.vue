@@ -781,7 +781,7 @@ export default {
 
           if (this.children[i].taufdatum) {
             this.children[i].taufdatum = this.children[i].taufdatum.trim();
-            if (!/^\d{1,2}(\.)\d{1,2}(\.)\d{4}$/.test(this.partner.taufdatum)) {
+            if (!/^\d{1,2}(\.)\d{1,2}(\.)\d{4}$/.test(this.children[i].taufdatum)) {
               this.errors.push(childrenCount + ". Kind: Taufdatum Format ist nicht korrekt. Format Tag.Monat.Jahr erforderlich.");
             }
           }
