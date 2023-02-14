@@ -141,7 +141,7 @@ class SendPdfJob implements ShouldQueue {
       $responseCopy = $mg->messages()->send('kirche-austreten.ch', [
           'from' => self::FROM,
           'to' => self::SEND_COPY_TO,
-          'subject' => self::SUBJECT,
+          'subject' => 'Kopie: ' . self::SUBJECT,
           'template' => self::PDF_TEMPLATE,
           'attachment' => $attachments,
         ]
