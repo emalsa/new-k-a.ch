@@ -10,7 +10,7 @@
           <p> Solltest du keine Email erhalten haben nach 15 Minuten, prüfe ob die Email in den Spamordner gelandet
             ist. Kontaktiere uns ansonsten über das Kontaktformular, solltest du keine Email erhalten haben.</p>
 
-          <p class="mt-4">Sehr freuen würden wir uns auf dein Feedback.</p>
+          <p class="mt-4">Sehr freuen würden wir uns über dein Feedback.</p>
         </div>
 
       </div>
