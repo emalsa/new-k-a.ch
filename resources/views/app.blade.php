@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>kirche-austreten.ch</title>
+    <title>Kirche austreten</title>
     <meta title="Kirchenaustritt für die Schweiz. Auch Gratis">
     <meta name="description"
           content="Aus der Kirche austreten mit dem Gratis Austrittsformular. Schnell und einfach. Adresse der Kirchgemeinde suchen wir für dich.">
