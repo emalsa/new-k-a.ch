@@ -10,10 +10,10 @@
         </div>
         <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 hidden lg:block">
           <ul class="flex items-center">
-            <li class="font-heading mr-12 text-gray-900"><a class="hover:text-black" href="#wie-es-funktioniert">Wie es funktioniert</a></li>
-            <li class="font-heading mr-12 text-gray-900"><a class="hover:text-black" href="#angebot">Angebot</a></li>
-            <li class="font-heading mr-12 text-gray-900"><a class="hover:text-black" href="#fragen-und-antworten">Fragen und Antworten</a></li>
-            <li class="font-heading mr-12 text-gray-900"><a class="hover:text-black" href="#kontakt">Kontakt</a></li>
+            <li class="font-heading mr-12 text-gray-900"><a class="hover:text-black" href="/#wie-es-funktioniert">Wie es funktioniert</a></li>
+            <li class="font-heading mr-12 text-gray-900"><a class="hover:text-black" href="/#angebot">Angebot</a></li>
+            <li class="font-heading mr-12 text-gray-900"><a class="hover:text-black" href="/#fragen-und-antworten">Fragen und Antworten</a></li>
+            <li class="font-heading mr-12 text-gray-900"><a class="hover:text-black" href="/#kontakt">Kontakt</a></li>
           </ul>
         </div>
         <div class="w-auto hidden lg:block">
@@ -21,7 +21,7 @@
              href="/formular">Start</a></div>
         <div class="w-auto lg:hidden">
           <a class="navbar-burger inline-flex w-14 h-14 justify-center items-center bg-gray-50 hover:bg-gray-100 rounded-full"
-             href="#">
+             href="/#">
             <svg width="20" height="10" viewbox="0 0 20 10" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M19 9H1M19 1H1"
                     stroke="black"
@@ -38,16 +38,16 @@
       <div class="navbar-backdrop fixed inset-0 backdrop-blur-xl backdrop-filter bg-gray-900 bg-opacity-80"></div>
       <nav class="relative pt-7 pb-8 bg-white h-full overflow-y-auto">
         <div class="flex flex-col px-6 h-full">
-          <a class="inline-block ml-4 mb-7" href="#">
+          <a class="inline-block ml-4 mb-7" href="/#">
             <img width="48" height="48" src="../../assets/logo/logo-acros-black_alone.png" alt="">
           </a>
           <ul class="w-full mb-auto pb-16">
             <li><a class="font-heading block text-base font-medium py-4 px-6 hover:bg-green-50 rounded-sm"
                    href="/">kirche-austreten.ch</a></li>
-            <li><a class="font-heading block text-base py-4 px-6 hover:bg-green-50 rounded-sm" href="#wie-es-funktioniert">Wie es funktioniert</a></li>
-            <li><a class="font-heading block text-base py-4 px-6 hover:bg-green-50 rounded-sm" href="#angebot">Angebot</a></li>
-            <li><a class="font-heading block text-base py-4 px-6 hover:bg-green-50 rounded-sm" href="#fragen-und-antworten">Fragen und Antworten</a>            </li>
-            <li><a class="font-heading block text-base py-4 px-6 hover:bg-green-50 rounded-sm" href="#kontakt">Kontakt</a>
+            <li><a class="font-heading block text-base py-4 px-6 hover:bg-green-50 rounded-sm" href="/#wie-es-funktioniert">Wie es funktioniert</a></li>
+            <li><a class="font-heading block text-base py-4 px-6 hover:bg-green-50 rounded-sm" href="/#angebot">Angebot</a></li>
+            <li><a class="font-heading block text-base py-4 px-6 hover:bg-green-50 rounded-sm" href="/#fragen-und-antworten">Fragen und Antworten</a>            </li>
+            <li><a class="font-heading block text-base py-4 px-6 hover:bg-green-50 rounded-sm" href="/#kontakt">Kontakt</a>
             </li>
           </ul>
           <div class="w-full">

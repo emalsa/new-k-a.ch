@@ -12,8 +12,8 @@
             <p class="text-lg leading-8 mb-10">Deinen Kirchenaustritt kannst du gratis in wenigen Minuten erstellen lassen und per Email zukommen lassen. Oder passende Kirchgemeinde finden lassen.</p>
             <div class="sm:flex items-center">
               <a class="inline-block w-full sm:w-auto py-4 px-6 mb-4 sm:mb-0 sm:mr-4 text-center font-heading font-medium text-base text-white bg-green-500 hover:bg-green-600 border border-green-500 hover:border-green-600 rounded-sm transition duration-200"
-                 href="#angebot">Kirchenaustritt hier</a><a class="inline-block w-full sm:w-auto py-4 px-6 text-center font-heading font-medium text-base text-gray-900 hover:text-green-500 border border-gray-900 hover:border-green-500 rounded-sm transition duration-150"
-                                  href="#fragen-und-antworten">Mehr dazu</a></div>
+                 href="/#angebot">Kirchenaustritt hier</a><a class="inline-block w-full sm:w-auto py-4 px-6 text-center font-heading font-medium text-base text-gray-900 hover:text-green-500 border border-gray-900 hover:border-green-500 rounded-sm transition duration-150"
+                                  href="/#fragen-und-antworten">Mehr dazu</a></div>
           </div>
         </div>
 <!--        <div class="w-full lg:w-1/2 px-4"><img class="block mx-auto xl:mx-0"-->
@@ -34,7 +34,7 @@
 
           </div>
         </div>
-        <a class="inline-block text-gray-900" href="#wie-es-funktioniert">
+        <a class="inline-block text-gray-900" href="/#wie-es-funktioniert">
           <svg width="26" height="30" viewbox="0 0 26 30" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M13 1V29M13 29L25 17M13 29L1 17"
                   stroke="currentColor"

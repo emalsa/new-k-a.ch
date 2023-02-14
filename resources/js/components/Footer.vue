@@ -9,8 +9,8 @@
 
         </div>
         <div class="w-full sm:w-auto mb-6 sm:mb-0 sm:mr-16 text-center">
-          <a class="inline-block mr-16 font-heading text-white" href="#wie-es-funktioniert">Wie es funktioniert</a>
-          <a class="inline-block font-heading text-white" href="#angebot">Angebot</a>
+          <a class="inline-block mr-16 font-heading text-white" href="/#wie-es-funktioniert">Wie es funktioniert</a>
+          <a class="inline-block font-heading text-white" href="/#angebot">Angebot</a>
 
         </div>
         <div class="text-center hidden md:block absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-auto">
@@ -19,10 +19,10 @@
           <h2 class="text-white text-bold text-heading">kirche-austreten.ch</h2>
         </div>
         <div class="w-full sm:w-auto text-center">
-          <a class="inline-block mr-16 font-heading text-white" href="#fragen-und-antworten">Fragen und Antworten</a>
+          <a class="inline-block mr-16 font-heading text-white" href="/#fragen-und-antworten">Fragen und Antworten</a>
           <a
               class="inline-block font-heading text-white"
-              href="#kontakt">Kontakt</a></div>
+              href="/#kontakt">Kontakt</a></div>
       </div>
       <div class="relative flex justify-between items-center">
         <div class="w-auto">
@@ -31,7 +31,7 @@
         <div class="hidden md:block absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-auto">
 
         </div>
-        <div class="w-auto"><a class="text-gray-300" href="#">Privacy Policy</a></div>
+        <div class="w-auto"><a class="text-gray-300" href="/#">Privacy Policy</a></div>
       </div>
     </div>
   </section>

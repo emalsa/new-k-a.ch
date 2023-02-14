@@ -270,13 +270,13 @@
                 <!--                  <ul>-->
                 <!--                    <li class="flex items-center mb-4">-->
                 <!--                      <div class="w-2 py-px bg-green-500 mr-4"></div>-->
-                <!--                      <a class="font-heading text-lg font-medium text-green-500" href="#">Sheridan</a>-->
+                <!--                      <a class="font-heading text-lg font-medium text-green-500" href="/#">Sheridan</a>-->
                 <!--                    </li>-->
-                <!--                    <li class="flex items-center mb-4"><a class="font-heading text-lg font-medium" href="#">Neonic</a>-->
+                <!--                    <li class="flex items-center mb-4"><a class="font-heading text-lg font-medium" href="/#">Neonic</a>-->
                 <!--                    </li>-->
-                <!--                    <li class="flex items-center mb-4"><a class="font-heading text-lg font-medium" href="#">Torf</a>-->
+                <!--                    <li class="flex items-center mb-4"><a class="font-heading text-lg font-medium" href="/#">Torf</a>-->
                 <!--                    </li>-->
-                <!--                    <li class="flex items-center mb-4"><a class="font-heading text-lg font-medium" href="#">Klakier</a>-->
+                <!--                    <li class="flex items-center mb-4"><a class="font-heading text-lg font-medium" href="/#">Klakier</a>-->
                 <!--                    </li>-->
                 <!--                  </ul>-->
                 <!--                </div>-->
@@ -292,7 +292,7 @@
                                        :element="person"
                                        headline="Deine Daten"/>
                       </div>
-                      <a class="group inline-flex items-center" href="#">
+                      <a class="group inline-flex items-center" href="/#">
                         <span class="mr-4 text-sm" @click="prev(1)">Bearbeiten</span>
                         <div class="flex items-center justify-center w-5 h-5 rounded-full bg-green-500 group-hover:bg-green-600">
                           <svg width="12"
@@ -318,7 +318,7 @@
                         <PersonSummary :element="partner" headline="Ehepartner"/>
                       </div>
                     </div>
-                    <a class="group inline-flex items-center" href="#">
+                    <a class="group inline-flex items-center" href="/#">
                       <span class="mr-4 text-sm" @click="prev(2)">Bearbeiten</span>
                       <div class="flex items-center justify-center w-5 h-5 rounded-full bg-green-500 group-hover:bg-green-600">
                         <svg width="12"
@@ -346,7 +346,7 @@
                         <PersonSummary :element="child"/>
                       </div>
                     </div>
-                    <a class="group inline-flex items-center" href="#">
+                    <a class="group inline-flex items-center" href="/#">
                       <span class="mr-4 text-sm" @click="prev(3)">Bearbeiten</span>
                       <div class="flex items-center justify-center w-5 h-5 rounded-full bg-green-500 group-hover:bg-green-600">
                         <svg width="12"
@@ -371,7 +371,7 @@
                         <AddressSummary :element="person" headline="Deine Adresse"/>
                       </div>
                     </div>
-                    <a class="group inline-flex items-center" href="#">
+                    <a class="group inline-flex items-center" href="/#">
                       <span class="mr-4 text-sm" @click="prev(1)">Bearbeiten</span>
                       <div class="flex items-center justify-center w-5 h-5 rounded-full bg-green-500 group-hover:bg-green-600">
                         <svg width="12"
@@ -397,7 +397,7 @@
                         <AddressSummary :element="catholic" headline="Katholische Kirchgemeinde"/>
                       </div>
                     </div>
-                    <a class="group inline-flex items-center" href="#">
+                    <a class="group inline-flex items-center" href="/#">
                       <span class="mr-4 text-sm" @click="prev(null)">Bearbeiten</span>
                       <div class="flex items-center justify-center w-5 h-5 rounded-full bg-green-500 group-hover:bg-green-600">
                         <svg width="12"
@@ -423,7 +423,7 @@
                         <AddressSummary :element="reform" headline="Reformierte Kirchgemeinde"/>
                       </div>
                     </div>
-                    <a class="group inline-flex items-center" href="#">
+                    <a class="group inline-flex items-center" href="/#">
                       <span class="mr-4 text-sm" @click="prev(null)">Bearbeiten</span>
                       <div class="flex items-center justify-center w-5 h-5 rounded-full bg-green-500 group-hover:bg-green-600">
                         <svg width="12"

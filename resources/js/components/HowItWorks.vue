@@ -14,7 +14,7 @@
             <p class="max-w-sm text-lg leading-8 mb-8">Austritt aus der Römisch Katholischen oder Evangelisch
               Reformierten Kirche.</p>
             <a class="inline-block w-full sm:w-auto py-4 px-6 text-center font-heading font-medium text-base text-gray-900 hover:text-green-500 border border-gray-900 hover:border-green-500 rounded-sm transition duration-150"
-               href="#fragen-und-antworten">Fragen und Antworten</a>
+               href="/#fragen-und-antworten">Fragen und Antworten</a>
           </div>
         </div>
         <div class="w-full lg:w-1/2 px-4">
