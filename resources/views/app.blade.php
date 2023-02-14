@@ -10,12 +10,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@400;500;600;700&display=swap">
-    <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
-
-
+{{--    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@400;500;600;700&display=swap">--}}
+{{--    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">--}}
     <link rel="apple-touch-icon" sizes="57x57" href={{URL::asset('static/favicon/apple-icon-57x57.png')}}>
     <link rel="apple-touch-icon" sizes="60x60" href={{URL::asset('static/favicon/apple-icon-60x60.png')}}>
     <link rel="apple-touch-icon" sizes="72x72" href={{URL::asset('static/favicon/apple-icon-72x72.png')}}>
@@ -48,18 +44,23 @@
         gtag('js', new Date());
         gtag('config', 'G-CJ4WXHWCXT');
     </script>
-
-    @vite('resources/css/min/app.min.css')
-  <?php else: ?>
-    @vite('resources/css/app.css')
   <?php endif ?>
 
-    @vite('resources/js/app.js')
-    @vite('resources/js/main.js')
+
 
 </head>
 
 <body class="antialiased bg-body text-body font-body">
 <div id="app"></div>
+
+  <?php if ($_SERVER['HTTP_HOST'] === 'kirche-austreten.ch' || $_SERVER['HTTP_HOST'] === 'www.kirche-austreten.ch'): ?>
+
+@vite('resources/css/min/app.min.css')
+<?php else: ?>
+@vite('resources/css/app.css')
+<?php endif ?>
+
+@vite('resources/js/app.js')
+@vite('resources/js/main.js')
 </body>
 </html>
