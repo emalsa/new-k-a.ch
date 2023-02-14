@@ -23,21 +23,21 @@ class SendPdfJob implements ShouldQueue {
    *
    * @var string
    */
-  protected const SEND_COPY = "setaloro@gmail.com";
+  protected const SEND_COPY_TO = "info@kirche-austreten.ch";
 
   /**
    * From.
    *
    * @var string
    */
-  protected const FROM = 'kirche-austreten.ch support@mail.kirche-austreten.ch';
+  protected const FROM = 'kirche-austreten.ch info@mail.kirche-austreten.ch';
 
   /**
    * Alert: Subject.
    *
    * @var string
    */
-  protected const SUBJECT = 'kirche-austreten.ch: Dein Austrittsformular ist da!';
+  protected const SUBJECT = 'kirche-austreten.ch: Dein Austrittsformular ist fertig';
 
   /**
    * Register: Template.
@@ -46,9 +46,18 @@ class SendPdfJob implements ShouldQueue {
    */
   protected const PDF_TEMPLATE = 'documents__available';
 
-
+  /**
+   * The person entity
+   *
+   * @var \App\Models\Person
+   */
   protected Person $person;
 
+  /**
+   * The Mailgun handler
+   *
+   * @var \Mailgun\Mailgun
+   */
   protected Mailgun $mailgun;
 
   /**
@@ -74,10 +83,9 @@ class SendPdfJob implements ShouldQueue {
 
     if (!empty($person) && $person instanceof Person) {
       SendPdfJob::dispatch($person)->onQueue('pdfSend');
+      $person->setAttribute('finalMailSent', 1);
+      $person->save();
     }
-
-    $person->setAttribute('finalMailSent', 1);
-    $person->save();
 
   }
 
@@ -87,25 +95,36 @@ class SendPdfJob implements ShouldQueue {
    * @return void
    */
   public function handle() {
-    $apiKey = env('MAILGUN_APIKEY');
-
-    $configurator = new HttpClientConfigurator();
-    $configurator->setEndpoint('https://api.eu.mailgun.net/v3/mail.kirche-austreten.ch/messages');
-    $configurator->setApiKey($apiKey);
-    $configurator->setDebug(env('MAILGUN_APIKEY'));
-
-    $mg = new Mailgun($configurator, new NoopHydrator());
-    $files = Storage::disk('private')->files("{$this->person->getAttribute('email')}/{$this->person->getAttribute('id')}");
-    $attachments = [];
-    foreach ($files as $file) {
-      $attachments[] = [
-        'filePath' => Storage::disk('private')->path($file),
-        'filename' => 'Wow.pdf',
-      ];
-    }
-
     try {
-      $mg->messages()->send('kirche-austreten.ch', [
+      $apiKey = env('MAILGUN_APIKEY');
+      $configurator = new HttpClientConfigurator();
+      $configurator->setEndpoint('https://api.eu.mailgun.net/v3/mail.kirche-austreten.ch/messages');
+      $configurator->setApiKey($apiKey);
+      $configurator->setDebug(TRUE);
+
+      $mg = new Mailgun($configurator, new NoopHydrator());
+      $files = Storage::disk('private')->files("{$this->person->getAttribute('email')}/{$this->person->getAttribute('id')}");
+
+
+      $attachments = [];
+      foreach ($files as $file) {
+        // Is PDF?
+        if (!pathinfo($file, PATHINFO_EXTENSION) == 'pdf') {
+          continue;
+        }
+
+        $attachments[] = [
+          'filePath' => Storage::disk('private')->path($file),
+          'filename' => basename(Storage::disk('private')->path($file)),
+        ];
+      }
+
+      if (empty($attachments)) {
+        $message = 'Email not sent. No Pdf file available for: ' . $this->person->getAttributeValue('email');
+        throw new \Exception($message);
+      }
+
+      $responsePerson = $mg->messages()->send('kirche-austreten.ch', [
           'from' => self::FROM,
           'to' => $this->person->getAttributeValue('email'),
           'subject' => self::SUBJECT,
@@ -114,6 +133,19 @@ class SendPdfJob implements ShouldQueue {
         ]
       );
 
+      if ($responsePerson->getStatusCode() != 200) {
+        $message = 'Mailgun responded not with a 200 for: ' . $this->person->getAttributeValue('email');
+        throw new \Exception($message);
+      }
+
+      $responseCopy = $mg->messages()->send('kirche-austreten.ch', [
+          'from' => self::FROM,
+          'to' => self::SEND_COPY_TO,
+          'subject' => self::SUBJECT,
+          'template' => self::PDF_TEMPLATE,
+          'attachment' => $attachments,
+        ]
+      );
 
     }
     catch (\Exception $exception) {

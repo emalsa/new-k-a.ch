@@ -636,70 +636,6 @@ export default {
   methods: {
     optionPaymentClicked(event) {
     },
-    prev(goToStep) {
-      this.errors = [];
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-      });
-      if (goToStep) {
-        this.currentStep = goToStep;
-        return
-      }
-      this.currentStep--;
-    },
-    next() {
-      this.errors = [];
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-      });
-      this.currentStep++;
-    },
-    submit() {
-      this.isLoading = true;
-      console.log(this.isLoading)
-      axios.post('/api/create-person?XDEBUG_SESSION_START=PHPSTORM', {
-            person: this.person,
-            partner: this.partner,
-            children: this.children,
-            formData: this.formData,
-            catholic: this.catholic,
-            reform: this.reform,
-            currentStep: this.currentStep,
-          }
-      )
-          .then((response) => {
-            console.log('Success');
-            if (this.formData.payment) {
-              setTimeout(() => {
-                this.isLoadingStep = false;
-                window.location.href = this.stripeURL
-              }, '8000')
-            } else {
-              setTimeout(() => {
-                this.isLoadingStep = false;
-                window.location.href = this.confirmURL
-              }, '5000')
-            }
-
-          })
-          .catch(e => {
-            this.errors = [];
-            this.errors.push("Da ging etwas schief... Versuche es noch einmal.");
-            this.errors.push("Sollte der Fehler immer noch auftreten, kontaktiere uns über das Kontaktformular.");
-
-            this.isLoading = false;
-            window.scrollTo({
-              top: 0,
-              behavior: "smooth"
-            });
-            console.log('Error:');
-            console.log(e);
-          });
-
-
-    },
     optionClicked(event) {
       // this.formData.payment = null;
       if (event.target.value === 'unpaymentChecked') {
@@ -867,6 +803,70 @@ export default {
         behavior: "smooth"
       });
       e.preventDefault();
+    },
+    prev(goToStep) {
+      this.errors = [];
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+      if (goToStep) {
+        this.currentStep = goToStep;
+        return
+      }
+      this.currentStep--;
+    },
+    next() {
+      this.errors = [];
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+      this.currentStep++;
+    },
+    submit() {
+      this.isLoading = true;
+      console.log(this.isLoading)
+      axios.post('/api/create-person?XDEBUG_SESSION_START=PHPSTORM', {
+            person: this.person,
+            partner: this.partner,
+            children: this.children,
+            formData: this.formData,
+            catholic: this.catholic,
+            reform: this.reform,
+            currentStep: this.currentStep,
+          }
+      )
+          .then((response) => {
+            console.log('Success');
+            if (this.formData.payment) {
+              setTimeout(() => {
+                this.isLoadingStep = false;
+                window.location.href = this.stripeURL
+              }, '8000')
+            } else {
+              setTimeout(() => {
+                this.isLoadingStep = false;
+                window.location.href = this.confirmURL
+              }, '5000')
+            }
+
+          })
+          .catch(e => {
+            this.errors = [];
+            this.errors.push("Da ging etwas schief... Versuche es noch einmal.");
+            this.errors.push("Sollte der Fehler immer noch auftreten, kontaktiere uns über das Kontaktformular.");
+
+            this.isLoading = false;
+            window.scrollTo({
+              top: 0,
+              behavior: "smooth"
+            });
+            console.log('Error:');
+            console.log(e);
+          });
+
+
     },
   }
 }

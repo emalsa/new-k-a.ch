@@ -78,6 +78,7 @@ class PdfGenerate {
       $churchAddressData = $reformMode['churchAddress'];
       $this->generatePDF('reform', $key, $item, $person, $hasChildren, $churchAddressData, $reformMode['children']);
     }
+
     $person->setAttribute('readyToSendFinalMail', TRUE);
     $person->save();
   }
@@ -99,10 +100,18 @@ class PdfGenerate {
     else {
       $childrenData = [];
     }
-    $currentDate = $this->getGermanDate();
+
     try {
+      $currentDate = $this->getGermanDate();
+
       $fileStorage = Storage::disk('private');
-      $filePathFull = "{$person->getAttributeValue('email')}/{$person->getAttributeValue('id')}/{$mode}_austritt_{$key}.pdf";
+      $lastnameKey = self::cleanString($person->getAttributeValue('nachname'));
+      $typeKey = $key === 'person' ? '' : '_partner';
+      $email = $person->getAttributeValue('email');
+      $id = $person->getAttributeValue('id');
+      $filePathFull = "{$email}/{$id}/kirchenaustritt_{$mode}_{$lastnameKey}{$typeKey}.pdf";
+
+      // Generate
       $pdf = Pdf::loadView('austritt', compact('personData', 'childrenData', 'churchAddressData', 'currentDate', 'mode'))->setPaper('a4');
       $pdf->save($filePathFull, 'private');
 
@@ -114,8 +123,8 @@ class PdfGenerate {
       Log::error('Error generating PDF for: ' . $person->getAttributeValue('email'));
       Log::error($exception->getMessage());
       dd($exception->getMessage());
-
     }
+
   }
 
   /**
@@ -141,6 +150,26 @@ class PdfGenerate {
       '12' => 'Dezember',
     ];
     return date('d.') . ' ' . $germanMonth[$currentMonth] . ' ' . date('Y');
+  }
+
+
+  /**
+   * Clean strings for save filename.
+   *
+   * @param  string  $string
+   *
+   * @return string
+   */
+  public static function cleanString(string $string): string {
+    $string = str_replace(' ', '-', $string); // Replaces all spaces with hyphens.
+    $string = preg_replace('/[^A-Za-z0-9\-]/', '_', $string); // Removes special chars.
+    $str = preg_replace('/-+/', '', $string);
+
+    if (is_string($str)) {
+      return strtolower($str);
+    }
+
+    return '_';
   }
 
 
