@@ -16,11 +16,11 @@ return new class extends Migration {
       $table->id();
       $table->foreignId('person_id');
       $table->string('confession');
-      $table->string('anschriftAddress');
-      $table->string('streetAddress');
+      $table->string('anschriftAddress')->nullable();
+      $table->string('streetAddress')->nullable();
       $table->string('streetAdditionalAddress')->nullable();
-      $table->string('postalAddress');
-      $table->string('locationAddress');
+      $table->string('postalAddress')->nullable();
+      $table->string('locationAddress')->nullable();
       $table->timestamps();
     });
   }
