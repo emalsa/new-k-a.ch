@@ -21,7 +21,7 @@
                   <span class="font-heading font-medium text-3xl leading-10">.-</span>
                 </div>
               </div>
-              <a class="block py-4 px-6 mb-8 text-center font-heading font-medium text-base text-green-500 hover:text-white border border-green-500 hover:bg-green-500 rounded-sm transition duration-200"
+              <a class="block font-bold py-4 px-6 mb-8 text-center font-heading text-base text-green-600 hover:text-white border border-green-500 hover:bg-green-500 rounded-sm transition duration-200"
                  href="/formular">Jetzt starten</a>
               <ul>
                 <li class="flex items-center mb-3">
@@ -110,7 +110,7 @@
 
                 </div>
               </div>
-              <a class="block py-4 px-6 mb-8 text-center font-heading font-medium text-base text-white bg-green-500 hover:bg-green-600 border border-green-500 hover:border-green-600 rounded-sm transition duration-200"
+              <a class="block  font-bold py-4 px-6 mb-8 text-center font-heading  text-base text-white bg-green-500 hover:bg-green-600 border border-green-500 hover:border-green-600 rounded-sm transition duration-200"
                  href="/formular">Jetzt starten</a>
               <ul>
                 <li class="flex items-center mb-3">

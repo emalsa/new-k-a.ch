@@ -103,7 +103,7 @@
         </div>
       </div>
       <a @click="addChild"
-         class="mt-10 w-full block py-4 px-6 text-center text-base text-white bg-blue-400 hover:bg-blue-600 border border-blue-400 hover:border-blue-600 rounded-sm transition duration-200 ">
+         class="mt-10 font-bold w-full block py-4 px-6 text-center text-base text-white bg-blue-400 hover:bg-blue-600 border border-blue-400 hover:border-blue-600 rounded-sm transition duration-200 ">
         Kind hinzuf&uuml;gen
       </a>
     </div>

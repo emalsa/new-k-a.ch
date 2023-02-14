@@ -10,14 +10,14 @@
         </div>
         <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 hidden lg:block">
           <ul class="flex items-center">
-            <li class="font-heading mr-12 text-gray-900"><a class="hover:text-black" href="/#wie-es-funktioniert">Wie es funktioniert</a></li>
-            <li class="font-heading mr-12 text-gray-900"><a class="hover:text-black" href="/#angebot">Angebot</a></li>
-            <li class="font-heading mr-12 text-gray-900"><a class="hover:text-black" href="/#fragen-und-antworten">Fragen und Antworten</a></li>
-            <li class="font-heading mr-12 text-gray-900"><a class="hover:text-black" href="/#kontakt">Kontakt</a></li>
+            <li class="font-heading font-bold mr-12 text-gray-400"><a class="hover:text-black" href="/#wie-es-funktioniert">Wie es funktioniert</a></li>
+            <li class="font-heading  font-bold mr-12 text-gray-400"><a class="hover:text-black" href="/#angebot">Angebot</a></li>
+            <li class="font-heading  font-bold mr-12 text-gray-400"><a class="hover:text-black" href="/#fragen-und-antworten">Fragen und Antworten</a></li>
+            <li class="font-heading font-bold mr-12 text-gray-400"><a class="hover:text-black" href="/#kontakt">Kontakt</a></li>
           </ul>
         </div>
         <div class="w-auto hidden lg:block">
-          <a class="inline-block py-4 px-8 font-heading font-medium text-base text-white bg-green-500 hover:bg-green-600 border border-green-500 hover:border-green-600 rounded-sm transition duration-200"
+          <a class="inline-block font-bold py-4 px-8 font-heading text-base text-white bg-green-500 hover:bg-green-600 border border-green-500 hover:border-green-600 rounded-sm transition duration-200"
              href="/formular">Start</a></div>
         <div class="w-auto lg:hidden">
           <a class="navbar-burger inline-flex w-14 h-14 justify-center items-center bg-gray-50 hover:bg-gray-100 rounded-full"
@@ -44,14 +44,14 @@
           <ul class="w-full mb-auto pb-16">
             <li><a class="font-heading block text-base font-medium py-4 px-6 hover:bg-green-50 rounded-sm"
                    href="/">kirche-austreten.ch</a></li>
-            <li><a class="font-heading block text-base py-4 px-6 hover:bg-green-50 rounded-sm" href="/#wie-es-funktioniert">Wie es funktioniert</a></li>
-            <li><a class="font-heading block text-base py-4 px-6 hover:bg-green-50 rounded-sm" href="/#angebot">Angebot</a></li>
-            <li><a class="font-heading block text-base py-4 px-6 hover:bg-green-50 rounded-sm" href="/#fragen-und-antworten">Fragen und Antworten</a>            </li>
-            <li><a class="font-heading block text-base py-4 px-6 hover:bg-green-50 rounded-sm" href="/#kontakt">Kontakt</a>
+            <li><a class="font-heading font-bold text-gray-400 block text-base py-4 px-6 hover:bg-green-50 rounded-sm" href="/#wie-es-funktioniert">Wie es funktioniert</a></li>
+            <li><a class="font-heading font-bold text-gray-400 block text-base py-4 px-6 hover:bg-green-50 rounded-sm" href="/#angebot">Angebot</a></li>
+            <li><a class="font-heading font-bold text-gray-400 block text-base py-4 px-6 hover:bg-green-50 rounded-sm" href="/#fragen-und-antworten">Fragen und Antworten</a>            </li>
+            <li><a class="font-heading font-bold text-gray-400 block text-base py-4 px-6 hover:bg-green-50 rounded-sm" href="/#kontakt">Kontakt</a>
             </li>
           </ul>
           <div class="w-full">
-            <a class="block w-full py-4 px-4 mb-8 text-center font-heading font-medium text-base text-white bg-green-500 hover:bg-green-600 border border-green-500 hover:border-green-600 rounded-sm transition duration-200"
+            <a class="block font-bold w-full py-4 px-4 mb-8 text-center font-heading text-base text-white bg-green-500 hover:bg-green-600 border border-green-500 hover:border-green-600 rounded-sm transition duration-200"
                        href="/formular">Start</a>
             <p class="pl-2 text-sm">{{ currentYear }} © kirche-austreten.ch</p>
           </div>

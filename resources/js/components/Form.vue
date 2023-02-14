@@ -491,7 +491,7 @@
             <div class="flex mt-14 mb-20">
               <!-- Zurück -->
               <div class="w-1/2 pr-32 text-left">
-                <button class="w-full block py-4 px-6 text-center font-heading font-medium text-base text-white bg-green-500 hover:bg-green-600 border border-green-500 hover:border-green-600 rounded-sm transition duration-200"
+                <button class="w-full font-bold block py-4 px-6 text-center font-heading text-base text-white bg-green-500 hover:bg-green-600 border border-green-500 hover:border-green-600 rounded-sm transition duration-200"
                         name="back"
                         @click.prevent="prev(null)">
                   Zurück
@@ -500,14 +500,14 @@
 
               <!-- Weiter -->
               <div v-if="!isStep5" class="w-1/2 text-right">
-                <button class="w-full block py-4 px-6 text-center font-heading font-medium text-base text-white bg-green-500 hover:bg-green-600 border border-green-500 hover:border-green-600 rounded-sm transition duration-200"
+                <button class="w-full font-bold block py-4 px-6 text-center font-heading text-base text-white bg-green-500 hover:bg-green-600 border border-green-500 hover:border-green-600 rounded-sm transition duration-200"
                         name="next">
                   Weiter
                 </button>
               </div>
 
               <div v-if="isStep5" class="w-1/2 text-right">
-                <button class="w-full block py-4 px-6 text-center font-heading font-medium text-base text-white bg-green-500 hover:bg-green-600 border border-green-500 hover:border-green-600 rounded-sm transition duration-200"
+                <button class="w-full font-bold block py-4 px-6 text-center font-heading text-base text-white bg-green-500 hover:bg-green-600 border border-green-500 hover:border-green-600 rounded-sm transition duration-200"
                         name="next"
                         @click.prevent="submit">
                   <span v-if="!formData.payment">Abschicken</span>
