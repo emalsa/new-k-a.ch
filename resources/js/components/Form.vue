@@ -143,7 +143,7 @@
                         name="paymentOrNot"
                         value="paymentChecked"
                         :checked="this.formData.payment">
-                    <span class="ml-1 leading-7">Sucht ihr mir die Kirchgemeinde heraus, ich will nur unterschreiben (15 Fr.)</span>
+                    <span class="ml-1 leading-7">Sucht ihr mir die Kirchgemeinde heraus, ich will nur unterschreiben (20 Fr.)</span>
                   </label>
                 </div>
 
@@ -448,7 +448,7 @@
                         <h5 class=" mb-8 font-heading text-2xl mb-4">Kosten</h5>
                         <p v-if="!formData.payment">Gratis</p>
                         <div v-if="formData.payment">
-                          <p>15 Franken</p>
+                          <p>20 Franken</p>
                           <div class="mb-6 mt-6 ">
                             <div class="mb-2">
                               <label> <span>Bezahlen mit</span><br/>
