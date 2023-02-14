@@ -293,7 +293,7 @@
                                        headline="Deine Daten"/>
                       </div>
                       <a class="group inline-flex items-center" href="/#">
-                        <span class="mr-4 text-sm" @click="prev(1)">Bearbeiten</span>
+                        <span class="mr-4 text-sm" @click.prevent="prev(1)">Bearbeiten</span>
                         <div class="flex items-center justify-center w-5 h-5 rounded-full bg-green-500 group-hover:bg-green-600">
                           <svg width="12"
                                height="12"
@@ -319,7 +319,7 @@
                       </div>
                     </div>
                     <a class="group inline-flex items-center" href="/#">
-                      <span class="mr-4 text-sm" @click="prev(2)">Bearbeiten</span>
+                      <span class="mr-4 text-sm" @click.prevent="prev(2)">Bearbeiten</span>
                       <div class="flex items-center justify-center w-5 h-5 rounded-full bg-green-500 group-hover:bg-green-600">
                         <svg width="12"
                              height="12"
@@ -347,7 +347,7 @@
                       </div>
                     </div>
                     <a class="group inline-flex items-center" href="/#">
-                      <span class="mr-4 text-sm" @click="prev(3)">Bearbeiten</span>
+                      <span class="mr-4 text-sm" @click.prevent="prev(3)">Bearbeiten</span>
                       <div class="flex items-center justify-center w-5 h-5 rounded-full bg-green-500 group-hover:bg-green-600">
                         <svg width="12"
                              height="12"
@@ -372,7 +372,7 @@
                       </div>
                     </div>
                     <a class="group inline-flex items-center" href="/#">
-                      <span class="mr-4 text-sm" @click="prev(1)">Bearbeiten</span>
+                      <span class="mr-4 text-sm" @click.prevent="prev(1)">Bearbeiten</span>
                       <div class="flex items-center justify-center w-5 h-5 rounded-full bg-green-500 group-hover:bg-green-600">
                         <svg width="12"
                              height="12"
@@ -398,7 +398,7 @@
                       </div>
                     </div>
                     <a class="group inline-flex items-center" href="/#">
-                      <span class="mr-4 text-sm" @click="prev(null)">Bearbeiten</span>
+                      <span class="mr-4 text-sm" @click.prevent="prev(null)">Bearbeiten</span>
                       <div class="flex items-center justify-center w-5 h-5 rounded-full bg-green-500 group-hover:bg-green-600">
                         <svg width="12"
                              height="12"
@@ -424,7 +424,7 @@
                       </div>
                     </div>
                     <a class="group inline-flex items-center" href="/#">
-                      <span class="mr-4 text-sm" @click="prev(null)">Bearbeiten</span>
+                      <span class="mr-4 text-sm" @click.prevent="prev(null)">Bearbeiten</span>
                       <div class="flex items-center justify-center w-5 h-5 rounded-full bg-green-500 group-hover:bg-green-600">
                         <svg width="12"
                              height="12"
@@ -802,6 +802,7 @@ export default {
         top: 0,
         behavior: "smooth"
       });
+      
       e.preventDefault();
     },
     prev(goToStep) {
@@ -812,9 +813,11 @@ export default {
       });
       if (goToStep) {
         this.currentStep = goToStep;
-        return
+      } else {
+        this.currentStep--;
       }
-      this.currentStep--;
+
+
     },
     next() {
       this.errors = [];
