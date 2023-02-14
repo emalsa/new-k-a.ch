@@ -1,5 +1,5 @@
 <template>
-  <section class="py-16 bg-gray-50">
+  <section id="angebot" class="py-16 bg-gray-50">
     <div class="container px-4 mx-auto">
       <div class="flex flex-wrap justify-between items-center -mx-4 mb-12">
         <div class="w-full lg:w-2/3 px-4 mb-8 lg:mb-0">
@@ -22,7 +22,7 @@
                 </div>
               </div>
               <a class="block py-4 px-6 mb-8 text-center font-heading font-medium text-base text-green-500 hover:text-white border border-green-500 hover:bg-green-500 rounded-sm transition duration-200"
-                 href="#">Jetzt starten</a>
+                 href="/formular">Jetzt starten</a>
               <ul>
                 <li class="flex items-center mb-3">
                   <svg width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -111,7 +111,7 @@
                 </div>
               </div>
               <a class="block py-4 px-6 mb-8 text-center font-heading font-medium text-base text-white bg-green-500 hover:bg-green-600 border border-green-500 hover:border-green-600 rounded-sm transition duration-200"
-                 href="#">Jetzt starten</a>
+                 href="/formular">Jetzt starten</a>
               <ul>
                 <li class="flex items-center mb-3">
                   <svg width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">

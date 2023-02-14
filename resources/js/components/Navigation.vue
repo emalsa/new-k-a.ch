@@ -10,10 +10,10 @@
         </div>
         <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 hidden lg:block">
           <ul class="flex items-center">
-            <li class="font-heading mr-12 text-gray-900"><a class="hover:text-black" href="#">About</a></li>
-            <li class="font-heading mr-12 text-gray-900"><a class="hover:text-black" href="#">Company</a></li>
-            <li class="font-heading mr-12 text-gray-900"><a class="hover:text-black" href="#">Services</a></li>
-            <li class="font-heading mr-12 text-gray-900"><a class="hover:text-black" href="#">Testimonials</a></li>
+            <li class="font-heading mr-12 text-gray-900"><a class="hover:text-black" href="#wie-es-funktioniert">Wie es funktioniert</a></li>
+            <li class="font-heading mr-12 text-gray-900"><a class="hover:text-black" href="#angebot">Angebot</a></li>
+            <li class="font-heading mr-12 text-gray-900"><a class="hover:text-black" href="#fragen-und-antworten">Fragen und Antworten</a></li>
+            <li class="font-heading mr-12 text-gray-900"><a class="hover:text-black" href="#kontakt">Kontakt</a></li>
           </ul>
         </div>
         <div class="w-auto hidden lg:block">
@@ -43,21 +43,17 @@
           </a>
           <ul class="w-full mb-auto pb-16">
             <li><a class="font-heading block text-base font-medium py-4 px-6 hover:bg-green-50 rounded-sm"
-                   href="/">Home</a></li>
-            <li><a class="font-heading block text-base py-4 px-6 hover:bg-green-50 rounded-sm" href="#">About</a></li>
-            <li><a class="font-heading block text-base py-4 px-6 hover:bg-green-50 rounded-sm" href="#">Company</a></li>
-            <li><a class="font-heading block text-base py-4 px-6 hover:bg-green-50 rounded-sm" href="#">Services</a>
+                   href="/">kirche-austreten.ch</a></li>
+            <li><a class="font-heading block text-base py-4 px-6 hover:bg-green-50 rounded-sm" href="#wie-es-funktioniert">Wie es funktioniert</a></li>
+            <li><a class="font-heading block text-base py-4 px-6 hover:bg-green-50 rounded-sm" href="#angebot">Angebot</a></li>
+            <li><a class="font-heading block text-base py-4 px-6 hover:bg-green-50 rounded-sm" href="#fragen-und-antworten">Fragen und Antworten</a>            </li>
+            <li><a class="font-heading block text-base py-4 px-6 hover:bg-green-50 rounded-sm" href="#kontakt">Kontakt</a>
             </li>
-            <li><a class="font-heading block text-base py-4 px-6 hover:bg-green-50 rounded-sm" href="#">Testimonials</a>
-            </li>
-            <li><a class="font-heading block text-base py-4 px-6 hover:bg-green-50 rounded-sm" href="/formular">Start</a></li>
           </ul>
           <div class="w-full">
-            <a class="block w-full py-4 px-4 mb-4 text-center font-heading font-medium text-base hover:text-green-500 border border-gray-900 hover:border-green-500 rounded-sm transition duration-200"
-               href="#">Log
-              in</a><a class="block w-full py-4 px-4 mb-8 text-center font-heading font-medium text-base text-white bg-green-500 hover:bg-green-600 border border-green-500 hover:border-green-600 rounded-sm transition duration-200"
-                       href="#">Sign up</a>
-            <p class="pl-2 text-sm">2022 © Shuffle</p>
+            <a class="block w-full py-4 px-4 mb-8 text-center font-heading font-medium text-base text-white bg-green-500 hover:bg-green-600 border border-green-500 hover:border-green-600 rounded-sm transition duration-200"
+                       href="/formular">Start</a>
+            <p class="pl-2 text-sm">{{ currentYear }} © kirche-austreten.ch</p>
           </div>
         </div>
       </nav>
@@ -67,6 +63,11 @@
 
 <script>
 export default {
-
+  computed: {
+    currentYear() {
+      let now = new Date();
+      return now.getFullYear();
+    }
+  }
 }
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <section class="py-16">
+  <section id="wie-es-funktioniert" class="py-16">
     <div class="container px-4 mx-auto">
       <div class="flex flex-wrap items-center -mx-4">
         <div class="w-full lg:w-1/2 px-4 mb-16 lg:mb-0">
