@@ -30,7 +30,7 @@
 <!--          <img class="block mx-auto xl:mx-0" src="../../assets/images/headers/undraw_add_document.svg" alt="">-->
 
             <div class="w-full lg:w-1/2 px-4" style="padding-top:50px;margin-bottom: 100px">
-              <img class="block mx-auto xl:mx-0" src="../../assets/images/headers/undraw_add_document_green.svg" alt="">
+              <img width="600" height="500" class="block mx-auto xl:mx-0" src="../../assets/images/headers/undraw_add_document_green.svg" alt="">
 
           </div>
         </div>
