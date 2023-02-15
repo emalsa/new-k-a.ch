@@ -135,9 +135,11 @@ class SendPdfJob implements ShouldQueue {
         $template = self::PDF_TEMPLATE_SIGN;
       }
 
+      $personEmail = $this->person->getAttributeValue('email');
+
       $responsePerson = $mg->messages()->send('kirche-austreten.ch', [
           'from' => self::FROM,
-          'to' => $this->person->getAttributeValue('email'),
+          'to' => $personEmail,
           'subject' => self::SUBJECT,
           'template' => $template,
           'attachment' => $attachments,
@@ -152,7 +154,7 @@ class SendPdfJob implements ShouldQueue {
       $responseCopy = $mg->messages()->send('kirche-austreten.ch', [
           'from' => self::FROM,
           'to' => self::SEND_COPY_TO,
-          'subject' => 'Kopie: ' . self::SUBJECT,
+          'subject' => "Kopie $personEmail: " . self::SUBJECT,
           'template' => $template,
           'attachment' => $attachments,
         ]
@@ -160,7 +162,7 @@ class SendPdfJob implements ShouldQueue {
 
     }
     catch (\Exception $exception) {
-      Log::error('Mailgun Error: ' . $exception->getCode() . ' -- ' . $exception->getMessage());
+      Log::error('Mailgun Error: ' . $exception->getCode() . '-- ' . $exception->getMessage());
       dd($exception->getMessage());
     }
   }
