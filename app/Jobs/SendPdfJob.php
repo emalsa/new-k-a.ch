@@ -46,6 +46,9 @@ class SendPdfJob implements ShouldQueue {
    */
   protected const PDF_TEMPLATE = 'documents__available';
 
+  protected const PDF_TEMPLATE_SIGN = 'documents__available__sign_required';
+
+
   /**
    * The person entity
    *
@@ -124,11 +127,18 @@ class SendPdfJob implements ShouldQueue {
         throw new \Exception($message);
       }
 
+      if (!$this->person->getAttribute('id')) {
+        $template = self::PDF_TEMPLATE;
+      }
+      else {
+        $template = self::PDF_TEMPLATE_SIGN;
+      }
+
       $responsePerson = $mg->messages()->send('kirche-austreten.ch', [
           'from' => self::FROM,
           'to' => $this->person->getAttributeValue('email'),
           'subject' => self::SUBJECT,
-          'template' => self::PDF_TEMPLATE,
+          'template' => $template,
           'attachment' => $attachments,
         ]
       );
@@ -142,7 +152,7 @@ class SendPdfJob implements ShouldQueue {
           'from' => self::FROM,
           'to' => self::SEND_COPY_TO,
           'subject' => 'Kopie: ' . self::SUBJECT,
-          'template' => self::PDF_TEMPLATE,
+          'template' => $template,
           'attachment' => $attachments,
         ]
       );
