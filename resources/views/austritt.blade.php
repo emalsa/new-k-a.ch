@@ -287,7 +287,7 @@
     </div>
     <div class="text-4">
         <p>Freundliche Gr&uuml;sse<br/>
-            Daniele Nicastro
+            {{$personData['vorname']}}&nbsp;{{$personData['nachname']}}
         </p>
     </div>
 
