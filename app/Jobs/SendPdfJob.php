@@ -127,6 +127,7 @@ class SendPdfJob implements ShouldQueue {
         throw new \Exception($message);
       }
 
+      // Sign required.
       if (!$this->person->getAttribute('id')) {
         $template = self::PDF_TEMPLATE;
       }
