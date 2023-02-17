@@ -128,8 +128,8 @@
             <div class="receiver">
                 <p class="einschreiben"><b>Einschreiben</b></p>
                 <p>{{$churchAddressData['anschriftAddress']}}</p>
-                <p>{{$churchAddressData['streetAddress']}}</p>
                 <p>{{$churchAddressData['streetAdditionalAddress']}}</p>
+                <p>{{$churchAddressData['streetAddress']}}</p>
                 <p>{{$churchAddressData['postalAddress']}}&nbsp;{{$churchAddressData['locationAddress']}}</p>
             </div>
         @else
