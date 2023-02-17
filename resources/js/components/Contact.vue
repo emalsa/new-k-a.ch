@@ -17,7 +17,7 @@
         <div class="w-full lg:w-1/2 px-4">
           <div>
             <h4 class="font-heading text-lg font-medium mb-4 text-gray-400">Kontakt</h4>
-            <div  v-if="this.successSubmitted" class="font-heading text-lg font-medium mb-4 text-gray-400">
+            <div v-if="this.successSubmitted" class="font-heading text-lg font-medium mb-4 text-gray-400">
               <p>Vielen Dank für deine Nachricht. Wir melden uns.</p>
             </div>
             <form v-if="!this.successSubmitted">
@@ -122,6 +122,9 @@ export default {
             this.responseFromController = response.data
             if (this.responseFromController && this.responseFromController.status === 'ok') {
               this.successSubmitted = true;
+              setTimeout(() => {
+                this.successSubmitted = true;
+              }, 1500)
             }
             // Error
             if (this.responseFromController && this.responseFromController.status === 'error') {
