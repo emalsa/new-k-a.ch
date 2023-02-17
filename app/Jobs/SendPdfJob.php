@@ -23,14 +23,14 @@ class SendPdfJob implements ShouldQueue {
    *
    * @var string
    */
-  protected const SEND_COPY_TO = "info@kirche-austreten.ch";
+  public const SEND_COPY_TO = "info@kirche-austreten.ch";
 
   /**
    * From.
    *
    * @var string
    */
-  protected const FROM = 'kirche-austreten.ch info@mail.kirche-austreten.ch';
+  public const FROM = 'kirche-austreten.ch info@mail.kirche-austreten.ch';
 
   /**
    * Alert: Subject.
@@ -47,6 +47,8 @@ class SendPdfJob implements ShouldQueue {
   protected const PDF_TEMPLATE = 'documents__available';
 
   protected const PDF_TEMPLATE_SIGN = 'documents__available__sign_required';
+
+  public const CONTACT_TEMPLATE = 'contact';
 
 
   /**

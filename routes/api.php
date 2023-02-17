@@ -24,6 +24,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::post('/create-person', 'App\Services\CreatePerson@handle');
 
+Route::post('/contact', 'App\Services\Contact@handle');
 // To debug
 Route::post('/pdf', 'App\Services\PdfGenerate@generate');
 
