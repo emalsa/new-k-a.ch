@@ -17,7 +17,10 @@
         <div class="w-full lg:w-1/2 px-4">
           <div>
             <h4 class="font-heading text-lg font-medium mb-4 text-gray-400">Kontakt</h4>
-            <form>
+            <div  v-if="this.successSubmitted" class="font-heading text-lg font-medium mb-4 text-gray-400">
+              <p>Vielen Dank für deine Nachricht. Wir melden uns.</p>
+            </div>
+            <form v-if="!this.successSubmitted">
               <div class="mb-4">
                 <label class="block text-sm leading-6 mb-2" for="">Name</label>
                 <input class="block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
@@ -75,6 +78,7 @@ export default {
   data() {
     return {
       errored: false,
+      successSubmitted: false,
       statusMessage: '',
       vorname: '',
       nachname: '',
@@ -117,21 +121,18 @@ export default {
           .then(response => {
             this.responseFromController = response.data
             if (this.responseFromController && this.responseFromController.status === 'ok') {
-              console.log(this.responseFromController.status)
+              this.successSubmitted = true;
             }
             // Error
             if (this.responseFromController && this.responseFromController.status === 'error') {
-              console.log(this.responseFromController.status)
               this.errored = true
               this.statusMessage = 'Es ist ein Fehler aufgetreten. Bitte später versuchen'
             }
           })
           .catch(error => {
-            console.log(error.message)
             this.errored = true
             this.statusMessage = 'Es ist ein Fehler aufgetreten. Bitte später erneut versuchen.'
           })
-
     }
   }
 }
