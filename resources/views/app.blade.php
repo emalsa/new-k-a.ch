@@ -33,17 +33,17 @@
   <?php if ($_SERVER['HTTP_HOST'] === 'kirche-austreten.ch' || $_SERVER['HTTP_HOST'] === 'www.kirche-austreten.ch'): ?>
 
           <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CJ4WXHWCXT"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
+{{--    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CJ4WXHWCXT"></script>--}}
+{{--    <script>--}}
+{{--        window.dataLayer = window.dataLayer || [];--}}
 
-        function gtag() {
-            dataLayer.push(arguments);
-        }
+{{--        function gtag() {--}}
+{{--            dataLayer.push(arguments);--}}
+{{--        }--}}
 
-        gtag('js', new Date());
-        gtag('config', 'G-CJ4WXHWCXT');
-    </script>
+{{--        gtag('js', new Date());--}}
+{{--        gtag('config', 'G-CJ4WXHWCXT');--}}
+{{--    </script>--}}
   <?php endif ?>
 
 
