@@ -8,7 +8,7 @@
                   <span>Einfach</span>
                   <span class="text-green-500">&nbsp;Fragen</span>
                 </span>
-            <h4 class="font-heading text-3xl sm:text-4xl mt-2 mb-6">EIne Frage oder ein Problem?</h4>
+            <h4 class="font-heading text-3xl sm:text-4xl mt-2 mb-6">Eine Frage oder ein Problem?</h4>
             <p class="text-lg leading-8 mb-12">Kontaktiere uns bei Fragen oder Unklarheiten. Oder gib uns Feedback. Dar&uuml;ber
               freuen wir uns.</p>
 
