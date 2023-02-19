@@ -45,8 +45,7 @@
                         :to="{ name: 'Form'}"
                         class="underline underline-offset-4 decoration-green-600 hover:decoration-green-400
                         decoration-[3px]">hier
-                    </router-link>
-                    &nbsp;ausf&uuml;llst. Dafür braucht es nur deinen Namen, Adresse und Geburtsdatum.
+                    </router-link>ausf&uuml;llst. Dafür braucht es nur deinen Namen, Adresse und Geburtsdatum.
                   </p>
                 </div>
               </div>
