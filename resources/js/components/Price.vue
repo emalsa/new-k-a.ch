@@ -70,7 +70,7 @@
                             stroke-linejoin="round"></path>
                       <circle cx="10" cy="10" r="9" stroke="#00CBA6" stroke-width="1.5"></circle>
                     </svg>
-                    <span class="ml-4 text-sm">Wir finden die Adresse der Kirchgemeinde</span>
+                    <span class="ml-4 text-sm">Mit Adresse der Kirchgemeinde</span>
                   </li>
                   <li class="flex items-center mb-3">
                     <svg width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
