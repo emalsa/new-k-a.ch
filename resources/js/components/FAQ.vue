@@ -9,57 +9,57 @@
       </div>
       <div class="max-w-4xl mx-auto mb-24">
         <ul class="space-y-4">
-<!--          <li id="faq-lifetime" class=" px-6 py-8 bg-gray-50 rounded-xl">-->
-<!--            <button class="accordion w-full flex justify-between items-center text-left font-semibold font-heading">-->
-<!--              <h3 class="text-xl font-semibold font-heading">Was sind die Gründe für einen Kirchenaustritt?</h3>-->
-<!--              <svg class="closed flex-shrink-0"-->
-<!--                   width="20"-->
-<!--                   height="20"-->
-<!--                   viewbox="0 0 20 20"-->
-<!--                   fill="none"-->
-<!--                   xmlns="http://www.w3.org/2000/svg">-->
-<!--                <path fill-rule="evenodd"-->
-<!--                      clip-rule="evenodd"-->
-<!--                      d="M0.750214 10C0.750214 15.108 4.89121 19.25 10.0002 19.25C15.1082 19.25 19.2502 15.108 19.2502 10C19.2502 4.892 15.1082 0.75 10.0002 0.75C4.89121 0.75 0.750214 4.892 0.750214 10Z"-->
-<!--                      stroke="#838EA4"-->
-<!--                      stroke-width="1.5"-->
-<!--                      stroke-linecap="round"-->
-<!--                      stroke-linejoin="round"></path>-->
-<!--                <path d="M6.52902 8.55774L10 12.0437L13.471 8.55774"-->
-<!--                      stroke="#838EA4"-->
-<!--                      stroke-width="1.5"-->
-<!--                      stroke-linecap="round"-->
-<!--                      stroke-linejoin="round"></path>-->
-<!--              </svg>-->
-<!--              <svg class="opened hidden flex-shrink-0"-->
-<!--                   width="20"-->
-<!--                   height="20"-->
-<!--                   viewbox="0 0 20 20"-->
-<!--                   fill="none"-->
-<!--                   xmlns="http://www.w3.org/2000/svg">-->
-<!--                <path fill-rule="evenodd"-->
-<!--                      clip-rule="evenodd"-->
-<!--                      d="M19.2498 10C19.2498 4.892 15.1088 0.75 9.99979 0.75C4.89179 0.75 0.749786 4.892 0.749786 10C0.749786 15.108 4.89179 19.25 9.99979 19.25C15.1088 19.25 19.2498 15.108 19.2498 10Z"-->
-<!--                      stroke="#45C1FF"-->
-<!--                      stroke-width="1.5"-->
-<!--                      stroke-linecap="round"-->
-<!--                      stroke-linejoin="round"></path>-->
-<!--                <path d="M13.471 11.4423L9.99998 7.95626L6.52898 11.4423"-->
-<!--                      stroke="#45C1FF"-->
-<!--                      stroke-width="1.5"-->
-<!--                      stroke-linecap="round"-->
-<!--                      stroke-linejoin="round"></path>-->
-<!--              </svg>-->
-<!--            </button>-->
-<!--            <div class="panel">-->
-<!--              <p class="max-w-3xl mt-4 text-base text-gray-700">-->
-<!--                Grundsätzlich steht jeder Person das Recht zu aus der Kirche auszutreten.-->
-<!--              </p>-->
-<!--              <p class="max-w-3xl mt-4 text-base text-gray-700">-->
+          <!--          <li id="faq-lifetime" class=" px-6 py-8 bg-gray-50 rounded-xl">-->
+          <!--            <button class="accordion w-full flex justify-between items-center text-left font-semibold font-heading">-->
+          <!--              <h3 class="text-xl font-semibold font-heading">Was sind die Gründe für einen Kirchenaustritt?</h3>-->
+          <!--              <svg class="closed flex-shrink-0"-->
+          <!--                   width="20"-->
+          <!--                   height="20"-->
+          <!--                   viewbox="0 0 20 20"-->
+          <!--                   fill="none"-->
+          <!--                   xmlns="http://www.w3.org/2000/svg">-->
+          <!--                <path fill-rule="evenodd"-->
+          <!--                      clip-rule="evenodd"-->
+          <!--                      d="M0.750214 10C0.750214 15.108 4.89121 19.25 10.0002 19.25C15.1082 19.25 19.2502 15.108 19.2502 10C19.2502 4.892 15.1082 0.75 10.0002 0.75C4.89121 0.75 0.750214 4.892 0.750214 10Z"-->
+          <!--                      stroke="#838EA4"-->
+          <!--                      stroke-width="1.5"-->
+          <!--                      stroke-linecap="round"-->
+          <!--                      stroke-linejoin="round"></path>-->
+          <!--                <path d="M6.52902 8.55774L10 12.0437L13.471 8.55774"-->
+          <!--                      stroke="#838EA4"-->
+          <!--                      stroke-width="1.5"-->
+          <!--                      stroke-linecap="round"-->
+          <!--                      stroke-linejoin="round"></path>-->
+          <!--              </svg>-->
+          <!--              <svg class="opened hidden flex-shrink-0"-->
+          <!--                   width="20"-->
+          <!--                   height="20"-->
+          <!--                   viewbox="0 0 20 20"-->
+          <!--                   fill="none"-->
+          <!--                   xmlns="http://www.w3.org/2000/svg">-->
+          <!--                <path fill-rule="evenodd"-->
+          <!--                      clip-rule="evenodd"-->
+          <!--                      d="M19.2498 10C19.2498 4.892 15.1088 0.75 9.99979 0.75C4.89179 0.75 0.749786 4.892 0.749786 10C0.749786 15.108 4.89179 19.25 9.99979 19.25C15.1088 19.25 19.2498 15.108 19.2498 10Z"-->
+          <!--                      stroke="#45C1FF"-->
+          <!--                      stroke-width="1.5"-->
+          <!--                      stroke-linecap="round"-->
+          <!--                      stroke-linejoin="round"></path>-->
+          <!--                <path d="M13.471 11.4423L9.99998 7.95626L6.52898 11.4423"-->
+          <!--                      stroke="#45C1FF"-->
+          <!--                      stroke-width="1.5"-->
+          <!--                      stroke-linecap="round"-->
+          <!--                      stroke-linejoin="round"></path>-->
+          <!--              </svg>-->
+          <!--            </button>-->
+          <!--            <div class="panel">-->
+          <!--              <p class="max-w-3xl mt-4 text-base text-gray-700">-->
+          <!--                Grundsätzlich steht jeder Person das Recht zu aus der Kirche auszutreten.-->
+          <!--              </p>-->
+          <!--              <p class="max-w-3xl mt-4 text-base text-gray-700">-->
 
-<!--              </p>-->
-<!--            </div>-->
-<!--          </li>-->
+          <!--              </p>-->
+          <!--            </div>-->
+          <!--          </li>-->
           <li id="faq-lifetime" class=" px-6 py-8 bg-gray-50 rounded-xl">
             <button class="accordion w-full flex justify-between items-center text-left font-semibold font-heading">
               <h3 class="text-xl font-semibold font-heading">Wie kann ich aus der Kirche austreten?</h3>
@@ -382,13 +382,18 @@
             </button>
             <div class="panel">
               <p class="max-w-3xl mt-4 text-base text-gray-700">Meistens läuft der Kirchenaustritt reibungslos. In
-                einigen Fällen wird einem der Austritt erschwert mit Gründen die rechtlich nicht standhalten. Meistens gewähren die betreffenden Institutionen den Kirchenaustritt ohne grosse Bürokratie.</p>
+                einigen Fällen wird einem der Austritt erschwert mit Gründen die rechtlich nicht standhalten. Meistens
+                gewähren die betreffenden Institutionen den Kirchenaustritt ohne grosse Bürokratie.</p>
               <p class="max-w-3xl mt-4 text-base text-gray-700">Das sind die häufigsten Gründe weshalb der Austritt
                 erschwert wird.</p>
               <p class="max-w-3xl mt-4 text-base text-gray-700">
               <ul class="mb-3">
                 <li class="font-bold mb-2">Fehlendes Taufdatum oder Taufort</li>
-                <li>Ein fehlendes Taufdatum oder Taufort ist rechtlich keinen Grund um einen Austritt zu verweigern. Das wird dann als Begründung geliefert wenn ein Austritt aus der Pfarrei vorgenommen wird. Einfach nochmals begründen das man nicht aus aus der Pfarrei austreten will sondern aus der öffentlichen-rechtlichen Landeskirche. Dafür braucht es kein Taufdatum/Taufort</li>
+                <li>Ein fehlendes Taufdatum oder Taufort ist rechtlich keinen Grund um einen Austritt zu verweigern. Das
+                  wird dann als Begründung geliefert wenn ein Austritt aus der Pfarrei vorgenommen wird. Einfach
+                  nochmals begründen das man nicht aus aus der Pfarrei austreten will sondern aus der
+                  öffentlichen-rechtlichen Landeskirche. Dafür braucht es kein Taufdatum/Taufort.
+                </li>
               </ul>
               <ul class="mb-3">
                 <li class="font-bold mb-2">Es wird um Gründe für einen Austritt verlangt</li>
@@ -396,7 +401,8 @@
               </ul>
               <ul class="mb-3">
                 <li class="font-bold mb-2">Es wird um ein Gespräch gebeten</li>
-                <li>Erkläre dass dein Entscheid bereits gefallen ist und kein Gespräch von deiner Seite gewünscht ist.</li>
+                <li>Erkläre dass dein Entscheid bereits gefallen ist und kein Gespräch von deiner Seite gewünscht ist.
+                </li>
               </ul>
               </p>
             </div>
