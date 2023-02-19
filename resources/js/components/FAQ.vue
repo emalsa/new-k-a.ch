@@ -271,7 +271,7 @@
       </div>
       <a class="close-menu group block max-w-max mx-auto font-heading font-medium text-gray-900 hover:text-gray-800 text-base overflow-hidden"
          href="#contact">
-        <p class="mb-1">Didn’t find the answer? Contact us here</p>
+<!--        <p class="mb-1">Didn’t find the answer? Contact us here</p>-->
         <div class="w-full transform -translate-x-0 group-hover:translate-x-full h-px bg-gradient-cyan transition ease-in-out duration-500"></div>
       </a>
     </div>
