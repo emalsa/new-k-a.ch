@@ -38,11 +38,15 @@
                 </div>
                 <div>
                   <h3 class="font-heading text-lg font-medium mb-4">Formular ausf&uuml;llen</h3>
-                  <p class="max-w-xxs leading-7">Starte deinen Kirchenaustritt indem du das Austritts Formular für die
-                    Kirche Schweiz&nbsp;<router-link :to="{ name: 'Form'}"
-                                                     class="underline underline-offset-4 decoration-green-600 hover:decoration-green-400 decoration-[3px]">
-                      hier
-                    </router-link>&nbsp;ausf&uuml;llst. Dafür braucht es nur deinen Namen, Adresse und Geburtsdatum.
+                  <p class="max-w-xxs leading-7">
+                    Starte deinen Kirchenaustritt indem du das Austritts Formular für die
+                    Kirche Schweiz&nbsp;
+                    <router-link
+                        :to="{ name: 'Form'}"
+                        class="underline underline-offset-4 decoration-green-600 hover:decoration-green-400
+                        decoration-[3px]">hier
+                    </router-link>
+                    &nbsp;ausf&uuml;llst. Dafür braucht es nur deinen Namen, Adresse und Geburtsdatum.
                   </p>
                 </div>
               </div>
