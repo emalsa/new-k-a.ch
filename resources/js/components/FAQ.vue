@@ -459,16 +459,9 @@
             <div class="panel">
               <p class="max-w-3xl mt-4 text-base text-gray-700">Das Austrittsschreiben muss eine beglaubigte
                 Unterschrift haben in diesen Kantonen.</p>
-              <p class="max-w-3xl mt-4 text-base text-gray-700">Das heisst das man nachdem man das Dokument ausgedruckt
-                hat <b>nicht unterschreiben</b> soll. Gehe dazu mit dem Dokument und ID/Pass zu deiner
-                Gemeinde/Stadtverwaltung und verlange eine beglaubigte Unterschrift für das Austrittsschreiben.</p>
-              <p class="max-w-3xl mt-4 text-base text-gray-700">
-                Wir schicken dir ebenfalls das Schreiben für das Steueramt beim
-                <a href="#angebot"
-                   class="underline underline-offset-4 decoration-green-600 hover:decoration-green-400 decoration-[3px]">
-                  <i>Garantierter Austritt.</i>
-                </a><br/>Mit der korrekten Anschrift der Gemeinde.
-              </p>
+              <p class="max-w-3xl mt-4 text-base text-gray-700">Das heisst, nachdem das Dokument ausgedruckt
+                ist <b>nicht unterschreiben.</b> Gehe dann mit dem Austrittsschreiben und ID/Pass zu deiner
+                Gemeinde/Stadtverwaltung und verlange eine beglaubigte Unterschrift für dein Austrittsschreiben.</p>
             </div>
           </li>
 
