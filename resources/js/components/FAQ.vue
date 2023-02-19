@@ -219,10 +219,10 @@
                 Austrittsschreiben nur ausdrucken, dann unterschreiben und zum Schluss zur Post bringen. Es ist also
                 keine Recherche der Kirchgemeinde notwendig und du musst kein Schreiben erstellen. Du sparst mit uns
                 Zeit und Nerven.</p>
-              <p class="max-w-3xl mt-4 text-base text-gray-700">Sollte uns beim Austrittsschreiben, den wir für dich
-                erstellen, einen Fehler unterlaufen sein erstatten wir dir das natürlich Geld zurück. Zum Beispiel wenn
-                die falsche Kirchgemeinde im Austrittsschreiben ist. Zudem werden wir dir ein neues Austrittsschreiben
-                mit der korrekten Kirchgemeinde nachschicken.</p>
+              <p class="max-w-3xl mt-4 text-base text-gray-700">Im Falle dass uns beim Austrittsschreiben einen Fehler
+                unterlaufen erstatten wir dir natürlich das Geld zurück. Zum Beispiel wenn die falsche Kirchgemeinde im
+                Austrittsschreiben ist. Zudem werden wir dir ein neues Austrittsschreiben mit der korrekten
+                Kirchgemeinde nachschicken.</p>
             </div>
           </li>
 
