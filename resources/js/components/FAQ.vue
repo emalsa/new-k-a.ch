@@ -397,7 +397,7 @@
               </ul>
               <ul class="mb-3">
                 <li class="font-bold mb-2">Es wird um Gründe für einen Austritt verlangt</li>
-                <li>Gründe für einen Austritt musst du nicht geben.</li>
+                <li>Gründe für einen Austritt musst du nicht geben. Erkläre das du informiert bist über den Kirchenaustritt.</li>
               </ul>
               <ul class="mb-3">
                 <li class="font-bold mb-2">Es wird um ein Gespräch gebeten</li>
