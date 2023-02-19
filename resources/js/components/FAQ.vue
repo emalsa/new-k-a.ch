@@ -389,7 +389,7 @@
               <p class="max-w-3xl mt-4 text-base text-gray-700">
               <ul class="mb-3">
                 <li class="font-bold mb-2">Fehlendes Taufdatum oder Taufort</li>
-                <li>Ein fehlendes Taufdatum oder Taufort ist rechtlich kein Grund um einen Austritt zu verweigern. Das wird dann als Begründung geliefert wenn ein Austritt aus der Pfarrei vorgenommen wird. Einfach nochmals begründen das man nicht aus aus der Pfarrei austreten will sondern aus der öffentlichen-rechtlichen Landeskirche. Dafür braucht es kein Taufdatum/Taufort</li>
+                <li>Ein fehlendes Taufdatum oder Taufort ist rechtlich keinen Grund um einen Austritt zu verweigern. Das wird dann als Begründung geliefert wenn ein Austritt aus der Pfarrei vorgenommen wird. Einfach nochmals begründen das man nicht aus aus der Pfarrei austreten will sondern aus der öffentlichen-rechtlichen Landeskirche. Dafür braucht es kein Taufdatum/Taufort</li>
               </ul>
               <ul class="mb-3">
                 <li class="font-bold mb-2">Es wird um Gründe für einen Austritt verlangt</li>
