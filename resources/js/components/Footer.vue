@@ -31,7 +31,7 @@
         <div class="hidden md:block absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-auto">
 
         </div>
-        <div class="w-auto"><a class="text-gray-300" href="/#">Privacy Policy</a></div>
+        <div class="w-auto"><a class="text-gray-300" href="/agb">AGB & Datenschutzbestimmungen</a></div>
       </div>
     </div>
   </section>

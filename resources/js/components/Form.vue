@@ -109,7 +109,7 @@
               <h4 v-if="isStep1">Personalien</h4>
               <h4 v-if="isStep2">Partner</h4>
               <h4 v-if="isStep3">Kinder</h4>
-<!--              <h4 v-if="isStep4">Kirchgemeinde</h4>-->
+              <!--              <h4 v-if="isStep4">Kirchgemeinde</h4>-->
               <h4 v-if="isStep4">&Uuml;bersicht</h4>
             </div>
             <div>
@@ -315,14 +315,14 @@
 
                   <!-- Payment -->
                   <div class="relative h-88 px-6 py-8 border-b-1">
-                    <div class="relative max-w-xs">
+                    <div class="relative">
                       <div class="mb-4">
                         <h5 class=" mb-8 font-heading text-2xl mb-4">Kosten</h5>
                         <p v-if="!formData.payment">Gratis</p>
                         <div v-if="formData.payment">
                           <p><b>20 Franken</b></p>
-                          <div class="mb-6 mt-6 ">
-                            <div class="mb-2">
+                          <div class="mb-6 mt-6">
+                            <div class="mb-6">
                               <label> <span>Bezahlen mit</span><br/>
                                 <input
                                     class="mt-4 mr-2"
@@ -332,6 +332,20 @@
                                     name="paymentMethod"
                                     value="stripe">
                                 <span class="ml-1">Kreditkarte, ApplePay, Google Pay etc.</span>
+                              </label>
+                            </div>
+                            <div class="mb-2">
+                              <label class="required">
+                                <input class="required" type="checkbox"
+
+                                       v-model="formData.agbAccepted"
+                                       name="agb"
+                                       value="example value">
+                                <span class="required ml-1">Ich akzeptiere die <a target="_blank"
+                                                                                  class="underline underline-offset-4 decoration-green-500 hover:decoration-green-400 decoration-[3px]"
+                                                                                  href="/agb">AGBs</a> und <a target="_blank"
+                                                                                                              class="underline underline-offset-4 decoration-green-500 hover:decoration-green-400 decoration-[3px]"
+                                                                                                              href="/agb">Datenschutzbestimmungen</a>*</span>
                               </label>
                             </div>
 
@@ -378,8 +392,10 @@
                 </button>
               </div>
 
+              <!-- Bezahlen -->
               <div v-if="isStep4" class="w-1/2 text-right">
-                <button class="w-full font-bold block py-4 px-6 text-center font-heading text-base text-white bg-green-500 hover:bg-green-600 border border-green-500 hover:border-green-600 rounded-sm transition duration-200"
+                <button :disabled="!formData.agbAccepted"
+                        class="w-full font-bold block py-4 px-6 text-center font-heading text-base text-white bg-green-500 hover:bg-green-600 border disabled:bg-green-100 disabled:border-green-100 border-green-500 hover:border-green-600 rounded-sm transition duration-200"
                         name="next"
                         @click.prevent="submit">
                   <span v-if="!formData.payment">Abschicken</span>
@@ -426,6 +442,7 @@ export default {
         hatEhepartner: false,
         hasChildren: false,
         payment: true,
+        agbAccepted: false
       },
       person: {
         email: '',
@@ -479,6 +496,7 @@ export default {
   },
   computed: {
     isStep1() {
+
       if (this.currentStep === 1) {
         window.scrollTo({
           top: 0,
@@ -678,6 +696,7 @@ export default {
       e.preventDefault();
     },
     prev(goToStep) {
+      this.formData.agbAccepted=false;
       this.errors = [];
       window.scrollTo({
         top: 0,
@@ -701,6 +720,14 @@ export default {
     },
     submit() {
       this.isLoading = true;
+      this.errors = [];
+      if (!this.formData.agbAccepted) {
+        this.isLoadingStep = false;
+        this.errors.push("Bitte akzeptiere die AGBs.");
+        return
+      }
+
+      this.errors.push("Da ging etwas schief... Versuche es noch einmal.");
       axios.post('/api/create-person?XDEBUG_SESSION_START=PHPSTORM', {
             person: this.person,
             partner: this.partner,
@@ -714,6 +741,10 @@ export default {
           .then((response) => {
             console.log('Success');
             if (this.formData.payment) {
+              if (response.data.message == 'agb not accepted') {
+                this.errors.push("Bitte akzeptiere die AGBs.");
+                return;
+              }
               setTimeout(() => {
                 this.isLoadingStep = false;
                 window.location.href = this.stripeURL

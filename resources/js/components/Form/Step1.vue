@@ -77,7 +77,6 @@
           <input class="block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
                  v-model="person.postalAddress"
                  type="text"
-
                  placeholder="3000">
         </div>
         <div class="flex-grow">
@@ -85,7 +84,6 @@
           <input class="block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
                  v-model="person.locationAddress"
                  type="text"
-
                  placeholder="Bern">
         </div>
       </div>
