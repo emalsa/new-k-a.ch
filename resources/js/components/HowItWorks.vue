@@ -1,5 +1,5 @@
 <template>
-  <section id="wie-es-funktioniert" class="py-16">
+  <section id="wie-es-funktioniert" class="py-16 bg-gray-50">
     <div class="container px-4 mx-auto">
       <div class="flex flex-wrap items-center -mx-4">
         <div class="w-full lg:w-1/2 px-4 mb-16 lg:mb-0">
@@ -18,10 +18,10 @@
           </div>
         </div>
         <div class="w-full lg:w-1/2 px-4">
-          <div class="max-w-lg mx-auto py-10 pl-4 pr-6 sm:px-12 xl:px-20 bg-gray-50 rounded-md">
+          <div class="max-w-lg mx-auto py-10 pl-4 pr-6 sm:px-12 xl:px-20 bg-white rounded-md">
             <div>
               <div class="flex mb-10">
-                <div class="relative flex-shrink-0 flex items-center justify-center w-16 h-16 mr-10 bg-white rounded">
+                <div class="relative flex-shrink-0 flex items-center justify-center w-16 h-16 mr-10 bg-gray-50 rounded">
                   <div class="absolute bottom-0 right-0 -mb-3 -mr-3 flex items-center justify-center w-6 h-6 text-xs font-semibold text-gray-900 bg-gray-200 rounded-full">
                     1
                   </div>
@@ -49,7 +49,7 @@
                 </div>
               </div>
               <div class="flex mb-10">
-                <div class="relative flex flex-shrink-0 items-center justify-center w-16 h-16 mr-10 bg-white rounded">
+                <div class="relative flex flex-shrink-0 items-center justify-center w-16 h-16 mr-10 bg-gray-50 rounded">
                   <div class="absolute bottom-0 right-0 -mb-3 -mr-3 flex items-center justify-center w-6 h-6 text-xs font-semibold text-gray-900 bg-gray-200 rounded-full">
                     2
                   </div>
@@ -90,7 +90,7 @@
                 </div>
               </div>
               <div class="flex">
-                <div class="relative flex flex-shrink-0 items-center justify-center w-16 h-16 mr-10 bg-white rounded">
+                <div class="relative flex flex-shrink-0 items-center justify-center w-16 h-16 mr-10 bg-gray-50 rounded">
                   <div class="absolute bottom-0 right-0 -mb-3 -mr-3 flex items-center justify-center w-6 h-6 text-xs font-semibold text-gray-900 bg-gray-200 rounded-full">
                     3
                   </div>

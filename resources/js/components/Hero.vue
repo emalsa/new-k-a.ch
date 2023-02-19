@@ -8,8 +8,8 @@
               <span>Kirchenaustritt</span>
               <span class="text-green-500">&nbsp;bestellen</span>
             </div>
-            <h1 class="font-heading text-4xl md:text-5xl mb-6">Deinen Kirchenaustritt in der Schweiz</h1>
-            <p class="text-lg leading-8 mb-10">Deinen Kirchenaustritt kannst du gratis in wenigen Minuten erstellen und
+            <h1 class="font-heading text-4xl md:text-5xl mb-6">Kirchenaustritt in der Schweiz</h1>
+            <p class="text-lg leading-8 mb-10">Der Austritt aus der Kirche kannst du gratis in wenigen Minuten erstellen und
               dir per Email zukommen lassen. Oder passende Kirchgemeinde finden lassen.</p>
             <div class="sm:flex items-center">
               <a class="inline-block font-bold w-full sm:w-auto py-4 px-6 mb-4 sm:mb-0 sm:mr-4 text-center font-heading text-base text-white bg-green-500 hover:bg-green-600 border border-green-500 hover:border-green-600 rounded-sm transition duration-200"
