@@ -109,8 +109,8 @@
               <h4 v-if="isStep1">Personalien</h4>
               <h4 v-if="isStep2">Partner</h4>
               <h4 v-if="isStep3">Kinder</h4>
-              <h4 v-if="isStep4">Kirchgemeinde</h4>
-              <h4 v-if="isStep5">&Uuml;bersicht</h4>
+<!--              <h4 v-if="isStep4">Kirchgemeinde</h4>-->
+              <h4 v-if="isStep4">&Uuml;bersicht</h4>
             </div>
             <div>
               <div v-if="errors.length">
@@ -133,139 +133,9 @@
             <!-- Step 3 (Kinder)-->
             <Step3 :is-step3="isStep3" :child="child" :children="children" :formData="formData"/>
 
-            <!-- Step 4 (Buy or enter address) -->
-            <div v-if="isStep4" class="step4">
-              <div class="mb-6">
-                <div class="mb-2">
-                  <label>
-                    <input
-                        class="mt-2 mr-2"
-                        @click="optionClicked"
-                        type="radio"
-                        name="paymentOrNot"
-                        value="paymentChecked"
-                        :checked="this.formData.payment">
-                    <span class="ml-1 leading-7">Sucht ihr mir die Kirchgemeinde heraus, ich will nur unterschreiben (20 Fr.)</span>
-                  </label>
-                </div>
 
-                <div class="my-8">
-                  <label>
-                    <input
-                        class="mt-2 mr-2"
-                        @click="optionClicked"
-                        type="radio"
-                        name="paymentOrNot"
-                        value="unpaymentChecked"
-                        :checked="!this.formData.payment">
-                    <span class="ml-1 leading-7">Ich habe die Adresse der Kirchgemeinde bereits oder werde sie selbst suchen (Gratis)</span>
-                  </label>
-                </div>
-              </div>
-
-              <div v-if="formData.payment===false">
-
-
-                <!-- Catholic -->
-                <div class="catholic p-8 mt-4 border" v-if="formData.isCatholic">
-                  <div class="mb-8">
-                    <p>
-                      Du kannst die Adressfelder leer lassen und nachtr&auml;glich hinzuf&uuml;gen, wenn du die Email
-                      mit dem
-                      Austrittsschreiben von uns erhalten hast.
-                    </p>
-                  </div>
-                  <h5 class="uppercase mb-8">Katholische Kirchgemeinde</h5>
-
-                  <div class="mb-4">
-                    <label class="block text-md leading-6 mb-2" for="">Anschrift</label>
-                    <input class="block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
-                           v-model="catholic.anschriftAddress"
-                           type="text"
-                           placeholder="Kirchgemeinde Musterhausen">
-                  </div>
-                  <div class="mb-4">
-                    <label class="block text-md leading-6 mb-2" for="">Strasse und Nr.</label>
-                    <input class="block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
-                           v-model="catholic.streetAddress"
-                           type="text"
-                           placeholder="Kath. Kirchenstrasse 13">
-                  </div>
-                  <div class="mb-6">
-                    <label class="block text-md leading-6 mb-2" for="">Addresszusatz</label>
-                    <input class="block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
-                           v-model="catholic.streetAdditionalAddress"
-                           type="text">
-                  </div>
-                  <div class="mb-6 md:flex">
-                    <div class="flex-grow w-1/12 pr-2">
-                      <label class="block text-md leading-6 mb-2" for="">Postleitzahl</label>
-                      <input class="block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
-                             v-model="catholic.postalAddress"
-                             type="text"
-                             placeholder="3000">
-                    </div>
-                    <div class="flex-grow">
-                      <label class="block text-md leading-6 mb-2" for="">Ort</label>
-                      <input class="block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
-                             v-model="catholic.locationAddress"
-                             type="text"
-                             placeholder="Bern">
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Reform -->
-                <div class="reform p-8 mt-8 border" v-if="formData.isReform">
-                  <div class="mb-8">
-                    <p>
-                      Du kannst die Adressfelder leer lassen und nachtr&auml;glich hinzuf&uuml;gen, wenn du die Email
-                      mit dem
-                      Austrittsschreiben von uns erhalten hast.
-                    </p>
-                  </div>
-                  <h5 class="uppercase mb-8">Reformierte Kirchgemeinde</h5>
-                  <div class="mb-4">
-                    <label class="block text-md leading-6 mb-2" for="">Anschrift</label>
-                    <input class="block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
-                           v-model="reform.anschriftAddress"
-                           type="text"
-                           placeholder="Kirchgemeinde Musterhausen">
-                  </div>
-                  <div class="mb-4">
-                    <label class="block text-md leading-6 mb-2" for="">Strasse und Nr.</label>
-                    <input class="block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
-                           v-model="reform.streetAddress"
-                           type="text"
-                           placeholder="Reform. Kirchenstrasse 13">
-                  </div>
-                  <div class="mb-6">
-                    <label class="block text-md leading-6 mb-2" for="">Addresszusatz</label>
-                    <input class="block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
-                           v-model="reform.streetAdditionalAddress"
-                           type="text">
-                  </div>
-                  <div class="mb-6 md:flex">
-                    <div class="flex-grow w-1/12  pr-2">
-                      <label class="block text-md leading-6 mb-2" for="">Postleitzahl</label>
-                      <input class="block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
-                             v-model="reform.postalAddress"
-                             type="text"
-                             placeholder="3000">
-                    </div>
-                    <div class="md:flex-grow">
-                      <label class="block text-md leading-6 mb-2" for="">Ort</label>
-                      <input class="block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
-                             v-model="reform.locationAddress"
-                             type="text"
-                             placeholder="Bern">
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
             <!-- Step 5 (Summary) -->
-            <div v-if="isStep5" class="step5">
+            <div v-if="isStep4" class="step5">
 
               <div class="flex flex-wrap -mx-4 mt-16">
                 <!--                <div class="w-full lg:w-1/3 px-4">-->
@@ -450,7 +320,7 @@
                         <h5 class=" mb-8 font-heading text-2xl mb-4">Kosten</h5>
                         <p v-if="!formData.payment">Gratis</p>
                         <div v-if="formData.payment">
-                          <p>20 Franken</p>
+                          <p><b>20 Franken</b></p>
                           <div class="mb-6 mt-6 ">
                             <div class="mb-2">
                               <label> <span>Bezahlen mit</span><br/>
@@ -501,14 +371,14 @@
               </div>
 
               <!-- Weiter -->
-              <div v-if="!isStep5" class="w-1/2 text-right">
+              <div v-if="!isStep4" class="w-1/2 text-right">
                 <button class="w-full font-bold block py-4 px-6 text-center font-heading text-base text-white bg-green-500 hover:bg-green-600 border border-green-500 hover:border-green-600 rounded-sm transition duration-200"
                         name="next">
                   Weiter
                 </button>
               </div>
 
-              <div v-if="isStep5" class="w-1/2 text-right">
+              <div v-if="isStep4" class="w-1/2 text-right">
                 <button class="w-full font-bold block py-4 px-6 text-center font-heading text-base text-white bg-green-500 hover:bg-green-600 border border-green-500 hover:border-green-600 rounded-sm transition duration-200"
                         name="next"
                         @click.prevent="submit">
@@ -792,7 +662,7 @@ export default {
 
       if (this.isStep4) {
         if (this.formData.payment === null || this.formData.payment === 'undefined') {
-          this.errors.push("Wähle bitte eine Option.");
+          // this.errors.push("Wähle bitte eine Option.");
         }
       }
 
