@@ -159,9 +159,8 @@
             <div class="panel">
               <p class="max-w-3xl mt-4 text-base text-gray-700">
                 Jede Gemeinde respektive Stadt ist einer bestimmten Kirchgemeinde zugeteilt, diese ist jedoch nicht
-                immer das Pfarramt oder die Adresse der Kirche in der Gemeinde.
-                In den meisten Fällen scheitert der Kirchenaustritt an diesem Punkt. Das Austrittsschreiben wird nicht
-                an die korrekte Kirchgemeinde geschickt.
+                immer das Pfarramt oder die Adresse der Kirche in der Gemeinde. In den meisten Fällen scheitert der
+                Kirchenaustritt an diesem Punkt. Das Austrittsschreiben wird an die falsche Kirchgemeinde geschickt.
               </p>
               <p class="max-w-3xl mt-4 text-base text-gray-700">
                 Die korrekte&nbsp;<a href="#angebot"
@@ -215,10 +214,9 @@
               </svg>
             </button>
             <div class="panel">
-              <p class="max-w-3xl mt-4 text-base text-gray-700">Du musst nur die notwendigen Daten,
-                also Name, Adresse und Geburtsdatum eingeben. Die Adresse der Kirchgemeinde haben wir und machen den
-                Rest. Du musst dein Austrittsschreiben nur ausdrucken, dann unterschreiben und zum Schluss zur Post
-                bringen. Es ist also
+              <p class="max-w-3xl mt-4 text-base text-gray-700">Du musst nur die notwendigen Daten, also Name, Adresse
+                und Geburtsdatum eingeben. Die Adresse der Kirchgemeinde haben wir und machen den Rest. Du musst dein
+                Austrittsschreiben nur ausdrucken, dann unterschreiben und zum Schluss zur Post bringen. Es ist also
                 keine Recherche der Kirchgemeinde notwendig und du musst kein Schreiben erstellen. Du sparst mit uns
                 Zeit und Nerven.</p>
               <p class="max-w-3xl mt-4 text-base text-gray-700">Sollte uns beim Austrittsschreiben, den wir für dich
@@ -393,7 +391,7 @@
                 <li class="font-bold mb-2">Fehlendes Taufdatum oder Taufort</li>
                 <li>Ein fehlendes Taufdatum oder Taufort ist rechtlich keinen Grund um einen Austritt zu verweigern. Das
                   wird dann als Begründung geliefert wenn ein Austritt aus der Pfarrei vorgenommen wird. Einfach
-                  nochmals begründen das man nicht aus aus der Pfarrei austreten will sondern aus der
+                  nochmals begründen das man nicht aus aus der Pfarrei austreten will sondern aus der Institution der
                   öffentlichen-rechtlichen Landeskirche. Dafür braucht es kein Taufdatum/Taufort.
                 </li>
               </ul>
