@@ -237,7 +237,7 @@
 
           <li class=" px-6 py-8 bg-gray-50 rounded-xl">
             <button class="accordion w-full flex justify-between items-center text-left font-semibold font-heading">
-              <span class="text-xl font-semibold font-heading">Muss ich noch ein Gespräch führen wenn ich Austreten will?</span>
+              <span class="text-xl font-semibold font-heading">Muss ich noch ein Gespräch führen wenn ich austreten will?</span>
               <svg class="closed flex-shrink-0"
                    width="20"
                    height="20"
