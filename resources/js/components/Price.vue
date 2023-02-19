@@ -178,7 +178,7 @@
                           stroke-linejoin="round"></path>
                     <circle cx="10" cy="10" r="9" stroke="#00CBA6" stroke-width="1.5"></circle>
                   </svg>
-                  <span class="ml-4 text-sm">Garantie</span>
+                  <span class="ml-4 text-sm"><a class="underline underline-offset-4 decoration-green-600 hover:decoration-green-400 decoration-[3px]" href="#garantie">Garantie</a></span>
                 </li>
               </ul>
             </div>
