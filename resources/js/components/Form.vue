@@ -701,7 +701,6 @@ export default {
     },
     submit() {
       this.isLoading = true;
-      console.log(this.isLoading)
       axios.post('/api/create-person?XDEBUG_SESSION_START=PHPSTORM', {
             person: this.person,
             partner: this.partner,
@@ -737,8 +736,8 @@ export default {
               top: 0,
               behavior: "smooth"
             });
-            console.log('Error:');
-            console.log(e);
+            // console.log('Error:');
+            // console.log(e);
           });
 
 

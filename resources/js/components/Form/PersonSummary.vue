@@ -49,7 +49,6 @@ export default {
       return this.$props.element.konfession === 'kath' ? 'Römisch-Katholisch' : 'Evangelisch-Reformiert';
     },
     isChild() {
-      console.log(this.$props.element)
       return this.$props.element.hasOwnProperty('sign');
     },
   }
