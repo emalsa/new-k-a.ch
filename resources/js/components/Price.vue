@@ -14,7 +14,7 @@
         <div class=" items-center -mx-4">
 
           <div class="sm:max-w-[90%] lg:max-w-[75%] mx-auto px-4 mb-8 lg:mb-0">
-            <div class="  relative p-8 bg-white border-2 border-green-500 rounded-md">
+            <div class="relative p-8 bg-white border-2 border-green-500 rounded-md">
 
               <div class="text-center mb-8">
                 <span class="font-heading font-medium text-lg">Garantierter Austritt</span>
@@ -24,7 +24,7 @@
 
                 </div>
               </div>
-              <a class="block max-w-[50%] text-center mx-auto font-bold py-4 px-6 mb-8 text-center font-heading  text-base text-white bg-green-500 hover:bg-green-600 border border-green-500 hover:border-green-600 rounded-sm transition duration-200"
+              <a class="block max-w-[53%] text-center mx-auto font-bold py-4 px-6 mb-8 text-center font-heading text-base text-white bg-green-500 hover:bg-green-600 border border-green-500 hover:border-green-600 rounded-sm transition duration-200"
                  href="/formular">Jetzt starten</a>
               <div class="text-center w-full">
                 <ul class="inline-block">

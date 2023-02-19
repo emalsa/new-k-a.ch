@@ -215,13 +215,13 @@
             </button>
             <div class="panel">
               <p class="max-w-3xl mt-4 text-base text-gray-700">Du musst nur die notwendigen Daten, also Name, Adresse
-                und Geburtsdatum eingeben. Die Adresse der Kirchgemeinde haben wir und machen den Rest. Du musst dein
-                Austrittsschreiben nur ausdrucken, dann unterschreiben und zum Schluss zur Post bringen. Es ist also
-                keine Recherche der Kirchgemeinde notwendig und du musst kein Schreiben erstellen. Du sparst mit uns
-                Zeit und Nerven.</p>
-              <p class="max-w-3xl mt-4 text-base text-gray-700">Im Falle dass uns beim Austrittsschreiben einen Fehler
-                unterlaufen ist erstatten wir dir natürlich das Geld zurück. Beispielsweise wenn wir trotz Kontrolle dir
-                die falsche Kirchgemeinde im Austrittsschreiben gegeben haben. Zudem werden wir dir ein neues
+                und Geburtsdatum eingeben. Die Adresse der Kirchgemeinde haben wir und schicken dir sogar noch das
+                Austrittsschreiben. Du musst dein Austrittsschreiben nur ausdrucken, dann unterschreiben und zum Schluss
+                zur Post bringen. Es ist also keine Recherche der Kirchgemeinde notwendig und du musst kein Schreiben
+                erstellen. Du sparst mit uns Zeit und Nerven.</p>
+              <p class="max-w-3xl mt-4 text-base text-gray-700">Im Falle dass uns bei der Kirchgemeinde einen Fehler
+                unterlaufen ist, erstatten wir dir natürlich das Geld zurück. Beispielsweise wenn wir trotz Kontrolle
+                dir die falsche Kirchgemeinde im Austrittsschreiben gegeben haben. Zudem werden wir dir ein neues
                 Austrittsschreiben mit der korrekten Kirchgemeinde nachschicken.</p>
             </div>
           </li>
@@ -397,7 +397,9 @@
               </ul>
               <ul class="mb-3">
                 <li class="font-bold mb-2">Es wird um Gründe für einen Austritt verlangt</li>
-                <li>Gründe für einen Austritt musst du nicht geben. Erkläre das du informiert bist über den Kirchenaustritt.</li>
+                <li>Gründe für einen Austritt musst du nicht geben. Erkläre das du informiert bist über den
+                  Kirchenaustritt.
+                </li>
               </ul>
               <ul class="mb-3">
                 <li class="font-bold mb-2">Es wird um ein Gespräch gebeten</li>
@@ -508,7 +510,8 @@
               </svg>
             </button>
             <div class="panel">
-              <p class="max-w-3xl mt-4 text-base text-gray-700">Du bekommst das Austrittsschreiben per Email zugeschickt.</p>
+              <p class="max-w-3xl mt-4 text-base text-gray-700">Du bekommst das Austrittsschreiben per Email
+                zugeschickt.</p>
               <p class="max-w-3xl mt-4 text-base text-gray-700">Kontaktiere uns über das Kontaktformular wenn du die
                 Dokumente per Post erhalten möchtest.</p>
             </div>
