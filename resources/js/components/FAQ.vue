@@ -215,14 +215,16 @@
               </svg>
             </button>
             <div class="panel">
-              <p class="max-w-3xl mt-4 text-base text-gray-700">Bei diesem Angebot musst du nur die notwendigen Daten,
-                also Name, Adresse und Geburtsdatum eingeben. Die Adresse der Kirchgemeinde haben wir. Du musst dein
-                Austrittsschreiben nur ausdrucken, dann unterschreiben und zum Schluss zur Post bringen. Es ist also
-                keine Recherche der Kirchgemeinde notwendig und du sparst Zeit.</p>
+              <p class="max-w-3xl mt-4 text-base text-gray-700">Du musst nur die notwendigen Daten,
+                also Name, Adresse und Geburtsdatum eingeben. Die Adresse der Kirchgemeinde haben wir und machen den
+                Rest. Du musst dein Austrittsschreiben nur ausdrucken, dann unterschreiben und zum Schluss zur Post
+                bringen. Es ist also
+                keine Recherche der Kirchgemeinde notwendig und du musst kein Schreiben erstellen. Du sparst mit uns
+                Zeit und Nerven.</p>
               <p class="max-w-3xl mt-4 text-base text-gray-700">Sollte uns beim Austrittsschreiben, den wir für dich
-                erstellen, einen Fehler unterlaufen sein erstatten wir dir das Geld zurück.
-                Zum Beispiel wenn die falsche Kirchgemeinde im Austrittsschreiben ist. Zudem werden wir dir ein neues
-                Austrittsschreiben mit der korrekten Kirchgemeinde nachschicken.</p>
+                erstellen, einen Fehler unterlaufen sein erstatten wir dir das natürlich Geld zurück. Zum Beispiel wenn
+                die falsche Kirchgemeinde im Austrittsschreiben ist. Zudem werden wir dir ein neues Austrittsschreiben
+                mit der korrekten Kirchgemeinde nachschicken.</p>
             </div>
           </li>
 
