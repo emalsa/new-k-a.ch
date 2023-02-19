@@ -151,7 +151,7 @@
             </div>
             <div class="text-1">
                 <p>
-                    Nach reiflicher &Uuml;berlegung habe ich mich entschieden, aus der Kirche auszutreten.
+                    Nach reiflicher &Uuml;berlegung habe ich mich entschieden, aus der öffentlich-rechtlichen Institution Landeskirche auszutreten.
                     Hiermit erkl&auml;re ich meinen vollst&auml;ndigen Austritt sowohl aus der Kirchgemeinde als auch
                     aus der {{$confessionFull}} Kirche mit sofortiger Wirkung.
                 </p>
