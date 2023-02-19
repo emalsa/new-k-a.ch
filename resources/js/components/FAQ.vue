@@ -406,8 +406,8 @@
               </ul>
               <ul class="mb-3">
                 <li class="font-bold mb-2">Keine Bestätigung nach 4-6 Wochen</li>
-                <li>Schreibe einen eingeschriebenen Brief an die Kirchgemeinde und erwähne dass du eine Bestätigung von
-                  deinem Kirchenaustritt innerhalb von einer Woche erwartest.
+                <li>Schreibe einen eingeschriebenen Brief an die Kirchgemeinde und verlange eine Bestätigung von
+                  deinem Kirchenaustritt innerhalb von einer Woche.
                 </li>
               </ul>
               </p>
@@ -460,7 +460,7 @@
               <p class="max-w-3xl mt-4 text-base text-gray-700">Das Austrittsschreiben muss eine beglaubigte
                 Unterschrift haben in diesen Kantonen.</p>
               <p class="max-w-3xl mt-4 text-base text-gray-700">Das heisst, nachdem das Dokument ausgedruckt
-                ist <b>nicht unterschreiben.</b> Gehe dann mit dem Austrittsschreiben und ID/Pass zu deiner
+                ist, <b>noch nicht unterschreiben.</b> Gehe dann mit dem Austrittsschreiben und ID/Pass zu deiner
                 Gemeinde/Stadtverwaltung und verlange eine beglaubigte Unterschrift für dein Austrittsschreiben.</p>
             </div>
           </li>

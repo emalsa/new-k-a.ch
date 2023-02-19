@@ -12,7 +12,7 @@
     "src": "resources/assets/logo/logo-acros-column-white_alone.png"
   },
   "resources/css/app.css": {
-    "file": "assets/app-ba8f52c1.css",
+    "file": "assets/app-bf383c30.css",
     "isEntry": true,
     "src": "resources/css/app.css"
   },
@@ -33,9 +33,9 @@
     ],
     "css": [
       "assets/app-574d079d.css",
-      "assets/app-ba8f52c1.css"
+      "assets/app-bf383c30.css"
     ],
-    "file": "assets/app-5db5b233.js",
+    "file": "assets/app-015a9dbe.js",
     "isEntry": true,
     "src": "resources/js/app.js"
   },
