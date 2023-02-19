@@ -382,8 +382,7 @@
             </button>
             <div class="panel">
               <p class="max-w-3xl mt-4 text-base text-gray-700">Meistens läuft der Kirchenaustritt reibungslos. In
-                einigen Fällen wird einem der Austritt erschwert mit Gründen die rechtlich nicht standhalten. Das ist
-                jedoch eher die Ausnahme.</p>
+                einigen Fällen wird einem der Austritt erschwert mit Gründen die rechtlich nicht standhalten. Meistens gewähren die betreffenden Institutionen den Kirchenaustritt ohne grosse Bürokratie.</p>
               <p class="max-w-3xl mt-4 text-base text-gray-700">Das sind die häufigsten Gründe weshalb der Austritt
                 erschwert wird.</p>
               <p class="max-w-3xl mt-4 text-base text-gray-700">
