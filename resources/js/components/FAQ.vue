@@ -385,7 +385,7 @@
                 einigen Fällen wird einem der Austritt erschwert mit Gründen die rechtlich nicht standhalten. Das ist
                 jedoch eher die Ausnahme.</p>
               <p class="max-w-3xl mt-4 text-base text-gray-700">Das sind die häufigsten Gründe weshalb der Austritt
-                erschwert verweigert wird.</p>
+                erschwert wird.</p>
               <p class="max-w-3xl mt-4 text-base text-gray-700">
               <ul class="mb-3">
                 <li class="font-bold mb-2">Fehlendes Taufdatum oder Taufort</li>
