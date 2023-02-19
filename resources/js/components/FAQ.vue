@@ -510,7 +510,7 @@
           </svg>
         </button>
         <div class="panel">
-          <p class="max-w-3xl mt-4 text-base text-gray-700">Du bekommst das Austrittsschreiben per Email zugeschickt</p>
+          <p class="max-w-3xl mt-4 text-base text-gray-700">Du bekommst das Austrittsschreiben per Email zugeschickt.</p>
           <p class="max-w-3xl mt-4 text-base text-gray-700">Kontaktiere uns über das Kontaktformular wenn du die
             Dokumente per Post erhalten möchtest.</p>
         </div>
