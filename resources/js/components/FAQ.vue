@@ -406,7 +406,7 @@
               </ul>
               <ul class="mb-3">
                 <li class="font-bold mb-2">Keine Bestätigung nach 4-6 Wochen</li>
-                <li>Schreibe einen eingeschrieben Brief an die Kirchgemeinde und erwähne dass du eine Bestätigung von deinem Kirchenaustritt innerhalb von einer Woche erwartest.
+                <li>Schreibe einen eingeschriebenen Brief an die Kirchgemeinde und erwähne dass du eine Bestätigung von deinem Kirchenaustritt innerhalb von einer Woche erwartest.
                 </li>
               </ul>
               </p>
