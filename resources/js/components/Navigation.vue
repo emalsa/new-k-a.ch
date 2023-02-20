@@ -10,7 +10,7 @@
         </div>
         <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 hidden lg:block">
           <ul class="flex items-center">
-            <li class="font-heading font-bold mr-12 text-gray-400"><a class="hover:text-black" href="/#wie-es-funktioniert">Wie es funktioniert</a></li>
+            <li class="font-heading font-bold mr-12 text-gray-400"><a class="hover:text-black" href="/#wie-es-funktioniert">Vorgang</a></li>
             <li class="font-heading  font-bold mr-12 text-gray-400"><a class="hover:text-black" href="/#angebot">Kirchenaustritt</a></li>
             <li class="font-heading  font-bold mr-12 text-gray-400"><a class="hover:text-black" href="/#fragen-und-antworten">Fragen und Antworten</a></li>
             <li class="font-heading font-bold mr-12 text-gray-400"><a class="hover:text-black" href="/#kontakt">Kontakt</a></li>
@@ -44,7 +44,7 @@
           <ul class="w-full mb-auto pb-16">
             <li><a class="font-heading block text-base font-medium py-4 px-6 hover:bg-green-50 rounded-sm"
                    href="/">kirche-austreten.ch</a></li>
-            <li><a class="font-heading font-bold text-gray-400 block text-base py-4 px-6 hover:bg-green-50 rounded-sm" href="/#wie-es-funktioniert">Wie es funktioniert</a></li>
+            <li><a class="font-heading font-bold text-gray-400 block text-base py-4 px-6 hover:bg-green-50 rounded-sm" href="/#wie-es-funktioniert">Vorgang</a></li>
             <li><a class="font-heading font-bold text-gray-400 block text-base py-4 px-6 hover:bg-green-50 rounded-sm" href="/#angebot">Kirchenaustritt</a></li>
             <li><a class="font-heading font-bold text-gray-400 block text-base py-4 px-6 hover:bg-green-50 rounded-sm" href="/#fragen-und-antworten">Fragen und Antworten</a>            </li>
             <li><a class="font-heading font-bold text-gray-400 block text-base py-4 px-6 hover:bg-green-50 rounded-sm" href="/#kontakt">Kontakt</a>

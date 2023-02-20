@@ -9,7 +9,7 @@
 
         </div>
         <div class="w-full sm:w-auto mb-6 sm:mb-0 sm:mr-16 text-center">
-          <a class="inline-block mr-16 font-heading text-white" href="/#wie-es-funktioniert">Wie es funktioniert</a>
+          <a class="inline-block mr-16 font-heading text-white" href="/#wie-es-funktioniert">Vorgang</a>
           <a class="inline-block font-heading text-white" href="/#angebot">Angebot</a>
 
         </div>
