@@ -9,8 +9,7 @@
               <span class="text-green-500">&nbsp;funktioniert</span>
             </div>
             <h1 class="font-heading text-3xl sm:text-4xl mb-6">Ich möchte aus der Kirche austreten</h1>
-            <p class="max-w-sm text-lg leading-8 mb-2">Dann bist du hier richtig. Eine Begr&uuml;ndung ist &uuml;brigens
-              nicht notwendig.</p>
+            <p class="max-w-sm text-lg leading-8 mb-2">Eine Begr&uuml;ndung ist &uuml;brigens nicht notwendig.</p>
             <p class="max-w-sm text-lg leading-8 mb-8">Austritt aus der Römisch Katholischen oder Evangelisch
               Reformierten Kirche.</p>
             <a class="inline-block w-full sm:w-auto py-4 px-6 text-center font-heading font-medium text-base text-gray-900 hover:text-green-500 border border-gray-900 hover:border-green-500 rounded-sm transition duration-150"
@@ -39,13 +38,14 @@
                 <div>
                   <h3 class="font-heading text-lg font-medium mb-4">Formular ausf&uuml;llen</h3>
                   <p class="max-w-xxs leading-7">
-                    Starte deinen Kirchenaustritt indem du das Austritts Formular für die
+                    Du füllt unser Online Kirchenaustritts Formular für die
                     Kirche Schweiz&nbsp;
                     <router-link
                         :to="{ name: 'Form'}"
                         class="underline underline-offset-4 decoration-green-600 hover:decoration-green-400
                         decoration-[3px]">hier
-                    </router-link>ausf&uuml;llst. Dafür braucht es nur deinen Namen, Adresse und Geburtsdatum.
+                    </router-link>
+                    aus. Dafür braucht es nur deinen Namen, Adresse und Geburtsdatum.
                   </p>
                 </div>
               </div>
@@ -85,9 +85,9 @@
                   <div class="hidden sm:block absolute top-full left-1/2 mt-4 transform -translate-x-1/2 h-18 w-px bg-gray-100"></div>
                 </div>
                 <div>
-                  <h3 class="font-heading text-lg font-medium mb-4">Hast du die richtige Kirchgemeinde?</h3>
-                  <p class="max-w-xxs leading-7">Du hast die korrekte Anschrift deiner Kirchgemeinde nicht und keine
-                    Lust zu suchen? Kein Problem! Wir kümmern uns darum.</p>
+                  <h3 class="font-heading text-lg font-medium mb-4">Zurücklehnen</h3>
+                  <p class="max-w-xxs leading-7">Wir suchen die korrekte Kirchgemeinde und erstellen das
+                    Austrittsschreiben.</p>
                 </div>
               </div>
               <div class="flex">
@@ -126,7 +126,7 @@
                 </div>
                 <div>
                   <h3 class="font-heading text-lg font-medium mb-4">Ausdrucken und unterschreiben</h3>
-                  <p class="max-w-xxs leading-7">Wir schicken dir das fertige Austrittsformular per Email. Du musst es
+                  <p class="max-w-xxs leading-7">Wir schicken dir das fertige Austrittsschreiben per Email. Du musst es
                     nur noch ausdrucken, unterschreiben. Und dann abschicken. Fertig.</p>
                 </div>
               </div>

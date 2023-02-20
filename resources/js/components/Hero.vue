@@ -6,10 +6,10 @@
           <div class="max-w-md md:max-w-lg mx-auto xl:mx-0">
             <div class="text-sm mb-4 font-semibold uppercase">
               <span>Kirchenaustritt</span>
-              <span class="text-green-500">&nbsp;bestellen</span>
+              <span class="text-green-500">&nbsp;Formular</span>
             </div>
             <h1 class="font-heading text-4xl md:text-5xl mb-6">Kirchenaustritt Schweiz</h1>
-            <p class="text-lg leading-8 mb-10">Der Austritt aus der Kirche kannst du in wenigen Minuten erstellen. Wir finden passende Kirchgemeinde und machen den Rest.</p>
+            <p class="text-lg leading-8 mb-10">Der Austritt aus der Kirche erstellt du in wenigen Minuten. Wir finden passende Kirchgemeinde und machen den Rest.</p>
             <div class="sm:flex items-center">
               <a class="inline-block font-bold w-full sm:w-auto py-4 px-6 mb-4 sm:mb-0 sm:mr-4 text-center font-heading text-base text-white bg-green-500 hover:bg-green-600 border border-green-500 hover:border-green-600 rounded-sm transition duration-200"
                  href="/#angebot">Kirchenaustritt hier</a>
