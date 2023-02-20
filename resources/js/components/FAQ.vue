@@ -109,7 +109,8 @@
               </p>
               <p class="max-w-3xl mt-4 text-base text-gray-700">
                 Es gibt kein Online Portal, Formular oder ähnliches welche von der Kirche zur Verfügung gestellt wird um
-                deinen Kirchenaustritt zu erledigen.
+                deinen Kirchenaustritt zu erledigen. Du kannst dein Austrittsschreiben selber erfassen oder wir nehmen
+                dir die Arbeit ab.
               </p>
             </div>
           </li>
