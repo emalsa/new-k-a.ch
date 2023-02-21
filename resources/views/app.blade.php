@@ -70,7 +70,6 @@
 @vite('resources/css/app.css')
 <?php endif ?>
 
-@vite('resources/js/app.js')
-@vite('resources/js/main.js')
+@vite(['resources/js/app.js', 'resources/js/main.js'])
 </body>
 </html>

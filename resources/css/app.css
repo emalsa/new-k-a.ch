@@ -8,11 +8,11 @@
      transition: 0.4s;
  }
 
-.panel {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.2s ease-out;
-}
+/*.panel{*/
+/*    max-height: 0;*/
+/*    overflow: hidden;*/
+/*    transition: max-height 0.2s ease-out;*/
+/*}*/
 
 .border-b-1 {
     border-bottom-width: 1px;

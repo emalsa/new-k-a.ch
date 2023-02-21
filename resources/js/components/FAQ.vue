@@ -9,59 +9,9 @@
       </div>
       <div class="max-w-4xl mx-auto mb-24">
         <ul class="space-y-4">
-          <!--          <li id="faq-lifetime" class=" px-6 py-8 bg-gray-50 rounded-xl">-->
-          <!--            <button class="accordion w-full flex justify-between items-center text-left font-semibold font-heading">-->
-          <!--              <h3 class="text-xl font-semibold font-heading">Was sind die Gründe für einen Kirchenaustritt?</h3>-->
-          <!--              <svg class="closed flex-shrink-0"-->
-          <!--                   width="20"-->
-          <!--                   height="20"-->
-          <!--                   viewbox="0 0 20 20"-->
-          <!--                   fill="none"-->
-          <!--                   xmlns="http://www.w3.org/2000/svg">-->
-          <!--                <path fill-rule="evenodd"-->
-          <!--                      clip-rule="evenodd"-->
-          <!--                      d="M0.750214 10C0.750214 15.108 4.89121 19.25 10.0002 19.25C15.1082 19.25 19.2502 15.108 19.2502 10C19.2502 4.892 15.1082 0.75 10.0002 0.75C4.89121 0.75 0.750214 4.892 0.750214 10Z"-->
-          <!--                      stroke="#838EA4"-->
-          <!--                      stroke-width="1.5"-->
-          <!--                      stroke-linecap="round"-->
-          <!--                      stroke-linejoin="round"></path>-->
-          <!--                <path d="M6.52902 8.55774L10 12.0437L13.471 8.55774"-->
-          <!--                      stroke="#838EA4"-->
-          <!--                      stroke-width="1.5"-->
-          <!--                      stroke-linecap="round"-->
-          <!--                      stroke-linejoin="round"></path>-->
-          <!--              </svg>-->
-          <!--              <svg class="opened hidden flex-shrink-0"-->
-          <!--                   width="20"-->
-          <!--                   height="20"-->
-          <!--                   viewbox="0 0 20 20"-->
-          <!--                   fill="none"-->
-          <!--                   xmlns="http://www.w3.org/2000/svg">-->
-          <!--                <path fill-rule="evenodd"-->
-          <!--                      clip-rule="evenodd"-->
-          <!--                      d="M19.2498 10C19.2498 4.892 15.1088 0.75 9.99979 0.75C4.89179 0.75 0.749786 4.892 0.749786 10C0.749786 15.108 4.89179 19.25 9.99979 19.25C15.1088 19.25 19.2498 15.108 19.2498 10Z"-->
-          <!--                      stroke="#45C1FF"-->
-          <!--                      stroke-width="1.5"-->
-          <!--                      stroke-linecap="round"-->
-          <!--                      stroke-linejoin="round"></path>-->
-          <!--                <path d="M13.471 11.4423L9.99998 7.95626L6.52898 11.4423"-->
-          <!--                      stroke="#45C1FF"-->
-          <!--                      stroke-width="1.5"-->
-          <!--                      stroke-linecap="round"-->
-          <!--                      stroke-linejoin="round"></path>-->
-          <!--              </svg>-->
-          <!--            </button>-->
-          <!--            <div class="panel">-->
-          <!--              <p class="max-w-3xl mt-4 text-base text-gray-700">-->
-          <!--                Grundsätzlich steht jeder Person das Recht zu aus der Kirche auszutreten.-->
-          <!--              </p>-->
-          <!--              <p class="max-w-3xl mt-4 text-base text-gray-700">-->
-
-          <!--              </p>-->
-          <!--            </div>-->
-          <!--          </li>-->
-          <li id="faq-lifetime" class=" px-6 py-8 bg-gray-50 rounded-xl">
-            <button class="accordion w-full flex justify-between items-center text-left font-semibold font-heading">
+          <li class=" px-6 py-8 bg-gray-50 rounded-xl">
+            <button @click="toggleItem(1)"
+                    class="accordion w-full flex justify-between items-center text-left font-semibold font-heading">
               <h3 class="text-xl font-semibold font-heading">Wie kann ich aus der Kirche austreten?</h3>
               <svg class="closed flex-shrink-0"
                    width="20"
@@ -102,13 +52,14 @@
                       stroke-linejoin="round"></path>
               </svg>
             </button>
-            <div class="panel">
+            <div class="panel" v-if="isActive[1] === 1">
               <p class="max-w-3xl mt-4 text-base text-gray-700">
                 Für den Austritt aus der Kirche in der Schweiz muss die betreffende Person, welche aus der Kirche
                 austreten will, per Post einen Brief an die zuständige Kirchgemeinde senden.
               </p>
               <p class="max-w-3xl mt-4 text-base text-gray-700">
-                Es gibt kein Online Portal, Formular oder ähnliches welche von der Kirche zur Verfügung gestellt wird um
+                Es gibt kein Online Portal, Formular oder ähnliches welche von der Kirche zur Verfügung gestellt wird
+                um
                 deinen Kirchenaustritt zu erledigen. Du kannst dein Austrittsschreiben selber erfassen oder wir nehmen
                 dir die Arbeit ab.
               </p>
@@ -116,7 +67,8 @@
           </li>
 
           <li class=" px-6 py-8 bg-gray-50 rounded-xl">
-            <button class="accordion w-full flex justify-between items-center text-left font-semibold font-heading">
+            <button @click="toggleItem(2)"
+                    class="accordion w-full flex justify-between items-center text-left font-semibold font-heading">
               <h3 class="text-xl font-semibold font-heading">Wohin muss ich mein Austrittsschreiben schicken?</h3>
               <svg class="closed flex-shrink-0"
                    width="20"
@@ -157,7 +109,7 @@
                       stroke-linejoin="round"></path>
               </svg>
             </button>
-            <div class="panel">
+            <div class="panel" v-if="isActive[2] === 2">
               <p class="max-w-3xl mt-4 text-base text-gray-700">
                 Jede Gemeinde respektive Stadt ist einer bestimmten Kirchgemeinde zugeteilt, diese ist jedoch nicht
                 immer das Pfarramt oder die Adresse der Kirche in der Gemeinde. In den meisten Fällen scheitert der
@@ -173,7 +125,8 @@
           </li>
 
           <li id="garantie" class=" px-6 py-8 bg-gray-50 rounded-xl">
-            <button class="accordion w-full flex justify-between items-center text-left font-semibold font-heading">
+            <button @click="toggleItem(3)"
+                    class="accordion w-full flex justify-between items-center text-left font-semibold font-heading">
               <h3 class="text-xl font-semibold font-heading">Was heisst <i>Garantierter Austritt</i>?</h3>
               <svg class="closed flex-shrink-0"
                    width="20"
@@ -214,7 +167,7 @@
                       stroke-linejoin="round"></path>
               </svg>
             </button>
-            <div class="panel">
+            <div class="panel" v-if="isActive[3] === 3">
               <p class="max-w-3xl mt-4 text-base text-gray-700">Du musst nur die notwendigen Daten, also Name, Adresse
                 und Geburtsdatum eingeben. Die Adresse der Kirchgemeinde haben wir und schicken dir sogar noch das
                 Austrittsschreiben. Du musst dein Austrittsschreiben nur ausdrucken, dann unterschreiben und zum Schluss
@@ -228,7 +181,8 @@
           </li>
 
           <li class=" px-6 py-8 bg-gray-50 rounded-xl">
-            <button class="accordion w-full flex justify-between items-center text-left font-semibold font-heading">
+            <button @click="toggleItem(4)"
+                    class="accordion w-full flex justify-between items-center text-left font-semibold font-heading">
               <span class="text-xl font-semibold font-heading">Was passiert nachdem ich das Austrittsschreiben an die Kirchgemeinde geschickt habe?</span>
               <svg class="closed flex-shrink-0"
                    width="20"
@@ -269,7 +223,7 @@
                       stroke-linejoin="round"></path>
               </svg>
             </button>
-            <div class="panel">
+            <div class="panel" v-if="isActive[4] === 4">
               <p class="max-w-3xl mt-4 text-base text-gray-700">Du erhältst nach etwa 4-6 Wochen eine Bestätigung per
                 Post von der Kirchgemeinde.
                 Die Kirchgemeinde schickt ebenfalls eine Bestätigung an das Steueramt deiner Gemeinde, um dich von der
@@ -288,7 +242,8 @@
           </li>
 
           <li class=" px-6 py-8 bg-gray-50 rounded-xl">
-            <button class="accordion w-full flex justify-between items-center text-left font-semibold font-heading">
+            <button @click="toggleItem(5)"
+                    class="accordion w-full flex justify-between items-center text-left font-semibold font-heading">
               <span class="text-xl font-semibold font-heading">Muss ich noch ein Gespräch führen wenn ich austreten will?</span>
               <svg class="closed flex-shrink-0"
                    width="20"
@@ -329,7 +284,7 @@
                       stroke-linejoin="round"></path>
               </svg>
             </button>
-            <div class="panel">
+            <div class="panel" v-if="isActive[5] === 5">
               <p class="max-w-3xl mt-4 text-base text-gray-700">Grundsätzlich Nein.</p>
               <p class="max-w-3xl mt-4 text-base text-gray-700">Im Schreiben wird explizit erläutert dass keine
                 Kontaktaufnahme gewünscht ist.</p>
@@ -340,7 +295,8 @@
           </li>
 
           <li class=" px-6 py-8 bg-gray-50 rounded-xl">
-            <button class="accordion w-full flex justify-between items-center text-left font-semibold font-heading">
+            <button @click="toggleItem(6)"
+                    class="accordion w-full flex justify-between items-center text-left font-semibold font-heading">
               <span class="text-xl font-semibold font-heading">Welche Probleme können auftreten?</span>
               <svg class="closed flex-shrink-0"
                    width="20"
@@ -381,7 +337,7 @@
                       stroke-linejoin="round"></path>
               </svg>
             </button>
-            <div class="panel">
+            <div class="panel" v-if="isActive[6] === 6">
               <p class="max-w-3xl mt-4 text-base text-gray-700">Meistens läuft der Kirchenaustritt reibungslos. In
                 einigen Fällen wird einem der Austritt erschwert mit Gründen die rechtlich nicht standhalten. Meistens
                 gewähren die betreffenden Institutionen den Kirchenaustritt ohne grosse Bürokratie.</p>
@@ -418,7 +374,8 @@
           </li>
 
           <li class=" px-6 py-8 bg-gray-50 rounded-xl">
-            <button class="accordion w-full flex justify-between items-center text-left font-semibold font-heading">
+            <button @click="toggleItem(7)"
+                    class="accordion w-full flex justify-between items-center text-left font-semibold font-heading">
               <span class="text-xl font-semibold font-heading">Für Kantone St. Gallen und beider Appenzell</span>
               <svg class="closed flex-shrink-0"
                    width="20"
@@ -459,7 +416,7 @@
                       stroke-linejoin="round"></path>
               </svg>
             </button>
-            <div class="panel">
+            <div class="panel" v-if="isActive[7] === 7">
               <p class="max-w-3xl mt-4 text-base text-gray-700">Das Austrittsschreiben muss eine beglaubigte
                 Unterschrift haben in diesen Kantonen.</p>
               <p class="max-w-3xl mt-4 text-base text-gray-700">Das heisst, nachdem das Dokument ausgedruckt
@@ -469,7 +426,8 @@
           </li>
 
           <li class=" px-6 py-8 bg-gray-50 rounded-xl">
-            <button class="accordion w-full flex justify-between items-center text-left font-semibold font-heading">
+            <button @click="toggleItem(8)"
+                    class="accordion w-full flex justify-between items-center text-left font-semibold font-heading">
               <span class="text-xl font-semibold font-heading">Wie erhalte ich das Austrittsschreiben?</span>
               <svg class="closed flex-shrink-0"
                    width="20"
@@ -510,7 +468,7 @@
                       stroke-linejoin="round"></path>
               </svg>
             </button>
-            <div class="panel">
+            <div class="panel" v-if="isActive[8] === 8">
               <p class="max-w-3xl mt-4 text-base text-gray-700">Du bekommst das Austrittsschreiben per Email
                 zugeschickt.</p>
               <p class="max-w-3xl mt-4 text-base text-gray-700">Kontaktiere uns über das Kontaktformular wenn du die
@@ -531,6 +489,41 @@
 
 </template>
 <script>
-
-export default {}
+// console.log('DOMContentLoaded')
+//
+// let acc = document.getElementsByClassName('accordion');
+// let index;
+//
+// console.log('acc: ' + acc.length)
+//
+// for (index = 0; index < acc.length; index++) {
+//   console.log('for loop: ' + index)
+//   acc[index].addEventListener('click', function () {
+//     console.log('click toggle')
+//     this.classList.toggle('active');
+//     let svgOpened = this.querySelector('svg.opened');
+//     let svgClosed = this.querySelector('svg.closed');
+//     svgOpened.classList.toggle('hidden');
+//     svgClosed.classList.toggle('hidden');
+//     let panel = this.nextElementSibling;
+//     if (panel.style.maxHeight) {
+//       panel.style.maxHeight = null;
+//     } else {
+//       panel.style.maxHeight = panel.scrollHeight + 'px';
+//     }
+//   });
+// }
+export default {
+  data() {
+    return {
+      transitionClass: '',
+      isActive: []
+    }
+  },
+  methods: {
+    toggleItem(index) {
+      this.isActive[index] = (this.isActive[index] === index) ? false : index;
+    }
+  }
+}
 </script>
