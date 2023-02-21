@@ -1,8 +1,8 @@
 <template>
   <section class="pb-12">
     <div class="relative container px-4 mx-auto">
-      <div class="flex flex-wrap -mx-4 items-center mb-16">
-        <div class="w-full lg:w-1/2 px-4 mb-24 lg:mb-0">
+      <div class="flex flex-wrap -mx-4 items-center mb-10">
+        <div class="w-full lg:w-1/2 px-4 mb-24 lg:mb-0 pt-12">
           <div class="max-w-md md:max-w-lg mx-auto xl:mx-0">
             <div class="text-sm mb-4 font-semibold uppercase">
               <span>Kirchenaustrittsschreiben</span>
@@ -31,12 +31,11 @@
         <!--        <div class="w-full lg:w-1/2 px-4" style="padding-top:50px;margin-bottom: 100px">-->
         <!--          <img class="block mx-auto xl:mx-0" src="../../assets/images/headers/undraw_add_document.svg" alt="">-->
 
-        <div class="w-full lg:w-1/2 px-4" style="padding-top:50px;margin-bottom: 100px">
-          <img width="600"
-               height="500"
-               class="block mx-auto xl:mx-0"
-               src="../../assets/images/headers/undraw_add_document_green.svg"
-               alt="">
+        <div class="max-w-sm  mx-auto sm:pt-12 md:pt-14 pt-38  ">
+          <img
+              class="block mx-auto xl:mx-0"
+              src="../../assets/images/headers/undraw_opened_re_i38e.svg"
+              alt="">
 
         </div>
       </div>

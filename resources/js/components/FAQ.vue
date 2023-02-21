@@ -12,7 +12,7 @@
           <li class=" px-6 py-8 bg-gray-50 rounded-xl">
             <button @click="toggleItem(1)"
                     class="accordion w-full flex justify-between items-center text-left font-semibold font-heading">
-              <h3 class="text-xl font-semibold font-heading">Wie kann ich aus der Kirche austreten?</h3>
+              <h3 class="font-heading text-lg font-medium text-gray-400">Wie kann ich aus der Kirche austreten?</h3>
               <svg class="closed flex-shrink-0"
                    width="20"
                    height="20"
@@ -69,7 +69,7 @@
           <li class=" px-6 py-8 bg-gray-50 rounded-xl">
             <button @click="toggleItem(2)"
                     class="accordion w-full flex justify-between items-center text-left font-semibold font-heading">
-              <h3 class="text-xl font-semibold font-heading">Wohin muss ich mein Austrittsschreiben schicken?</h3>
+              <h3 class="font-heading text-lg font-medium text-gray-400">Wohin muss ich mein Austrittsschreiben schicken?</h3>
               <svg class="closed flex-shrink-0"
                    width="20"
                    height="20"
@@ -127,7 +127,7 @@
           <li id="garantie" class=" px-6 py-8 bg-gray-50 rounded-xl">
             <button @click="toggleItem(3)"
                     class="accordion w-full flex justify-between items-center text-left font-semibold font-heading">
-              <h3 class="text-xl font-semibold font-heading">Was heisst <i>Garantierter Austritt</i>?</h3>
+              <h3 class="font-heading text-lg font-medium text-gray-400">Was heisst <i>Garantierter Austritt</i>&nbsp;?</h3>
               <svg class="closed flex-shrink-0"
                    width="20"
                    height="20"
@@ -183,7 +183,7 @@
           <li class=" px-6 py-8 bg-gray-50 rounded-xl">
             <button @click="toggleItem(4)"
                     class="accordion w-full flex justify-between items-center text-left font-semibold font-heading">
-              <span class="text-xl font-semibold font-heading">Was passiert nachdem ich das Austrittsschreiben an die Kirchgemeinde geschickt habe?</span>
+              <span class="font-heading text-lg font-medium text-gray-400">Was passiert nachdem ich das Austrittsschreiben an die Kirchgemeinde geschickt habe?</span>
               <svg class="closed flex-shrink-0"
                    width="20"
                    height="20"
@@ -244,7 +244,7 @@
           <li class=" px-6 py-8 bg-gray-50 rounded-xl">
             <button @click="toggleItem(5)"
                     class="accordion w-full flex justify-between items-center text-left font-semibold font-heading">
-              <span class="text-xl font-semibold font-heading">Muss ich noch ein Gespräch führen wenn ich austreten will?</span>
+              <span class="font-heading text-lg font-medium text-gray-400">Muss ich noch ein Gespräch führen wenn ich austreten will?</span>
               <svg class="closed flex-shrink-0"
                    width="20"
                    height="20"
@@ -297,7 +297,7 @@
           <li class=" px-6 py-8 bg-gray-50 rounded-xl">
             <button @click="toggleItem(6)"
                     class="accordion w-full flex justify-between items-center text-left font-semibold font-heading">
-              <span class="text-xl font-semibold font-heading">Welche Probleme können auftreten?</span>
+              <span class="font-heading text-lg font-medium text-gray-400">Welche Probleme können auftreten?</span>
               <svg class="closed flex-shrink-0"
                    width="20"
                    height="20"
@@ -376,7 +376,7 @@
           <li class=" px-6 py-8 bg-gray-50 rounded-xl">
             <button @click="toggleItem(7)"
                     class="accordion w-full flex justify-between items-center text-left font-semibold font-heading">
-              <span class="text-xl font-semibold font-heading">Für Kantone St. Gallen und beider Appenzell</span>
+              <span class="font-heading text-lg font-medium text-gray-400">Für Kantone St. Gallen und beider Appenzell</span>
               <svg class="closed flex-shrink-0"
                    width="20"
                    height="20"
@@ -428,7 +428,7 @@
           <li class=" px-6 py-8 bg-gray-50 rounded-xl">
             <button @click="toggleItem(8)"
                     class="accordion w-full flex justify-between items-center text-left font-semibold font-heading">
-              <span class="text-xl font-semibold font-heading">Wie erhalte ich das Austrittsschreiben?</span>
+              <span class="font-heading text-lg font-medium text-gray-400">Wie erhalte ich das Austrittsschreiben?</span>
               <svg class="closed flex-shrink-0"
                    width="20"
                    height="20"

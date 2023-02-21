@@ -36,7 +36,7 @@
                   <div class="hidden sm:block absolute top-full left-1/2 mt-4 transform -translate-x-1/2 h-18 w-px bg-gray-100"></div>
                 </div>
                 <div>
-                  <h3 class="font-heading text-lg font-medium mb-4">Formular ausf&uuml;llen</h3>
+                  <p class="font-heading text-lg font-medium mb-2 text-gray-400">Formular ausf&uuml;llen</p>
                   <p class="max-w-xxs leading-7">
                     Du füllt unser Online Kirchenaustritts Formular für die
                     Kirche Schweiz&nbsp;
@@ -85,7 +85,7 @@
                   <div class="hidden sm:block absolute top-full left-1/2 mt-4 transform -translate-x-1/2 h-18 w-px bg-gray-100"></div>
                 </div>
                 <div>
-                  <h3 class="font-heading text-lg font-medium mb-4">Zurücklehnen</h3>
+                  <p class="font-heading text-lg font-medium mb-2 text-gray-400">Zurücklehnen</p>
                   <p class="max-w-xxs leading-7">Wir suchen die korrekte Kirchgemeinde und erstellen das
                     Austrittsschreiben.</p>
                 </div>
@@ -125,7 +125,7 @@
                   </svg>
                 </div>
                 <div>
-                  <h3 class="font-heading text-lg font-medium mb-4">Ausdrucken und unterschreiben</h3>
+                  <p class="font-heading text-lg font-medium mb-2 text-gray-400">Unterschreiben</p>
                   <p class="max-w-xxs leading-7">Wir schicken dir das fertige Austrittsschreiben per Email. Du musst es
                     nur noch ausdrucken, unterschreiben. Und dann abschicken. Fertig.</p>
                 </div>
