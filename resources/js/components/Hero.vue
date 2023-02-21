@@ -6,7 +6,7 @@
           <div class="max-w-md md:max-w-lg mx-auto xl:mx-0">
             <div class="text-sm mb-4 font-semibold uppercase">
               <span>Kirchenaustritt</span>
-              <span class="text-green-500">&nbsp;Formular</span>
+              <span class="text-green-500">&nbsp;Online</span>
             </div>
             <h1 class="font-heading text-4xl md:text-5xl mb-6">Kirchenaustritt Schweiz</h1>
             <p class="text-lg leading-8 mb-10">Der Austritt aus der Kirche erstellt du in wenigen Minuten. Wir finden die zuständige Kirchgemeinde und machen den Rest.</p>
