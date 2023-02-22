@@ -44,7 +44,7 @@
           <ul class="w-full mb-auto pb-16">
             <li><a class="font-heading block text-base font-medium py-4 px-6 hover:bg-green-50 rounded-sm"
                    href="/">kirche-austreten.ch</a></li>
-            <li><a class="font-heading font-bold text-gray-400 block text-base py-4 px-6 hover:bg-green-50 rounded-sm close-menu" href="/#wie-es-funktioniert">Vorgang</a></li>
+            <li><a class="font-heading font-bold text-gray-400 block text-base py-4 px-6 hover:bg-green-50 rounded-sm close-menu" href="/#wie-es-funktioniert">Funktionsweise</a></li>
             <li><a class="font-heading font-bold text-gray-400 block text-base py-4 px-6 hover:bg-green-50 rounded-sm close-menu" href="/#angebot">Kirchenaustritt</a></li>
             <li><a class="font-heading font-bold text-gray-400 block text-base py-4 px-6 hover:bg-green-50 rounded-sm close-menu" href="/#fragen-und-antworten">Fragen und Antworten</a>            </li>
             <li><a class="font-heading font-bold text-gray-400 block text-base py-4 px-6 hover:bg-green-50 rounded-sm close-menu" href="/#kontakt">Kontakt</a>
