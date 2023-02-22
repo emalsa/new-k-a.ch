@@ -418,11 +418,11 @@
                                        value="example value">
                                 <span class="required ml-1">Ich akzeptiere die
                                   <a target="_blank"
-                                     class="underline underline-offset-4 decoration-green-500 hover:decoration-green-400 decoration-[3px]"
+                                     class="underline underline-offset-4 decoration-[1px]"
                                      href="/agb">
                                     AGBs</a> und
                                   <a target="_blank"
-                                     class="underline underline-offset-4 decoration-green-500 hover:decoration-green-400 decoration-[3px]"
+                                     class="underline underline-offset-4 decoration-[1px]"
                                      href="/agb">Datenschutzbestimmungen</a>*</span>
                               </label>
                             </div>
