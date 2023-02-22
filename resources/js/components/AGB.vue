@@ -20,41 +20,43 @@
           <p class="mb-2 font-bold">Garantierter Kirchenaustritt und Gewähr</p>
           <p class="mb-1">kirche-austreten.ch bietet als Dienstleistung die Unterstützung bei der korrekten Adresse der
             zuständigen Kirchgemeinde. Das Kirchenaustrittsschreiben, welches mitgeliefert wird, ist kein rechtlich
-            geprüftes Schreiben und deshalb ohne Gewähr. Die korrekte Kirchgemeinde wird spätestens eine Woche nach
-            Bezahlung geliefert.</p>
-          <p class="mb-1">a) Den offiziellen Kirchenaustritt bestätigt die Kirchgemeinde normalerweise mit einer
-            Bestätigung über den Kirchenaustritt. kirche-austreten.ch und involvierte Personen können für Versäumnisse
-            der Kirche, wie beispielsweise das Verfehlen der Meldung über den Austritt an die Gemeinde/ das Steueramt
-            nicht haftbar gemacht werden.</p>
-          <p class="mb-1">a.a) Verweigert die Kirchgemeinde oder eine Institution den Austritt oder das entfallen der
-            Kirchensteuer, aus irgendwelchen Gründen, kann kirche-austreten.ch und involvierte Personen nicht haftbar
-            gemacht werden für entstehende Folgekosten und Einforderungen. Der Kunde hat also auf keinen Fall Anspruch
-            auf darüber hinausgehende Entschädigung, weder für bezahlte Kirchensteuer, andere geltend gemachte
-            Folgeschäden, Schadenersatz von Dritten oder ähnliches.</p>
-          <p class="mb-1">b) kirche-austreten.ch und involvierte Personen garantieren die korrekte Adresse der
+            geprüftes Schreiben und deshalb ohne Gewähr. Jedoch wurde das gelieferte Schreiben für etliche andere Kunden
+            verwendet. Das Schreiben mit korrekter Kirchgemeinde wird normalerweise innerhalb von 1 Stunde geliefert. Es
+            kann jedoch noch fehlende Daten in unserer Datenbank geben, deshalb gilt als Frist: Die korrekte
+            Kirchgemeinde wird spätestens nach einer Woche nach Bezahlung geliefert.</p>
+          <p class="mb-1">a) kirche-austreten.ch und involvierte Personen garantieren die korrekte Adresse der
             Kirchgemeinde. Sollte es zu Fehler bezüglich der Kirchgemeindeadresse geben, garantiert kirche-austreten.ch
             die Rückerstattung der bezahlten Kosten auf der kirche-austreten.ch Website für diese Dienstleistung sowie
             eine Nachbesserung mittels einem kostenlosen nachgelieferten Austrittsschreiben per Email.</p>
+          <p class="mb-1">a.a) Der Auftraggeber kann bis vor dem Verwenden der gelieferten Kirchgemeinde vom Vertrag
+            zurücktreten. Nach der Verwendung der gelieferten Kirchgemeindeadresse ist ein Rücktritt nicht mehr
+            möglich.</p>
+          <p class="mb-1">b) Den offiziellen Kirchenaustritt bestätigt die Kirchgemeinde normalerweise mit einer
+            Bestätigung über den Kirchenaustritt. kirche-austreten.ch und involvierte Personen können für Versäumnisse
+            der Kirche, wie beispielsweise das Verfehlen der Meldung über den Austritt an die Gemeinde/ das Steueramt
+            nicht haftbar gemacht werden.</p>
+          <p class="mb-1">b.1) Verweigert die Kirchgemeinde oder eine Institution den Austritt oder das entfallen der
+            Kirchensteuer, aus irgendwelchen Gründen, kann kirche-austreten.ch und involvierte Personen nicht haftbar
+            gemacht werden für entstehende Folgekosten und Einforderungen. Der Kunde hat auf keinen Fall Anspruch
+            auf darüber hinausgehende Entschädigung, weder für bezahlte Kirchensteuer, andere geltend gemachte
+            Folgeschäden, Schadenersatz von Dritten oder ähnliches.</p>
           <p class="mb-1">c) kirche-austreten.ch und involvierte Personen lehnen jegliche Folgekosten, wie
-            Beispielsweise Rechtskosten und Steuereinforderungen, ab, welche durch ein nicht-erfolgen eines
+            Beispielsweise Rechtskosten und Steuereinforderungen ab, welche durch ein nicht-erfolgen eines
             Kirchenaustritt entstehen.</p>
           <p class="mb-1">d) Alle zur Verfügung stehende Informationen auf dieser Website, Emails, Links und ggf.
             Korrespondenzen sind mit besten Gewissen und sorgfältig erfasst worden, diese sind auf keinen Fall als
             Rechtsberatung zu verstehen. Alle Angaben sind ohne Gewähr und die korrekte Durchführung des
             Kirchenaustritts ist Sache des Auftragsgeber. Diese können je nach Person, Kanton und Gemeinde
             variieren.</p>
-          <p class="mb-1">e) Der Auftraggeber kann bis vor dem Verwenden der gelieferten Kirchgemeinde vom Vertrag
-            zurücktreten. Nach der Verwendung der gelieferten Kirchgemeindeadresse ist ein Rücktritt nicht mehr
-            möglich.</p>
+          <p class="mb-1">e) Kosten für etwaige Postzustellung oder die Durchführung einer beglaubigte Unterschrift
+            tragen die Kunden.
+          </p>
           <p class="mb-1">f) Es wird zur keiner Zeit eine Rechtsberatung angeboten.</p>
           <p class="mb-1">g) Sollte der Auftrag wegen technischen oder Personal Ausfällen unbearbeitet bleiben, so
             kann kirche-austreten und involvierte Personen nicht belangt werden.</p>
           <p class="mb-1">h) Es ist die Sache des Kunden über das Ausbleiben der Email mit der Kirchgemeindeadresse uns
             zu informieren.</p>
           <p class="mb-1">i) Die Richtigkeit der Daten liegt in der Verantwortung des Kunden.</p>
-          <p class="mb-1">j) Kosten für etwaige Postzustellung oder die Durchführung einer beglaubigte Unterschrift
-            obliegt dem Kunden.
-          </p>
 
           <p class="mb-2 mt-2 font-bold">Information zum allgemeinen Kirchenaustritt und Kirchensteuer</p>
           <p class="mb-2">Dieses Angebot ist kostenpflichtig und vor Vertragsabschluss ist klar ersichtlich das ein
