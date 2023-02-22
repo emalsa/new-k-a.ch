@@ -49,10 +49,9 @@
             Kirchenaustritts ist Sache des Auftragsgeber. Diese können je nach Person, Kanton und Gemeinde
             variieren.</p>
           <p class="mb-1">e) Kosten für etwaige Postzustellung oder die Durchführung einer beglaubigte Unterschrift
-            tragen die Kunden.
-          </p>
+            tragen die Kunden.</p>
           <p class="mb-1">f) Es wird zur keiner Zeit eine Rechtsberatung angeboten.</p>
-          <p class="mb-1">g) Sollte der Auftrag wegen technischen oder Personal Ausfällen unbearbeitet bleiben, so
+          <p class="mb-1">g) Sollte der Auftrag wegen Personal oder technischen Ausfällen unbearbeitet bleiben, so
             kann kirche-austreten und involvierte Personen nicht belangt werden.</p>
           <p class="mb-1">h) Es ist die Sache des Kunden über das Ausbleiben der Email mit der Kirchgemeindeadresse uns
             zu informieren.</p>
@@ -65,7 +64,7 @@
             bezahlen können sich auch kostenlos ein Austrittsschreiben selbständig erfassen. Die Wirksamkeit des
             Kirchenaustritts in Bezug auf Kirchen-Mitgliedschaft und Befreiung von der Kirchensteuer können variieren.
             Die Angaben sind zu verstehen für einen grossen Teil der austretenden Personen, können jedoch aufgrund
-            Umständen sowie eventuelle Fehler erheblich abweichen.
+            Umständen sowie eventuelle Fehler abweichen.
           </p>
 
           <p class="mb-2 mt-2 font-bold">Gewähr der Informationen</p>
