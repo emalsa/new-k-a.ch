@@ -75,11 +75,11 @@
           <p class="mb-2 mt-2 font-bold">Datenschutz</p>
           <p class="mb-2">Die eingegeben Daten werden nach bestem Gewissen sorgfältig behandelt und in der Schweiz
             bei www.metanet.ch gespeichert. Spätestens nach 3 Monaten werden diese Daten gelöscht. Für die eingesetzten
-            Drittanbieter wie etwa stripe.com, Google oder Mailgun können wir keine Haftung übernehmen. Siehe Stripe.com
-            und Mailgun und Google AGB's. kirche-austreten.ch hat als Region Bound die EU ausgewählt für den Transaction
-            Mail Anbieter namens Mailgun im Einsatz. Stripe.com als Zahlungsdienstleister und Google Service wie etwa
-            Google Analytic 4 (keine Anzeige der IP von Seitenbesucher und verbessertem DSGVO) zur Verbesserung des
-            Angebots.
+            Drittanbieter wie etwa stripe.com, Google, Hotjar oder Mailgun können wir keine Haftung übernehmen. Siehe
+            Stripe.com, Mailgun, Hotjar und Google AGB's. Stripe.com als Zahlungsdienstleister und Google Service wie
+            etwa Google Analytic 4 (keine Anzeige der IP von Seitenbesucher und verbessertem DSGVO) sowie Hotjar zur
+            Verbesserung des Angebots. kirche-austreten.ch hat als Region Bound die EU ausgewählt für den Transaction
+            Mail Anbieter namens Mailgun im Einsatz.
             <br/>Die Übermittlung der Daten im Formular werden durch das HTTPS Protokoll geschützt, ohne erweiterte
             Sicherheitsmechanismen</p>
 
