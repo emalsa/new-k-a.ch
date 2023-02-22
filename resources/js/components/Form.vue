@@ -325,7 +325,7 @@
                         <h5 class="mb-6 font-heading text-2xl">Kosten</h5>
                         <p v-if="!formData.payment">Gratis</p>
                         <div v-if="formData.payment">
-                          <p class="font-heading">Total:&nbsp;<i>20 CHF</i></p>
+                          <p class="font-heading">Total:&nbsp;<i>24 CHF</i></p>
                           <div class="mb-6 mt-6">
 
 

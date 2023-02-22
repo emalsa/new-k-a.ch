@@ -19,7 +19,7 @@
               <div class="text-center mb-8">
                 <span class="font-heading font-medium text-lg">Garantierter Austritt</span>
                 <div class="flex items-start justify-center mt-2">
-                  <span class="font-heading font-medium text-3xl leading-10">20</span>
+                  <span class="font-heading font-medium text-3xl leading-10">24</span>
                   <span class="font-heading font-medium text-3xl leading-10">.-</span>
 
                 </div>
