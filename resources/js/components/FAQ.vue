@@ -53,11 +53,11 @@
               </svg>
             </button>
             <div class="panel" v-if="isActive[1] === 1">
-              <p class="max-w-3xl mt-4 text-base text-gray-700">
+              <p class="max-w-3xl mt-4 text-base  text-gray-800">
                 Für den Austritt aus der Kirche in der Schweiz muss die betreffende Person, welche aus der Kirche
                 austreten will, per Post einen Brief an die zuständige Kirchgemeinde senden.
               </p>
-              <p class="max-w-3xl mt-4 text-base text-gray-700">
+              <p class="max-w-3xl mt-4 text-base  text-gray-800">
                 Es gibt kein Online Portal, Formular oder ähnliches welche von der Kirche zur Verfügung gestellt wird
                 um
                 deinen Kirchenaustritt zu erledigen. Du kannst dein Austrittsschreiben selber erfassen oder wir nehmen
@@ -69,7 +69,8 @@
           <li class=" px-6 py-8 bg-gray-50 rounded-xl">
             <button @click="toggleItem(2)"
                     class="accordion w-full flex justify-between items-center text-left font-semibold font-heading">
-              <h3 class="font-heading text-lg font-medium text-gray-400">Wohin muss ich mein Austrittsschreiben schicken?</h3>
+              <h3 class="font-heading text-lg font-medium text-gray-400">Wohin muss ich mein Austrittsschreiben
+                schicken?</h3>
               <svg class="closed flex-shrink-0"
                    width="20"
                    height="20"
@@ -110,12 +111,12 @@
               </svg>
             </button>
             <div class="panel" v-if="isActive[2] === 2">
-              <p class="max-w-3xl mt-4 text-base text-gray-700">
+              <p class="max-w-3xl mt-4 text-base  text-gray-800">
                 Jede Gemeinde respektive Stadt ist einer bestimmten Kirchgemeinde zugeteilt, diese ist jedoch nicht
                 immer das Pfarramt oder die Adresse der Kirche in der Gemeinde. In den meisten Fällen scheitert der
                 Kirchenaustritt an diesem Punkt. Das Austrittsschreiben wird an die falsche Kirchgemeinde geschickt.
               </p>
-              <p class="max-w-3xl mt-4 text-base text-gray-700">
+              <p class="max-w-3xl mt-4 text-base  text-gray-800">
                 Die korrekte&nbsp;<a href="#angebot"
                                      class="underline underline-offset-4 decoration-green-600 hover:decoration-green-400 decoration-[3px]">
                 Adresse der Kirchgemeinde</a> können wir dir geben.
@@ -127,7 +128,8 @@
           <li id="garantie" class=" px-6 py-8 bg-gray-50 rounded-xl">
             <button @click="toggleItem(3)"
                     class="accordion w-full flex justify-between items-center text-left font-semibold font-heading">
-              <h3 class="font-heading text-lg font-medium text-gray-400">Was heisst <i>Garantierter Austritt</i>&nbsp;?</h3>
+              <h3 class="font-heading text-lg font-medium text-gray-400">Was heisst <i>Garantierter Austritt</i>&nbsp;?
+              </h3>
               <svg class="closed flex-shrink-0"
                    width="20"
                    height="20"
@@ -168,12 +170,12 @@
               </svg>
             </button>
             <div class="panel" v-if="isActive[3] === 3">
-              <p class="max-w-3xl mt-4 text-base text-gray-700">Du musst nur die notwendigen Daten, also Name, Adresse
+              <p class="max-w-3xl mt-4 text-base  text-gray-800">Du musst nur die notwendigen Daten, also Name, Adresse
                 und Geburtsdatum eingeben. Die Adresse der Kirchgemeinde haben wir und schicken dir sogar noch das
                 Austrittsschreiben. Du musst dein Austrittsschreiben nur ausdrucken, dann unterschreiben und zum Schluss
                 zur Post bringen. Es ist also keine Recherche der Kirchgemeinde notwendig und du musst kein Schreiben
                 erstellen. Du sparst mit uns Zeit und Nerven.</p>
-              <p class="max-w-3xl mt-4 text-base text-gray-700">Im Falle dass uns bei der Kirchgemeinde einen Fehler
+              <p class="max-w-3xl mt-4 text-base  text-gray-800">Im Falle dass uns bei der Kirchgemeinde einen Fehler
                 unterlaufen ist, erstatten wir dir natürlich das Geld zurück. Beispielsweise wenn wir trotz Kontrolle
                 dir die falsche Kirchgemeinde im Austrittsschreiben gegeben haben. Zudem werden wir dir ein neues
                 Austrittsschreiben mit der korrekten Kirchgemeinde nachschicken.</p>
@@ -224,14 +226,14 @@
               </svg>
             </button>
             <div class="panel" v-if="isActive[4] === 4">
-              <p class="max-w-3xl mt-4 text-base text-gray-700">Du erhältst nach etwa 4-6 Wochen eine Bestätigung per
+              <p class="max-w-3xl mt-4 text-base  text-gray-800">Du erhältst nach etwa 4-6 Wochen eine Bestätigung per
                 Post von der Kirchgemeinde.
                 Die Kirchgemeinde schickt ebenfalls eine Bestätigung an das Steueramt deiner Gemeinde, um dich von der
                 Kirchensteuer zu befreien.</p>
-              <p class="max-w-3xl mt-4 text-base text-gray-700">Als gute Praxis etabliert hat sich dass das Steueramt
+              <p class="max-w-3xl mt-4 text-base  text-gray-800">Als gute Praxis etabliert hat sich dass das Steueramt
                 deiner Gemeinde von dir ebenfalls über deinen Kirchenaustritt informiert wird.
                 Für den Fall das es die Kirchgemeinde nicht macht.</p>
-              <p class="max-w-3xl mt-4 text-base text-gray-700">
+              <p class="max-w-3xl mt-4 text-base  text-gray-800">
                 Wir schicken dir ebenfalls das Schreiben für das Steueramt beim
                 <a href="#angebot"
                    class="underline underline-offset-4 decoration-green-600 hover:decoration-green-400 decoration-[3px]">
@@ -285,10 +287,10 @@
               </svg>
             </button>
             <div class="panel" v-if="isActive[5] === 5">
-              <p class="max-w-3xl mt-4 text-base text-gray-700">Grundsätzlich Nein.</p>
-              <p class="max-w-3xl mt-4 text-base text-gray-700">Im Schreiben wird explizit erläutert dass keine
+              <p class="max-w-3xl mt-4 text-base  text-gray-800">Grundsätzlich Nein.</p>
+              <p class="max-w-3xl mt-4 text-base  text-gray-800">Im Schreiben wird explizit erläutert dass keine
                 Kontaktaufnahme gewünscht ist.</p>
-              <p class="max-w-3xl mt-4 text-base text-gray-700">In ganz wenigen Gemeinden ist der Austritt mit einem
+              <p class="max-w-3xl mt-4 text-base  text-gray-800">In ganz wenigen Gemeinden ist der Austritt mit einem
                 Gespräch verbunden. Die Anzahl dieser Gemeinden ist jedoch zu vernachlässigen. Das haben die
                 entsprechenden Landeskirchen gesetzlich durchgesetzt.</p>
             </div>
@@ -338,38 +340,39 @@
               </svg>
             </button>
             <div class="panel" v-if="isActive[6] === 6">
-              <p class="max-w-3xl mt-4 text-base text-gray-700">Meistens läuft der Kirchenaustritt reibungslos. In
+              <p class="max-w-3xl mt-4 text-base  text-gray-800">Meistens läuft der Kirchenaustritt reibungslos. In
                 einigen Fällen wird einem der Austritt erschwert mit Gründen die rechtlich nicht standhalten. Meistens
                 gewähren die betreffenden Institutionen den Kirchenaustritt ohne grosse Bürokratie.</p>
-              <p class="max-w-3xl mt-4 text-base text-gray-700">Das sind die häufigsten Gründe weshalb der Austritt
+              <p class="max-w-3xl mt-4 text-base  text-gray-800">Das sind die häufigsten Gründe weshalb der Austritt
                 erschwert wird.</p>
-              <p class="max-w-3xl mt-4 text-base text-gray-700">
-              <ul class="mb-3">
-                <li class="font-bold mb-2">Fehlendes Taufdatum oder Taufort</li>
-                <li>Ein fehlendes Taufdatum oder Taufort ist rechtlich keinen Grund um einen Austritt zu verweigern. Das
-                  wird dann als Begründung geliefert wenn ein Austritt aus der Pfarrei vorgenommen wird. Einfach
-                  nochmals begründen das man nicht aus aus der Pfarrei austreten will sondern aus der Institution der
-                  öffentlichen-rechtlichen Landeskirche. Dafür braucht es kein Taufdatum/Taufort.
-                </li>
-              </ul>
-              <ul class="mb-3">
-                <li class="font-bold mb-2">Es wird um Gründe für einen Austritt verlangt</li>
-                <li>Gründe für einen Austritt musst du nicht geben. Erkläre das du informiert bist über den
-                  Kirchenaustritt.
-                </li>
-              </ul>
-              <ul class="mb-3">
-                <li class="font-bold mb-2">Es wird um ein Gespräch gebeten</li>
-                <li>Erkläre dass dein Entscheid bereits gefallen ist und kein Gespräch von deiner Seite gewünscht ist.
-                </li>
-              </ul>
-              <ul class="mb-3">
-                <li class="font-bold mb-2">Keine Bestätigung nach 4-6 Wochen</li>
-                <li>Schreibe einen eingeschriebenen Brief an die Kirchgemeinde und verlange eine Bestätigung von
-                  deinem Kirchenaustritt innerhalb von einer Woche.
-                </li>
-              </ul>
-              </p>
+              <div class="max-w-3xl mt-4 text-base text-gray-800">
+                <ul class="mb-3">
+                  <li class="font-bold mb-2">Fehlendes Taufdatum oder Taufort</li>
+                  <li>Ein fehlendes Taufdatum oder Taufort ist rechtlich keinen Grund um einen Austritt zu verweigern.
+                    Das
+                    wird dann als Begründung geliefert wenn ein Austritt aus der Pfarrei vorgenommen wird. Einfach
+                    nochmals begründen das man nicht aus aus der Pfarrei austreten will sondern aus der Institution der
+                    öffentlichen-rechtlichen Landeskirche. Dafür braucht es kein Taufdatum/Taufort.
+                  </li>
+                </ul>
+                <ul class="mb-3">
+                  <li class="font-bold mb-2">Es wird um Gründe für einen Austritt verlangt</li>
+                  <li>Gründe für einen Austritt musst du nicht geben. Erkläre das du informiert bist über den
+                    Kirchenaustritt.
+                  </li>
+                </ul>
+                <ul class="mb-3">
+                  <li class="font-bold mb-2">Es wird um ein Gespräch gebeten</li>
+                  <li>Erkläre dass dein Entscheid bereits gefallen ist und kein Gespräch von deiner Seite gewünscht ist.
+                  </li>
+                </ul>
+                <ul class="mb-3">
+                  <li class="font-bold mb-2">Keine Bestätigung nach 4-6 Wochen</li>
+                  <li>Schreibe einen eingeschriebenen Brief an die Kirchgemeinde und verlange eine Bestätigung von
+                    deinem Kirchenaustritt innerhalb von einer Woche.
+                  </li>
+                </ul>
+              </div>
             </div>
           </li>
 
@@ -417,9 +420,9 @@
               </svg>
             </button>
             <div class="panel" v-if="isActive[7] === 7">
-              <p class="max-w-3xl mt-4 text-base text-gray-700">Das Austrittsschreiben muss eine beglaubigte
+              <p class="max-w-3xl mt-4 text-base  text-gray-800">Das Austrittsschreiben muss eine beglaubigte
                 Unterschrift haben in diesen Kantonen.</p>
-              <p class="max-w-3xl mt-4 text-base text-gray-700">Das heisst, nachdem das Dokument ausgedruckt
+              <p class="max-w-3xl mt-4 text-base  text-gray-800">Das heisst, nachdem das Dokument ausgedruckt
                 ist, <b>noch nicht unterschreiben.</b> Gehe dann mit dem Austrittsschreiben und ID/Pass zu deiner
                 Gemeinde/Stadtverwaltung und verlange eine beglaubigte Unterschrift für dein Austrittsschreiben.</p>
             </div>
@@ -469,9 +472,9 @@
               </svg>
             </button>
             <div class="panel" v-if="isActive[8] === 8">
-              <p class="max-w-3xl mt-4 text-base text-gray-700">Du bekommst das Austrittsschreiben per Email
+              <p class="max-w-3xl mt-4 text-base  text-gray-800">Du bekommst das Austrittsschreiben per Email
                 zugeschickt.</p>
-              <p class="max-w-3xl mt-4 text-base text-gray-700">Kontaktiere uns über das Kontaktformular wenn du die
+              <p class="max-w-3xl mt-4 text-base  text-gray-800">Kontaktiere uns über das Kontaktformular wenn du die
                 Dokumente per Post erhalten möchtest.</p>
             </div>
           </li>

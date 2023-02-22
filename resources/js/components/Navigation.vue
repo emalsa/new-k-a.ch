@@ -10,9 +10,9 @@
         </div>
         <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 hidden lg:block">
           <ul class="flex items-center">
-            <li class="font-heading font-bold mr-12 text-gray-400"><a class="hover:text-black" href="/#wie-es-funktioniert">Vorgang</a></li>
-            <li class="font-heading  font-bold mr-12 text-gray-400"><a class="hover:text-black" href="/#angebot">Kirchenaustritt</a></li>
-            <li class="font-heading  font-bold mr-12 text-gray-400"><a class="hover:text-black" href="/#fragen-und-antworten">Fragen und Antworten</a></li>
+            <li class="font-heading font-bold mr-12 text-gray-400"><a class="hover:text-black" href="/#wie-es-funktioniert">Funktionsweise</a></li>
+            <li class="font-heading  font-bold mr-12 text-gray-400"><a class="hover:text-black" href="/#angebot">Formular</a></li>
+            <li class="font-heading  font-bold mr-12 text-gray-400"><a class="hover:text-black" href="/#fragen-und-antworten">FAQ</a></li>
             <li class="font-heading font-bold mr-12 text-gray-400"><a class="hover:text-black" href="/#kontakt">Kontakt</a></li>
           </ul>
         </div>

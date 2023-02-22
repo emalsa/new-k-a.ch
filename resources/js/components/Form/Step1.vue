@@ -1,16 +1,17 @@
 <template>
   <div v-if="isStep1" class="step1">
-    <div class="mb-4">
+    <div class="mb-12">Um das Austrittsschreiben korrekt zu erstellen, benötigt die Kirchgemeinde ein paar Daten von dir.</div>
+    <div class="mb-12">
       <label class="required block text-md leading-6 mb-2" for="">Email</label>
-      <input class="block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
+      <input class="block w-full p-4 mb-2 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
              v-model="person.email"
              name="email"
              type="email"
              placeholder="Deine Email">
-      <span class="block text-md w-full py-4 font-heading rounded outline-none">An diese Email schicken wir das Austrittsschreiben.</span>
+      <span class="text-[15px] text-gray-500">Hierhin schicken wir das Austrittsschreiben.</span>
 
     </div>
-    <div class="mb-4">
+    <div class="mb-6">
       <label class="required block text-md leading-6 mb-2" for="">Vorname</label>
       <input class="block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
              v-model="person.vorname"
@@ -18,7 +19,7 @@
              type="text"
              placeholder="Dein Vorname">
     </div>
-    <div class="mb-4">
+    <div class="mb-6">
       <label class="required block text-md leading-6 mb-2" for="">Nachname</label>
       <input class="block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
              v-model="person.nachname"
@@ -26,13 +27,13 @@
 
              placeholder="Dein Nachname">
     </div>
-    <div class="mb-6">
+    <div class="mb-10">
       <label class="required block text-md leading-6 mb-2" for="">Geburtsdatum</label>
-      <input class="block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
+      <input class="block w-full p-4 mb-2 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
              v-model="person.geburtsdatum"
              type="text"
              placeholder="Dein Geburtsdatum, Beispiel: 4.12.1967">
-      <span class="block text-md w-full py-4 font-heading rounded outline-none">Beispiel: <i>4.12.1966</i> oder <i>3.3.1922</i></span>
+      <span class="text-[15px] text-gray-500">Beispiel: <i>4.12.1966</i> oder <i>3.3.1922</i></span>
     </div>
         <div class="mb-6">
           <label class="required block text-md leading-6 mb-2" for="">Meine Konfession</label>
@@ -54,13 +55,13 @@
 
     <!-- Address -->
     <div class="address mt-16">
-      <h4 class="mb-8 font-heading text-2xl mb-4">Deine Adresse</h4>
+      <h4 class="mb-4 font-heading text-2xl">Deine Adresse</h4>
+      <div class="mb-10">Deine Adresse wird im Austrittsschreiben benötigt.</div>
       <div class="mb-6">
         <label class="required block text-md leading-6 mb-2" for="">Strasse und Nr.</label>
         <input class="block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
                v-model="person.streetAddress"
                type="text"
-
                placeholder="Musterstrasse 24b">
       </div>
 

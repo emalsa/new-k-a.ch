@@ -7,7 +7,7 @@
                v-model="formData.hatEhepartner"
                name="hatEhepartner"
                value="example value">
-        <span class="ml-1">Mein Ehepartner möchte auch austreten</span>
+        <span class="ml-1">Meine Ehepartnerin / Mein Ehepartner möchte auch austreten</span>
       </label>
     </div>
     <div v-if="formData.hatEhepartner">

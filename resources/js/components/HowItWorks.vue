@@ -1,5 +1,5 @@
 <template>
-  <section id="wie-es-funktioniert" class="py-16 bg-gray-50">
+  <section id="wie-es-funktioniert" class="sm:py-16 bg-gray-50">
     <div class="container px-4 mx-auto">
       <div class="flex flex-wrap items-center -mx-4">
         <div class="w-full lg:w-1/2 px-4 mb-16 lg:mb-0">
@@ -39,12 +39,10 @@
                   <p class="font-heading text-lg font-medium mb-2 text-gray-400">Formular ausf&uuml;llen</p>
                   <p class="max-w-xxs leading-7">
                     Du füllt unser Online Kirchenaustritts Formular für die
-                    Kirche Schweiz&nbsp;
-                    <router-link
-                        :to="{ name: 'Form'}"
-                        class="underline underline-offset-4 decoration-green-600 hover:decoration-green-400
-                        decoration-[3px]">hier
-                    </router-link>
+                    Kirche Schweiz <a
+                      href="/formular"
+                      class="underline underline-offset-4 decoration-green-600 hover:decoration-green-400
+                        decoration-[3px]">hier</a>
                     aus. Dafür braucht es nur deinen Namen, Adresse und Geburtsdatum.
                   </p>
                 </div>

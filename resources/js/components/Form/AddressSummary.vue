@@ -1,8 +1,8 @@
 <template>
   <div>
-    <h5 class=" mb-8 font-heading text-2xl mb-4">{{ headline }}</h5>
+    <h5 class="mb-6 font-heading text-2xl">{{ headline }}</h5>
 
-    <table class="mt-6">
+    <table class="mt-4">
       <tr>
         <td v-if="element.streetAddress">
           {{ element.streetAddress ? element.streetAddress : '-' }}
