@@ -512,7 +512,7 @@ export default {
       currentStep: 1,
       isLoading: false,
       isLoadingStep: false,
-      stripeURL: 'https://buy.stripe.com/fZe7urdLl1TmcaQ003',
+      stripeURL: 'https://buy.stripe.com/fZe9CzdLl69Cb6M7sx',
       confirmURL: '/confirm',
       formData: {
         isCatholic: false,
