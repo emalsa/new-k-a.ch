@@ -17,6 +17,17 @@ document.addEventListener('DOMContentLoaded', function () {
     // close
     const close = document.querySelectorAll('.navbar-close');
     const backdrop = document.querySelectorAll('.navbar-backdrop');
+    const link = document.querySelectorAll('.close-menu');
+
+    if (link.length) {
+        for (var i = 0; i < link.length; i++) {
+            link[i].addEventListener('click', function () {
+                for (var j = 0; j < menu.length; j++) {
+                    menu[j].classList.add('hidden');
+                }
+            });
+        }
+    }
 
     if (close.length) {
         for (var i = 0; i < close.length; i++) {
