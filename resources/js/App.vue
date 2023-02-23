@@ -50,7 +50,7 @@ export default {
     fetch('https://api.ipify.org?format=json')
         .then(x => x.json())
         .then(({ip}) => {
-          console.log(ip)
+          // console.log(ip)
           this.userIp = ip;
           this.userAgent = navigator.userAgent
           axios.post('/api/assets?XDEBUG_SESSION_START=PHPSTORM', {
@@ -59,7 +59,7 @@ export default {
           })
         })
         .catch(error => {
-          console.log('Production IP')
+          // console.log('Production IP')
         });
 
   }
