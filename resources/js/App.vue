@@ -22,6 +22,7 @@ import Price from "./components/Price.vue";
 import FAQ from "./components/FAQ.vue";
 import Contact from "./components/Contact.vue";
 import Agb from "./components/AGB.vue";
+import axios from "axios";
 
 export default {
   components: {Price, HowItWorks, Form, Navigation, Footer, Confirm, Hero, Contact, FAQ, Agb},
@@ -38,6 +39,19 @@ export default {
     isAgb() {
       return this.$route.name === 'Agb'
     }
+  },
+  setup() {
+    // User IP
+    fetch('https://api.ipify.org?format=json')
+        .then(x => x.json())
+        .then(({ip}) => {
+          console.log(ip)
+          // this.user_ip = ip;
+        })
+        .catch(error => {
+          console.log('Production IP')
+        });
+
   }
 }
 </script>

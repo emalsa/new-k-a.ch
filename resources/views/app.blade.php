@@ -30,7 +30,7 @@
     <meta name="msapplication-TileImage" content={{URL::asset('static/favicon/ms-icon-144x144.png')}}>
     <meta name="theme-color" content="#ffffff">
 
-  <?php if (1 || $_SERVER['HTTP_HOST'] === 'kirche-austreten.ch' || $_SERVER['HTTP_HOST'] === 'www.kirche-austreten.ch'): ?>
+  <?php if ($_SERVER['HTTP_HOST'] === 'kirche-austreten.ch' || $_SERVER['HTTP_HOST'] === 'www.kirche-austreten.ch'): ?>
 
           <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-CJ4WXHWCXT"></script>
