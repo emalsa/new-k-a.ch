@@ -8,7 +8,6 @@
   <Form v-if="isForm"/>
   <Confirm v-if="isConfirm"/>
   <Agb v-if="isAgb"/>
-
   <Footer/>
 </template>
 <script>
