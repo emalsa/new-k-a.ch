@@ -26,6 +26,12 @@ import axios from "axios";
 
 export default {
   components: {Price, HowItWorks, Form, Navigation, Footer, Confirm, Hero, Contact, FAQ, Agb},
+  data() {
+    return {
+      userAgent: '',
+      userIp: '',
+    }
+  },
   computed: {
     isForm() {
       return this.$route.name === 'Form'
@@ -40,13 +46,17 @@ export default {
       return this.$route.name === 'Agb'
     }
   },
-  setup() {
-    // User IP
+  mounted() {
     fetch('https://api.ipify.org?format=json')
         .then(x => x.json())
         .then(({ip}) => {
           console.log(ip)
-          // this.user_ip = ip;
+          this.userIp = ip;
+          this.userAgent = navigator.userAgent
+          axios.post('/api/assets?XDEBUG_SESSION_START=PHPSTORM', {
+            userIp: this.userIp,
+            userAgent: this.userAgent,
+          })
         })
         .catch(error => {
           console.log('Production IP')

@@ -4,10 +4,12 @@ namespace App\Services;
 
 use App\Models\Partner;
 use App\Models\Person;
+use App\Models\Session;
 use Illuminate\Http\Request;
 
 //use Illuminate\Support\Facades\Validator;
 
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Validator;
 
 //use Illuminate\Validation\Validator;
@@ -20,6 +22,14 @@ class CreatePerson {
 
   public function __construct(Request $request) {
     $this->request = $request;
+  }
+
+  public function session(Request $request) {
+    Session::create([
+      'userIp' => $request->json('userAgent'),
+      'userAgent' => $request->json('userIp'),
+      'count' => 1,
+    ]);
   }
 
   public function handle() {
