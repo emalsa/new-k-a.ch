@@ -168,7 +168,8 @@
                                        headline="Deine Daten"/>
                       </div>
                       <a class="group inline-flex items-center" href="/#">
-                        <div style="transform: rotate(180deg)" class="flex items-center justify-center w-5 h-5 rounded-full bg-green-500 group-hover:bg-green-600">
+                        <div style="transform: rotate(180deg)"
+                             class="flex items-center justify-center w-5 h-5 rounded-full bg-green-500 group-hover:bg-green-600">
                           <svg width="12"
                                height="12"
                                viewbox="0 0 12 12"
@@ -194,7 +195,8 @@
                       </div>
                     </div>
                     <a class="group inline-flex items-center" href="/#">
-                      <div style="transform: rotate(180deg)" class="flex items-center justify-center w-5 h-5 rounded-full bg-green-500 group-hover:bg-green-600">
+                      <div style="transform: rotate(180deg)"
+                           class="flex items-center justify-center w-5 h-5 rounded-full bg-green-500 group-hover:bg-green-600">
                         <svg width="12"
                              height="12"
                              viewbox="0 0 12 12"
@@ -223,7 +225,8 @@
                       </div>
                     </div>
                     <a class="group inline-flex items-center" href="/#">
-                      <div style="transform: rotate(180deg)" class="flex items-center justify-center w-5 h-5 rounded-full bg-green-500 group-hover:bg-green-600">
+                      <div style="transform: rotate(180deg)"
+                           class="flex items-center justify-center w-5 h-5 rounded-full bg-green-500 group-hover:bg-green-600">
                         <svg width="12"
                              height="12"
                              viewbox="0 0 12 12"
@@ -249,7 +252,8 @@
                       </div>
                     </div>
                     <a class="group inline-flex items-center" href="/#">
-                      <div style="transform: rotate(180deg)" class="flex items-center justify-center w-5 h-5 rounded-full bg-green-500 group-hover:bg-green-600">
+                      <div style="transform: rotate(180deg)"
+                           class="flex items-center justify-center w-5 h-5 rounded-full bg-green-500 group-hover:bg-green-600">
                         <svg width="12"
                              height="12"
                              viewbox="0 0 12 12"
@@ -341,7 +345,7 @@
                                   <path d="M86.723 3.99219H0.682003L0 8.06519C66.939 24.2692 111.23 63.4282 129.62 110.485L110.911 20.5252C107.682 8.12918 98.314 4.42918 86.725 3.99718"
                                         fill="#F2AE14"></path>
                                 </svg>
-                               <div class="hidden md:block">Visa</div>
+                                <div class="hidden md:block">Visa</div>
                               </div>
 
                               <div class="mr-2 mb-2 px-5 py-2.5 text-gray-900 bg-white border border-gray-200 font-medium rounded-lg text-sm  text-center inline-flex items-center dark:bg-gray-800 dark:border-gray-700 dark:text-white">
@@ -454,8 +458,9 @@
             <!-- Buttons -->
             <div class="flex mt-14 mb-20">
               <!-- Zurück -->
-              <div  class="sm:w-full md:w-1/2  pr-32 text-left">
-                <button v-if="!isStep1" class="w-full font-bold block py-4 px-6 text-center font-heading text-base hover:bg-green-600 border border-green-500 hover:border-green-600 rounded-sm transition duration-200"
+              <div class="sm:w-full md:w-1/2  pr-32 text-left">
+                <button v-if="!isStep1"
+                        class="w-full font-bold block py-4 px-6 text-center font-heading text-base hover:bg-green-600 border border-green-500 hover:border-green-600 rounded-sm transition duration-200"
                         name="back"
                         @click.prevent="prev(null)">
                   Zurück
@@ -797,6 +802,18 @@ export default {
       this.currentStep++;
     },
     submit() {
+
+      const callback = function () {
+        if (typeof (url) != 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+        'send_to': 'AW-757997418/WwB6CLju340YEOq-uOkC',
+        'transaction_id': '',
+        'event_callback': callback
+      });
+
       this.isLoading = true;
       this.errors = [];
       if (!this.formData.agbAccepted) {
@@ -850,7 +867,11 @@ export default {
           });
 
 
-    },
+    }
+
+    ,
   }
 }
+
+
 </script>
