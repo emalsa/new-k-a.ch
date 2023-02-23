@@ -2,8 +2,8 @@
   <Navigation/>
   <Hero v-if="isHome"/>
   <HowItWorks v-if="isHome"/>
-  <FAQ v-if="isHome"/>
   <Price v-if="isHome"/>
+  <FAQ v-if="isHome"/>
   <Contact v-if="isHome"/>
   <Form v-if="isForm"/>
   <Confirm v-if="isConfirm"/>

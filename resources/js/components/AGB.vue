@@ -18,7 +18,7 @@
             Daten im Formular übermittelt</p>
 
           <p class="mb-2 font-bold">Garantierter Kirchenaustritt und Gewähr</p>
-          <p class="mb-1">kirche-austreten.ch bietet als Dienstleistung die Unterstützung bei der korrekten Adresse der
+          <p class="mb-6">kirche-austreten.ch bietet als Dienstleistung die Unterstützung bei der korrekten Adresse der
             zuständigen Kirchgemeinde. Das Kirchenaustrittsschreiben, welches mitgeliefert wird, ist kein rechtlich
             geprüftes Schreiben und deshalb ohne Gewähr. Jedoch wurde das gelieferte Schreiben für etliche andere Kunden
             verwendet. Das Schreiben mit korrekter Kirchgemeinde wird normalerweise innerhalb von 1 Stunde geliefert. Es
