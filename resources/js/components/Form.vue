@@ -809,7 +809,7 @@ export default {
         }
       };
       gtag('event', 'conversion', {
-        'send_to': 'AW-757997418/WwB6CLju340YEOq-uOkC',
+        'send_to': 'AW-757997418/Hv05CJSV340YEOq-uOkC',
         'transaction_id': '',
         'event_callback': callback
       });
