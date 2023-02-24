@@ -1,6 +1,5 @@
 <template>
   <div>
-
     <section class="py-16 bg-white">
       <div class="container px-4 mx-auto">
 
@@ -120,6 +119,13 @@
                 </ul>
               </div>
             </div>
+
+            <div v-if="isStep4" class="bg-yellow-400 p-4">
+              <div>
+                <p class="leading-6">Wegen dringenden Wartungsarbeiten verzögert sich die Auslieferung ein wenig. Bis spätestens Sonntag
+                  Nachmittag (26.02) bekommt ihr das Schreiben. Entschuldigung für die Umstände.</p>
+              </div>
+            </div>
           </div>
 
           <form @submit.prevent="checkForm" class="mx-auto max-w-xl">
@@ -136,8 +142,8 @@
 
             <!-- Step 5 (Summary) -->
             <div v-if="isStep4" class="step5">
-              <div class="">Kontrolliere noch zum Schluss deine Angaben. Wenn deine Daten stimmen kannst unten auf der
-                Seite auf den <i>Bestellen</i> Button klicken. Dann wirst du auf die Bezahlseite weitergeleitet.
+              <div><p class="leading-6">Kontrolliere noch zum Schluss deine Angaben. Wenn deine Daten stimmen kannst unten auf der
+                Seite auf den <i>Bestellen</i> Button klicken. Dann wirst du auf die Bezahlseite weitergeleitet.</p>
               </div>
 
               <div class="flex flex-wrap -mx-4 mt-6 p-3">

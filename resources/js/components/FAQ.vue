@@ -1,6 +1,6 @@
-<template xmlns="http://www.w3.org/1999/html">
+<template>
   <!-- FAQ -->
-  <section id="fragen-und-antworten" class="pt-24 pb-28 bg-gradient-gray2 overflow-hidden">
+  <section id="fragen-und-antworten" class="sm:py-16 py-12 bg-gradient-gray2 overflow-hidden">
     <div id="faq" class="container px-4 mx-auto">
       <div class="max-w-md mx-auto mb-20">
         <h2 class="mb-7 font-heading font-semibold text-center text-4xl text-gray-900">Fragen?</h2>

@@ -1,5 +1,5 @@
 <template>
-  <section id="kontakt" class="py-16">
+  <section id="kontakt" class="sm:py-16 py-12">
     <div class="container px-4 mx-auto">
       <div class="flex flex-wrap -mx-4">
         <div class="w-full lg:w-1/2 px-4 mb-16 lg:mb-0">
@@ -55,7 +55,7 @@
                           v-model="message"
                           placeholder="Deine Nachricht"></textarea>
               </div>
-              <div v-if="errored" class="">
+              <div v-if="errored" class="pb-4">
                 <p class="text-red-500 font-bold">{{ statusMessage }}</p>
               </div>
 

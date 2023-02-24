@@ -1,9 +1,9 @@
 <template>
-  <section id="angebot" class="py-16 bg-gray-50">
+  <section id="angebot" class="sm:py-16 py-12 bg-gray-50">
     <div class="container px-4 mx-auto">
       <div class="flex flex-wrap justify-between items-center -mx-4 mb-12">
         <div class="w-full lg:w-2/3 px-4 mb-8 lg:mb-0">
-          <span class="text-sm font-semibold uppercase">Angebot</span>
+          <span class="text-sm font-semibold uppercase">Formular</span>
           <h2 class="max-w-xl font-heading text-3xl sm:text-4xl">Austritt aus der Kirche</h2>
         </div>
         <div class="w-full lg:w-auto px-4">
