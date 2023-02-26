@@ -66,6 +66,7 @@ const {data, error, isLoading, getData} = useVisitorData(
 
 watch(data, (currentData) => {
   if (currentData) {
+    // console.log(curr)
     axios.post('/api/assets?XDEBUG_SESSION_START=PHPSTORM', {
       confidence: currentData.confidence.score,
       visitorId: currentData.visitorId,
