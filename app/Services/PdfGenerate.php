@@ -91,16 +91,6 @@ class PdfGenerate {
 
   /**
    * Generate Austrittsschreiben.
-   *
-   * @param $mode
-   * @param $key
-   * @param $personData
-   * @param $person
-   * @param $hasChildren
-   * @param $churchAddressData
-   * @param $children
-   *
-   * @return void
    */
   protected function generatePDF($mode, $key, $personData, $person, &$hasChildren, $churchAddressData, $children) {
     // We need the address from the person, because partner doesn't have it.
@@ -148,16 +138,6 @@ class PdfGenerate {
 
   /**
    * Generate Austrittsschreiben für Gemeinde.
-   *
-   * @param $mode
-   * @param $key
-   * @param $personData
-   * @param $person
-   * @param $hasChildren
-   * @param $gemeindeAddressData
-   * @param $children
-   *
-   * @return void
    */
   protected function generatePDFGemeinde($mode, $key, $personData, $person, &$hasChildren, $gemeindeAddressData, $children) {
     // We need the address from the person, because partner doesn't have it.
@@ -202,7 +182,6 @@ class PdfGenerate {
     }
 
   }
-
 
   /**
    * Fast and cheap getting written month in german.
