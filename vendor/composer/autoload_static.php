@@ -626,6 +626,7 @@ class ComposerStaticInitacb70e19bd4840651c9d841b1d2b9510
         'App\\Jobs\\SendPdfJob' => __DIR__ . '/../..' . '/app/Jobs/SendPdfJob.php',
         'App\\Models\\Child' => __DIR__ . '/../..' . '/app/Models/Child.php',
         'App\\Models\\ChurchAddress' => __DIR__ . '/../..' . '/app/Models/ChurchAddress.php',
+        'App\\Models\\Gemeinde' => __DIR__ . '/../..' . '/app/Models/Gemeinde.php',
         'App\\Models\\Partner' => __DIR__ . '/../..' . '/app/Models/Partner.php',
         'App\\Models\\Person' => __DIR__ . '/../..' . '/app/Models/Person.php',
         'App\\Models\\Session' => __DIR__ . '/../..' . '/app/Models/Session.php',

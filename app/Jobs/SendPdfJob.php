@@ -100,6 +100,7 @@ class SendPdfJob implements ShouldQueue {
    * @return void
    */
   public function handle() {
+    return;
     try {
       $apiKey = env('MAILGUN_APIKEY');
       $configurator = new HttpClientConfigurator();

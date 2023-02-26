@@ -27,6 +27,7 @@ return array(
     'App\\Jobs\\SendPdfJob' => $baseDir . '/app/Jobs/SendPdfJob.php',
     'App\\Models\\Child' => $baseDir . '/app/Models/Child.php',
     'App\\Models\\ChurchAddress' => $baseDir . '/app/Models/ChurchAddress.php',
+    'App\\Models\\Gemeinde' => $baseDir . '/app/Models/Gemeinde.php',
     'App\\Models\\Partner' => $baseDir . '/app/Models/Partner.php',
     'App\\Models\\Person' => $baseDir . '/app/Models/Person.php',
     'App\\Models\\Session' => $baseDir . '/app/Models/Session.php',

@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Models\Gemeinde;
 use App\Models\Partner;
 use App\Models\Person;
 use App\Models\Session;
@@ -31,7 +32,7 @@ class CreatePerson {
       'confidence' => $request->json('confidence'),
       'visitorId' => $request->json('visitorId'),
       'userIpLocation' => $request->json('userIpLocation'),
-      'incognito'=>$request->json('incognito'),
+      'incognito' => $request->json('incognito'),
     ]);
   }
 
@@ -68,9 +69,11 @@ class CreatePerson {
         'hasPaid' => FALSE,
       ]);
 
+    $person->gemeinde()->create([]);
+
     if ($formData['hatEhepartner']) {
       $partnerPostData = $this->request->json('partner');
-      $partner = $person->partner()->create([
+      $person->partner()->create([
         'vorname' => $partnerPostData['vorname'],
         'nachname' => $partnerPostData['nachname'],
         'geburtsdatum' => $partnerPostData['geburtsdatum'],
@@ -98,40 +101,34 @@ class CreatePerson {
       }
     }
 
-    if (!$formData['payment']) {
-      $catholicPostData = $this->request->json('catholic');
-      if ($formData['isCatholic']) {
-        // Catholic
-        $person->churchAddress()->create([
-          'confession' => 'kath',
-          'anschriftAddress' => $catholicPostData['anschriftAddress'],
-          'streetAddress' => $catholicPostData['streetAddress'],
-          'streetAdditionalAddress' => $catholicPostData['streetAdditionalAddress'],
-          'postalAddress' => $catholicPostData['postalAddress'],
-          'locationAddress' => $catholicPostData['locationAddress'],
-        ]);
-      }
+    // Catholic
+    if ($formData['isCatholic']) {
+      $person->churchAddress()->create([
+        'confession' => 'kath',
+        'anschriftAddress' => '',
+        'streetAddress' => '',
+        'streetAdditionalAddress' => '',
+        'postalAddress' => '',
+        'locationAddress' => '',
+      ]);
+    }
 
-      // Reform
-      if ($formData['isReform']) {
-        $reformPostData = $this->request->json('reform');
-        $person->churchAddress()->create([
-          'confession' => 'reform',
-          'anschriftAddress' => $reformPostData['anschriftAddress'],
-          'streetAddress' => $reformPostData['streetAddress'],
-          'streetAdditionalAddress' => $reformPostData['streetAdditionalAddress'],
-          'postalAddress' => $reformPostData['postalAddress'],
-          'locationAddress' => $reformPostData['locationAddress'],
-        ]);
-      }
+    // Reform
+    if ($formData['isReform']) {
+      $person->churchAddress()->create([
+        'confession' => 'reform',
+        'anschriftAddress' => '',
+        'streetAddress' => '',
+        'streetAdditionalAddress' => '',
+        'postalAddress' => '',
+        'locationAddress' => '',
+      ]);
     }
 
     return response()->json(['status' => 'ok'], 200);
-
   }
 
-  protected
-  function validateRequest() {
+  protected function validateRequest() {
     $this->validator = Validator::make($this->request->all(),
       [
         //        'payment' => 'required',

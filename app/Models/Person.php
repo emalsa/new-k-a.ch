@@ -46,4 +46,8 @@ class Person extends Model {
     return $this->hasOne(ChurchAddress::class);
   }
 
+  public function gemeinde() {
+    return $this->hasOne(Gemeinde::class);
+  }
+
 }

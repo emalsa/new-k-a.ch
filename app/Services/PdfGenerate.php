@@ -50,11 +50,13 @@ class PdfGenerate {
     }
 
 
-    if (!$person->getAttributeValue('payment')) {
-      $catholicMode['churchAddress'] = $person->churchAddress()->where('confession', '=', 'kath')->first();
-      $reformMode['churchAddress'] = $person->churchAddress()->where('confession', '=', 'reform')->first();
-    }
+    $catholicMode['churchAddress'] = $person->churchAddress()->where('confession', '=', 'kath')->first();
+    $reformMode['churchAddress'] = $person->churchAddress()->where('confession', '=', 'reform')->first();
 
+    $gemeindeAddressData = $person->gemeinde()->first();
+    if (empty($gemeindeAddressData['streetAdditionalAddress'])) {
+      $gemeindeAddressData['streetAdditionalAddress'] = 'Steuern';
+    }
 
     $hasChildren = !empty($catholicMode['children']);
     foreach ($catholicMode as $key => $item) {
@@ -65,6 +67,8 @@ class PdfGenerate {
       }
       $churchAddressData = $catholicMode['churchAddress'];
       $this->generatePDF('kath', $key, $item, $person, $hasChildren, $churchAddressData, $catholicMode['children']);
+      $this->generatePDFGemeinde('kath', $key, $item, $person, $hasChildren, $gemeindeAddressData, $catholicMode['children']);
+
     }
 
     $hasChildren = !empty($reformMode['children']);
@@ -77,12 +81,27 @@ class PdfGenerate {
 
       $churchAddressData = $reformMode['churchAddress'];
       $this->generatePDF('reform', $key, $item, $person, $hasChildren, $churchAddressData, $reformMode['children']);
+      $this->generatePDFGemeinde('reform', $key, $item, $person, $hasChildren, $gemeindeAddressData, $reformMode['children']);
+
     }
 
     $person->setAttribute('readyToSendFinalMail', TRUE);
     $person->save();
   }
 
+  /**
+   * Generate Austrittsschreiben.
+   *
+   * @param $mode
+   * @param $key
+   * @param $personData
+   * @param $person
+   * @param $hasChildren
+   * @param $churchAddressData
+   * @param $children
+   *
+   * @return void
+   */
   protected function generatePDF($mode, $key, $personData, $person, &$hasChildren, $churchAddressData, $children) {
     // We need the address from the person, because partner doesn't have it.
     if ($key === 'partner') {
@@ -128,6 +147,64 @@ class PdfGenerate {
   }
 
   /**
+   * Generate Austrittsschreiben für Gemeinde.
+   *
+   * @param $mode
+   * @param $key
+   * @param $personData
+   * @param $person
+   * @param $hasChildren
+   * @param $gemeindeAddressData
+   * @param $children
+   *
+   * @return void
+   */
+  protected function generatePDFGemeinde($mode, $key, $personData, $person, &$hasChildren, $gemeindeAddressData, $children) {
+    // We need the address from the person, because partner doesn't have it.
+    if ($key === 'partner') {
+      $personData['streetAddress'] = $person->getAttributeValue('streetAddress');
+      $personData['streetAdditionalAddress'] = $person->getAttributeValue('streetAdditionalAddress');
+      $personData['postalAddress'] = $person->getAttributeValue('postalAddress');
+      $personData['locationAddress'] = $person->getAttributeValue('locationAddress');
+    }
+
+    if ($hasChildren) {
+      $childrenData = $children;
+      // Set to false now, since the children will be included, but not again on second iteration for partner.
+      $hasChildren = FALSE;
+    }
+    else {
+      $childrenData = [];
+    }
+
+    try {
+      $currentDate = $this->getGermanDate();
+
+      $fileStorage = Storage::disk('private');
+      $lastnameKey = self::cleanString($person->getAttributeValue('nachname'));
+      $typeKey = $key === 'person' ? '' : '_partner';
+      $email = $person->getAttributeValue('email');
+      $id = $person->getAttributeValue('id');
+      $filePathFull = "{$email}/{$id}/kirchenaustritt_{$mode}_{$lastnameKey}{$typeKey}__gemeinde.pdf";
+
+      // Generate
+      $pdf = Pdf::loadView('austritt_gemeinde', compact('personData', 'childrenData', 'gemeindeAddressData', 'currentDate', 'mode'))->setPaper('a4');
+      $pdf->save($filePathFull, 'private');
+
+      if (!$fileStorage->exists($filePathFull)) {
+        throw new \Exception('File does not exist: ' . $filePathFull);
+      }
+    }
+    catch (\Exception $exception) {
+      Log::error('Error generating PDF Gemeinde for: ' . $person->getAttributeValue('email'));
+      Log::error($exception->getMessage());
+      dd($exception->getMessage());
+    }
+
+  }
+
+
+  /**
    * Fast and cheap getting written month in german.
    *
    * @return string
@@ -151,7 +228,6 @@ class PdfGenerate {
     ];
     return date('d.') . ' ' . $germanMonth[$currentMonth] . ' ' . date('Y');
   }
-
 
   /**
    * Clean strings for save filename.

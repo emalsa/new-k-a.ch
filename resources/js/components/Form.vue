@@ -611,30 +611,6 @@ export default {
     },
     optionClicked(event) {
       // this.formData.payment = null;
-      if (event.target.value === 'unpaymentChecked') {
-        this.formData.payment = false;
-      }
-      if (event.target.value === 'paymentChecked') {
-        this.formData.payment = true;
-      }
-      this.formData.isCatholic = false;
-      this.formData.isReform = false;
-
-      if (this.person.konfession === 'kath') {
-        this.formData.isCatholic = true;
-      }
-      if (this.formData.hatEhepartner && this.partner.konfession === 'kath') {
-        this.formData.isCatholic = true;
-      }
-
-      if (this.person.konfession === 'ref') {
-        this.formData.isReform = true;
-      }
-      if (this.formData.hatEhepartner && this.partner.konfession === 'ref') {
-        this.formData.isReform = true;
-      }
-
-
     },
     checkForm: function (e) {
       this.errors = [];
@@ -802,18 +778,35 @@ export default {
       this.currentStep++;
     },
     submit() {
+      this.formData.isCatholic = false;
+      this.formData.isReform = false;
 
-      const callback = function () {
-        if (typeof (url) != 'undefined') {
-          window.location = url;
-        }
-      };
-      gtag('event', 'conversion', {
-        'send_to': 'AW-757997418/Hv05CJSV340YEOq-uOkC',
-        'transaction_id': '',
-        'event_callback': callback
-      });
+      if (this.person.konfession === 'kath') {
+        this.formData.isCatholic = true;
+      }
+      if (this.formData.hatEhepartner && this.partner.konfession === 'kath') {
+        this.formData.isCatholic = true;
+      }
 
+      if (this.person.konfession === 'ref') {
+        this.formData.isReform = true;
+      }
+      if (this.formData.hatEhepartner && this.partner.konfession === 'ref') {
+        this.formData.isReform = true;
+      }
+
+      if (window.location.host !== 'kirche-austreten.localhost') {
+        const callback = function () {
+          if (typeof (url) != 'undefined') {
+            window.location = url;
+          }
+        };
+        gtag('event', 'conversion', {
+          'send_to': 'AW-757997418/Hv05CJSV340YEOq-uOkC',
+          'transaction_id': '',
+          'event_callback': callback
+        });
+      }
       this.isLoading = true;
       this.errors = [];
       if (!this.formData.agbAccepted) {
