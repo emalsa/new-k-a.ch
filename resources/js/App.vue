@@ -9,7 +9,6 @@
   <Confirm v-if="isConfirm"/>
   <Agb v-if="isAgb"/>
   <Footer/>
-  <button @click='getData'>Get visitor data</button>
 
 </template>
 <script>
@@ -58,26 +57,25 @@ import {useVisitorData} from '@fingerprintjs/fingerprintjs-pro-vue-v3';
 import {watch} from 'vue';
 import axios from "axios";
 
-const {data, error, isLoading, getData} = useVisitorData(
-    {extendedResult: true},
-    // Set to true to fetch data on mount
-    {immediate: true}
-);
+if (window.location.host !== 'kirche-austreten.localhost') {
+  const {data, error, isLoading, getData} = useVisitorData(
+      {extendedResult: true},
+      // Set to true to fetch data on mount
+      {immediate: true}
+  );
 
-watch(data, (currentData) => {
-  if (currentData) {
-    // console.log(curr)
-    axios.post('/api/assets?XDEBUG_SESSION_START=PHPSTORM', {
-      confidence: currentData.confidence.score,
-      visitorId: currentData.visitorId,
-      userIp: currentData.ip,
-      userIpLocation: currentData.ipLocation.city.name,
-      incognito: currentData.incognito
-      // userAgent: this.userAgent,
-    }).catch(error => {
-      // console.log(error)
-    })
-  }
-});
-
+  watch(data, (currentData) => {
+    if (currentData) {
+      axios.post('/api/assets?XDEBUG_SESSION_START=PHPSTORM', {
+        confidence: currentData.confidence.score,
+        visitorId: currentData.visitorId,
+        userIp: currentData.ip,
+        userIpLocation: currentData.ipLocation.city.name,
+        incognito: currentData.incognito
+      }).catch(error => {
+        // console.log(error)
+      })
+    }
+  });
+}
 </script>
