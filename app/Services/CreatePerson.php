@@ -26,9 +26,12 @@ class CreatePerson {
 
   public function session(Request $request) {
     Session::create([
-      'userIp' => $request->json('userAgent'),
-      'userAgent' => $request->json('userIp'),
+      'userIp' => $request->json('userIp'),
       'count' => 1,
+      'confidence' => $request->json('confidence'),
+      'visitorId' => $request->json('visitorId'),
+      'userIpLocation' => $request->json('userIpLocation'),
+      'incognito'=>$request->json('incognito'),
     ]);
   }
 

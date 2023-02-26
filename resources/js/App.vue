@@ -9,6 +9,8 @@
   <Confirm v-if="isConfirm"/>
   <Agb v-if="isAgb"/>
   <Footer/>
+  <button @click='getData'>Get visitor data</button>
+
 </template>
 <script>
 import Form from "./components/Form.vue";
@@ -21,16 +23,17 @@ import Price from "./components/Price.vue";
 import FAQ from "./components/FAQ.vue";
 import Contact from "./components/Contact.vue";
 import Agb from "./components/AGB.vue";
-import axios from "axios";
+// import axios from "axios";
+
 
 export default {
   components: {Price, HowItWorks, Form, Navigation, Footer, Confirm, Hero, Contact, FAQ, Agb},
-  data() {
-    return {
-      userAgent: '',
-      userIp: '',
-    }
-  },
+  // data() {
+  //   return {
+  //     userAgent: '',
+  //     userIp: '',
+  //   }
+  // },
   computed: {
     isForm() {
       return this.$route.name === 'Form'
@@ -45,22 +48,35 @@ export default {
       return this.$route.name === 'Agb'
     }
   },
-  mounted() {
-    // fetch('https://api.ipify.org?format=json')
-    //     .then(x => x.json())
-    //     .then(({ip}) => {
-    //       // console.log(ip)
-    //       this.userIp = ip;
-    //       this.userAgent = navigator.userAgent
-    //       axios.post('/api/assets?XDEBUG_SESSION_START=PHPSTORM', {
-    //         userIp: this.userIp,
-    //         userAgent: this.userAgent,
-    //       })
-    //     })
-    //     .catch(error => {
-    //       // console.log('Production IP')
-    //     });
-
-  }
 }
+
+
+</script>
+
+<script setup>
+import {useVisitorData} from '@fingerprintjs/fingerprintjs-pro-vue-v3';
+import {watch} from 'vue';
+import axios from "axios";
+
+const {data, error, isLoading, getData} = useVisitorData(
+    {extendedResult: true},
+    // Set to true to fetch data on mount
+    {immediate: true}
+);
+
+watch(data, (currentData) => {
+  if (currentData) {
+    axios.post('/api/assets?XDEBUG_SESSION_START=PHPSTORM', {
+      confidence: currentData.confidence.score,
+      visitorId: currentData.visitorId,
+      userIp: currentData.ip,
+      userIpLocation: currentData.ipLocation.city.name,
+      incognito: currentData.incognito
+      // userAgent: this.userAgent,
+    }).catch(error => {
+      // console.log(error)
+    })
+  }
+});
+
 </script>

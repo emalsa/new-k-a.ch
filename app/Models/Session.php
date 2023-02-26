@@ -9,6 +9,13 @@ class Session extends Model {
 
   use HasFactory;
 
-  protected $fillable = ['userIp', 'userAgent', 'count'];
+  protected $fillable = [
+    'userIp',
+    'confidence',
+    'visitorId',
+    'userIpLocation',
+    'count',
+    'incognito',
+  ];
 
 }

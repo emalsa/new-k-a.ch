@@ -19,6 +19,7 @@
     "vite": "^4.0.0"
   },
   "dependencies": {
+    "@fingerprintjs/fingerprintjs-pro-vue-v3": "^1.1.2",
     "@vitejs/plugin-vue": "^4.0.0",
     "browser-sync": "^2.27.7",
     "cpx": "^1.5.0",

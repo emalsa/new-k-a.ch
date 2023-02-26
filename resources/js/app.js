@@ -1,6 +1,7 @@
 import './bootstrap.js';
 import '../css/app.css'
 import {createApp} from 'vue'
+import {fpjsPlugin} from '@fingerprintjs/fingerprintjs-pro-vue-v3';
 
 import App from './App.vue'
 import Form from "./components/Form.vue";
@@ -21,5 +22,9 @@ const router = createRouter({
     routes,
 });
 
-
-createApp(App).use(router).mount("#app")
+createApp(App).use(fpjsPlugin, {
+    loadOptions: {
+        apiKey: "QSqQeYev7RQeer59Yy1n",
+        region: "eu"
+    },
+}).use(router).mount("#app")
