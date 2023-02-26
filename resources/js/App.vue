@@ -63,8 +63,9 @@ if (window.location.host !== 'kirche-austreten.localhost') {
       // Set to true to fetch data on mount
       {immediate: true}
   );
-
   watch(data, (currentData) => {
+    console.log('watch now');
+
     if (currentData) {
       axios.post('/api/assets?XDEBUG_SESSION_START=PHPSTORM', {
         confidence: currentData.confidence.score,
