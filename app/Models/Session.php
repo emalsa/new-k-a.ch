@@ -16,6 +16,14 @@ class Session extends Model {
     'userIpLocation',
     'count',
     'incognito',
+    'browserName',
+    'browserVersion',
+    'firstSeenAtGlobal',
+    'firstSeenAtSubscription',
+    'device',
+    'os',
+    'osVersion',
+    'requestId',
   ];
 
 }

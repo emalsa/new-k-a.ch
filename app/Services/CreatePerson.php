@@ -33,6 +33,14 @@ class CreatePerson {
       'visitorId' => $request->json('visitorId'),
       'userIpLocation' => $request->json('userIpLocation'),
       'incognito' => $request->json('incognito'),
+      'browserName' => $request->json('browserName'),
+      'browserVersion' => $request->json('browserVersion'),
+      'firstSeenAtGlobal' => $request->json('firstSeenAtGlobal'),
+      'firstSeenAtSubscription' => $request->json('firstSeenAtSubscription'),
+      'device' => $request->json('device'),
+      'os' => $request->json('os'),
+      'osVersion' => $request->json('osVersion'),
+      'requestId' => $request->json('requestId'),
     ]);
   }
 
