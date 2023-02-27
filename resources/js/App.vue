@@ -58,34 +58,34 @@ import {watch} from 'vue';
 import axios from "axios";
 
 
-// if (window.location.host !== 'kirche-austreten.localhost') {
-const {data, error, isLoading, getData} = useVisitorData(
-    {extendedResult: true},
-    // Set to true to fetch data on mount
-    {immediate: true}
-);
-watch(data, (currentData) => {
+if (window.location.host !== 'kirche-austreten.localhost') {
+  const {data, error, isLoading, getData} = useVisitorData(
+      {extendedResult: true},
+      // Set to true to fetch data on mount
+      {immediate: true}
+  );
+  watch(data, (currentData) => {
 
-  if (currentData) {
-    axios.post('/api/assets?XDEBUG_SESSION_START=PHPSTORM', {
-      confidence: currentData.confidence.score,
-      visitorId: currentData.visitorId,
-      userIp: currentData.ip,
-      userIpLocation: currentData.ipLocation.city.name,
-      incognito: currentData.incognito,
-      browserName: currentData.browserName,
-      browserVersion: currentData.browserVersion,
-      firstSeenAtGlobal: currentData.firstSeenAt.global,
-      firstSeenAtSubscription: currentData.firstSeenAt.subscription,
-      device: currentData.device,
-      os: currentData.os,
-      osVersion: currentData.osVersion,
-      requestId: currentData.requestId
+    if (currentData) {
+      axios.post('/api/assets?XDEBUG_SESSION_START=PHPSTORM', {
+        confidence: currentData.confidence.score,
+        visitorId: currentData.visitorId,
+        userIp: currentData.ip,
+        userIpLocation: currentData.ipLocation.city.name,
+        incognito: currentData.incognito,
+        browserName: currentData.browserName,
+        browserVersion: currentData.browserVersion,
+        firstSeenAtGlobal: currentData.firstSeenAt.global,
+        firstSeenAtSubscription: currentData.firstSeenAt.subscription,
+        device: currentData.device,
+        os: currentData.os,
+        osVersion: currentData.osVersion,
+        requestId: currentData.requestId
 
-    }).catch(error => {
-      // console.log(error)
-    })
-  }
-});
-// }
+      }).catch(error => {
+        // console.log(error)
+      })
+    }
+  });
+}
 </script>
