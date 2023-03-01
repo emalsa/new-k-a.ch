@@ -6,7 +6,8 @@
   <?php if ($_SERVER['REQUEST_URI'] === '/'): ?>
     <title>Kirche Austreten</title>
     <meta title="Kirchenaustritt für die Schweiz.">
-    <meta name="description" content="Aus der Kirche austreten mit dem Austrittsformular. Schnell und einfach. Ohne Kirchgemeinde suchen.">
+    <meta name="description"
+          content="Aus der Kirche austreten mit dem Austrittsformular. Schnell und einfach. Ohne Kirchgemeinde suchen.">
   <?php endif ?>
   <?php if ($_SERVER['REQUEST_URI'] === '/formular'): ?>
     <title>Austrittsschreiben | Kirche Austreten</title>
@@ -75,6 +76,19 @@
 </head>
 
 <body class="antialiased bg-body text-body font-body">
+<?php if ($_SERVER['HTTP_HOST'] === 'kirche-austreten.ch' || $_SERVER['HTTP_HOST'] === 'www.kirche-austreten.ch'): ?>
+<script type='text/javascript'>var script = document.createElement('script');
+    script.async = true;
+    script.type = 'text/javascript';
+    var target = 'https://www.clickcease.com/monitor/stat.js';
+    script.src = target;
+    var elem = document.head;
+    elem.appendChild(script);
+</script>
+<noscript>
+    <a href='https://www.clickcease.com' rel='nofollow'><img src='https://monitor.clickcease.com' alt='ClickCease'/></a>
+</noscript>
+<?php endif ?>
 <div id="app"></div>
 
 <?php if ($_SERVER['HTTP_HOST'] === 'kirche-austreten.ch' || $_SERVER['HTTP_HOST'] === 'www.kirche-austreten.ch'): ?>
