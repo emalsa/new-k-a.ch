@@ -5,16 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
   <?php if ($_SERVER['REQUEST_URI'] === '/'): ?>
     <title>Kirche Austreten</title>
-    <meta title="Kirchenaustritt für die Schweiz.">
+    <meta title="Kirchenaustritt Schweiz.">
     <meta name="description"
           content="Aus der Kirche austreten mit dem Austrittsformular. Schnell und einfach. Ohne Kirchgemeinde suchen.">
   <?php endif ?>
   <?php if ($_SERVER['REQUEST_URI'] === '/formular'): ?>
     <title>Austrittsschreiben | Kirche Austreten</title>
+    <meta title="Austrittsschreiben | Kirche Austreten">
     <meta name="description" content="Austrittsschreiben für den Kirchenaustritt Schweiz. Ohne Kirchgemeinde suchen.">
   <?php endif ?>
   <?php if ($_SERVER['REQUEST_URI'] === '/agb'): ?>
     <title>Datenschutz | Kirche Austreten</title>
+    <meta title="Datenschutz | Kirche Austreten">
     <meta name="description" content="Austrittsschreiben für den Kirchenaustritt Schweiz. Ohne Kirchgemeinde suchen.">
   <?php endif ?>
 
