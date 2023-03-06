@@ -1,5 +1,5 @@
 <template>
-  <section id="kontakt" class="">
+  <section id="kontakt" class="mb-10">
     <div class="container px-4 mx-auto">
       <div class="flex flex-wrap -mx-4">
         <div class="w-full lg:w-1/2 px-4 mb-16 lg:mb-0">
@@ -9,9 +9,8 @@
                   <span class="text-green-500">&nbsp;Fragen</span>
                 </span>
             <h4 class="font-heading text-3xl sm:text-4xl mt-2 mb-6">Eine Frage oder ein Problem?</h4>
-            <p class="text-lg leading-8 mb-12">Kontaktiere uns bei Fragen oder Unklarheiten. Oder gib uns Feedback. Dar&uuml;ber
-              freuen wir uns.</p>
-
+            <p class="text-lg leading-8 mb-12">Kontaktiere uns bei Fragen oder Unklarheiten. Oder gib uns ein Feedback.
+              Dar&uuml;ber freuen wir uns.</p>
           </div>
         </div>
         <div class="w-full lg:w-1/2 px-4">
