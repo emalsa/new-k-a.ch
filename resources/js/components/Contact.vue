@@ -1,5 +1,5 @@
 <template>
-  <section id="kontakt" class="sm:py-16 py-12">
+  <section id="kontakt" class="">
     <div class="container px-4 mx-auto">
       <div class="flex flex-wrap -mx-4">
         <div class="w-full lg:w-1/2 px-4 mb-16 lg:mb-0">
