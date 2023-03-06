@@ -4,8 +4,8 @@
     <div id="faq" class="container px-4 mx-auto">
       <div class="max-w-md mx-auto mb-20">
         <h2 class="mb-7 font-heading font-semibold text-center text-4xl text-gray-900">Fragen?</h2>
-        <p class="text-lg text-gray-600 text-center">Hier unten die wichtigsten Fragen und Antworten über den
-          Kirchenaustritt. Klicke einfach auf die Frage um deine Antwort zu erhalten.</p>
+        <p class="text-lg text-gray-600 text-center">Unten findest du die wichtigsten Fragen und Antworten über den
+          Kirchenaustritt. Klicke einfach auf die Frage um deine Antwort einzublenden.</p>
       </div>
       <div class="max-w-4xl mx-auto mb-24">
         <ul class="space-y-4">
@@ -131,7 +131,8 @@
               </p>
               <p class="max-w-3xl mt-4 text-base text-gray-800">
                 Eine gute Übersicht was die Kirchen leisten findest du hier
-                <a class="underline underline-offset-4 decoration-[2px]" href="https://www.kirchensteuern-sei-dank.ch">https://www.kirchensteuern-sei-dank.ch</a>
+                <a class="underline underline-offset-4 decoration-[2px]" href="https://www.kirchensteuern-sei-dank.ch"
+                   target="_blank">https://www.kirchensteuern-sei-dank.ch</a>
               </p>
               <p class="max-w-3xl mt-4 text-base text-gray-800">
                 Schlussendlich ist der Kirchenaustritt eine persönliche Entscheidung und wir wollen dich bezüglich
@@ -186,14 +187,13 @@
             </button>
             <div class="panel" v-if="isActive[1] === 1">
               <p class="max-w-3xl mt-4 text-base  text-gray-800">
-                Für den Austritt aus der Kirche in der Schweiz muss die betreffende Person, welche aus der Kirche
-                austreten will, per Post einen Brief an die zuständige Kirchgemeinde senden.
+                Für den Austritt aus der Kirche in der Schweiz muss die betreffende Person, die aus der Kirche austreten
+                will, einen Brief per Post an die zuständige Kirchgemeinde senden.
               </p>
               <p class="max-w-3xl mt-4 text-base  text-gray-800">
-                Es gibt kein Online Portal, Formular oder ähnliches welche von der Kirche zur Verfügung gestellt wird
-                um
-                deinen Kirchenaustritt zu erledigen. Du kannst dein Austrittsschreiben selber erfassen oder wir nehmen
-                dir die Arbeit ab.
+                Es gibt kein Online-Portal, Formular oder ähnliches, das von der Kirche zur Verfügung gestellt wird, um
+                den Kirchenaustritt zu erledigen. Du kannst dein Austrittsschreiben selbst verfassen oder wir übernehmen
+                diese Aufgabe für dich.
               </p>
             </div>
           </li>
@@ -301,15 +301,16 @@
               </svg>
             </button>
             <div class="panel" v-if="isActive[3] === 3">
-              <p class="max-w-3xl mt-4 text-base  text-gray-800">Du musst nur die notwendigen Daten, also Name, Adresse
-                und Geburtsdatum eingeben. Die Adresse der Kirchgemeinde haben wir und schicken dir sogar noch das
-                Austrittsschreiben. Du musst dein Austrittsschreiben nur ausdrucken, dann unterschreiben und zum Schluss
-                zur Post bringen. Es ist also keine Recherche der Kirchgemeinde notwendig und du musst kein Schreiben
-                erstellen. Du sparst mit uns Zeit und Nerven.</p>
-              <p class="max-w-3xl mt-4 text-base  text-gray-800">Im Falle dass uns bei der Kirchgemeinde einen Fehler
-                unterlaufen ist, erstatten wir dir natürlich das Geld zurück. Beispielsweise wenn wir trotz Kontrolle
-                dir die falsche Kirchgemeinde im Austrittsschreiben gegeben haben. Zudem werden wir dir ein neues
-                Austrittsschreiben mit der korrekten Kirchgemeinde nachschicken.</p>
+              <p class="max-w-3xl mt-4 text-base  text-gray-800">Unser Formular benötigt lediglich deine persönlichen
+                Daten wie deinen Namen, deine Adresse und dein Geburtsdatum angeben. Wir haben die Adresse der
+                zuständigen Kirchgemeinde bereits für dich und senden dir sogar das Austrittsschreiben zu. Du musst
+                das Schreiben lediglich ausdrucken, unterschreiben und zur Post bringen. Eine mühsame Recherche der
+                Kirchgemeinde entfällt also für dich und du musst kein eigenes Schreiben erstellen. Mit uns sparst du
+                Zeit und Nerven.</p>
+              <p class="max-w-3xl mt-4 text-base  text-gray-800">Falls uns bei der Kirchgemeinde ein Fehler unterläuft,
+                erstatten wir dir selbstverständlich das Geld zurück. Ein Beispiel dafür wäre, wenn wir trotz Kontrolle
+                die falsche Kirchgemeinde im Austrittsschreiben angeben. Zudem senden wir dir ein neues
+                Austrittsschreiben mit der korrekten Kirchgemeinde zu.</p>
             </div>
           </li>
 
@@ -471,26 +472,27 @@
               </svg>
             </button>
             <div class="panel" v-if="isActive[6] === 6">
-              <p class="max-w-3xl mt-4 text-base  text-gray-800">Meistens läuft der Kirchenaustritt reibungslos. In
-                einigen Fällen wird einem der Austritt erschwert mit Gründen die rechtlich nicht standhalten. Meistens
-                gewähren die betreffenden Institutionen den Kirchenaustritt ohne grosse Bürokratie.</p>
+              <p class="max-w-3xl mt-4 text-base  text-gray-800">Der Kirchenaustritt verläuft in der Regel reibungslos.
+                In manchen Fällen wird einem jedoch der Austritt erschwert, obwohl die Gründe rechtlich nicht
+                standhalten. Normalerweise gewähren die betreffenden Institutionen den Kirchenaustritt ohne große
+                Bürokratie.</p>
               <p class="max-w-3xl mt-4 text-base  text-gray-800">Das sind die häufigsten Gründe weshalb der Austritt
                 erschwert wird.</p>
               <div class="max-w-3xl mt-4 text-base text-gray-800">
                 <ul class="mb-3">
                   <li class="font-bold mb-2">Fehlendes Taufdatum oder Taufort</li>
                   <li>
-                    Ein fehlendes Taufdatum oder Taufort ist kein rechtlich zulässiger Grund, um einen Austritt zu
-                    verweigern.
-                    Das wird dann als Begründung geliefert wenn ein Austritt aus der Pfarrei vorgenommen wird. Einfach
-                    nochmals begründen das man nicht aus aus der Pfarrei austreten will sondern aus der Institution der
-                    öffentlichen-rechtlichen Landeskirche. Dafür braucht es kein Taufdatum/Taufort.
+                    Die häufigsten Gründe, aus denen der Austritt erschwert wird, sind ein fehlendes Taufdatum oder
+                    Taufort. Dies ist jedoch kein Grund, um den Austritt zu verweigern, wenn man aus der Institution der
+                    öffentlich-rechtlichen Landeskirche austreten möchte. In diesem Fall muss man nochmal klarstellen,
+                    dass man nicht (nur) aus der Pfarrei austreten möchte sondern aus der "Institution der
+                    öffentlich-rechtlichen Landeskirche" austreten möchte. Diese erhebt die Kirchensteuern.
                   </li>
                 </ul>
                 <ul class="mb-3">
                   <li class="font-bold mb-2">Es wird um Gründe für einen Austritt verlangt</li>
-                  <li>Gründe für einen Austritt musst du nicht geben. Erkläre das du informiert bist über den
-                    Kirchenaustritt.
+                  <li>Es ist nicht erforderlich, Gründe für den Austritt anzugeben. Es genügt zu erklären, dass man über
+                    den Kirchenaustritt informiert ist, dass deine Entscheidung bereits getroffen wurde.
                   </li>
                 </ul>
                 <ul class="mb-3">
@@ -500,7 +502,7 @@
                 </ul>
                 <ul class="mb-3">
                   <li class="font-bold mb-2">Keine Bestätigung nach 4-6 Wochen</li>
-                  <li>Schreibe einen eingeschriebenen Brief an die Kirchgemeinde und verlange eine Bestätigung von
+                  <li>Schicke einen eingeschriebenen Brief an die Kirchgemeinde und verlange eine Bestätigung von
                     deinem Kirchenaustritt innerhalb von einer Woche.
                   </li>
                 </ul>
