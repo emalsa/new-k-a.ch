@@ -46,7 +46,7 @@
 
   <?php if ($_SERVER['HTTP_HOST'] === 'kirche-austreten.ch' || $_SERVER['HTTP_HOST'] === 'www.kirche-austreten.ch'): ?>
 
-          <!-- Google tag (gtag.js) -->
+      <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-CJ4WXHWCXT"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -72,6 +72,11 @@
             a.appendChild(r);
         })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
     </script>
+
+      <!-- Event snippet for kirche-austreten.ch Bezahlt conversion page -->
+      <script>
+          gtag('event', 'conversion', {'send_to': 'AW-757997418/aacsCKH6y-AYEOq-uOkC'});
+      </script>
   <?php endif ?>
 
 
