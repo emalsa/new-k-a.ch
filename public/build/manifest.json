@@ -22,7 +22,7 @@
     "src": "resources/css/min/app.min.css"
   },
   "resources/js/app.css": {
-    "file": "assets/app-574d079d.css",
+    "file": "assets/app-03ed5cb1.css",
     "src": "resources/js/app.css"
   },
   "resources/js/app.js": {
@@ -32,10 +32,9 @@
       "assets/undraw_opened_re_i38e-5f0543b0.svg"
     ],
     "css": [
-      "assets/app-574d079d.css",
-      "assets/app-caced047.css"
+      "assets/app-03ed5cb1.css"
     ],
-    "file": "assets/app-4989c65c.js",
+    "file": "assets/app-1ed13864.js",
     "isEntry": true,
     "src": "resources/js/app.js"
   },
