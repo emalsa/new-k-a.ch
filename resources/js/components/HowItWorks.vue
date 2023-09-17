@@ -12,8 +12,9 @@
             <p class="max-w-sm text-lg leading-8 mb-2">Eine Begr&uuml;ndung ist &uuml;brigens nicht notwendig.</p>
             <p class="max-w-sm text-lg leading-8 mb-8">Austritt aus der Römisch Katholischen oder Evangelisch
               Reformierten Kirche.</p>
-            <a class="inline-block w-full sm:w-auto py-4 px-6 text-center font-heading font-medium text-base text-gray-900 hover:text-green-500 border border-gray-900 hover:border-green-500 rounded-sm transition duration-150"
-               href="/#fragen-und-antworten">Fragen und Antworten</a>
+            <a
+              class="inline-block w-full sm:w-auto py-4 px-6 text-center font-heading font-medium text-base text-gray-900 hover:text-green-500 border border-gray-900 hover:border-green-500 rounded-sm transition duration-150"
+              href="/#fragen-und-antworten">Fragen und Antworten</a>
           </div>
         </div>
         <div class="w-full lg:w-1/2 px-4">
@@ -21,27 +22,30 @@
             <div>
               <div class="flex mb-10">
                 <div class="relative flex-shrink-0 flex items-center justify-center w-16 h-16 mr-10 bg-gray-50 rounded">
-                  <div class="absolute bottom-0 right-0 -mb-3 -mr-3 flex items-center justify-center w-6 h-6 text-xs font-semibold text-gray-900 bg-gray-200 rounded-full">
+                  <div
+                    class="absolute bottom-0 right-0 -mb-3 -mr-3 flex items-center justify-center w-6 h-6 text-xs font-semibold text-gray-900 bg-gray-200 rounded-full">
                     1
                   </div>
                   <svg width="20" height="24" viewbox="0 0 20 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M19.468 1.47802C19.342 1.15003 18.858 1.07803 18.636 1.314C17.631 2.199 16.342 2.685 15.001 2.685C13.153 2.685 11.439 1.76498 10.418 0.224016C10.3251 0.084 10.1691 0 10.0011 0C9.83404 0 9.67705 0.084 9.58504 0.222984C8.56105 1.764 6.84702 2.68397 4.99902 2.68397C3.64302 2.68397 2.34102 2.18695 1.33302 1.28395C1.18602 1.15195 0.976024 1.11994 0.795039 1.19995C0.615039 1.27997 0.499023 1.45894 0.499023 1.65595V12.4989C0.499023 18.7429 9.37902 23.7279 9.75702 23.937C9.83202 23.979 9.91602 24 9.99904 24C10.0821 24 10.1661 23.979 10.2411 23.939C10.6191 23.73 19.4991 18.744 19.4991 12.501V1.70095C19.5051 1.626 19.495 1.55002 19.468 1.47802Z"
-                          fill="#00CBA6"></path>
+                    <path
+                      d="M19.468 1.47802C19.342 1.15003 18.858 1.07803 18.636 1.314C17.631 2.199 16.342 2.685 15.001 2.685C13.153 2.685 11.439 1.76498 10.418 0.224016C10.3251 0.084 10.1691 0 10.0011 0C9.83404 0 9.67705 0.084 9.58504 0.222984C8.56105 1.764 6.84702 2.68397 4.99902 2.68397C3.64302 2.68397 2.34102 2.18695 1.33302 1.28395C1.18602 1.15195 0.976024 1.11994 0.795039 1.19995C0.615039 1.27997 0.499023 1.45894 0.499023 1.65595V12.4989C0.499023 18.7429 9.37902 23.7279 9.75702 23.937C9.83202 23.979 9.91602 24 9.99904 24C10.0821 24 10.1661 23.979 10.2411 23.939C10.6191 23.73 19.4991 18.744 19.4991 12.501V1.70095C19.5051 1.626 19.495 1.55002 19.468 1.47802Z"
+                      fill="#00CBA6"></path>
                     <path d="M6.25 11.4167L8.75 13.9167L13.75 8.5"
                           stroke="white"
                           stroke-width="1.5"
                           stroke-linecap="round"
                           stroke-linejoin="round"></path>
                   </svg>
-                  <div class="hidden sm:block absolute top-full left-1/2 mt-4 transform -translate-x-1/2 h-18 w-px bg-gray-100"></div>
+                  <div
+                    class="hidden sm:block absolute top-full left-1/2 mt-4 transform -translate-x-1/2 h-18 w-px bg-gray-100"></div>
                 </div>
                 <div>
                   <p class="font-heading text-lg font-medium mb-2 text-gray-400">Formular ausf&uuml;llen</p>
                   <p class="max-w-xxs leading-7">
                     Du füllst unser Online Kirchenaustritts Formular für die
                     Kirche Schweiz <a
-                      href="/formular"
-                      class="underline underline-offset-4 decoration-green-600 hover:decoration-green-400
+                    href="/formular"
+                    class="underline underline-offset-4 decoration-green-600 hover:decoration-green-400
                         decoration-[3px]">hier</a>
                     aus. Dafür braucht es nur deinen Namen, Adresse und Geburtsdatum.
                   </p>
@@ -49,20 +53,23 @@
               </div>
               <div class="flex mb-10">
                 <div class="relative flex flex-shrink-0 items-center justify-center w-16 h-16 mr-10 bg-gray-50 rounded">
-                  <div class="absolute bottom-0 right-0 -mb-3 -mr-3 flex items-center justify-center w-6 h-6 text-xs font-semibold text-gray-900 bg-gray-200 rounded-full">
+                  <div
+                    class="absolute bottom-0 right-0 -mb-3 -mr-3 flex items-center justify-center w-6 h-6 text-xs font-semibold text-gray-900 bg-gray-200 rounded-full">
                     2
                   </div>
                   <svg width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M14.0203 8.91334C15.8413 8.91334 17.3173 7.43734 17.3173 5.61634C17.3173 3.79634 15.8413 2.31934 14.0203 2.31934"
-                          stroke="#00CBA6"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"></path>
-                    <path d="M15.5364 12.4963C16.0804 12.5333 16.6204 12.6113 17.1534 12.7293C17.8924 12.8763 18.7824 13.1793 19.0984 13.8423C19.3004 14.2673 19.3004 14.7623 19.0984 15.1873C18.7834 15.8503 17.8924 16.1533 17.1534 16.3053"
-                          stroke="#00CBA6"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"></path>
+                    <path
+                      d="M14.0203 8.91334C15.8413 8.91334 17.3173 7.43734 17.3173 5.61634C17.3173 3.79634 15.8413 2.31934 14.0203 2.31934"
+                      stroke="#00CBA6"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"></path>
+                    <path
+                      d="M15.5364 12.4963C16.0804 12.5333 16.6204 12.6113 17.1534 12.7293C17.8924 12.8763 18.7824 13.1793 19.0984 13.8423C19.3004 14.2673 19.3004 14.7623 19.0984 15.1873C18.7834 15.8503 17.8924 16.1533 17.1534 16.3053"
+                      stroke="#00CBA6"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"></path>
                     <path fill-rule="evenodd"
                           clip-rule="evenodd"
                           d="M7.59149 13.2063C11.2815 13.2063 14.4335 13.7653 14.4335 15.9983C14.4335 18.2323 11.3015 18.8103 7.59149 18.8103C3.90149 18.8103 0.750488 18.2523 0.750488 16.0183C0.750488 13.7843 3.88149 13.2063 7.59149 13.2063Z"
@@ -80,7 +87,8 @@
                           stroke-linecap="round"
                           stroke-linejoin="round"></path>
                   </svg>
-                  <div class="hidden sm:block absolute top-full left-1/2 mt-4 transform -translate-x-1/2 h-18 w-px bg-gray-100"></div>
+                  <div
+                    class="hidden sm:block absolute top-full left-1/2 mt-4 transform -translate-x-1/2 h-18 w-px bg-gray-100"></div>
                 </div>
                 <div>
                   <p class="font-heading text-lg font-medium mb-2 text-gray-400">Zurücklehnen</p>
@@ -90,7 +98,8 @@
               </div>
               <div class="flex">
                 <div class="relative flex flex-shrink-0 items-center justify-center w-16 h-16 mr-10 bg-gray-50 rounded">
-                  <div class="absolute bottom-0 right-0 -mb-3 -mr-3 flex items-center justify-center w-6 h-6 text-xs font-semibold text-gray-900 bg-gray-200 rounded-full">
+                  <div
+                    class="absolute bottom-0 right-0 -mb-3 -mr-3 flex items-center justify-center w-6 h-6 text-xs font-semibold text-gray-900 bg-gray-200 rounded-full">
                     3
                   </div>
                   <svg width="18" height="20" viewbox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -106,10 +115,11 @@
                           clip-rule="evenodd"
                           d="M11.677 0.518122V3.42712C11.677 4.84712 12.826 5.99912 14.245 6.00212C15.562 6.00512 16.909 6.00612 17 6.00012"
                           fill="#80E5D3"></path>
-                    <path d="M11.677 0.518122V3.42712C11.677 4.84712 12.826 5.99912 14.245 6.00212C15.562 6.00512 16.909 6.00612 17 6.00012L11.677 0.518122Z"
-                          stroke="#80E5D3"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"></path>
+                    <path
+                      d="M11.677 0.518122V3.42712C11.677 4.84712 12.826 5.99912 14.245 6.00212C15.562 6.00512 16.909 6.00612 17 6.00012L11.677 0.518122Z"
+                      stroke="#80E5D3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"></path>
                     <path d="M11.284 13.5579H5.88696"
                           stroke="white"
                           stroke-width="1.5"
@@ -137,5 +147,5 @@
 </template>
 
 <script>
-export default {}
+export default {};
 </script>

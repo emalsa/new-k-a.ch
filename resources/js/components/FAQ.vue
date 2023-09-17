@@ -513,7 +513,8 @@
           <li class=" px-6 py-8 bg-gray-50 rounded-xl">
             <button @click="toggleItem(7)"
                     class="accordion w-full flex justify-between items-center text-left font-semibold font-heading">
-              <span class="font-heading text-lg font-medium text-gray-400">Für Kantone St. Gallen und beider Appenzell</span>
+              <span
+                class="font-heading text-lg font-medium text-gray-400">Für Kantone St. Gallen und beider Appenzell</span>
               <svg class="closed flex-shrink-0"
                    width="20"
                    height="20"
@@ -565,7 +566,8 @@
           <li class=" px-6 py-8 bg-gray-50 rounded-xl">
             <button @click="toggleItem(8)"
                     class="accordion w-full flex justify-between items-center text-left font-semibold font-heading">
-              <span class="font-heading text-lg font-medium text-gray-400">Wie erhalte ich das Austrittsschreiben?</span>
+              <span
+                class="font-heading text-lg font-medium text-gray-400">Wie erhalte ich das Austrittsschreiben?</span>
               <svg class="closed flex-shrink-0"
                    width="20"
                    height="20"
@@ -615,10 +617,12 @@
 
         </ul>
       </div>
-      <a class="close-menu group block max-w-max mx-auto font-heading font-medium text-gray-900 hover:text-gray-800 text-base overflow-hidden"
-         href="#contact">
+      <a
+        class="close-menu group block max-w-max mx-auto font-heading font-medium text-gray-900 hover:text-gray-800 text-base overflow-hidden"
+        href="#contact">
         <!--        <p class="mb-1">Didn’t find the answer? Contact us here</p>-->
-        <div class="w-full transform -translate-x-0 group-hover:translate-x-full h-px bg-gradient-cyan transition ease-in-out duration-500"></div>
+        <div
+          class="w-full transform -translate-x-0 group-hover:translate-x-full h-px bg-gradient-cyan transition ease-in-out duration-500"></div>
       </a>
     </div>
   </section>
@@ -654,13 +658,13 @@ export default {
   data() {
     return {
       transitionClass: '',
-      isActive: []
-    }
+      isActive: [],
+    };
   },
   methods: {
     toggleItem(index) {
       this.isActive[index] = (this.isActive[index] === index) ? false : index;
-    }
-  }
-}
+    },
+  },
+};
 </script>

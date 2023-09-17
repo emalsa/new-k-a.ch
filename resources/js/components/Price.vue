@@ -24,8 +24,9 @@
 
                 </div>
               </div>
-              <a class="block max-w-[53%] text-center mx-auto font-bold py-4 px-6 mb-8 text-center font-heading text-base text-white bg-green-500 hover:bg-green-600 border border-green-500 hover:border-green-600 rounded-sm transition duration-200"
-                 href="/formular">Jetzt starten</a>
+              <a
+                class="block max-w-[53%] text-center mx-auto font-bold py-4 px-6 mb-8 text-center font-heading text-base text-white bg-green-500 hover:bg-green-600 border border-green-500 hover:border-green-600 rounded-sm transition duration-200"
+                href="/formular">Jetzt starten</a>
               <div class="text-center w-full">
                 <ul class="inline-block">
                   <li class="flex mx-auto items-center mb-3">
@@ -60,8 +61,9 @@
                       <circle cx="10" cy="10" r="9" stroke="#00CBA6" stroke-width="1.5"></circle>
                     </svg>
                     <span class="ml-4 text-sm">
-                      <a class="underline underline-offset-4 decoration-green-600 hover:decoration-green-400 decoration-[3px]"
-                         href="#garantie">Garantie</a></span>
+                      <a
+                        class="underline underline-offset-4 decoration-green-600 hover:decoration-green-400 decoration-[3px]"
+                        href="#garantie">Garantie</a></span>
                   </li>
                   <li class="flex items-center mb-3">
                     <svg width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -108,5 +110,5 @@
 
 </template>
 <script>
-export default {}
+export default {};
 </script>

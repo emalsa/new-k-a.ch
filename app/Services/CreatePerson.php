@@ -2,18 +2,12 @@
 
 namespace App\Services;
 
-use App\Models\Gemeinde;
-use App\Models\Partner;
 use App\Models\Person;
 use App\Models\Session;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
-//use Illuminate\Support\Facades\Validator;
-
-use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Validator;
-
-//use Illuminate\Validation\Validator;
 
 class CreatePerson {
 
@@ -25,7 +19,7 @@ class CreatePerson {
     $this->request = $request;
   }
 
-  public function session(Request $request) {
+  public function session(Request $request): void {
     Session::create([
       'userIp' => $request->json('userIp'),
       'count' => 1,
@@ -44,7 +38,7 @@ class CreatePerson {
     ]);
   }
 
-  public function handle() {
+  public function handle(): JsonResponse {
     $this->validateRequest();
     if ($this->validator->fails()) {
       return response()->json($this->validator->messages(), 500);
@@ -79,20 +73,6 @@ class CreatePerson {
 
     $person->gemeinde()->create([]);
 
-    if ($formData['hatEhepartner']) {
-      $partnerPostData = $this->request->json('partner');
-      $person->partner()->create([
-        'vorname' => $partnerPostData['vorname'],
-        'nachname' => $partnerPostData['nachname'],
-        'geburtsdatum' => $partnerPostData['geburtsdatum'],
-        'konfession' => $partnerPostData['konfession'],
-        'taufDatumBekanntPartner' => isset($partnerPostData['taufDatumBekanntPartner']) ? $partnerPostData['taufDatumBekanntPartner'] : FALSE,
-        'taufdatum' => isset($partnerPostData['taufdatum']) ? $partnerPostData['taufdatum'] : '',
-        'taufort' => isset($partnerPostData['taufort']) ? $partnerPostData['taufort'] : '',
-      ]);
-    }
-
-
     if ($formData['hasChildren']) {
       $childrenPostData = $this->request->json('children');
       foreach ($childrenPostData as $index => $childPostData) {
@@ -101,37 +81,30 @@ class CreatePerson {
           'nachname' => $childPostData['nachname'],
           'geburtsdatum' => $childPostData['geburtsdatum'],
           'konfession' => $childPostData['konfession'],
-          'taufDatumBekanntChild' => isset($childPostData['taufDatumBekanntChild']) ? $childPostData['taufDatumBekanntChild'] : FALSE,
-          'taufdatum' => isset($childPostData['taufdatum']) ? $childPostData['taufdatum'] : '',
-          'taufort' => isset($childPostData['taufort']) ? $childPostData['taufort'] : '',
+          'taufDatumBekanntChild' => $childPostData['taufDatumBekanntChild'] ?? FALSE,
+          'taufdatum' => $childPostData['taufdatum'] ?? '',
+          'taufort' => $childPostData['taufort'] ?? '',
           'sign' => $childPostData['sign'],
         ]);
       }
     }
 
-    // Catholic
-    if ($formData['isCatholic']) {
-      $person->churchAddress()->create([
-        'confession' => 'kath',
-        'anschriftAddress' => '',
-        'streetAddress' => '',
-        'streetAdditionalAddress' => '',
-        'postalAddress' => '',
-        'locationAddress' => '',
-      ]);
-    }
+    $churchPostData = $this->request->json('church');
+    $churchAnschriftAddress = !empty($churchPostData['anschriftAddress']) ? $churchPostData : '';
+    $churchStreetAddress = !empty($churchPostData['streetAddress']) ? $churchPostData['streetAddress'] : '';
+    $churchStreetAdditionalAddress = !empty($churchPostData['streetAdditionalAddress']) ? $churchPostData['streetAdditionalAddress'] : '';
+    $churchPostalAddress = !empty($churchPostData['postalAddress']) ? $churchPostData['postalAddress'] : '';
+    $churchLocationAddress = !empty($churchPostData['locationAddress']) ? $churchPostData['locationAddress'] : '';
 
-    // Reform
-    if ($formData['isReform']) {
-      $person->churchAddress()->create([
-        'confession' => 'reform',
-        'anschriftAddress' => '',
-        'streetAddress' => '',
-        'streetAdditionalAddress' => '',
-        'postalAddress' => '',
-        'locationAddress' => '',
-      ]);
-    }
+    // Church
+    $person->churchAddress()->create([
+      'confession' => isset($formData['isCatholic']) && $formData['isCatholic'] ? 'kath' : 'reform',
+      'anschriftAddress' => $churchAnschriftAddress,
+      'streetAddress' => $churchStreetAddress,
+      'streetAdditionalAddress' => $churchStreetAdditionalAddress,
+      'postalAddress' => $churchPostalAddress,
+      'locationAddress' => $churchLocationAddress,
+    ]);
 
     return response()->json(['status' => 'ok'], 200);
   }
@@ -148,6 +121,5 @@ class CreatePerson {
     );
     $a = 1;
   }
-
 
 }

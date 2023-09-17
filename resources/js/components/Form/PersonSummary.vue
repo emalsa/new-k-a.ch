@@ -51,8 +51,8 @@ export default {
     isChild() {
       return this.$props.element.hasOwnProperty('sign');
     },
-  }
-}
+  },
+};
 </script>
 
 <style>

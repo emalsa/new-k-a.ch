@@ -12,10 +12,12 @@
             <p class="text-lg leading-8 mb-10">Der Austritt aus der Kirche erstellt du in wenigen Minuten online. Mit
               der korrekten Kirchgemeinde.</p>
             <div class="sm:flex items-center">
-              <a class="inline-block font-bold w-full sm:w-auto py-4 px-6 mb-4 sm:mb-0 sm:mr-4 text-center font-heading text-base text-white bg-green-500 hover:bg-green-600 border border-green-500 hover:border-green-600 rounded-sm transition duration-200"
-                 href="/#angebot">Kirchenaustritt Online</a>
-              <a class="inline-block font-bold w-full sm:w-auto py-4 px-6 text-center font-heading  text-base text-gray-900 hover:text-green-500 border border-gray-900 hover:border-green-500 rounded-sm transition duration-150"
-                 href="/#fragen-und-antworten">Mehr dazu</a>
+              <a
+                class="inline-block font-bold w-full sm:w-auto py-4 px-6 mb-4 sm:mb-0 sm:mr-4 text-center font-heading text-base text-white bg-green-500 hover:bg-green-600 border border-green-500 hover:border-green-600 rounded-sm transition duration-200"
+                href="/#angebot">Kirchenaustritt Online</a>
+              <a
+                class="inline-block font-bold w-full sm:w-auto py-4 px-6 text-center font-heading  text-base text-gray-900 hover:text-green-500 border border-gray-900 hover:border-green-500 rounded-sm transition duration-150"
+                href="/#fragen-und-antworten">Mehr dazu</a>
             </div>
           </div>
         </div>
@@ -33,9 +35,9 @@
 
         <div class="hidden sm:block max-w-sm mx-auto sm:pt-12 md:pt-14 pt-38">
           <img
-              class="block mx-auto xl:mx-0"
-              src="../../assets/images/headers/undraw_opened_re_i38e.svg"
-              alt="">
+            class="block mx-auto xl:mx-0"
+            src="../../assets/images/headers/undraw_opened_re_i38e.svg"
+            alt="">
 
         </div>
       </div>
@@ -53,5 +55,5 @@
 </template>
 
 <script>
-export default {}
+export default {};
 </script>

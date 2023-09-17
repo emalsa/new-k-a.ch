@@ -13,7 +13,8 @@
           <a class="inline-block font-heading text-white" href="/#angebot">Angebot</a>
 
         </div>
-        <div class="text-center hidden md:block absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-auto">
+        <div
+          class="text-center hidden md:block absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-auto">
           <a class="inline-block" href="/">
             <img width="40" height="45" src="../../assets/logo/logo-acros-column-white_alone.png" alt=""></a>
           <h2 class="text-white text-bold text-heading">kirche-austreten.ch</h2>
@@ -21,8 +22,8 @@
         <div class="w-full sm:w-auto text-center">
           <a class="inline-block mr-16 font-heading text-white" href="/#fragen-und-antworten">Fragen und Antworten</a>
           <a
-              class="inline-block font-heading text-white"
-              href="/#kontakt">Kontakt</a></div>
+            class="inline-block font-heading text-white"
+            href="/#kontakt">Kontakt</a></div>
       </div>
       <div class="relative flex justify-between items-center">
         <div class="w-auto">
@@ -43,7 +44,7 @@ export default {
     currentYear() {
       let now = new Date();
       return now.getFullYear();
-    }
-  }
-}
+    },
+  },
+};
 </script>

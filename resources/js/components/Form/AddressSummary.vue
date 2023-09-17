@@ -24,7 +24,7 @@
 export default {
   props: ['element', 'headline'],
   computed: {},
-}
+};
 </script>
 
 <style>

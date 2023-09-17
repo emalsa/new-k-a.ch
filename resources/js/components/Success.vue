@@ -1,10 +1,8 @@
 <template>
- Danke
+  Danke
 </template>
 
 <script>
-export default {
-
-}
+export default {};
 
 </script>
