@@ -39,109 +39,122 @@
 
         </div>
         <div class="mb-6">
-            <input id="yesAdressdaten" type="radio" class="block text-md leading-6 mb-2">
-            <label for="yesAdressdaten">Ich möchte meine Adresse jetzt eingeben</label>
-            <input id="noAdressdaten" type="radio" class="block text-md leading-6 mb-2">
-            <label for="noAdressdaten">Ich werden meine Adresse nach Erhalt selber eingeben</label>
-        </div>
-
-        <div v-if="formData.adressDatenEingeben">
-        <div class="mb-6">
-            <label class="required block text-md leading-6 mb-2" for="">Vorname</label>
-            <input
-                class="block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
-                v-model="person.vorname"
-                name="vorname"
-                type="text"
-                placeholder="Dein Vorname">
-        </div>
-        <div class="mb-6">
-            <label class="required block text-md leading-6 mb-2" for="">Nachname</label>
-            <input
-                class="block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
-                v-model="person.nachname"
-                type="text"
-
-                placeholder="Dein Nachname">
-        </div>
-
-        <!-- Address -->
-        <div class="address mt-16">
-            <h4 class="mb-4 font-heading text-2xl">Deine Adresse</h4>
-            <div class="mb-6">
-                <label class="required block text-md leading-6 mb-2" for="">Strasse und Nr.</label>
-                <input
-                    class="block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
-                    v-model="person.streetAddress"
-                    type="text"
-                    placeholder="Musterstrasse 24b">
-            </div>
-
-            <div class="mb-6">
-                <label class="block text-md leading-6 mb-2" for="">Addresszusatz</label>
-                <input
-                    class="block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
-                    v-model="person.streetAdditionalAddress"
-                    type="text">
-            </div>
-
-            <div class="mb-6 md:flex">
-                <div class="flex-grow sm:w-1/12 pr-2">
-                    <label class="required block text-md leading-6 mb-2" for="">Postleitzahl</label>
-                    <input
-                        class="block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
-                        v-model="person.postalAddress"
-                        type="text"
-                        placeholder="3000">
-                </div>
-                <div class="flex-grow">
-                    <label class="required block text-md leading-6 mb-2" for="">Ort</label>
-                    <input
-                        class="block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
-                        v-model="person.locationAddress"
-                        type="text"
-                        placeholder="Bern">
-                </div>
-            </div>
-
-        </div>
-
-        <!--Taufdatum checkbox -->
-        <div class="my-12">
             <label>
                 <input type="checkbox"
-                       v-model="person.taufDatumBekanntPerson"
-                       name="taufDatumBekanntPerson"
+                       v-model="formData.adressDatenSpaeterEingeben"
+                       name="adressDatenSpaeterEingeben"
                        value="example value">
-                <span class="ml-1">Taufdatum oder Taufort ist bekannt (optional)</span>
+                <span class="ml-1">Ich möchte meine Adresse später eingeben</span>
             </label>
-            <!-- Taufort/datum -->
-            <div v-if="person.taufDatumBekanntPerson" class="mt-12 mb-6">
+        </div>
+
+        <div v-if="formData.adressDatenSpaeterEingeben">
+            <div class="mb-12">
+                Sie können Ihre Adresse auch später, nach Erhalt des Austrittsschreiben, in das Dokument einfügen.
+                In der Email die Sie mit dem Schreiben erhalten ist beschrieben wie Sie das Dokument bearbeiten können.
+            </div>
+
+        </div>
+
+        <div v-if="!formData.adressDatenSpaeterEingeben">
+            <div class="mb-6">
+                <label class="required block text-md leading-6 mb-2" for="">Vorname</label>
+                <input
+                    class="block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
+                    v-model="person.vorname"
+                    name="vorname"
+                    type="text"
+                    placeholder="Dein Vorname">
+            </div>
+            <div class="mb-6">
+                <label class="required block text-md leading-6 mb-2" for="">Nachname</label>
+                <input
+                    class="block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
+                    v-model="person.nachname"
+                    type="text"
+
+                    placeholder="Dein Nachname">
+            </div>
+
+            <!-- Address -->
+            <div class="address mt-16">
                 <div class="mb-6">
-                    <label class="block text-md leading-6 mb-2" for="">Taufdatum</label>
-                    <input class="block w-full p-4 font-heading placeholder-gray-300 bg-gray-50 rounded outline-none"
-                           v-model="person.taufdatum"
-                           name="taufdatum"
-                           type="text"
-                           placeholder="Taufdatum, Beispiel: 4.12.1967">
-                    <span class="block text-md w-full py-4 font-heading rounded outline-none">Beispiel: <i>4.12.1966</i> oder <i>3.3.1922</i></span>
+                    <label class="required block text-md leading-6 mb-2" for="">Strasse und Nr.</label>
+                    <input
+                        class="block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
+                        v-model="person.streetAddress"
+                        type="text"
+                        placeholder="Musterstrasse 24b">
                 </div>
+
                 <div class="mb-6">
-                    <label class="block text-md leading-6 mb-2" for="">Taufort</label>
-                    <input class="block w-full p-4 font-heading placeholder-gray-300 bg-gray-50 rounded outline-none"
-                           v-model="person.taufort"
-                           type="text"
-                           placeholder="Taufort">
+                    <label class="block text-md leading-6 mb-2" for="">Addresszusatz</label>
+                    <input
+                        class="block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
+                        v-model="person.streetAdditionalAddress"
+                        type="text">
+                </div>
+
+                <div class="mb-6 md:flex">
+                    <div class="flex-grow sm:w-1/12 pr-2">
+                        <label class="required block text-md leading-6 mb-2" for="">Postleitzahl</label>
+                        <input
+                            class="block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
+                            v-model="person.postalAddress"
+                            type="text"
+                            placeholder="3000">
+                    </div>
+                    <div class="flex-grow">
+                        <label class="required block text-md leading-6 mb-2" for="">Ort</label>
+                        <input
+                            class="block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
+                            v-model="person.locationAddress"
+                            type="text"
+                            placeholder="Bern">
+                    </div>
+                </div>
+
+            </div>
+
+            <!--Taufdatum checkbox -->
+            <div class="my-12">
+                <label>
+                    <input type="checkbox"
+                           v-model="person.taufDatumBekanntPerson"
+                           name="taufDatumBekanntPerson"
+                           value="example value">
+                    <span class="ml-1">Taufdatum oder Taufort ist bekannt (optional)</span>
+                </label>
+                <!-- Taufort/datum -->
+                <div v-if="person.taufDatumBekanntPerson" class="mt-12 mb-6">
+                    <div class="mb-6">
+                        <label class="block text-md leading-6 mb-2" for="">Taufdatum</label>
+                        <input
+                            class="block w-full p-4 font-heading placeholder-gray-300 bg-gray-50 rounded outline-none"
+                            v-model="person.taufdatum"
+                            name="taufdatum"
+                            type="text"
+                            placeholder="Taufdatum, Beispiel: 4.12.1967">
+                        <span
+                            class="block text-md w-full py-4 font-heading rounded outline-none">Beispiel: <i>4.12.1966</i> oder <i>3.3.1922</i></span>
+                    </div>
+                    <div class="mb-6">
+                        <label class="block text-md leading-6 mb-2" for="">Taufort</label>
+                        <input
+                            class="block w-full p-4 font-heading placeholder-gray-300 bg-gray-50 rounded outline-none"
+                            v-model="person.taufort"
+                            type="text"
+                            placeholder="Taufort">
+                    </div>
                 </div>
             </div>
-        </div>
         </div>
     </div>
 </template>
 
 <script>
 export default {
-    props: ['isStep1', 'person', 'formData']
+    props: ['isStep1', 'person', 'formData'],
 }
 
 </script>

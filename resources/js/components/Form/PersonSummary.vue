@@ -10,7 +10,7 @@
         <td>Vorname</td>
         <td>{{ element.vorname }}</td>
       </tr>
-      <tr>
+      <tr v-if="element.nachname">
         <td>Nachname</td>
         <td>{{ element.nachname }}</td>
       </tr>
@@ -28,7 +28,7 @@
         <td>{{ element.sign ? 'Ja' : 'Nein' }}</td>
       </tr>
 
-      <tr>
+      <tr v-if="element.taufdatum">
         <td>Taufdatum</td>
         <td>{{ element.taufdatum ? element.taufdatum : '-' }}</td>
       </tr>
