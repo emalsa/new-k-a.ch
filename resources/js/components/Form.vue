@@ -542,7 +542,7 @@ export default {
 
         if (this.church.postalAddress) {
           this.church.postalAddress = this.church.postalAddress.trim();
-          if (!/^\d+$/.test(this.person.postalAddress)) {
+          if (!/^\d+$/.test(this.postalAddress.postalAddress)) {
             this.errors.push('Postleitzahl darf nur Nummern enthalten.');
           }
 

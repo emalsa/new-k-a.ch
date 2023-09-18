@@ -21,7 +21,7 @@
       <div class="mb-6">
         <label class="required block text-md leading-6 mb-2" for="">Anschrift</label>
         <input class="block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
-               v-model="church.anschrift" name="anschrift" type="text">
+               v-model="church.anschriftAddress" name="anschrift" type="text">
       </div>
 
       <div class="mb-6">
