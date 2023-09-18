@@ -19,13 +19,6 @@ class SendPdfJob implements ShouldQueue {
   use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
   /**
-   * Send to me.
-   *
-   * @var string
-   */
-  public const SEND_COPY_TO = "info@kirche-austreten.ch";
-
-  /**
    * From.
    *
    * @var string
@@ -33,32 +26,42 @@ class SendPdfJob implements ShouldQueue {
   public const FROM = 'kirche-austreten.ch info@mail.kirche-austreten.ch';
 
   /**
-   * Alert: Subject.
+   * Subject.
    *
    * @var string
    */
   protected const SUBJECT = 'kirche-austreten.ch: Dein Austrittsformular ist fertig';
 
   /**
-   * Register: Template.
+   * Document available template.
    *
    * @var string
    */
   protected const PDF_TEMPLATE = 'documents__available';
 
-  protected const PDF_TEMPLATE_SIGN = 'documents__available__sign_required';
+  /**
+   * Send copy to me.
+   *
+   * @var string
+   */
+  public const SEND_COPY_TO = "info@kirche-austreten.ch";
 
+  /**
+   * Contact template.
+   *
+   * @var string
+   */
   public const CONTACT_TEMPLATE = 'contact';
 
   /**
-   * The person entity
+   * The person entity.
    *
    * @var \App\Models\Person
    */
   protected Person $person;
 
   /**
-   * The Mailgun handler
+   * The Mailgun handler.
    *
    * @var \Mailgun\Mailgun
    */
@@ -108,11 +111,13 @@ class SendPdfJob implements ShouldQueue {
 
       $mg = new Mailgun($configurator, new NoopHydrator());
       $files = Storage::disk('private')
-        ->files("{$this->person->getAttribute('email')}/{$this->person->getAttribute('id')}");
+        ->files(
+          "{$this->person->getAttribute('email')}/{$this->person->getAttribute('id')}"
+        );
 
       $attachments = [];
       foreach ($files as $file) {
-        // Is a PDF?
+        // Ensure is a PDF.
         if (!pathinfo($file, PATHINFO_EXTENSION) == 'pdf') {
           continue;
         }
@@ -128,24 +133,14 @@ class SendPdfJob implements ShouldQueue {
         throw new \Exception($message);
       }
 
-      // Sign required.
-      if ($this->person->getAttribute('id') !== 1) {
-        $template = self::PDF_TEMPLATE;
-      }
-      else {
-        $template = self::PDF_TEMPLATE_SIGN;
-      }
-
       $personEmail = $this->person->getAttributeValue('email');
-
       $responsePerson = $mg->messages()->send('kirche-austreten.ch', [
-          'from' => self::FROM,
-          'to' => $personEmail,
-          'subject' => self::SUBJECT,
-          'template' => $template,
-          'attachment' => $attachments,
-        ]
-      );
+        'from' => self::FROM,
+        'to' => $personEmail,
+        'subject' => self::SUBJECT,
+        'template' => self::PDF_TEMPLATE,
+        'attachment' => $attachments,
+      ]);
 
       if ($responsePerson->getStatusCode() != 200) {
         $message = 'Mailgun responded not with a 200 for: ' . $this->person->getAttributeValue('email');
@@ -156,7 +151,7 @@ class SendPdfJob implements ShouldQueue {
           'from' => self::FROM,
           'to' => self::SEND_COPY_TO,
           'subject' => "Kopie $personEmail: " . self::SUBJECT,
-          'template' => $template,
+          'template' => self::PDF_TEMPLATE,
           'attachment' => $attachments,
         ]
       );

@@ -49,7 +49,7 @@ class CreatePdfJob implements ShouldQueue {
    *
    * @return void
    */
-  public function handle() {
+  public function handle(): void {
     $pdfGenerate = new PdfGenerate();
     $pdfGenerate->generate($this->person->getKey());
   }
