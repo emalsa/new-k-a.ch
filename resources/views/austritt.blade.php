@@ -87,28 +87,28 @@
 </head>
 <body>
 @php
-if($mode == 'kath'){
-$confessionFull='Römisch-Katholische';
-}
-else {
-$confessionFull='Evangelisch Reformierte';
-}
+  if($mode == 'kath'){
+  $confessionFull='Römisch-Katholische';
+  }
+  else {
+  $confessionFull='Evangelisch Reformierte';
+  }
 
 
-$showTaufdatumFehlt = NULL;
-if(empty($personData['taufdatum']) || empty($personData['taufort'])) {
-$showTaufdatumFehlt = TRUE;
-}
+  $showTaufdatumFehlt = NULL;
+  if(empty($personData['taufdatum']) || empty($personData['taufort'])) {
+  $showTaufdatumFehlt = TRUE;
+  }
 
 @endphp
 
 @if($showTaufdatumFehlt || empty($childrenData))
-<style>
+  <style>
 
-  body {
-    line-height: 19px;
-  }
-</style>
+    body {
+      line-height: 19px;
+    }
+  </style>
 @endif
 
 <div class="page">
@@ -123,18 +123,18 @@ $showTaufdatumFehlt = TRUE;
     </div>
 
     @if(!empty($churchAddressData))
-    <div class="receiver">
-      <p class="einschreiben"><b>Einschreiben</b></p>
-      <p>{{$churchAddressData['anschriftAddress'] ? : 'Anschrift'}}</p>
-      <p>{{$churchAddressData['streetAdditionalAddress']}}</p>
-      <p>{{ $churchAddressData['streetAddress'] ? : 'Strasse'}}</p>
-      <p>
-        {{$churchAddressData['postalAddress'] ? : 'PLZ'}}&nbsp;{{$churchAddressData['locationAddress'] ? : 'Ort'}}</p>
-    </div>
+      <div class="receiver">
+        <p class="einschreiben"><b>Einschreiben</b></p>
+        <p>{{$churchAddressData['anschriftAddress'] ? : 'Anschrift'}}</p>
+        <p>{{$churchAddressData['streetAdditionalAddress']}}</p>
+        <p>{{ $churchAddressData['streetAddress'] ? : 'Strasse'}}</p>
+        <p>
+          {{$churchAddressData['postalAddress'] ? : 'PLZ'}}&nbsp;{{$churchAddressData['locationAddress'] ? : 'Ort'}}</p>
+      </div>
     @else
-    <div class="receiver receiver-falls-leer">
-      <p class="einschreiben"><b>Einschreiben</b></p>
-    </div>
+      <div class="receiver receiver-falls-leer">
+        <p class="einschreiben"><b>Einschreiben</b></p>
+      </div>
     @endif
 
     <div class="date">
@@ -171,16 +171,16 @@ $showTaufdatumFehlt = TRUE;
             <td>{{$personData['geburtsdatum']}}</td>
           </tr>
           @if(!empty($personData['taufort']))
-          <tr>
-            <td>Taufort:</td>
-            <td>{{$personData['taufort']}}</td>
-          </tr>
+            <tr>
+              <td>Taufort:</td>
+              <td>{{$personData['taufort']}}</td>
+            </tr>
           @endif
           @if(!empty($personData['taufdatum']))
-          <tr>
-            <td>Taufdatum:</td>
-            <td>{{$personData['taufdatum']}}</td>
-          </tr>
+            <tr>
+              <td>Taufdatum:</td>
+              <td>{{$personData['taufdatum']}}</td>
+            </tr>
           @endif
           <tr>
             <td>Konfession:</td>
@@ -190,65 +190,65 @@ $showTaufdatumFehlt = TRUE;
       </div>
 
       @if(!empty($childrenData))
-      <div class="text-falls-kinder">
-        <p>
-          Meine unten aufgef&uuml;hrten Kinder haben ebenfalls entschieden ab
-          sofort aus der Kirchgemeinde und aus der {{$confessionFull}} Kirche
-          auszutreten.
-        </p>
-      </div>
-      <div class="tabelle-falls-kinder person-data">
-        @foreach($childrenData as $child)
-        @php
-        if(!$showTaufdatumFehlt && (empty($child['taufdatum']) ||
-        empty($child['taufort']))) {
-        $showTaufdatumFehlt = TRUE;
-        }
-        @endphp
+        <div class="text-falls-kinder">
+          <p>
+            Meine unten aufgef&uuml;hrten Kinder haben ebenfalls entschieden ab
+            sofort aus der Kirchgemeinde und aus der {{$confessionFull}} Kirche
+            auszutreten.
+          </p>
+        </div>
+        <div class="tabelle-falls-kinder person-data">
+          @foreach($childrenData as $child)
+            @php
+              if(!$showTaufdatumFehlt && (empty($child['taufdatum']) ||
+              empty($child['taufort']))) {
+              $showTaufdatumFehlt = TRUE;
+              }
+            @endphp
 
-        <table>
+            <table>
 
-          <tr>
-            <td>Vorname:</td>
-            <td>{{$child['vorname'] ? : 'Vorname Kind'}}</td>
-          </tr>
-          <tr>
-            <td>Nachname:</td>
-            <td>{{$child['nachname'] ? : 'Nachname Kind'}}</td>
-          </tr>
-          <tr>
-            <td>Geburtsdatum:</td>
-            <td>{{$child['geburtsdatum'] ? : 'Geburtsdatum Kind'}}</td>
-          </tr>
-          @if(!empty($child['taufort']))
-          <tr>
-            <td>Taufort:</td>
-            <td>{{$child['taufort']}}</td>
-          </tr>
-          @endif
-          @if(!empty($child['taufdatum']))
-          <tr>
-            <td>Taufdatum:</td>
-            <td>{{$child['taufdatum']}}</td>
-          </tr>
-          @endif
-          <tr>
-            <td>Konfession:</td>
-            <td>{{substr($confessionFull, 0, -1)}}</td>
-          </tr>
-        </table>
-        @endforeach
-      </div>
+              <tr>
+                <td>Vorname:</td>
+                <td>{{$child['vorname'] ? : 'Vorname Kind'}}</td>
+              </tr>
+              <tr>
+                <td>Nachname:</td>
+                <td>{{$child['nachname'] ? : 'Nachname Kind'}}</td>
+              </tr>
+              <tr>
+                <td>Geburtsdatum:</td>
+                <td>{{$child['geburtsdatum'] ? : 'Geburtsdatum Kind'}}</td>
+              </tr>
+              @if(!empty($child['taufort']))
+                <tr>
+                  <td>Taufort:</td>
+                  <td>{{$child['taufort']}}</td>
+                </tr>
+              @endif
+              @if(!empty($child['taufdatum']))
+                <tr>
+                  <td>Taufdatum:</td>
+                  <td>{{$child['taufdatum']}}</td>
+                </tr>
+              @endif
+              <tr>
+                <td>Konfession:</td>
+                <td>{{substr($confessionFull, 0, -1)}}</td>
+              </tr>
+            </table>
+          @endforeach
+        </div>
       @endif
       <!-- @todo: Children handle taufdatum/ort?-->
       @if($showTaufdatumFehlt)
-      <div class="text-falls-taufdaten-fehlen">
-        <p>
-          Das Fehlen des Taufdatums oder Tauforts ist kein Hindernis und darf
-          nicht als Grund f&uuml;r die Ablehnung des Kirchenaustritts verwendet
-          werden.
-        </p>
-      </div>
+        <div class="text-falls-taufdaten-fehlen">
+          <p>
+            Das Fehlen des Taufdatums oder Tauforts ist kein Hindernis und darf
+            nicht als Grund f&uuml;r die Ablehnung des Kirchenaustritts verwendet
+            werden.
+          </p>
+        </div>
       @endif
       <div class="text-2">
         <p>
@@ -266,15 +266,15 @@ $showTaufdatumFehlt = TRUE;
       </div>
 
       @if(!empty($childrenData))
-      <div class="text-falls-kinder-2">
-        <p>
-          Die oben genannten Punkte gelten auch f&uuml;r die erw&auml;hnten
-          Kinder. Der Austritt wurde gr&uuml;ndlich mit ihnen besprochen und ich
-          versichere Ihnen, dass sie sich bewusst sind &uuml;ber die damit
-          einhergehenden Konsequenzen, einschließlich des Verzichts auf zuk&uuml;nftige
-          Sakramente und &auml;hnliches.
-        </p>
-      </div>
+        <div class="text-falls-kinder-2">
+          <p>
+            Die oben genannten Punkte gelten auch f&uuml;r die erw&auml;hnten
+            Kinder. Der Austritt wurde gr&uuml;ndlich mit ihnen besprochen und ich
+            versichere Ihnen, dass sie sich bewusst sind &uuml;ber die damit
+            einhergehenden Konsequenzen, einschließlich des Verzichts auf zuk&uuml;nftige
+            Sakramente und &auml;hnliches.
+          </p>
+        </div>
       @endif
     </div>
   </div>
@@ -304,19 +304,19 @@ $showTaufdatumFehlt = TRUE;
     </p>
   </div>
   @foreach($childrenData as $child)
-  @if($child['sign'])
-  <div class="sign unterschrift-falls-kinder">
-    <div class="line">
-      ___________________________________________________________________________
-    </div>
-    <p>
-      {{$child['vorname'] ? : 'Vorname Kind'}}&nbsp;{{ $child['nachname'] ? : 'Nachname Kind'}}
-    </p>
-    <p>
-      <span>Ort, Datum</span><span>Unterschrift</span>
-    </p>
-  </div>
-  @endif
+    @if($child['sign'])
+      <div class="sign unterschrift-falls-kinder">
+        <div class="line">
+          ___________________________________________________________________________
+        </div>
+        <p>
+          {{$child['vorname'] ? : 'Vorname Kind'}}&nbsp;{{ $child['nachname'] ? : 'Nachname Kind'}}
+        </p>
+        <p>
+          <span>Ort, Datum</span><span>Unterschrift</span>
+        </p>
+      </div>
+    @endif
   @endforeach
 </div>
 </body>
