@@ -535,14 +535,13 @@ export default {
           this.errors.push('Strasse erforderlich.');
         }
 
-
         if (!this.church.postalAddress) {
           this.errors.push('Postleitzahl erforderlich.');
         }
 
         if (this.church.postalAddress) {
           this.church.postalAddress = this.church.postalAddress.trim();
-          if (!/^\d+$/.test(this.postalAddress.postalAddress)) {
+          if (!/^\d+$/.test(this.church.postalAddress)) {
             this.errors.push('Postleitzahl darf nur Nummern enthalten.');
           }
 
