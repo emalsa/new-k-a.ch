@@ -13,10 +13,11 @@ class StripeController extends Controller {
   public function stripeWebhookHandler(Request $request) {
     // The library needs to be configured with your account's secret key.
     // Ensure the key is kept out of any version control system you might be using.
-    $stripe = new StripeClient('sk_test_TU37sGUHCg4yqlLxNDVqB8w600AwljpXmE');
+    $stripeApiKey = env('STRIPE_API_KEY');
+    $stripe = new StripeClient($stripeApiKey);
 
     // This is your Stripe CLI webhook secret for testing your endpoint locally.
-    $endpoint_secret = 'whsec_N0ksu2SGUh6ubDT2BUY2JEHJ6UJlQogs';
+    $endpoint_secret = env('STRIPE_WEBHOOK_SECRET');
 
     $payload = @file_get_contents('php://input');
     $sig_header = $_SERVER['HTTP_STRIPE_SIGNATURE'];
