@@ -233,7 +233,7 @@
                         <h5 class="mb-6 font-heading text-2xl">Kosten</h5>
                         <p v-if="!formData.payment">Gratis</p>
                         <div v-if="formData.payment">
-                          <p class="font-heading">Total:&nbsp;<i>24 CHF</i></p>
+                          <p class="font-heading">Total:&nbsp;<i>3 CHF</i></p>
                           <div class="mb-6 mt-6">
 
                             <div class="max-w-2xl mx-auto">
@@ -365,7 +365,7 @@ export default {
       currentStep: 1,
       isLoading: false,
       isLoadingStep: false,
-      stripeURL: 'https://buy.stripe.com/fZe9CzdLl69Cb6M7sx',
+      stripeURL: 'https://buy.stripe.com/7sIeWT36HfKcgr64gm',
       confirmURL: '/confirm',
       formData: {
         adressDatenSpaeterEingeben: false,
