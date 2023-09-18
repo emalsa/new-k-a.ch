@@ -171,7 +171,7 @@
                   <!-- Children -->
                   <div v-if="formData.hasChildren" class="relative h-88 px-6 py-8 border-b-1">
                     <div class="relative max-w-xs">
-                      <h5 class="mb-6 font-heading text-2xl mb-4">Kinder</h5>
+                      <h5 class="font-heading text-2xl mb-4">Kinder</h5>
                       <div class="mb-4" v-for="(child, index) in children" :key="index">
                         <PersonSummary :element="child"/>
                       </div>
