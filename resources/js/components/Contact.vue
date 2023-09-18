@@ -4,7 +4,7 @@
       <div class="flex flex-wrap -mx-4">
         <div class="w-full lg:w-1/2 px-4 mb-16 lg:mb-0">
           <div class="max-w-md">
-            ∑ <span class="text-sm font-semibold uppercase">
+               <span class="text-sm font-semibold uppercase">
                   <span>Einfach</span>
                   <span class="text-green-500">&nbsp;Fragen</span>
                 </span>

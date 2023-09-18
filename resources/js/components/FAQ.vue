@@ -248,71 +248,67 @@
                 Pfarramt oder die Adresse der Kirche in der Gemeinde ist. Oftmals scheitert der Kirchenaustritt genau an
                 diesem Punkt: Das Austrittsschreiben wird an die falsche Kirchgemeinde geschickt.
               </p>
-              <p class="max-w-3xl mt-4 text-base  text-gray-800">Beim&nbsp;<a href="#angebot"
-                                                                              class="underline underline-offset-4 decoration-green-600 hover:decoration-green-400 decoration-[3px]">Garantierten
-                Austritt</a> ist korrekte Adresse der Kirchgemeinde im Schreiben enthalten.
-              </p>
 
             </div>
           </li>
 
-          <li id="garantie" class=" px-6 py-8 bg-gray-50 rounded-xl">
-            <button @click="toggleItem(3)"
-                    class="accordion w-full flex justify-between items-center text-left font-semibold font-heading">
-              <h3 class="font-heading text-lg font-medium text-gray-400">Was heisst <i>Garantierter Austritt</i>&nbsp;?
-              </h3>
-              <svg class="closed flex-shrink-0"
-                   width="20"
-                   height="20"
-                   viewbox="0 0 20 20"
-                   fill="none"
-                   xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M0.750214 10C0.750214 15.108 4.89121 19.25 10.0002 19.25C15.1082 19.25 19.2502 15.108 19.2502 10C19.2502 4.892 15.1082 0.75 10.0002 0.75C4.89121 0.75 0.750214 4.892 0.750214 10Z"
-                      stroke="#838EA4"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"></path>
-                <path d="M6.52902 8.55774L10 12.0437L13.471 8.55774"
-                      stroke="#838EA4"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"></path>
-              </svg>
-              <svg class="opened hidden flex-shrink-0"
-                   width="20"
-                   height="20"
-                   viewbox="0 0 20 20"
-                   fill="none"
-                   xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M19.2498 10C19.2498 4.892 15.1088 0.75 9.99979 0.75C4.89179 0.75 0.749786 4.892 0.749786 10C0.749786 15.108 4.89179 19.25 9.99979 19.25C15.1088 19.25 19.2498 15.108 19.2498 10Z"
-                      stroke="#45C1FF"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"></path>
-                <path d="M13.471 11.4423L9.99998 7.95626L6.52898 11.4423"
-                      stroke="#45C1FF"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"></path>
-              </svg>
-            </button>
-            <div class="panel" v-if="isActive[3] === 3">
-              <p class="max-w-3xl mt-4 text-base  text-gray-800">Unser Formular benötigt lediglich deine persönlichen
-                Daten wie deinen Namen, deine Adresse und dein Geburtsdatum angeben. Wir haben die Adresse der
-                zuständigen Kirchgemeinde bereits für dich und senden dir sogar das Austrittsschreiben zu. Du musst
-                das Schreiben lediglich ausdrucken, unterschreiben und zur Post bringen. Eine mühsame Recherche der
-                Kirchgemeinde entfällt also für dich und du musst kein eigenes Schreiben erstellen. Mit uns sparst du
-                Zeit und Nerven.</p>
-              <p class="max-w-3xl mt-4 text-base  text-gray-800">Falls uns bei der Kirchgemeinde ein Fehler unterläuft,
-                erstatten wir dir selbstverständlich das Geld zurück. Ein Beispiel dafür wäre, wenn wir trotz Kontrolle
-                die falsche Kirchgemeinde im Austrittsschreiben angeben. Zudem senden wir dir ein neues
-                Austrittsschreiben mit der korrekten Kirchgemeinde zu.</p>
-            </div>
-          </li>
+          <!--          <li id="garantie" class=" px-6 py-8 bg-gray-50 rounded-xl">-->
+          <!--            <button @click="toggleItem(3)"-->
+          <!--                    class="accordion w-full flex justify-between items-center text-left font-semibold font-heading">-->
+          <!--              <h3 class="font-heading text-lg font-medium text-gray-400">Was heisst <i>Garantierter Austritt</i>&nbsp;?-->
+          <!--              </h3>-->
+          <!--              <svg class="closed flex-shrink-0"-->
+          <!--                   width="20"-->
+          <!--                   height="20"-->
+          <!--                   viewbox="0 0 20 20"-->
+          <!--                   fill="none"-->
+          <!--                   xmlns="http://www.w3.org/2000/svg">-->
+          <!--                <path fill-rule="evenodd"-->
+          <!--                      clip-rule="evenodd"-->
+          <!--                      d="M0.750214 10C0.750214 15.108 4.89121 19.25 10.0002 19.25C15.1082 19.25 19.2502 15.108 19.2502 10C19.2502 4.892 15.1082 0.75 10.0002 0.75C4.89121 0.75 0.750214 4.892 0.750214 10Z"-->
+          <!--                      stroke="#838EA4"-->
+          <!--                      stroke-width="1.5"-->
+          <!--                      stroke-linecap="round"-->
+          <!--                      stroke-linejoin="round"></path>-->
+          <!--                <path d="M6.52902 8.55774L10 12.0437L13.471 8.55774"-->
+          <!--                      stroke="#838EA4"-->
+          <!--                      stroke-width="1.5"-->
+          <!--                      stroke-linecap="round"-->
+          <!--                      stroke-linejoin="round"></path>-->
+          <!--              </svg>-->
+          <!--              <svg class="opened hidden flex-shrink-0"-->
+          <!--                   width="20"-->
+          <!--                   height="20"-->
+          <!--                   viewbox="0 0 20 20"-->
+          <!--                   fill="none"-->
+          <!--                   xmlns="http://www.w3.org/2000/svg">-->
+          <!--                <path fill-rule="evenodd"-->
+          <!--                      clip-rule="evenodd"-->
+          <!--                      d="M19.2498 10C19.2498 4.892 15.1088 0.75 9.99979 0.75C4.89179 0.75 0.749786 4.892 0.749786 10C0.749786 15.108 4.89179 19.25 9.99979 19.25C15.1088 19.25 19.2498 15.108 19.2498 10Z"-->
+          <!--                      stroke="#45C1FF"-->
+          <!--                      stroke-width="1.5"-->
+          <!--                      stroke-linecap="round"-->
+          <!--                      stroke-linejoin="round"></path>-->
+          <!--                <path d="M13.471 11.4423L9.99998 7.95626L6.52898 11.4423"-->
+          <!--                      stroke="#45C1FF"-->
+          <!--                      stroke-width="1.5"-->
+          <!--                      stroke-linecap="round"-->
+          <!--                      stroke-linejoin="round"></path>-->
+          <!--              </svg>-->
+          <!--            </button>-->
+          <!--            <div class="panel" v-if="isActive[3] === 3">-->
+          <!--              <p class="max-w-3xl mt-4 text-base  text-gray-800">Unser Formular benötigt lediglich deine persönlichen-->
+          <!--                Daten wie deinen Namen, deine Adresse und dein Geburtsdatum angeben. Wir haben die Adresse der-->
+          <!--                zuständigen Kirchgemeinde bereits für dich und senden dir sogar das Austrittsschreiben zu. Du musst-->
+          <!--                das Schreiben lediglich ausdrucken, unterschreiben und zur Post bringen. Eine mühsame Recherche der-->
+          <!--                Kirchgemeinde entfällt also für dich und du musst kein eigenes Schreiben erstellen. Mit uns sparst du-->
+          <!--                Zeit und Nerven.</p>-->
+          <!--              <p class="max-w-3xl mt-4 text-base  text-gray-800">Falls uns bei der Kirchgemeinde ein Fehler unterläuft,-->
+          <!--                erstatten wir dir selbstverständlich das Geld zurück. Ein Beispiel dafür wäre, wenn wir trotz Kontrolle-->
+          <!--                die falsche Kirchgemeinde im Austrittsschreiben angeben. Zudem senden wir dir ein neues-->
+          <!--                Austrittsschreiben mit der korrekten Kirchgemeinde zu.</p>-->
+          <!--            </div>-->
+          <!--          </li>-->
 
           <li class=" px-6 py-8 bg-gray-50 rounded-xl">
             <button @click="toggleItem(4)"
@@ -358,20 +354,12 @@
               </svg>
             </button>
             <div class="panel" v-if="isActive[4] === 4">
-              <p class="max-w-3xl mt-4 text-base  text-gray-800">Etwa 4-6 Wochen nach dem Abschicken des
+              <p class="max-w-3xl mt-4 text-base  text-gray-800">Etwa 4-8 Wochen nach dem Abschicken des
                 Austrittsschreibens erhältst du eine Bestätigung von der Kirchgemeinde per Post. Die Kirchgemeinde
                 informiert auch das Steueramt deiner Gemeinde über deinen Kirchenaustritt, damit du von der
                 Kirchensteuer befreit wirst.</p>
-              <p class="max-w-3xl mt-4 text-base  text-gray-800">Allerdings empfiehlt es sich auch, dass du das
-                Steueramt deiner Gemeinde über deinen Austritt vorinformierst, sollte die Kirchgemeinde dies
-                nicht tun. Wir schicken dir das Schreiben für das Steueramt immer mit.</p>
-              <p class="max-w-3xl mt-4 text-base  text-gray-800">
-                Wir schicken dir ebenfalls das Schreiben für das Steueramt beim
-                <a href="#angebot"
-                   class="underline underline-offset-4 decoration-green-600 hover:decoration-green-400 decoration-[3px]">
-                  <i>Garantierter Austritt.</i>
-                </a><br/>Mit der korrekten Anschrift der Gemeinde.
-              </p>
+              <p class="max-w-3xl mt-4 text-base  text-gray-800">Allerdings empfiehlt es sich, dass du beim
+                Steueramt deiner Gemeinde nach etwa zwei Wochen nach Erhalt der Bestätigung nachfragst.</p>
             </div>
           </li>
 

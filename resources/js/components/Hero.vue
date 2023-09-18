@@ -9,8 +9,7 @@
               <span class="text-green-500">&nbsp;Online</span>
             </div>
             <h1 class="font-heading text-4xl md:text-5xl mb-6">Kirchenaustritt Schweiz</h1>
-            <p class="text-lg leading-8 mb-10">Der Austritt aus der Kirche erstellt du in wenigen Minuten online. Mit
-              der korrekten Kirchgemeinde.</p>
+            <p class="text-lg leading-8 mb-10">Erstelle das Kirchen Austrittschreiben in wenigen Minuten online.</p>
             <div class="sm:flex items-center">
               <a
                 class="inline-block font-bold w-full sm:w-auto py-4 px-6 mb-4 sm:mb-0 sm:mr-4 text-center font-heading text-base text-white bg-green-500 hover:bg-green-600 border border-green-500 hover:border-green-600 rounded-sm transition duration-200"

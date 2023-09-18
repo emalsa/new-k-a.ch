@@ -43,11 +43,9 @@
                   <p class="font-heading text-lg font-medium mb-2 text-gray-400">Formular ausf&uuml;llen</p>
                   <p class="max-w-xxs leading-7">
                     Du füllst unser Online Kirchenaustritts Formular für die
-                    Kirche Schweiz <a
-                    href="/formular"
-                    class="underline underline-offset-4 decoration-green-600 hover:decoration-green-400
-                        decoration-[3px]">hier</a>
-                    aus. Dafür braucht es nur deinen Namen, Adresse und Geburtsdatum.
+                    Kirche Schweiz <a href="/formular"
+                                      class="underline underline-offset-4 decoration-green-600 hover:decoration-green-400 decoration-[3px]">
+                    hier</a>&nbsp;aus.
                   </p>
                 </div>
               </div>
@@ -92,8 +90,7 @@
                 </div>
                 <div>
                   <p class="font-heading text-lg font-medium mb-2 text-gray-400">Zurücklehnen</p>
-                  <p class="max-w-xxs leading-7">Wir suchen die korrekte Kirchgemeinde und erstellen das
-                    Austrittsschreiben.</p>
+                  <p class="max-w-xxs leading-7">Lasse dir das Austrittschreiben innerhalb von Minuten per Email zukommen.</p>
                 </div>
               </div>
               <div class="flex">
@@ -134,8 +131,7 @@
                 </div>
                 <div>
                   <p class="font-heading text-lg font-medium mb-2 text-gray-400">Unterschreiben</p>
-                  <p class="max-w-xxs leading-7">Wir schicken dir das fertige Austrittsschreiben per Email. Du musst es
-                    nur noch ausdrucken, unterschreiben. Und dann abschicken. Fertig.</p>
+                  <p class="max-w-xxs leading-7">Ausdrucken, unterschreiben. Und dann abschicken. Fertig.</p>
                 </div>
               </div>
             </div>
