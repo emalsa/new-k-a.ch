@@ -1,6 +1,6 @@
 <template>
   <div v-if="isStep1" class="step1">
-    <div class="mb-12">Diese Daten werden benötigt um das Austrittschreiben korrekt zu erstellen.</div>
+    <div class="mb-12">Diese Daten werden benötigt um den Kirchenaustritt korrekt zu erstellen.</div>
     <div class="mb-12">
       <label class="required block text-md leading-6 mb-2" for="">Email</label>
       <input

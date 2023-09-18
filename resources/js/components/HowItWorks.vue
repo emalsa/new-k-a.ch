@@ -8,7 +8,7 @@
               <span>Wie es</span>
               <span class="text-green-500">&nbsp;funktioniert</span>
             </div>
-            <h1 class="font-heading text-3xl sm:text-4xl mb-6">Ich möchte aus der Kirche austreten</h1>
+<!--            <h1 class="font-heading text-3xl sm:text-4xl mb-6">Ich möchte aus der Kirche austreten</h1>-->
             <p class="max-w-sm text-lg leading-8 mb-2">Eine Begr&uuml;ndung ist &uuml;brigens nicht notwendig.</p>
             <p class="max-w-sm text-lg leading-8 mb-8">Austritt aus der Römisch Katholischen oder Evangelisch
               Reformierten Kirche.</p>
@@ -42,10 +42,8 @@
                 <div>
                   <p class="font-heading text-lg font-medium mb-2 text-gray-400">Formular ausf&uuml;llen</p>
                   <p class="max-w-xxs leading-7">
-                    Du füllst unser Online Kirchenaustritts Formular für die
-                    Kirche Schweiz <a href="/formular"
-                                      class="underline underline-offset-4 decoration-green-600 hover:decoration-green-400 decoration-[3px]">
-                    hier</a>&nbsp;aus.
+                    Du füllst das Online Formular für die Kirche Schweiz <a href="/formular"
+                                                                              class="underline underline-offset-4 decoration-green-600 hover:decoration-green-400 decoration-[3px]">hier</a>&nbsp;aus.
                   </p>
                 </div>
               </div>
@@ -90,7 +88,8 @@
                 </div>
                 <div>
                   <p class="font-heading text-lg font-medium mb-2 text-gray-400">Zurücklehnen</p>
-                  <p class="max-w-xxs leading-7">Lasse dir das Austrittschreiben innerhalb von Minuten per Email zukommen.</p>
+                  <p class="max-w-xxs leading-7">Lasse dir das Austrittschreiben innerhalb von Minuten per Email
+                    zukommen.</p>
                 </div>
               </div>
               <div class="flex">

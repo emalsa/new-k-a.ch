@@ -17,10 +17,10 @@
             <div class="relative p-8 bg-white border-2 border-green-500 rounded-md">
 
               <div class="text-center mb-8">
-                <span class="font-heading font-medium text-lg">Kirchenaustrittschreiben</span>
+                <span class="font-heading font-medium text-lg">Kirchenaustritt</span>
                 <div class="flex items-start justify-center mt-2">
                   <span class="font-heading font-medium text-3xl leading-10">3</span>
-                  <span class="font-heading font-medium text-3xl leading-10">.-</span>
+                  <span class="font-heading font-medium text-3xl leading-10">&nbsp;CHF</span>
 
                 </div>
               </div>
@@ -38,33 +38,33 @@
                             stroke-linejoin="round"></path>
                       <circle cx="10" cy="10" r="9" stroke="#00CBA6" stroke-width="1.5"></circle>
                     </svg>
-                    <span class="ml-4 text-sm">Austrittsschreiben für Kirche</span>
+                    <span class="ml-4 text-sm">Schreiben für Kirchenaustritt.</span>
                   </li>
-<!--                  <li class="flex items-center mb-3">-->
-<!--                    <svg width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">-->
-<!--                      <path d="M5.5 10.5L8.5 13.5L14.5 7"-->
-<!--                            stroke="#00CBA6"-->
-<!--                            stroke-width="1.5"-->
-<!--                            stroke-linecap="round"-->
-<!--                            stroke-linejoin="round"></path>-->
-<!--                      <circle cx="10" cy="10" r="9" stroke="#00CBA6" stroke-width="1.5"></circle>-->
-<!--                    </svg>-->
-<!--                    <span class="ml-4 text-sm">Mit Adresse der Kirchgemeinde</span>-->
-<!--                  </li>-->
-<!--                  <li class="flex items-center mb-3">-->
-<!--                    <svg width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">-->
-<!--                      <path d="M5.5 10.5L8.5 13.5L14.5 7"-->
-<!--                            stroke="#00CBA6"-->
-<!--                            stroke-width="1.5"-->
-<!--                            stroke-linecap="round"-->
-<!--                            stroke-linejoin="round"></path>-->
-<!--                      <circle cx="10" cy="10" r="9" stroke="#00CBA6" stroke-width="1.5"></circle>-->
-<!--                    </svg>-->
-<!--                    <span class="ml-4 text-sm">-->
-<!--                      <a-->
-<!--                        class="underline underline-offset-4 decoration-green-600 hover:decoration-green-400 decoration-[3px]"-->
-<!--                        href="#garantie">Garantie</a></span>-->
-<!--                  </li>-->
+                  <!--                  <li class="flex items-center mb-3">-->
+                  <!--                    <svg width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+                  <!--                      <path d="M5.5 10.5L8.5 13.5L14.5 7"-->
+                  <!--                            stroke="#00CBA6"-->
+                  <!--                            stroke-width="1.5"-->
+                  <!--                            stroke-linecap="round"-->
+                  <!--                            stroke-linejoin="round"></path>-->
+                  <!--                      <circle cx="10" cy="10" r="9" stroke="#00CBA6" stroke-width="1.5"></circle>-->
+                  <!--                    </svg>-->
+                  <!--                    <span class="ml-4 text-sm">Mit Adresse der Kirchgemeinde</span>-->
+                  <!--                  </li>-->
+                  <!--                  <li class="flex items-center mb-3">-->
+                  <!--                    <svg width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+                  <!--                      <path d="M5.5 10.5L8.5 13.5L14.5 7"-->
+                  <!--                            stroke="#00CBA6"-->
+                  <!--                            stroke-width="1.5"-->
+                  <!--                            stroke-linecap="round"-->
+                  <!--                            stroke-linejoin="round"></path>-->
+                  <!--                      <circle cx="10" cy="10" r="9" stroke="#00CBA6" stroke-width="1.5"></circle>-->
+                  <!--                    </svg>-->
+                  <!--                    <span class="ml-4 text-sm">-->
+                  <!--                      <a-->
+                  <!--                        class="underline underline-offset-4 decoration-green-600 hover:decoration-green-400 decoration-[3px]"-->
+                  <!--                        href="#garantie">Garantie</a></span>-->
+                  <!--                  </li>-->
                   <li class="flex items-center mb-3">
                     <svg width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M5.5 10.5L8.5 13.5L14.5 7"
@@ -74,7 +74,7 @@
                             stroke-linejoin="round"></path>
                       <circle cx="10" cy="10" r="9" stroke="#00CBA6" stroke-width="1.5"></circle>
                     </svg>
-                    <span class="ml-4 text-sm">Kirchgemeinde kann im Formular erfasst werden</span>
+                    <span class="ml-4 text-sm">Kirchgemeinde kann im Formular erfasst werden.</span>
                   </li>
                   <li class="flex items-center mb-3">
                     <svg width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -85,30 +85,31 @@
                             stroke-linejoin="round"></path>
                       <circle cx="10" cy="10" r="9" stroke="#00CBA6" stroke-width="1.5"></circle>
                     </svg>
-                    <span class="ml-4 text-sm">Mit Kinder (optional)</span>
+                    <span class="ml-4 text-sm">Dokumentbearbeitung nachträglich möglich.</span>
                   </li>
-                                    <li class="flex items-center mb-3">
-                                      <svg width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M5.5 10.5L8.5 13.5L14.5 7"
-                                              stroke="#00CBA6"
-                                              stroke-width="1.5"
-                                              stroke-linecap="round"
-                                              stroke-linejoin="round"></path>
-                                        <circle cx="10" cy="10" r="9" stroke="#00CBA6" stroke-width="1.5"></circle>
-                                      </svg>
-                                      <span class="ml-4 text-sm">Dokument kann bearbeitet werden.</span>
-                                    </li>
-<!--                  <li class="flex items-center mb-3">-->
-<!--                    <svg width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">-->
-<!--                      <path d="M5.5 10.5L8.5 13.5L14.5 7"-->
-<!--                            stroke="#00CBA6"-->
-<!--                            stroke-width="1.5"-->
-<!--                            stroke-linecap="round"-->
-<!--                            stroke-linejoin="round"></path>-->
-<!--                      <circle cx="10" cy="10" r="9" stroke="#00CBA6" stroke-width="1.5"></circle>-->
-<!--                    </svg>-->
-<!--                    <span class="ml-4 text-sm">Schreiben für Steuergemeinde</span>-->
-<!--                  </li>-->
+                  <li class="flex items-center mb-3">
+                    <svg width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M5.5 10.5L8.5 13.5L14.5 7"
+                            stroke="#00CBA6"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"></path>
+                      <circle cx="10" cy="10" r="9" stroke="#00CBA6" stroke-width="1.5"></circle>
+                    </svg>
+                    <span class="ml-4 text-sm">Optional mit Kinder</span>
+                  </li>
+
+                  <!--                  <li class="flex items-center mb-3">-->
+                  <!--                    <svg width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+                  <!--                      <path d="M5.5 10.5L8.5 13.5L14.5 7"-->
+                  <!--                            stroke="#00CBA6"-->
+                  <!--                            stroke-width="1.5"-->
+                  <!--                            stroke-linecap="round"-->
+                  <!--                            stroke-linejoin="round"></path>-->
+                  <!--                      <circle cx="10" cy="10" r="9" stroke="#00CBA6" stroke-width="1.5"></circle>-->
+                  <!--                    </svg>-->
+                  <!--                    <span class="ml-4 text-sm">Schreiben für Steuergemeinde</span>-->
+                  <!--                  </li>-->
 
                 </ul>
               </div>
