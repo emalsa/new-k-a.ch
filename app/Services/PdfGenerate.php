@@ -54,12 +54,12 @@ class PdfGenerate {
       }
       $churchAddressData = $catholicMode['churchAddress'];
       $this->generatePDF('kath', $key, $item, $person, $hasChildren, $churchAddressData, $catholicMode['children']);
-      $this->generatePDFGemeinde('kath', $key, $item, $person, $hasChildren, $gemeindeAddressData, $catholicMode['children']);
+      // $this->generatePDFGemeinde('kath', $key, $item, $person, $hasChildren, $gemeindeAddressData, $catholicMode['children']);
     }
 
     $hasChildren = !empty($reformMode['children']);
     foreach ($reformMode as $key => $item) {
-      // Children will be handled either with person, but never alone.
+      // Children will be handled with person, but never alone.
       // Same for church address.
       if ($key == 'children' || $key == 'churchAddress') {
         continue;
@@ -67,7 +67,7 @@ class PdfGenerate {
 
       $churchAddressData = $reformMode['churchAddress'];
       $this->generatePDF('reform', $key, $item, $person, $hasChildren, $churchAddressData, $reformMode['children']);
-      $this->generatePDFGemeinde('reform', $key, $item, $person, $hasChildren, $gemeindeAddressData, $reformMode['children']);
+      // $this->generatePDFGemeinde('reform', $key, $item, $person, $hasChildren, $gemeindeAddressData, $reformMode['children']);
     }
 
     $person->setAttribute('documentsCreated', TRUE);

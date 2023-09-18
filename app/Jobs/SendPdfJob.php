@@ -50,7 +50,6 @@ class SendPdfJob implements ShouldQueue {
 
   public const CONTACT_TEMPLATE = 'contact';
 
-
   /**
    * The person entity
    *
@@ -75,13 +74,14 @@ class SendPdfJob implements ShouldQueue {
   }
 
   /**
-   * Selects the candidates to generate the pdf and dispatch the job into the queue.
+   * Selects the candidates to send the PDF and Mail.
    *
    * @return void
    */
   public static function store(): void {
     $person = Person::where([
-      //      ['payment', '=', 0],
+      ['payment', '=', 1],
+      ['hasPaid', '=', 1],
       ['documentsCreated', '=', 1],
       ['documentsSent', '=', 0],
     ])->first();
@@ -91,15 +91,14 @@ class SendPdfJob implements ShouldQueue {
       $person->setAttribute('documentsSent', 1);
       $person->save();
     }
-
   }
 
   /**
-   * Execute the job.
+   * Executes the job.
    *
    * @return void
    */
-  public function handle() {
+  public function handle(): void {
     try {
       $apiKey = env('MAILGUN_APIKEY');
       $configurator = new HttpClientConfigurator();
@@ -108,12 +107,12 @@ class SendPdfJob implements ShouldQueue {
       $configurator->setDebug(TRUE);
 
       $mg = new Mailgun($configurator, new NoopHydrator());
-      $files = Storage::disk('private')->files("{$this->person->getAttribute('email')}/{$this->person->getAttribute('id')}");
-
+      $files = Storage::disk('private')
+        ->files("{$this->person->getAttribute('email')}/{$this->person->getAttribute('id')}");
 
       $attachments = [];
       foreach ($files as $file) {
-        // Is PDF?
+        // Is a PDF?
         if (!pathinfo($file, PATHINFO_EXTENSION) == 'pdf') {
           continue;
         }
@@ -161,13 +160,11 @@ class SendPdfJob implements ShouldQueue {
           'attachment' => $attachments,
         ]
       );
-
     }
     catch (\Exception $exception) {
       Log::error('Mailgun Error: ' . $exception->getCode() . '-- ' . $exception->getMessage());
       dd($exception->getMessage());
     }
   }
-
 
 }

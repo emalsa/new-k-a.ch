@@ -27,13 +27,14 @@ class CreatePdfJob implements ShouldQueue {
   }
 
   /**
-   * Selects the candidates to generate the pdf and dispatch the job into the queue.
+   * Selects the candidates to generate the PDF
    *
    * @return void
    */
   public static function store(): void {
     $person = Person::where([
-      ['payment', '=', 0],
+      ['payment', '=', 1],
+      ['hasPaid', '=', 1],
       ['documentsCreated', '=', 0],
       ['documentsSent', '=', 0],
     ])->first();
@@ -41,7 +42,6 @@ class CreatePdfJob implements ShouldQueue {
     if (!empty($person) && $person instanceof Person) {
       CreatePdfJob::dispatch($person)->onQueue('pdfGenerate');
     }
-
   }
 
   /**
@@ -53,6 +53,5 @@ class CreatePdfJob implements ShouldQueue {
     $pdfGenerate = new PdfGenerate();
     $pdfGenerate->generate($this->person->getKey());
   }
-
 
 }
