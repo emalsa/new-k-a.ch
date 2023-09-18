@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\StripeController;
 use App\Jobs\CreatePdfJob;
 use App\Jobs\SendPdfJob;
 use Illuminate\Http\Request;
@@ -75,3 +76,9 @@ Route::get('queue-work/send-pdf/work', function() {
     Log::error($e->getMessage());
   }
 });
+
+Route::post('stripe/success', [
+  StripeController::class,
+  'stripeWebhookHandler',
+]);
+
