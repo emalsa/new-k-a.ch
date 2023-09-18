@@ -11,9 +11,6 @@
           <br/>
           {{ element.postalAddress }}&nbsp;{{ element.locationAddress }}
         </td>
-        <td v-if="!element.streetAddress">
-          Nicht angegeben
-        </td>
       </tr>
     </table>
   </div>

@@ -12,7 +12,7 @@ return new class extends Migration {
    * @return void
    */
   public function up() {
-    Schema::table('sessions', function (Blueprint $table) {
+    Schema::table('sessions', function(Blueprint $table) {
       $table->string('browserName')->nullable();
       $table->string('browserVersion')->nullable();
       $table->string('firstSeenAtGlobal')->nullable();
@@ -30,7 +30,7 @@ return new class extends Migration {
    * @return void
    */
   public function down() {
-    Schema::table('sessions', function (Blueprint $table) {
+    Schema::table('sessions', function(Blueprint $table) {
       //
     });
   }

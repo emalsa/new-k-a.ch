@@ -32,7 +32,8 @@
         <td>Taufdatum</td>
         <td>{{ element.taufdatum ? element.taufdatum : '-' }}</td>
       </tr>
-      <tr>
+
+      <tr v-if="element.taufort">
         <td>Taufort</td>
         <td>{{ element.taufort ? element.taufort : '-' }}</td>
       </tr>

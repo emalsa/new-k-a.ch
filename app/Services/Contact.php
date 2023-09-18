@@ -30,7 +30,6 @@ class Contact {
 
       $mg = new Mailgun($configurator, new NoopHydrator());
 
-
       $vornameContact = $request->json('vorname');
       $emailContact = $request->json('email');
       $messageContact = $request->json('message');
@@ -67,8 +66,6 @@ class Contact {
     }
 
     return response()->json(['status' => 'ok'], 200);
-
   }
-
 
 }

@@ -3,10 +3,7 @@
     <!--Taufdatum checkbox -->
     <div class="my-12">
       <label>
-        <input type="checkbox"
-               v-model="formData.hasChildren"
-               name="hasChildren"
-               value="example value"
+        <input type="checkbox" v-model="formData.hasChildren" name="hasChildren" value="example value"
                @click="clickHasChildren">
         <span class="ml-1">Meine Kinder wollen auch austreten. (Unter 16 Jahre)</span>
       </label>
@@ -14,8 +11,7 @@
 
     <div v-if="formData.hasChildren">
       <div class="border border-sky-500 px-10 pt-10 mt-8"
-           v-for="(childElement, childrenCount) in children"
-           v-bind:key="childrenCount">
+           v-for="(childElement, childrenCount) in children" v-bind:key="childrenCount">
         <div>
           <h3 class="font-heading mt-2 text-3xl float-left">{{ childrenCount + 1 }}. Kind</h3>
           <button @click="removeChild(childrenCount)"
@@ -27,26 +23,19 @@
           <label class="required block text-md leading-6 mb-2" for="">Vorname</label>
           <input
             class="block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
-            v-model="children[childrenCount].vorname"
-            type="text"
-
-            placeholder="Vorname">
+            v-model="children[childrenCount].vorname" type="text" placeholder="Vorname">
         </div>
         <div class="mb-4">
           <label class="required block text-md leading-6 mb-2" for="">Nachname</label>
           <input
             class="block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
-            v-model="children[childrenCount].nachname"
-            type="text"
-            placeholder="Nachname">
+            v-model="children[childrenCount].nachname" type="text" placeholder="Nachname">
         </div>
         <div class="mb-6">
           <label class="required block text-md leading-6 mb-2" for="">Geburtsdatum</label>
           <input
             class="block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
-            v-model="children[childrenCount].geburtsdatum"
-            type="text"
-            placeholder="Geburtsdatum, Beispiel: 4.12.1967">
+            v-model="children[childrenCount].geburtsdatum" type="text" placeholder="Geburtsdatum, Beispiel: 4.12.1967">
           <span class="block text-md w-full py-4 font-heading rounded outline-none">Beispiel: <i>4.12.1966</i> oder <i>3.3.1922</i></span>
         </div>
         <div class="mb-6">
@@ -54,7 +43,7 @@
           <div class="relative">
             <select
               class="appearance-none block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
-              v-model="children[childrenCount].konfession">
+              disabled v-model="children[childrenCount].konfession">
               <option value="">Bitte auswählen</option>
               <option value="kath">R&ouml;misch-Katholisch (Kath.)</option>
               <option value="ref">Evangelisch-Reformiert (Ref.)</option>
@@ -68,20 +57,17 @@
         </div>
         <div class="my-12 mt-8 mb-12">
           <label>
-            <input type="checkbox"
-                   v-model="children[childrenCount].sign"
-                   name="sign"
-                   value="example value">
+            <input type="checkbox" v-model="children[childrenCount].sign" name="sign" value="example value">
             <span class="ml-1 leading-7">Mein Kind ist in der Lage zu unterschreiben</span>
-            <span class="block text-md w-full py-4 font-heading rounded outline-none leading-7">Wenn dein Kind in der Lage ist, seinen Namen zu schreiben, kannst du das K&auml;stchen aktiviert lassen. Wenn es zum Beispiel zu jung ist, um zu unterschreiben, solltest du das K&auml;stchen deaktivieren.</span>
+            <span class="block text-md w-full py-4 font-heading rounded outline-none leading-7">
+              Wenn dein Kind in der Lage ist, seinen Namen zu schreiben, lasse das K&auml;stchen aktiviert.
+              Wenn es zu jung ist, um selbständig zu unterschreiben, deaktiviere das K&auml;stchen.</span>
           </label>
         </div>
         <!--Taufdatum checkbox -->
         <div class="my-12 mt-8 mb-12">
           <label>
-            <input type="checkbox"
-                   v-model="children[childrenCount].taufDatumBekanntChild"
-                   name="taufDatumBekanntChild"
+            <input type="checkbox" v-model="children[childrenCount].taufDatumBekanntChild" name="taufDatumBekanntChild"
                    value="1">
             <span class="ml-1">Taufdatum oder Taufort ist bekannt</span>
           </label>
@@ -91,18 +77,14 @@
           <div class="mb-6">
             <label class="block text-md leading-6 mb-2" for="">Taufdatum</label>
             <input class="block w-full p-4 font-heading placeholder-gray-300 bg-gray-50 rounded outline-none"
-                   v-model="children[childrenCount].taufdatum"
-                   type="text"
-                   placeholder="Taufdatum, Beispiel: 4.12.1967">
+                   v-model="children[childrenCount].taufdatum" type="text" placeholder="Taufdatum, Beispiel: 4.12.1967">
             <span
               class="block text-md w-full py-4 font-heading rounded outline-none">Beispiel: <i>4.12.1966</i> oder <i>3.3.1922</i></span>
           </div>
           <div class="mb-6">
             <label class="block text-md leading-6 mb-2" for="">Taufort</label>
             <input class="block w-full p-4 font-heading placeholder-gray-300 bg-gray-50 rounded outline-none"
-                   v-model="children[childrenCount].taufort"
-                   type="text"
-                   placeholder="Taufort">
+                   v-model="children[childrenCount].taufort" type="text" placeholder="Taufort">
           </div>
         </div>
       </div>
@@ -117,16 +99,16 @@
 
 <script>
 export default {
-  props: ['isStep2', 'children', 'formData'],
+  props: ['isStep2', 'person', 'children', 'formData'],
   methods: {
     removeChild(count) {
       this.children.splice(count, 1);
     },
     addChild() {
-      this.children.push({ sign: true });
+      this.children.push({ sign: true, konfession: this.person.konfession });
     },
     clickHasChildren() {
-      this.children.push({ sign: true });
+      this.addChild();
     },
   },
 };

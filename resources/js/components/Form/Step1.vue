@@ -5,18 +5,13 @@
       <label class="required block text-md leading-6 mb-2" for="">Email</label>
       <input
         class="block w-full p-4 mb-2 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
-        v-model="person.email"
-        name="email"
-        type="email"
-        placeholder="Deine Email">
+        v-model="person.email" name="email" type="text" placeholder="Deine Email">
       <!--            <span class="text-[15px] text-gray-500">Hierhin schicken wir das Austrittsschreiben.</span>-->
       <div class="mb-10">
         <label class="required block text-md leading-6 mb-2" for="">Geburtsdatum</label>
         <input
           class="block w-full p-4 mb-2 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
-          v-model="person.geburtsdatum"
-          type="text"
-          placeholder="Dein Geburtsdatum, Beispiel: 4.12.1967">
+          v-model="person.geburtsdatum" type="text" placeholder="Dein Geburtsdatum, Beispiel: 4.12.1967">
         <span class="text-[15px] text-gray-500">Beispiel: <i>4.12.1966</i> oder <i>3.3.1922</i></span>
       </div>
       <div class="mb-6">
@@ -40,11 +35,8 @@
     </div>
     <div class="mb-6">
       <label>
-        <input type="checkbox"
-               v-model="formData.adressDatenSpaeterEingeben"
-               name="adressDatenSpaeterEingeben"
-               value="example value">
-        <span class="ml-1">Ich möchte meine Adresse später eingeben</span>
+        <input type="checkbox" v-model="formData.adressDatenSpaeterEingeben" name="adressDatenSpaeterEingeben">
+        <span class="ml-1">Meine Adresse später eingeben</span>
       </label>
     </div>
 
@@ -60,21 +52,13 @@
     <div v-if="!formData.adressDatenSpaeterEingeben">
       <div class="mb-6">
         <label class="required block text-md leading-6 mb-2" for="">Vorname</label>
-        <input
-          class="block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
-          v-model="person.vorname"
-          name="vorname"
-          type="text"
-          placeholder="Dein Vorname">
+        <input class="block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
+               v-model="person.vorname" name="vorname" type="text" placeholder="Dein Vorname">
       </div>
       <div class="mb-6">
         <label class="required block text-md leading-6 mb-2" for="">Nachname</label>
-        <input
-          class="block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
-          v-model="person.nachname"
-          type="text"
-
-          placeholder="Dein Nachname">
+        <input class="block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
+               v-model="person.nachname" type="text" placeholder="Dein Nachname">
       </div>
 
       <!-- Address -->
@@ -83,17 +67,14 @@
           <label class="required block text-md leading-6 mb-2" for="">Strasse und Nr.</label>
           <input
             class="block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
-            v-model="person.streetAddress"
-            type="text"
-            placeholder="Musterstrasse 24b">
+            v-model="person.streetAddress" type="text" placeholder="Musterstrasse 24b">
         </div>
 
         <div class="mb-6">
           <label class="block text-md leading-6 mb-2" for="">Addresszusatz</label>
           <input
             class="block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
-            v-model="person.streetAdditionalAddress"
-            type="text">
+            v-model="person.streetAdditionalAddress" type="text">
         </div>
 
         <div class="mb-6 md:flex">
@@ -101,17 +82,13 @@
             <label class="required block text-md leading-6 mb-2" for="">Postleitzahl</label>
             <input
               class="block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
-              v-model="person.postalAddress"
-              type="text"
-              placeholder="3000">
+              v-model="person.postalAddress" type="text" placeholder="3000">
           </div>
           <div class="flex-grow">
             <label class="required block text-md leading-6 mb-2" for="">Ort</label>
             <input
               class="block w-full p-4 font-heading text-gray-900 placeholder-gray-300 bg-gray-50 rounded outline-none"
-              v-model="person.locationAddress"
-              type="text"
-              placeholder="Bern">
+              v-model="person.locationAddress" type="text" placeholder="Bern">
           </div>
         </div>
 
@@ -120,32 +97,22 @@
       <!--Taufdatum checkbox -->
       <div class="my-12">
         <label>
-          <input type="checkbox"
-                 v-model="person.taufDatumBekanntPerson"
-                 name="taufDatumBekanntPerson"
-                 value="example value">
+          <input type="checkbox" v-model="person.taufDatumBekanntPerson" name="taufDatumBekanntPerson">
           <span class="ml-1">Taufdatum oder Taufort ist bekannt (optional)</span>
         </label>
         <!-- Taufort/datum -->
         <div v-if="person.taufDatumBekanntPerson" class="mt-12 mb-6">
           <div class="mb-6">
             <label class="block text-md leading-6 mb-2" for="">Taufdatum</label>
-            <input
-              class="block w-full p-4 font-heading placeholder-gray-300 bg-gray-50 rounded outline-none"
-              v-model="person.taufdatum"
-              name="taufdatum"
-              type="text"
-              placeholder="Taufdatum, Beispiel: 4.12.1967">
+            <input class="block w-full p-4 font-heading placeholder-gray-300 bg-gray-50 rounded outline-none"
+                   v-model="person.taufdatum" name="taufdatum" type="text" placeholder="Taufdatum, Beispiel: 4.12.1967">
             <span
               class="block text-md w-full py-4 font-heading rounded outline-none">Beispiel: <i>4.12.1966</i> oder <i>3.3.1922</i></span>
           </div>
           <div class="mb-6">
             <label class="block text-md leading-6 mb-2" for="">Taufort</label>
-            <input
-              class="block w-full p-4 font-heading placeholder-gray-300 bg-gray-50 rounded outline-none"
-              v-model="person.taufort"
-              type="text"
-              placeholder="Taufort">
+            <input class="block w-full p-4 font-heading placeholder-gray-300 bg-gray-50 rounded outline-none"
+                   v-model="person.taufort" type="text" placeholder="Taufort">
           </div>
         </div>
       </div>

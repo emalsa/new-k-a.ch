@@ -82,13 +82,13 @@ class SendPdfJob implements ShouldQueue {
   public static function store(): void {
     $person = Person::where([
       //      ['payment', '=', 0],
-      ['readyToSendFinalMail', '=', 1],
-      ['finalMailSent', '=', 0],
+      ['documentsCreated', '=', 1],
+      ['documentsSent', '=', 0],
     ])->first();
 
     if (!empty($person) && $person instanceof Person) {
       SendPdfJob::dispatch($person)->onQueue('pdfSend');
-      $person->setAttribute('finalMailSent', 1);
+      $person->setAttribute('documentsSent', 1);
       $person->save();
     }
 

@@ -24,19 +24,13 @@ class Person extends Model {
     'streetAdditionalAddress',
     'postalAddress',
     'locationAddress',
-    'hatEhepartner',
     'hasChildren',
     'payment',
     'confirmationMailSent',
-    'readyToSendFinalMail',
-    'finalMailSent',
-    'donationMailSent',
+    'documentsCreated',
+    'documentsSent',
     'hasPaid',
   ];
-
-  public function partner() {
-    return $this->hasOne(Partner::class);
-  }
 
   public function children() {
     return $this->hasMany(Child::class);

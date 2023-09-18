@@ -1,9 +1,7 @@
 <template>
   <div>
-
     <section class="py-16 bg-white">
       <div class="container px-4 mx-auto">
-
         <div class="max-w-3xl mx-auto">
 
           <!--          Stepper-->
@@ -63,19 +61,14 @@
           <!--          </div>-->
 
           <div class="mb-6 mx-auto max-w-xl">
-
             <!-- Loading spinner Submit -->
             <div v-if="isLoading" wire:loading
                  class="fixed top-0 left-0 right-0 bottom-0 w-full h-screen z-50 overflow-hidden bg-gray-700 opacity-95 flex flex-col items-center justify-center">
-              <div
-                class="loader ease-linear rounded-full border-4 border-t-4 border-gray-200 h-12 w-12 mb-4"></div>
+              <div class="loader ease-linear rounded-full border-4 border-t-4 border-gray-200 h-12 w-12 mb-4"></div>
               <h2 class="text-center text-white text-xl font-semibold">Bitte warten...</h2>
-              <p v-if="!this.formData.payment" class="w-1/3 text-center text-white">Daten werden
-                gespeichert.</p>
-              <p v-if="this.formData.payment" class="w-1/3 text-center text-white">In wenigen Sekunden
-                wirst du zur
-                Bezahlseite weitergeleitet. Falls du nicht weitergeleitet wirst, benutze diesen
-                Link.</p>
+              <p v-if="!this.formData.payment" class="w-1/3 text-center text-white">Daten werden gespeichert.</p>
+              <p v-if="this.formData.payment" class="w-1/3 text-center text-white">In wenigen Sekunden wirst du zur
+                Bezahlseite weitergeleitet. Falls du nicht weitergeleitet wirst, benutze diesen Link.</p>
               <p v-if="this.formData.payment" class="w-full text-center text-white mt-5">
                 <a :href=this.stripeURL>{{ this.stripeURL }}</a>
               </p>
@@ -83,32 +76,29 @@
 
             <div v-if="isLoadingStep" wire:loading
                  class="fixed top-0 left-0 right-0 bottom-0 w-full h-screen z-50 overflow-hidden bg-gray-700 opacity-95 flex flex-col items-center justify-center">
-              <div
-                class="loader ease-linear rounded-full border-4 border-t-4 border-gray-200 h-12 w-12 mb-4"></div>
+              <div class="loader ease-linear rounded-full border-4 border-t-4 border-gray-200 h-12 w-12 mb-4"></div>
               <h2 class="text-center text-white text-xl font-semibold">Bitte warten...</h2>
             </div>
 
             <div class="mb-8">
               <span v-if="isStep1" class="text-md font-semibold uppercase">
-                <span>LASS UNS</span>
-                <span class="text-green-500">&nbsp;Starten</span>
+                <span>Lass un</span><span class="text-green-500">&nbsp;Starten</span>
               </span>
               <span v-if="isStep2" class="text-sm font-semibold uppercase">
-                <span>Und deine</span>
-                <span class="text-green-500">&nbsp;Kinder?</span>
+                <span>Und deine</span><span class="text-green-500">&nbsp;Kinder?</span>
               </span>
               <span v-if="isStep3" class="text-sm font-semibold uppercase">
-                <span>Die</span>
-                <span class="text-green-500">&nbsp;Kirchgemeinde</span>
+                <span>Die</span><span class="text-green-500">&nbsp;Kirchgemeinde</span>
               </span>
               <span v-if="isStep4" class="text-sm font-semibold uppercase">
-                <span>Bald</span>
-                <span class="text-green-500">&nbsp;geschafft</span>
+                <span>Bald</span><span class="text-green-500">&nbsp;geschafft</span>
               </span>
             </div>
             <div class="mb-10 max-w-xs text-2xl mt-2 uppercase">
               <h4 v-if="isStep1">Deine Daten</h4>
               <h4 v-if="isStep2">Kinder</h4>
+              <h4 v-if="isStep3">Kirchgemeinde</h4>
+
               <!--              <h4 v-if="isStep3">Kirchgemeinde</h4>-->
               <h4 v-if="isStep4">&Uuml;bersicht</h4>
             </div>
@@ -127,17 +117,16 @@
             <!-- Step 1 (Person)-->
             <Step1 :is-step1="isStep1" :person="person" :formData="formData"/>
 
+            <!-- Step 2 (Kinder)-->
+            <Step2 :is-step2="isStep2" :person="person" :child="child" :children="children" :formData="formData"/>
 
-            <!-- Step 3 (Kinder)-->
-            <Step2 :is-step2="isStep2" :child="child" :children="children" :formData="formData"/>
+            <!-- Step 3 (Kirchgemeinde)-->
+            <Step3 :is-step3="isStep3" :church="church" :formData="formData"/>
 
-
-            <!-- Step 5 (Summary) -->
+            <!-- Summary -->
             <div v-if="isStep4" class="step5">
-              <div class="">Kontrolliere noch zum Schluss deine Angaben. Wenn deine Daten stimmen kannst
-                unten auf der
-                Seite auf den <i>Bestellen</i> Button klicken. Dann wirst du auf die Bezahlseite
-                weitergeleitet.
+              <div class="">Kontrolliere noch zum Schluss deine Angaben. Wenn deine Daten stimmen kannst unten auf der
+                Seite auf den <i>Bestellen</i> Button klicken. Dann wirst du auf die Bezahlseite weitergeleitet.
               </div>
 
               <div class="flex flex-wrap -mx-4 mt-6 p-3">
@@ -163,23 +152,15 @@
                   <div class="relative h-88 px-6 py-8 border-b-1">
                     <div class="relative max-w-xs">
                       <div class="mb-4">
-                        <PersonSummary class=""
-                                       :element="person"
-                                       headline="Deine Daten"/>
+                        <PersonSummary class="" :element="person" headline="Deine Daten"/>
                       </div>
                       <a class="group inline-flex items-center" href="/#">
                         <div style="transform: rotate(180deg)"
                              class="flex items-center justify-center w-5 h-5 rounded-full bg-green-500 group-hover:bg-green-600">
-                          <svg width="12"
-                               height="12"
-                               viewbox="0 0 12 12"
-                               fill="none"
+                          <svg width="12" height="12" viewbox="0 0 12 12" fill="none"
                                xmlns="http://www.w3.org/2000/svg">
-                            <path d="M2.5 6H9.5M9.5 6L6.5 3M9.5 6L6.5 9"
-                                  stroke="white"
-                                  stroke-width="1.5"
-                                  stroke-linecap="round"
-                                  stroke-linejoin="round"></path>
+                            <path d="M2.5 6H9.5M9.5 6L6.5 3M9.5 6L6.5 9" stroke="white" stroke-width="1.5"
+                                  stroke-linecap="round" stroke-linejoin="round"></path>
                           </svg>
                         </div>
                         <span class="ml-4 text-sm" @click.prevent="prev(1)">Bearbeiten</span>
@@ -187,65 +168,28 @@
                     </div>
                   </div>
 
-                  <!-- Ehepartner -->
-                  <div v-if="formData.hatEhepartner" class="relative h-88 px-6 py-8 border-b-1">
-                    <div class="relative max-w-xs">
-                      <div class="mb-4">
-                        <PersonSummary :element="partner" headline="Ehepartner/In"/>
-                      </div>
-                    </div>
-                    <a class="group inline-flex items-center" href="/#">
-                      <div style="transform: rotate(180deg)"
-                           class="flex items-center justify-center w-5 h-5 rounded-full bg-green-500 group-hover:bg-green-600">
-                        <svg width="12"
-                             height="12"
-                             viewbox="0 0 12 12"
-                             fill="none"
-                             xmlns="http://www.w3.org/2000/svg">
-                          <path d="M2.5 6H9.5M9.5 6L6.5 3M9.5 6L6.5 9"
-                                stroke="white"
-                                stroke-width="1.5"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"></path>
-                        </svg>
-                      </div>
-                      <span class="ml-4 text-sm" @click.prevent="prev(2)">Bearbeiten</span>
-
-                    </a>
-                  </div>
-
                   <!-- Children -->
                   <div v-if="formData.hasChildren" class="relative h-88 px-6 py-8 border-b-1">
                     <div class="relative max-w-xs">
                       <h5 class="mb-6 font-heading text-2xl mb-4">Kinder</h5>
-                      <div class="mb-4"
-                           v-for="(child, index) in children"
-                           :key="index">
+                      <div class="mb-4" v-for="(child, index) in children" :key="index">
                         <PersonSummary :element="child"/>
                       </div>
                     </div>
                     <a class="group inline-flex items-center" href="/#">
                       <div style="transform: rotate(180deg)"
                            class="flex items-center justify-center w-5 h-5 rounded-full bg-green-500 group-hover:bg-green-600">
-                        <svg width="12"
-                             height="12"
-                             viewbox="0 0 12 12"
-                             fill="none"
-                             xmlns="http://www.w3.org/2000/svg">
-                          <path d="M2.5 6H9.5M9.5 6L6.5 3M9.5 6L6.5 9"
-                                stroke="white"
-                                stroke-width="1.5"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"></path>
+                        <svg width="12" height="12" viewbox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M2.5 6H9.5M9.5 6L6.5 3M9.5 6L6.5 9" stroke="white" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round"></path>
                         </svg>
                       </div>
                       <span class="ml-4 text-sm" @click.prevent="prev(3)">Bearbeiten</span>
-
                     </a>
                   </div>
 
                   <!-- Address -->
-                  <div class="relative h-88 px-6 py-8 border-b-1">
+                  <div v-if="!formData.adressDatenSpaeterEingeben" class="relative h-88 px-6 py-8 border-b-1">
                     <div class="relative max-w-xs">
                       <div class="mb-6">
                         <AddressSummary :element="person" headline="Deine Adresse"/>
@@ -254,16 +198,9 @@
                     <a class="group inline-flex items-center" href="/#">
                       <div style="transform: rotate(180deg)"
                            class="flex items-center justify-center w-5 h-5 rounded-full bg-green-500 group-hover:bg-green-600">
-                        <svg width="12"
-                             height="12"
-                             viewbox="0 0 12 12"
-                             fill="none"
-                             xmlns="http://www.w3.org/2000/svg">
-                          <path d="M2.5 6H9.5M9.5 6L6.5 3M9.5 6L6.5 9"
-                                stroke="white"
-                                stroke-width="1.5"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"></path>
+                        <svg width="12" height="12" viewbox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M2.5 6H9.5M9.5 6L6.5 3M9.5 6L6.5 9" stroke="white" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round"></path>
                         </svg>
                       </div>
                       <span class="ml-4 text-sm" @click.prevent="prev(1)">Bearbeiten</span>
@@ -271,55 +208,19 @@
                   </div>
 
                   <!-- Catholic church -->
-                  <div v-if="!formData.payment && formData.isCatholic"
-                       class="relative h-88 px-6 py-8 border-b-1">
+                  <div v-if="!formData.kirchgemeindeSpaeterEingeben" class="relative h-88 px-6 py-8 border-b-1">
                     <div class="relative">
                       <div class="mb-12">
-                        <AddressSummary :element="catholic"
-                                        headline="Katholische Kirchgemeinde"/>
+                        <AddressSummary :element="church" headline="Kirchgemeinde"/>
                       </div>
                     </div>
                     <a class="group inline-flex items-center" href="/#">
                       <span class="mr-4 text-sm" @click.prevent="prev(null)">Bearbeiten</span>
                       <div
                         class="flex items-center justify-center w-5 h-5 rounded-full bg-green-500 group-hover:bg-green-600">
-                        <svg width="12"
-                             height="12"
-                             viewbox="0 0 12 12"
-                             fill="none"
-                             xmlns="http://www.w3.org/2000/svg">
-                          <path d="M2.5 6H9.5M9.5 6L6.5 3M9.5 6L6.5 9"
-                                stroke="white"
-                                stroke-width="1.5"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"></path>
-                        </svg>
-                      </div>
-                    </a>
-                  </div>
-
-                  <!-- Reform church -->
-                  <div v-if="!formData.payment && formData.isReform"
-                       class="relative h-88 px-6 py-8 border-b-1">
-                    <div class="relative">
-                      <div class="mb-12">
-                        <AddressSummary :element="reform" headline="Reformierte Kirchgemeinde"/>
-                      </div>
-                    </div>
-                    <a class="group inline-flex items-center" href="/#">
-                      <span class="mr-4 text-sm" @click.prevent="prev(null)">Bearbeiten</span>
-                      <div
-                        class="flex items-center justify-center w-5 h-5 rounded-full bg-green-500 group-hover:bg-green-600">
-                        <svg width="12"
-                             height="12"
-                             viewbox="0 0 12 12"
-                             fill="none"
-                             xmlns="http://www.w3.org/2000/svg">
-                          <path d="M2.5 6H9.5M9.5 6L6.5 3M9.5 6L6.5 9"
-                                stroke="white"
-                                stroke-width="1.5"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"></path>
+                        <svg width="12" height="12" viewbox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M2.5 6H9.5M9.5 6L6.5 3M9.5 6L6.5 9" stroke="white" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round"></path>
                         </svg>
                       </div>
                     </a>
@@ -335,14 +236,10 @@
                           <p class="font-heading">Total:&nbsp;<i>24 CHF</i></p>
                           <div class="mb-6 mt-6">
 
-
-                            <!-- This is an example component -->
                             <div class="max-w-2xl mx-auto">
                               <div
                                 class="mr-2 mb-2 px-5 py-2.5 text-gray-900 bg-white border border-gray-200 font-medium rounded-lg text-sm  text-center inline-flex items-center">
-                                <svg class="-ml-1 w-7 h-4 mr-2"
-                                     viewBox="0 0 660 203"
-                                     fill="none"
+                                <svg class="-ml-1 w-7 h-4 mr-2" viewBox="0 0 660 203" fill="none"
                                      xmlns="http://www.w3.org/2000/svg">
                                   <path
                                     d="M233.003 199.762L266.362 4.002H319.72L286.336 199.762H233.003V199.762ZM479.113 8.222C468.544 4.256 451.978 0 431.292 0C378.566 0 341.429 26.551 341.111 64.604C340.814 92.733 367.626 108.426 387.865 117.789C408.636 127.387 415.617 133.505 415.517 142.072C415.384 155.195 398.931 161.187 383.593 161.187C362.238 161.187 350.892 158.22 333.368 150.914L326.49 147.803L319.003 191.625C331.466 197.092 354.511 201.824 378.441 202.07C434.531 202.07 470.943 175.822 471.357 135.185C471.556 112.915 457.341 95.97 426.556 81.997C407.906 72.941 396.484 66.898 396.605 57.728C396.605 49.591 406.273 40.89 427.165 40.89C444.611 40.619 457.253 44.424 467.101 48.39L471.882 50.649L479.113 8.222V8.222ZM616.423 3.99899H575.193C562.421 3.99899 552.861 7.485 547.253 20.233L468.008 199.633H524.039C524.039 199.633 533.198 175.512 535.27 170.215C541.393 170.215 595.825 170.299 603.606 170.299C605.202 177.153 610.098 199.633 610.098 199.633H659.61L616.423 3.993V3.99899ZM551.006 130.409C555.42 119.13 572.266 75.685 572.266 75.685C571.952 76.206 576.647 64.351 579.34 57.001L582.946 73.879C582.946 73.879 593.163 120.608 595.299 130.406H551.006V130.409V130.409ZM187.706 3.99899L135.467 137.499L129.902 110.37C120.176 79.096 89.8774 45.213 56.0044 28.25L103.771 199.45L160.226 199.387L244.23 3.99699L187.706 3.996"
@@ -356,9 +253,7 @@
 
                               <div
                                 class="mr-2 mb-2 px-5 py-2.5 text-gray-900 bg-white border border-gray-200 font-medium rounded-lg text-sm  text-center inline-flex items-center dark:bg-gray-800 dark:border-gray-700 dark:text-white">
-                                <svg class="-ml-1 w-7 h-4 mr-2"
-                                     viewBox="0 0 601 360"
-                                     fill="none"
+                                <svg class="-ml-1 w-7 h-4 mr-2" viewBox="0 0 601 360" fill="none"
                                      xmlns="http://www.w3.org/2000/svg">
                                   <path
                                     d="M359.01 179.504C359.01 278.647 278.639 359.004 179.5 359.004C80.361 359.004 0 278.643 0 179.504C0 80.3709 80.362 0.00390625 179.5 0.00390625C278.637 0.00390625 359.01 80.3749 359.01 179.504Z"
@@ -384,9 +279,7 @@
 
                               <div
                                 class="text-white bg-[#2557D6] font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center mr-2 mb-2">
-                                <svg class="-ml-1 w-7 h-4 mr-2"
-                                     viewBox="0 0 256 64"
-                                     fill="none"
+                                <svg class="-ml-1 w-7 h-4 mr-2" viewBox="0 0 256 64" fill="none"
                                      xmlns="http://www.w3.org/2000/svg">
                                   <path
                                     d="M28.812 0L0 63.76H34.492L38.768 53.594H48.542L52.818 63.76H90.784V56.001L94.167 63.76H113.806L117.189 55.837V63.76H196.148L205.749 53.858L214.739 63.76L255.294 63.842L226.391 32.058L255.294 0H215.368L206.022 9.71899L197.315 0H111.418L104.042 16.457L96.493 0H62.073V7.495L58.244 0C58.244 0 28.812 0 28.812 0ZM35.486 9.05399H52.299L71.41 52.29V9.05399H89.828L104.589 40.054L118.193 9.05399H136.519V54.806H125.368L125.277 18.955L109.02 54.806H99.045L82.697 18.955V54.806H59.757L55.408 44.549H31.912L27.572 54.797H15.281C15.281 54.797 35.486 9.05399 35.486 9.05399ZM146.721 9.05399H192.063L205.931 24.034L220.246 9.05399H234.114L213.043 32.049L234.114 54.779H219.617L205.749 39.625L191.361 54.779H146.721V9.05399ZM43.665 16.795L35.924 35.067H51.397L43.665 16.795ZM157.918 18.527V26.879H182.654V36.188H157.918V45.306H185.663L198.555 31.876L186.21 18.519H157.918V18.527Z"
@@ -394,81 +287,33 @@
                                 </svg>
                                 <div class="hidden md:block">American Express</div>
                               </div>
-
-
-                              <!--                              <div class="text-white bg-[#050708] hover:bg-[#050708]/80 focus:ring-4 focus:ring-[#050708]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:hover:bg-[#050708]/40 dark:focus:ring-gray-600 mr-2 mb-2">-->
-                              <!--                                Apple Pay-->
-                              <!--                                <svg class="ml-2 -mr-1 w-5 h-5"-->
-                              <!--                                     aria-hidden="true"-->
-                              <!--                                     focusable="false"-->
-                              <!--                                     data-prefix="fab"-->
-                              <!--                                     data-icon="apple"-->
-                              <!--                                     role="img"-->
-                              <!--                                     xmlns="http://www.w3.org/2000/svg"-->
-                              <!--                                     viewBox="0 0 384 512">-->
-                              <!--                                  <path fill="currentColor"-->
-                              <!--                                        d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"></path>-->
-                              <!--                                </svg>-->
-                              <!--                              </div>-->
-
                             </div>
 
-
-                            <div class="mb-6">
-                              <!--                              <div>Zahlungsmethode</div>-->
-                              <!--                              <label><span>Zahlungsmethode</span><br/>-->
-                              <!--                                <input-->
-                              <!--                                    class="mt-4 mr-2"-->
-                              <!--                                    @click="optionPaymentClicked"-->
-                              <!--                                    checked-->
-                              <!--                                    type="radio"-->
-                              <!--                                    name="paymentMethod"-->
-                              <!--                                    value="stripe">-->
-                              <!--                                <span class="ml-1">Kreditkarte, ApplePay, Google Pay etc.</span>-->
-                              <!--                                <div class="mt-2 text-[15px]"><i>Zahlungsdienstleister ist stripe.com</i></div>-->
-                              <!--                              </label>-->
-                            </div>
-                            <div class="mb-2">
+                            <div class="mt-6 mb-2">
                               <label class="required">
-                                <input class="required"
-                                       type="checkbox"
-                                       v-model="formData.agbAccepted"
-                                       name="agb"
-                                       value="example value">
+                                <input class="required" type="checkbox" v-model="formData.agbAccepted" name="agb">
                                 <span class="required ml-1">Ich akzeptiere die
-                                  <a target="_blank"
-                                     class="underline underline-offset-4 decoration-[1px]"
-                                     href="/agb">
-                                    AGBs</a> und
-                                  <a target="_blank"
-                                     class="underline underline-offset-4 decoration-[1px]"
-                                     href="/agb">Datenschutzbestimmungen</a>*</span>
+                                  <a target="_blank" class="underline underline-offset-4 decoration-[1px]" href="/agb"> AGBs</a> und
+                                  <a target="_blank" class="underline underline-offset-4 decoration-[1px]" href="/agb">Datenschutzbestimmungen</a>*</span>
                               </label>
                             </div>
 
-                            <!--                            <div class="my-8">-->
-                            <!--                              <label>-->
-                            <!--                                <input-->
-                            <!--                                    @click="optionPaymentClicked"-->
-                            <!--                                    type="radio"-->
-                            <!--                                    name="paymentMethod"-->
-                            <!--                                    value="Twint">-->
-                            <!--                                <span class="ml-1">Twint</span>-->
-                            <!--                              </label>-->
-                            <!--                            </div>-->
+                            <!-- Bezahlen -->
+                            <div v-if="isStep4" class="mt-8 w-1/2 text-right">
+                              <button :disabled="!formData.agbAccepted"
+                                      class="w-full font-bold block py-4 px-6 text-center font-heading text-base text-white bg-green-600 hover:bg-green-600 border disabled:bg-green-100 disabled:border-green-100 border-green-500 hover:border-green-600 rounded-sm transition duration-200"
+                                      name="next" @click.prevent="submit">
+                                <span v-if="formData.payment">Bestellen</span>
+                              </button>
+                            </div>
                           </div>
                         </div>
-
                       </div>
                     </div>
                   </div>
-
                 </div>
-
-
               </div>
             </div>
-
 
             <!-- Buttons -->
             <div class="flex mt-14 mb-20">
@@ -476,9 +321,7 @@
               <div class="sm:w-full md:w-1/2  pr-32 text-left">
                 <button v-if="!isStep1"
                         class="w-full font-bold block py-4 px-6 text-center font-heading text-base hover:bg-green-600 border border-green-500 hover:border-green-600 rounded-sm transition duration-200"
-                        name="back"
-                        @click.prevent="prev(null)">
-                  Zurück
+                        name="back" @click.prevent="prev(null)">Zurück
                 </button>
               </div>
 
@@ -486,21 +329,10 @@
               <div v-if="!isStep4" class="sm:w-full md:w-1/2 text-right">
                 <button
                   class="w-full font-bold block py-4 px-6 text-center font-heading text-base text-white bg-green-500 hover:bg-green-600 border border-green-500 hover:border-green-600 rounded-sm transition duration-200"
-                  name="next">
-                  Weiter
+                  name="next">Weiter
                 </button>
               </div>
 
-              <!-- Bezahlen -->
-              <div v-if="isStep4" class="w-1/2 text-right">
-                <button :disabled="!formData.agbAccepted"
-                        class="w-full font-bold block py-4 px-6 text-center font-heading text-base text-white bg-green-600 hover:bg-green-600 border disabled:bg-green-100 disabled:border-green-100 border-green-500 hover:border-green-600 rounded-sm transition duration-200"
-                        name="next"
-                        @click.prevent="submit">
-                  <span v-if="!formData.payment">Abschicken</span>
-                  <span v-if="formData.payment">Bestellen</span>
-                </button>
-              </div>
             </div>
 
 
@@ -540,7 +372,6 @@ export default {
         kirchgemeindeSpaeterEingeben: true,
         isCatholic: false,
         isReform: false,
-        hatEhepartner: false,
         hasChildren: false,
         payment: true,
         agbAccepted: false,
@@ -557,15 +388,6 @@ export default {
         streetAdditionalAddress: '',
         postalAddress: '',
         locationAddress: '',
-      },
-      partner: {
-        taufDatumBekanntPartner: false,
-        vorname: '',
-        nachname: '',
-        geburtsdatum: '',
-        konfession: '',
-        taufdatum: '',
-        taufort: '',
       },
       child: {
         taufDatumBekanntChild: false,
@@ -589,7 +411,6 @@ export default {
   },
   computed: {
     isStep1() {
-
       if (this.currentStep === 1) {
         window.scrollTo({
           top: 0,
@@ -614,11 +435,6 @@ export default {
     },
   },
   methods: {
-    optionPaymentClicked(event) {
-    },
-    optionClicked(event) {
-      // this.formData.payment = null;
-    },
     checkForm: function (e) {
       this.errors = [];
       if (this.isStep1) {
@@ -626,15 +442,14 @@ export default {
           this.errors.push('Email erforderlich.');
         }
 
-        if (this.person.email) {
-          if (!/[^\s@]+@[^\s@]+\.[^\s@]+/.test(this.person.email)) {
-            this.errors.push('Email nicht valide.');
-          }
+        if (!/[^\s@]+@[^\s@]+\.[^\s@]+/.test(this.person.email)) {
+          this.errors.push('Die Email ist nicht valide.');
         }
 
         if (!this.person.geburtsdatum) {
           this.errors.push('Geburtsdatum erforderlich.');
         }
+
         if (this.person.geburtsdatum) {
           this.person.geburtsdatum = this.person.geburtsdatum.trim();
           if (!/^\d{1,2}(\.)\d{1,2}(\.)\d{4}$/.test(this.person.geburtsdatum)) {
@@ -650,6 +465,7 @@ export default {
           if (!this.person.vorname) {
             this.errors.push('Vorname erforderlich.');
           }
+
           if (!this.person.nachname) {
             this.errors.push('Nachname erforderlich.');
           }
@@ -660,6 +476,7 @@ export default {
               this.errors.push('Taufdatum Format ist nicht korrekt. Format Tag.Monat.Jahr erforderlich.');
             }
           }
+
           if (!this.person.streetAddress) {
             this.errors.push('Strasse erforderlich.');
           }
@@ -685,46 +502,10 @@ export default {
         }
       }
 
-      // Ehepartner
-      if (this.isStep2 && this.formData.hatEhepartner) {
-        if (!this.partner.vorname) {
-          this.errors.push('Vorname erforderlich.');
-        }
-        if (!this.partner.nachname) {
-          this.errors.push('Nachname erforderlich.');
-        }
-        if (!this.partner.geburtsdatum) {
-          this.errors.push('Geburtsdatum erforderlich.');
-        }
-        if (this.partner.geburtsdatum) {
-          this.partner.geburtsdatum = this.partner.geburtsdatum.trim();
-          if (!/^\d{1,2}(\.)\d{1,2}(\.)\d{4}$/.test(this.partner.geburtsdatum)) {
-            this.errors.push('Geburtsdatum Format ist nicht korrekt. Format Tag.Monat.Jahr erforderlich.');
-          }
-        }
-
-        if (!this.partner.konfession) {
-          this.errors.push('Bitte wähle die Konfession.');
-        }
-
-        if (this.partner.taufdatum) {
-          this.partner.taufdatum = this.partner.taufdatum.trim();
-          if (!/^\d{1,2}(\.)\d{1,2}(\.)\d{4}$/.test(this.partner.taufdatum)) {
-            this.errors.push('Taufdatum Format ist nicht korrekt. Format Tag.Monat.Jahr erforderlich.');
-          }
-        }
-      }
-
       // Kinder
       if (this.isStep2 && this.formData.hasChildren) {
         for (let i = 0; i < this.children.length; i++) {
           let childrenCount = i + 1;
-          if (!this.children[i].vorname) {
-            this.errors.push(childrenCount + '. Kind: Vorname erforderlich.');
-          }
-          if (!this.children[i].nachname) {
-            this.errors.push(childrenCount + '. Kind: Nachname erforderlich.');
-          }
           if (!this.children[i].geburtsdatum) {
             this.errors.push(childrenCount + '. Kind: Geburtsdatum erforderlich.');
           }
@@ -733,10 +514,6 @@ export default {
             if (!/^\d{1,2}(\.)\d{1,2}(\.)\d{4}$/.test(this.children[i].geburtsdatum)) {
               this.errors.push(childrenCount + '. Kind. Geburtsdatum Format ist nicht korrekt. Format Tag.Monat.Jahr erforderlich.');
             }
-          }
-
-          if (!this.children[i].konfession) {
-            this.errors.push(childrenCount + '. Kind: Bitte wähle die Konfession.');
           }
 
           if (this.children[i].taufdatum) {
@@ -748,9 +525,34 @@ export default {
         }
       }
 
-      if (this.isStep4) {
-        if (this.formData.payment === null || this.formData.payment === 'undefined') {
-          // this.errors.push("Wähle bitte eine Option.");
+      // Kirchgemeinde
+      if (this.isStep3 && !this.formData.kirchgemeindeSpaeterEingeben) {
+        if (!this.church.anschriftAddress) {
+          this.errors.push('Anschrift erforderlich.');
+        }
+
+        if (!this.church.streetAddress) {
+          this.errors.push('Strasse erforderlich.');
+        }
+
+
+        if (!this.church.postalAddress) {
+          this.errors.push('Postleitzahl erforderlich.');
+        }
+
+        if (this.church.postalAddress) {
+          this.church.postalAddress = this.church.postalAddress.trim();
+          if (!/^\d+$/.test(this.person.postalAddress)) {
+            this.errors.push('Postleitzahl darf nur Nummern enthalten.');
+          }
+
+          if (this.church.postalAddress.length !== 4) {
+            this.errors.push('Postleitzahl darf nur vier Ziffern enthalten.');
+          }
+        }
+
+        if (!this.church.locationAddress) {
+          this.errors.push('Ort erforderlich.');
         }
       }
 
@@ -788,50 +590,30 @@ export default {
     submit() {
       this.formData.isCatholic = false;
       this.formData.isReform = false;
+      this.isLoading = true;
+      this.errors = [];
 
       if (this.person.konfession === 'kath') {
         this.formData.isCatholic = true;
-      }
-      if (this.formData.hatEhepartner && this.partner.konfession === 'kath') {
-        this.formData.isCatholic = true;
-      }
-
-      if (this.person.konfession === 'ref') {
-        this.formData.isReform = true;
-      }
-      if (this.formData.hatEhepartner && this.partner.konfession === 'ref') {
+      } else if (this.person.konfession === 'ref') {
         this.formData.isReform = true;
       }
 
-      if (window.location.host !== 'kirche-austreten.localhost') {
-        const callback = function () {
-          if (typeof (url) != 'undefined') {
-            window.location = url;
-          }
-        };
-        gtag('event', 'conversion', {
-          'send_to': 'AW-757997418/Hv05CJSV340YEOq-uOkC',
-          'transaction_id': '',
-          'event_callback': callback,
-        });
-      }
-      this.isLoading = true;
-      this.errors = [];
       if (!this.formData.agbAccepted) {
         this.isLoadingStep = false;
         this.errors.push('Bitte akzeptiere noch die AGBs.');
         return;
       }
 
-      this.errors.push('Da ging etwas schief... Versuche es noch einmal.');
+      this.errors.push('Da ging etwas schief. Versuche es noch einmal.');
       axios.post('/api/create-person?XDEBUG_SESSION_START=PHPSTORM', {
           person: this.person,
-          partner: this.partner,
           children: this.children,
           formData: this.formData,
           catholic: this.catholic,
           reform: this.reform,
           currentStep: this.currentStep,
+          church: this.church,
         },
       )
         .then((response) => {
@@ -844,19 +626,19 @@ export default {
             setTimeout(() => {
               this.isLoadingStep = false;
               window.location.href = this.stripeURL;
-            }, '8000');
+            }, 3000);
           } else {
             setTimeout(() => {
               this.isLoadingStep = false;
               window.location.href = this.confirmURL;
-            }, '5000');
+            }, 3000);
           }
 
         })
         .catch(e => {
           this.errors = [];
-          this.errors.push('Da ging etwas schief... Versuche es noch einmal.');
-          this.errors.push('Sollte der Fehler immer noch auftreten, kontaktiere uns über das Kontaktformular.');
+          this.errors.push('Da ging etwas schief. Versuche es noch einmal.');
+          this.errors.push('Sollte der Fehler wieder auftreten, kontaktiere uns bitte über das Kontaktformular.');
 
           this.isLoading = false;
           window.scrollTo({
@@ -867,9 +649,7 @@ export default {
           // console.log(e);
         });
 
-    }
-
-    ,
+    },
   },
 };
 

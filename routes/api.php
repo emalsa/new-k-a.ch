@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+Route::middleware('auth:sanctum')->get('/user', function(Request $request) {
   return $request->user();
 });
 
@@ -30,7 +30,7 @@ Route::post('/pdf', 'App\Services\PdfGenerate@generate');
 
 // Run queue worker, because there are some problems
 // on the hoster side to run the queue workers via cron.
-Route::get('queue-work/create-pdf/dispatch', function () {
+Route::get('queue-work/create-pdf/dispatch', function() {
   try {
     CreatePdfJob::store();
   }
@@ -42,7 +42,7 @@ Route::get('queue-work/create-pdf/dispatch', function () {
 
 // Run queue worker, because there are some problems
 // on the hoster side to run the queue workers via cron.
-Route::get('queue-work/create-pdf/work', function () {
+Route::get('queue-work/create-pdf/work', function() {
   try {
     Artisan::call('queue:work --queue=pdfGenerate --stop-when-empty --max-jobs=2');
   }
@@ -52,10 +52,9 @@ Route::get('queue-work/create-pdf/work', function () {
   }
 });
 
-
 // Run queue worker, because there are some problems
 // on the hoster side to run the queue workers via cron.
-Route::get('queue-work/send-pdf/dispatch', function () {
+Route::get('queue-work/send-pdf/dispatch', function() {
   try {
     SendPdfJob::store();
   }
@@ -67,7 +66,7 @@ Route::get('queue-work/send-pdf/dispatch', function () {
 
 // Run queue worker, because there are some problems
 // on the hoster side to run the queue workers via cron.
-Route::get('queue-work/send-pdf/work', function () {
+Route::get('queue-work/send-pdf/work', function() {
   try {
     Artisan::call('queue:work --queue=pdfSend --stop-when-empty --max-jobs=5');
   }

@@ -13,11 +13,11 @@ return new class extends Migration {
    * @return void
    */
   public function up() {
-    Schema::create('children', function (Blueprint $table) {
+    Schema::create('children', function(Blueprint $table) {
       $table->id();
       $table->foreignId('person_id');
-      $table->string('vorname');
-      $table->string('nachname');
+      $table->string('vorname')->nullable();
+      $table->string('nachname')->nullable();
       $table->string('geburtsdatum');
       $table->string('konfession');
       $table->boolean('taufDatumBekanntChild')->nullable();

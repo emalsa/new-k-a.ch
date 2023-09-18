@@ -50,25 +50,23 @@ class CreatePerson {
     $person = Person::create(
       [
         'email' => $personPostData['email'],
-        'taufDatumBekanntPerson' => $personPostData['taufDatumBekanntPerson'],
-        'vorname' => $personPostData['vorname'],
-        'nachname' => $personPostData['nachname'],
+        'taufDatumBekanntPerson' => $personPostData['taufDatumBekanntPerson'] ?? FALSE,
+        'vorname' => $personPostData['vorname'] ?? '',
+        'nachname' => $personPostData['nachname'] ?? '',
         'geburtsdatum' => $personPostData['geburtsdatum'],
         'konfession' => $personPostData['konfession'],
-        'taufdatum' => $personPostData['taufdatum'],
-        'taufort' => $personPostData['taufort'],
-        'streetAddress' => $personPostData['streetAddress'],
-        'streetAdditionalAddress' => $personPostData['streetAdditionalAddress'],
-        'postalAddress' => $personPostData['postalAddress'],
-        'locationAddress' => $personPostData['locationAddress'],
-        'hatEhepartner' => $formData['hatEhepartner'],
+        'taufdatum' => $personPostData['taufdatum'] ?? '',
+        'taufort' => $personPostData['taufort'] ?? '',
+        'streetAddress' => $personPostData['streetAddress'] ?? '',
+        'streetAdditionalAddress' => $personPostData['streetAdditionalAddress'] ?? '',
+        'postalAddress' => $personPostData['postalAddress'] ?? '',
+        'locationAddress' => $personPostData['locationAddress'] ?? '',
         'hasChildren' => $formData['hasChildren'],
         'payment' => $formData['payment'],
-        'confirmationMailSent' => FALSE,
-        'readyToSendFinalMail' => FALSE,
-        'finalMailSent' => FALSE,
-        'donationMailSent' => FALSE,
         'hasPaid' => FALSE,
+        'confirmationMailSent' => FALSE,
+        'documentsCreated' => FALSE,
+        'documentsSent' => FALSE,
       ]);
 
     $person->gemeinde()->create([]);
@@ -77,10 +75,10 @@ class CreatePerson {
       $childrenPostData = $this->request->json('children');
       foreach ($childrenPostData as $index => $childPostData) {
         $person->children()->create([
-          'vorname' => $childPostData['vorname'],
-          'nachname' => $childPostData['nachname'],
-          'geburtsdatum' => $childPostData['geburtsdatum'],
-          'konfession' => $childPostData['konfession'],
+          'vorname' => $childPostData['vorname'] ?? '',
+          'nachname' => $childPostData['nachname'] ?? '',
+          'geburtsdatum' => $childPostData['geburtsdatum'] ?? '',
+          'konfession' => $childPostData['konfession'] ?? '',
           'taufDatumBekanntChild' => $childPostData['taufDatumBekanntChild'] ?? FALSE,
           'taufdatum' => $childPostData['taufdatum'] ?? '',
           'taufort' => $childPostData['taufort'] ?? '',
@@ -90,11 +88,11 @@ class CreatePerson {
     }
 
     $churchPostData = $this->request->json('church');
-    $churchAnschriftAddress = !empty($churchPostData['anschriftAddress']) ? $churchPostData : '';
-    $churchStreetAddress = !empty($churchPostData['streetAddress']) ? $churchPostData['streetAddress'] : '';
-    $churchStreetAdditionalAddress = !empty($churchPostData['streetAdditionalAddress']) ? $churchPostData['streetAdditionalAddress'] : '';
-    $churchPostalAddress = !empty($churchPostData['postalAddress']) ? $churchPostData['postalAddress'] : '';
-    $churchLocationAddress = !empty($churchPostData['locationAddress']) ? $churchPostData['locationAddress'] : '';
+    $churchAnschriftAddress = $churchPostData['anschriftAddress'] ?? '';
+    $churchStreetAddress = $churchPostData['streetAddress'] ?? '';
+    $churchStreetAdditionalAddress = $churchPostData['streetAdditionalAddress'] ?? '';
+    $churchPostalAddress = $churchPostData['postalAddress'] ?? '';
+    $churchLocationAddress = $churchPostData['locationAddress'] ?? '';
 
     // Church
     $person->churchAddress()->create([
