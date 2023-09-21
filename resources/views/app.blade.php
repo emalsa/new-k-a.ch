@@ -15,7 +15,7 @@
   <meta title="Datenschutz | Kirche Austreten">
   <meta name="description" content="Austrittsschreiben für den Kirchenaustritt Schweiz.">
 
-  <?php else ?>
+  <?php else: ?>
   <title>kirche-austreten.ch</title>
   <meta title="Kirchenaustritt Schweiz.">
   <meta name="description"
